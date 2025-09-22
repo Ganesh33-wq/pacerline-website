@@ -1,12 +1,8 @@
 import Head from 'next/head'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
-import Link from 'next/li              <div className="text-center mb-6">
-                <div className="text-center mb-4">
-                  <span className="text-5xl">🏢</span>
-                </div>
-                <h3 className="text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors duration-300">Property Management Accounting</h3>
-              </div>
+import Link from 'next/link'
+
 const AccountingPage = () => {
   return (
     <div className="min-h-screen bg-white">
