@@ -1,0 +1,176 @@
+/* --- Google Fonts Import (Optional) --- */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+
+/* --- CSS Variables for Brand Colors --- */
+:root {
+    --primary-blue: #0c4c94;
+    --accent-blue: #2196F3;
+    --light-gray: #f5f7fa;
+    --dark-gray: #333;
+    --text-color: #444;
+}
+
+/* --- Reset & Base Styles --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #fff;
+    color: var(--text-color);
+    scroll-behavior: smooth;
+}
+
+/* --- Fade In on Load --- */
+.home_fade-in {
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+/* --- Hero Section --- */
+.home_hero {
+    background: linear-gradient(to right, var(--primary-blue), var(--accent-blue));
+    color: white;
+    padding: 100px 10% 80px;
+    text-align: center;
+}
+
+.home_hero-heading {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.home_hero-subheading {
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+}
+
+.home_cta-button {
+    background-color: white;
+    color: var(--primary-blue);
+    padding: 12px 28px;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.home_cta-button:hover {
+    background-color: #e0e0e0;
+}
+
+/* --- Section Blocks (Alternating Layout) --- */
+.home_section-block {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 10%;
+    gap: 40px;
+    background-color: white;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.6s ease-in-out;
+}
+
+.home_visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.home_left {
+    flex-direction: row;
+}
+
+.home_right {
+    flex-direction: row-reverse;
+}
+
+.home_text {
+    flex: 1 1 45%;
+    max-width: 45%;
+}
+
+.home_text h2 {
+    font-size: 2rem;
+    margin-bottom: 16px;
+    color: var(--primary-blue);
+}
+
+.home_text p,
+.home_text li {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--text-color);
+}
+
+.home_image {
+    flex: 1 1 45%;
+    max-width: 45%;
+}
+
+.home_image img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Footer --- */
+footer {
+    background-color: var(--primary-blue);
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9rem;
+}
+
+/* --- Responsive Media Queries --- */
+@media (max-width: 1024px) {
+    .home_text, .home_image {
+        max-width: 100%;
+        flex: 1 1 100%;
+    }
+
+    .home_section-block {
+        flex-direction: column !important;
+        padding: 60px 6%;
+    }
+
+    .home_hero {
+        padding: 80px 5%;
+    }
+
+    .home_hero-heading {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .home_hero-heading {
+        font-size: 2rem;
+    }
+
+    .home_cta-button {
+        font-size: 0.9rem;
+        padding: 10px 20px;
+    }
+
+    .home_text h2 {
+        font-size: 1.5rem;
+    }
+
+    .home_text p, .home_text li {
+        font-size: 0.95rem;
+    }
+}

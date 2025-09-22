@@ -1,0 +1,695 @@
+/* General Body and Typography */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f9fa;
+}
+
+.content-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1, h2, h3 {
+    color: #2c3e50;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 3.2em;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 2.5em;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: #007bff; /* Primary blue for accents */
+    border-radius: 2px;
+}
+
+h3 {
+    font-size: 1.8em;
+    font-weight: 600;
+    color: #007bff;
+}
+
+p {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+/* !!! IMPORTANT FIX FOR CHECKMARK OVERLAP !!! */
+/* This ensures the checkmark is properly spaced from the text */
+ul li {
+    margin-bottom: 10px; /* Space between list items */
+    padding-left: 0; /* Remove default padding from generic ul li */
+    position: relative;
+    display: flex; /* Use flexbox to align icon and text */
+    align-items: flex-start; /* Align icon and text to the top */
+    line-height: 1.4; /* Improve line height for readability */
+    color: #333; /* Default text color for lists */
+}
+
+
+
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: #fff;
+    border: 2px solid #007bff;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    color: #fff;
+    border: 2px solid #6c757d;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+    border-color: #5a6268;
+    transform: translateY(-2px);
+}
+
+/* Hero Section */
+.hero-section {
+    background: url('https://via.placeholder.com/1600x600/3498db/ffffff?text=Bookkeeping+Services') no-repeat center center/cover; /* Placeholder image - REPLACE THIS! */
+    color: #fff;
+    text-align: center;
+    padding: 100px 20px;
+    position: relative;
+    height: 500px; /* Adjust height as needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-overlay {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 40px 60px;
+    border-radius: 10px;
+    max-width: 800px;
+}
+
+.hero-section h1 {
+    font-size: 3.5em;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.hero-section p {
+    font-size: 1.5em;
+    margin-bottom: 30px;
+    color: #e0e0e0;
+}
+
+/* Sections Styling */
+section {
+    padding: 40px 0;
+    margin-bottom: 30px;
+}
+
+.section-intro {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.section-intro p {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Services Grid */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.service-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    padding: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.service-card h3 {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+.service-card h3 .icon-color {
+    color: #007bff;
+    margin-right: 15px;
+    font-size: 1.5em;
+}
+
+.service-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+/* !!! IMPORTANT FIX FOR CHECKMARK OVERLAP IN SERVICE CARDS !!! */
+.service-card ul li {
+    padding-left: 0; /* No padding on the list item itself */
+    margin-bottom: 8px; /* Spacing between lines */
+    color: #555;
+    display: flex; /* Makes the li a flex container */
+    align-items: flex-start; /* Aligns the icon and text to the top */
+    line-height: 1.4; /* Ensures good line spacing for readability */
+}
+
+.service-card ul li::before {
+    content: '\f00c'; /* Font Awesome checkmark */
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    color: #28a745;
+    margin-right: 10px; /* Crucial: Space between icon and text */
+    font-size: 0.9em; /* Adjust size if needed */
+    flex-shrink: 0; /* Prevents the icon from shrinking */
+    padding-top: 2px; /* Small adjustment for visual alignment if needed */
+}
+
+
+/* Tax Services List */
+.section-tax-services {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.section-tax-services p {
+    max-width: 800px;
+    margin: 0 auto 20px;
+}
+
+.tax-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    margin-top: 30px;
+}
+
+.tax-list li {
+    background-color: #e9f5ff; /* Light blue background */
+    padding: 15px 20px;
+    border-left: 5px solid #007bff;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease;
+}
+
+.tax-list li:hover {
+    transform: translateX(5px);
+}
+
+.tax-list li i {
+    margin-right: 15px;
+    color: #007bff;
+    font-size: 1.3em;
+}
+
+.tax-list li::before { /* Remove default checkmark for this specific list */
+    content: none;
+}
+
+/* Highlight Section (QuickBooks) */
+.highlight-section {
+    background-color: #f0f8ff; /* Very light blue */
+    padding: 50px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    margin-top: 40px;
+}
+
+.highlight-section h2 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+.highlight-section p {
+    font-size: 1.2em;
+    max-width: 900px;
+    margin: 0 auto 30px;
+}
+
+/* Industries We Serve */
+.section-industries {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.industry-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.industry-list span {
+    background-color: #e6e6e6;
+    color: #333;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    font-size: 1em;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.industry-list span:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.industry-list span i {
+    margin-right: 8px;
+    font-size: 1.1em;
+}
+
+/* Why Choose Pacerline (Benefits) */
+.section-benefits {
+    text-align: center;
+    background-color: #fff;
+    padding: 50px 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.benefit-item {
+    text-align: center;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.benefit-item:hover {
+    transform: translateY(-5px);
+}
+
+.benefit-item i {
+    font-size: 3em;
+    color: #007bff;
+    margin-bottom: 15px;
+}
+
+.benefit-item p {
+    font-size: 1.1em;
+    font-weight: 400;
+    color: #444;
+}
+
+/* CTA Process */
+.cta-process {
+    background-color: #007bff;
+    color: #fff;
+    padding: 60px 20px;
+    text-align: center;
+    border-radius: 10px;
+    margin-top: 50px;
+}
+
+.cta-process h2 {
+    color: #fff;
+    margin-bottom: 30px;
+}
+
+.cta-process h2::after { /* Remove specific underline for white background */
+    background-color: #fff;
+}
+
+.process-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.step-card {
+    background-color: rgba(255, 255, 255, 0.15);
+    padding: 25px;
+    border-radius: 8px;
+    position: relative;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.step-card:hover {
+    transform: translateY(-8px);
+}
+
+.step-number {
+    background-color: #fff;
+    color: #007bff;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8em;
+    font-weight: 700;
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 3px solid #007bff;
+}
+
+.step-card h3 {
+    color: #fff;
+    margin-top: 30px;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.step-card p {
+    color: #f0f0f0;
+    font-size: 1em;
+}
+
+.cta-tagline {
+    font-size: 1.5em;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    font-weight: 600;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+/* FAQ Section */
+.faq-section {
+    padding: 50px 0;
+    text-align: center;
+}
+
+.faq-accordion {
+    max-width: 900px;
+    margin: 30px auto 0;
+    text-align: left;
+}
+
+.faq-accordion details {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.3s ease;
+}
+
+.faq-accordion details:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.faq-accordion summary {
+    font-weight: 600;
+    padding: 20px 25px;
+    cursor: pointer;
+    outline: none;
+    font-size: 1.15em;
+    color: #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq-accordion summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq-accordion summary::after {
+    content: '\25B6'; /* Right arrow */
+    font-size: 1em;
+    margin-left: 10px;
+    transition: transform 0.3s ease;
+}
+
+.faq-accordion details[open] summary::after {
+    transform: rotate(90deg); /* Down arrow when open */
+}
+
+.faq-accordion p {
+    padding: 0 25px 20px;
+    margin: 0;
+    color: #555;
+    font-size: 1em;
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+}
+
+/* Footer */
+footer {
+    background-color: #2c3e50;
+    color: #fff;
+    text-align: center;
+    padding: 25px 0;
+    margin-top: 50px;
+    font-size: 0.9em;
+}
+
+footer .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .hero-section {
+        height: 400px;
+        padding: 70px 20px;
+    }
+
+    .hero-section h1 {
+        font-size: 2.8em;
+    }
+
+    .hero-section p {
+        font-size: 1.3em;
+    }
+
+    h1 {
+        font-size: 2.8em;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    h3 {
+        font-size: 1.6em;
+    }
+
+    .services-grid, .tax-list, .benefits-grid, .process-steps {
+        grid-template-columns: 1fr;
+    }
+
+    .cta-process {
+        padding: 40px 20px;
+    }
+
+    .step-card {
+        top: 0; /* Adjust position for smaller screens */
+        position: static;
+    }
+
+    .step-number {
+        position: static;
+        margin: 0 auto 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        height: 350px;
+        padding: 50px 15px;
+    }
+
+    .hero-section h1 {
+        font-size: 2.2em;
+    }
+
+    .hero-section p {
+        font-size: 1.1em;
+    }
+
+    h1 {
+        font-size: 2.2em;
+    }
+
+    h2 {
+        font-size: 1.8em;
+    }
+
+    h3 {
+        font-size: 1.4em;
+    }
+
+    .content-container {
+        padding: 15px;
+    }
+
+    .highlight-section {
+        padding: 30px;
+    }
+
+    .faq-accordion summary {
+        font-size: 1.05em;
+        padding: 15px 20px;
+    }
+
+    .tax-list li {
+        padding: 12px 15px;
+        font-size: 1em;
+    }
+
+    .industry-list span {
+        padding: 8px 15px;
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-overlay {
+        padding: 30px 20px;
+    }
+
+    .hero-section h1 {
+        font-size: 1.8em;
+    }
+
+    .hero-section p {
+        font-size: 1em;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    h2 {
+        font-size: 1.6em;
+    }
+
+    h3 {
+        font-size: 1.2em;
+    }
+
+    .service-card, .benefit-item, .step-card {
+        padding: 20px;
+    }
+}
+
+/* Navbar (placeholder style) */
+nav {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 15px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #fff;
+    text-decoration: none;
+}
+
+nav ul {
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 25px;
+}
+
+nav ul li a {
+    color: #fff;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+}

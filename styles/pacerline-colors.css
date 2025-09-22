@@ -1,0 +1,129 @@
+/* Pacerline Brand Colors - Light, Clean, US-Friendly Theme */
+
+/* Override existing colors with Pacerline brand colors */
+:root {
+  /* Pacerline Blue (from logo) */
+  --pacerline-blue-50: #eff6ff;
+  --pacerline-blue-100: #dbeafe;
+  --pacerline-blue-200: #bfdbfe;
+  --pacerline-blue-300: #93c5fd;
+  --pacerline-blue-400: #60a5fa;
+  --pacerline-blue-500: #3b82f6;
+  --pacerline-blue-600: #2563eb;
+  --pacerline-blue-700: #1d4ed8;
+  --pacerline-blue-800: #1e40af;
+  --pacerline-blue-900: #1e3a8a;
+
+  /* Pacerline Green (from logo) */
+  --pacerline-green-50: #f0fdf4;
+  --pacerline-green-100: #dcfce7;
+  --pacerline-green-200: #bbf7d0;
+  --pacerline-green-300: #86efac;
+  --pacerline-green-400: #4ade80;
+  --pacerline-green-500: #22c55e;
+  --pacerline-green-600: #16a34a;
+  --pacerline-green-700: #15803d;
+  --pacerline-green-800: #166534;
+  --pacerline-green-900: #14532d;
+}
+
+/* Light, clean background for US users */
+.hero-section {
+  background: linear-gradient(135deg, #f8fafc 0%, #eff6ff 50%, #dbeafe 100%) !important;
+  color: #1f2937 !important;
+}
+
+/* Update dark backgrounds to light */
+.bg-gradient-to-br.from-slate-900 {
+  background: linear-gradient(135deg, #f8fafc 0%, #eff6ff 50%, #dbeafe 100%) !important;
+  color: #1f2937 !important;
+}
+
+/* Update old color references */
+.text-\[\#092870\] {
+  color: var(--pacerline-blue-700) !important;
+}
+
+.text-\[\#30a659\] {
+  color: var(--pacerline-green-600) !important;
+}
+
+.bg-\[\#092870\] {
+  background-color: var(--pacerline-blue-700) !important;
+}
+
+.bg-\[\#30a659\] {
+  background-color: var(--pacerline-green-600) !important;
+}
+
+/* Update gradient backgrounds */
+.from-\[\#092870\] {
+  --tw-gradient-from: var(--pacerline-blue-700) !important;
+}
+
+.to-\[\#30a659\] {
+  --tw-gradient-to: var(--pacerline-green-600) !important;
+}
+
+.via-\[\#30a659\] {
+  --tw-gradient-via: var(--pacerline-green-600) !important;
+}
+
+/* Light, clean button styles */
+.btn-primary {
+  background: linear-gradient(135deg, var(--pacerline-blue-500), var(--pacerline-green-500), var(--pacerline-blue-500));
+  border: none;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, var(--pacerline-green-500), var(--pacerline-blue-500), var(--pacerline-green-500));
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
+}
+
+/* Clean card styles */
+.service-card {
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(59, 130, 246, 0.1);
+  border-radius: 16px;
+  transition: all 0.3s ease;
+}
+
+.service-card:hover {
+  border-color: var(--pacerline-green-400);
+  box-shadow: 0 20px 40px rgba(59, 130, 246, 0.1);
+  transform: translateY(-8px);
+}
+
+/* Text color updates for readability */
+.text-white {
+  color: #1f2937 !important;
+}
+
+.text-gray-300 {
+  color: #6b7280 !important;
+}
+
+.text-indigo-400 {
+  color: var(--pacerline-blue-600) !important;
+}
+
+/* Clean, modern spacing */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Responsive design for mobile */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 2rem 1rem;
+  }
+  
+  .service-card {
+    margin-bottom: 1.5rem;
+  }
+}

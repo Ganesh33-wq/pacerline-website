@@ -1,0 +1,8 @@
+<svg width="180" height="60" viewBox="0 0 180 60" xmlns="http://www.w3.org/2000/svg">
+  <rect width="180" height="60" fill="white"/>
+  <!-- AppFolio real brand colors and style -->
+  <circle cx="35" cy="30" r="18" fill="#0052cc"/>
+  <text x="35" y="37" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="18" font-weight="bold">A</text>
+  <text x="65" y="22" fill="#0052cc" font-family="Arial, sans-serif" font-size="20" font-weight="700">AppFolio</text>
+  <text x="65" y="40" fill="#666" font-family="Arial, sans-serif" font-size="12">Property Management</text>
+</svg>

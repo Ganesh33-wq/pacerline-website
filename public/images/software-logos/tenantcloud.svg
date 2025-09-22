@@ -1,0 +1,8 @@
+<svg width="160" height="60" viewBox="0 0 160 60" xmlns="http://www.w3.org/2000/svg">
+  <rect width="160" height="60" fill="white"/>
+  <!-- TenantCloud brand colors -->
+  <circle cx="30" cy="30" r="18" fill="#FF6B35"/>
+  <path d="M22 35h16v3H22v-3zm0-6h16v4H22v-4zm4-6h8v4h-8v-4z" fill="white"/>
+  <text x="55" y="28" fill="#FF6B35" font-family="Arial, sans-serif" font-size="16" font-weight="700">TenantCloud</text>
+  <text x="55" y="42" fill="#666" font-family="Arial, sans-serif" font-size="10">Property Management</text>
+</svg>

@@ -1,0 +1,7 @@
+<svg width="140" height="60" viewBox="0 0 140 60" xmlns="http://www.w3.org/2000/svg">
+  <rect width="140" height="60" fill="white"/>
+  <!-- Rentvine brand style -->
+  <circle cx="30" cy="30" r="18" fill="#228B22"/>
+  <path d="M22 36h16l-2-8h-12l-2 8zm2-10h12l-6-8-6 8z" fill="white"/>
+  <text x="55" y="35" fill="#228B22" font-family="Arial, sans-serif" font-size="18" font-weight="700">Rentvine</text>
+</svg>

@@ -1,0 +1,1058 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3, h4 {
+    font-weight: 600;
+    color: #2c3e50; /* Dark Blue */
+}
+
+h1 {
+    font-size: 2.8em;
+    margin-bottom: 0.5em;
+}
+
+h2 {
+    font-size: 2.2em;
+    text-align: center;
+    margin-bottom: 1em;
+    padding-bottom: 0.5em;
+    border-bottom: 2px solid #3498db; /* Primary Blue */
+    display: inline-block; /* To make border only as wide as text */
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+h3 {
+    font-size: 1.8em;
+    margin-bottom: 0.5em;
+    color: #3498db; /* Primary Blue */
+}
+
+h4 {
+    font-size: 1.2em;
+    margin-bottom: 0.3em;
+    color: #2980b9; /* Darker Primary Blue */
+}
+
+p {
+    margin-bottom: 1em;
+    font-size: 1em;
+    color: #555;
+}
+
+a {
+    color: #3498db; /* Primary Blue */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Navbar Placeholder Styling (Basic) */
+.navbar {
+    background-color: #fff;
+    padding: 1em 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}/* General Styles */
+:root {
+    /* Define a color palette for easier management and consistency */
+    --primary-blue: #3498db;          /* A vibrant blue for primary actions and accents */
+    --dark-blue: #2c3e50;             /* A deep, professional blue for headers and footers */
+    --light-gray: #ecf0f1;            /* A soft light gray for subtle backgrounds */
+    --medium-gray: #7f8c8d;           /* A neutral gray for supporting text */
+    --text-color: #333;               /* Standard text color */
+    --white: #ffffff;
+    --light-bg-blue: #eaf5ff;         /* A very light blue for soft background sections */
+    --accent-green: #2ecc71;          /* An optional accent color for highlights or success */
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.7; /* Increased for better readability */
+    color: var(--text-color);
+    background-color: var(--light-gray);
+    -webkit-font-smoothing: antialiased; /* Smoother font rendering */
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Headings */
+h1, h2, h3, h4 {
+    font-weight: 700; /* Bolder headings for emphasis */
+    color: var(--dark-blue);
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 3.8em; /* Larger for significant impact */
+    margin-bottom: 0.5em;
+}
+
+h2 {
+    font-size: 2.8em; /* Prominent section titles */
+    text-align: center;
+    margin-bottom: 1.5em; /* More space below section titles */
+    padding-bottom: 0.5em;
+    border-bottom: 3px solid var(--primary-blue); /* Thicker border for prominence */
+    display: inline-block;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+h3 {
+    font-size: 2em; /* Clear sub-section titles */
+    margin-bottom: 0.75em;
+    color: var(--primary-blue);
+}
+
+h4 {
+    font-size: 1.3em; /* Service item titles */
+    margin-bottom: 0.5em;
+    color: var(--dark-blue);
+}
+
+p {
+    margin-bottom: 1em;
+    font-size: 1.05em; /* Slightly larger text for readability */
+    color: #555;
+}
+
+a {
+    color: var(--primary-blue);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #2980b9; /* Slightly darker blue on hover */
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block; /* Removes extra space below images */
+}
+
+/* --- Navbar (Placeholder Styling) --- */
+.navbar {
+    background-color: var(--white);
+    padding: 1em 0;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .logo {
+    font-size: 1.8em;
+    font-weight: 800; /* Extra bold for logo */
+    color: var(--dark-blue);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.navbar .nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.navbar .nav-links li {
+    margin-left: 30px; /* More space between links */
+}
+
+.navbar .nav-links a {
+    color: var(--text-color);
+    font-weight: 600;
+    position: relative; /* For underline effect */
+    padding-bottom: 5px; /* Space for underline */
+}
+
+.navbar .nav-links a:hover {
+    color: var(--primary-blue);
+    text-decoration: none;
+}
+
+/* Animated underline on hover for nav links */
+.navbar .nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--primary-blue);
+    transition: width 0.3s ease-out;
+}
+
+.navbar .nav-links a:hover::after {
+    width: 100%;
+}
+
+
+/* --- Hero Section --- */
+.hero-section {
+    /* Using a linear-gradient overlay for better text readability on top of an image */
+    background: linear-gradient(rgba(44, 62, 80, 0.75), rgba(44, 62, 80, 0.85)), 
+                url('https://source.unsplash.com/1920x800/?office,accounting,finance,cityscape') no-repeat center center/cover;
+    background-attachment: fixed; /* Creates a subtle parallax effect */
+    color: var(--white);
+    padding: 8em 0; /* More vertical padding for impact */
+    text-align: center;
+    position: relative;
+    overflow: hidden; /* Ensures no content spills out */
+}
+
+.hero-section h1 {
+    color: var(--white);
+    font-size: 4.2em; /* Even larger for main headline */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3); /* Subtle text shadow for readability */
+}
+
+.hero-section p {
+    font-size: 1.3em; /* Larger, more impactful intro text */
+    margin-bottom: 2em;
+    color: var(--light-gray);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+.cta-button, .cta-button-secondary {
+    padding: 14px 30px; /* Larger buttons for better clickability */
+    border-radius: 8px; /* Slightly more rounded corners */
+    font-size: 1.15em;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block; /* Allows side-by-side display */
+    margin: 0.8em 0.5em; /* Consistent margin */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15); /* Adds depth */
+}
+
+.cta-button {
+    background-color: var(--primary-blue);
+    color: var(--white);
+    border: 2px solid var(--primary-blue);
+}
+
+.cta-button:hover {
+    background-color: #2980b9; /* Darker blue on hover */
+    border-color: #2980b9;
+    transform: translateY(-3px); /* Slight lift effect */
+    box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+    text-decoration: none;
+}
+
+.cta-button-secondary {
+    background-color: transparent;
+    color: var(--primary-blue);
+    border: 2px solid var(--primary-blue);
+}
+
+.cta-button-secondary:hover {
+    background-color: var(--primary-blue);
+    color: var(--white);
+    transform: translateY(-3px); /* Slight lift effect */
+    box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+    text-decoration: none;
+}
+
+
+/* --- Content Sections --- */
+.content-section {
+    padding: 5em 0; /* Consistent vertical padding for sections */
+    text-align: left;
+}
+
+.content-section.bg-light {
+    background-color: var(--white);
+}
+
+.content-section.bg-dark {
+    background-color: var(--dark-blue);
+    color: var(--light-gray);
+}
+.content-section.bg-dark h2,
+.content-section.bg-dark h3,
+.content-section.bg-dark p {
+    color: var(--light-gray);
+}
+.content-section.bg-dark h2 {
+    border-bottom-color: var(--primary-blue); /* Primary blue border on dark background */
+}
+
+.content-section .section-subtitle {
+    text-align: center;
+    font-size: 1.2em;
+    color: var(--medium-gray);
+    margin-bottom: 3em; /* More space below subtitle */
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* --- Software Logos --- */
+.software-logos {
+    text-align: center;
+    margin-top: 3em;
+    padding-top: 1.5em;
+    border-top: 1px solid #eee; /* Subtle separator */
+}
+.software-logos p {
+    font-weight: 600;
+    margin-bottom: 1.5em;
+    color: var(--dark-blue);
+    font-size: 1.1em;
+}
+.software-logos img {
+    margin: 0 15px; /* More spacing between logos */
+    opacity: 0.7;
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    height: 50px; /* Slightly larger, uniform height */
+    width: auto;
+    display: inline-block; /* Allow logos to be side by side */
+    vertical-align: middle;
+    filter: grayscale(80%); /* Start mostly grayscale */
+}
+.software-logos img:hover {
+    opacity: 1;
+    filter: grayscale(0%); /* Full color on hover */
+    transform: scale(1.1); /* Slight enlarge on hover */
+}
+
+/* --- Service Blocks (for Corporate & Trust Accounting) --- */
+.service-blocks {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center blocks if they don't fill the row */
+    gap: 2.5em; /* More space between blocks */
+    margin-top: 3em;
+}
+.service-block {
+    background-color: var(--white);
+    padding: 2.5em;
+    border-radius: 10px; /* Slightly more rounded */
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08); /* Softer, larger shadow */
+    flex: 1 1 450px; /* Adjusted basis for wider blocks */
+    max-width: 550px; /* Max width to prevent them from becoming too wide */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center; /* Center content within the block */
+}
+.service-block:hover {
+    transform: translateY(-8px); /* More pronounced lift */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15); /* More prominent shadow on hover */
+}
+.service-block img.service-img {
+    width: 100%;
+    height: 220px; /* Slightly taller images */
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1.5em;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.service-block h3 {
+    margin-top: 0.5em; /* Space after image */
+    font-size: 2.2em; /* Larger heading in blocks */
+}
+.service-block p {
+    font-size: 1em;
+    color: #444;
+}
+
+/* --- Services Grid --- */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Min width for service items */
+    gap: 2em; /* More space between grid items */
+    margin-top: 3em;
+}
+
+.service-item {
+    background-color: var(--white);
+    padding: 2em; /* More padding inside items */
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06); /* Softer shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex; /* Use flexbox for content alignment */
+    flex-direction: column;
+    justify-content: space-between; /* Pushes content apart */
+}
+.service-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+.service-item h4 {
+    margin-top: 0;
+    margin-bottom: 0.8em;
+    font-size: 1.4em;
+}
+.service-item p {
+    font-size: 0.95em;
+    color: #666;
+}
+
+/* --- Why Trust Us Section --- */
+.trust-points {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5em;
+    margin-top: 3em;
+    text-align: center;
+}
+.trust-point {
+    background-color: rgba(255,255,255, 0.1);
+    padding: 2em;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    backdrop-filter: blur(3px); /* Subtle blur for modern look on dark bg */
+}
+.trust-point svg {
+    fill: var(--accent-green); /* Use the accent color for checkmarks */
+    width: 60px; /* Larger icons */
+    height: 60px;
+    margin-bottom: 0.8em;
+}
+.trust-point p {
+    color: var(--light-gray);
+    font-size: 1.1em;
+    font-weight: 500;
+}
+
+/* --- FAQ Section --- */
+.faq-item {
+    background-color: var(--white);
+    margin-bottom: 1.2em;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+    overflow: hidden; /* Important for animation */
+}
+.faq-item details {
+    padding: 1.2em 2em; /* More padding */
+}
+.faq-item summary {
+    font-weight: 700; /* Bolder summary text */
+    cursor: pointer;
+    color: var(--dark-blue);
+    font-size: 1.2em;
+    position: relative;
+    list-style: none;
+    padding-right: 30px; /* Space for custom arrow */
+    outline: none; /* Remove focus outline */
+}
+.faq-item summary::-webkit-details-marker { /* Hide default marker for webkit browsers */
+    display: none;
+}
+.faq-item summary::after {
+    content: '\25BC'; /* Unicode for down arrow */
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%) rotate(0deg);
+    transition: transform 0.3s ease-in-out; /* Smooth arrow animation */
+    font-size: 0.9em;
+    color: var(--primary-blue);
+}
+.faq-item details[open] summary::after {
+    transform: translateY(-50%) rotate(180deg);
+}
+.faq-item details p {
+    margin-top: 1em; /* Space between summary and answer */
+    padding-left: 15px;
+    border-left: 3px solid var(--primary-blue); /* Thicker accent border */
+    color: #555;
+    font-size: 1em;
+    /* Optional: Add a transition for the content reveal if using JS or specific max-height */
+    opacity: 0; /* Start hidden for animation */
+    animation: fadeIn 0.5s forwards; /* Custom animation */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+/* --- CTA Section --- */
+.cta-section {
+    background-color: var(--light-bg-blue); /* Soft blue background */
+    text-align: center;
+    padding: 6em 0; /* More padding */
+}
+.cta-section h2 {
+    color: var(--dark-blue);
+}
+.cta-section p {
+    margin-bottom: 2.5em; /* More space before buttons */
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.1em;
+}
+.cta-section .cta-button, .cta-section .cta-button-secondary {
+    margin: 0.8em; /* Consistent margin between buttons */
+}
+.cta-section .small-text {
+    font-size: 0.95em;
+    color: var(--medium-gray);
+    margin-top: 2em; /* More space after buttons */
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* --- Footer --- */
+.footer {
+    background-color: var(--dark-blue);
+    color: var(--light-gray);
+    text-align: center;
+    padding: 2.5em 0; /* More padding for a substantial footer */
+    margin-top: 4em; /* More space above the footer */
+}
+.footer p {
+    margin: 0;
+    color: var(--light-gray);
+    font-size: 0.95em;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 1024px) {
+    h1 { font-size: 3.2em; }
+    h2 { font-size: 2.5em; }
+    h3 { font-size: 1.8em; }
+    .hero-section { padding: 6em 0; }
+    .hero-section h1 { font-size: 3.5em; }
+    .hero-section p { font-size: 1.15em; }
+    .service-block { flex: 1 1 400px; max-width: none; } /* Allow them to take more space */
+}
+
+@media (max-width: 768px) {
+    h1 { font-size: 2.5em; }
+    h2 { font-size: 2.2em; }
+    h3 { font-size: 1.6em; }
+    p { font-size: 1em; }
+
+    .navbar .container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .navbar .nav-links {
+        margin-top: 15px;
+        flex-wrap: wrap; /* Allow links to wrap */
+        justify-content: center;
+    }
+    .navbar .nav-links li {
+        margin: 0 15px 10px; /* Adjust margin for wrapped links */
+    }
+
+    .hero-section {
+        padding: 5em 0;
+    }
+    .hero-section h1 {
+        font-size: 2.8em;
+    }
+    .hero-section p {
+        font-size: 1em;
+    }
+    .cta-button, .cta-button-secondary {
+        font-size: 1em;
+        padding: 12px 25px;
+    }
+
+    .service-blocks {
+        flex-direction: column; /* Stack service blocks vertically */
+        align-items: center; /* Center them */
+    }
+    .service-block {
+        width: 95%; /* Take almost full width */
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr; /* Stack service items on smaller screens */
+    }
+    .trust-points {
+        grid-template-columns: 1fr; /* Stack trust points */
+    }
+
+    .software-logos img {
+        margin: 0 10px;
+        height: 40px; /* Slightly smaller logos */
+    }
+    .faq-item details {
+        padding: 1em 1.5em;
+    }
+    .faq-item summary {
+        font-size: 1.1em;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 { font-size: 2em; }
+    h2 { font-size: 1.8em; border-bottom-width: 2px; }
+    h3 { font-size: 1.4em; }
+    h4 { font-size: 1.2em; }
+
+    .container {
+        width: 95%;
+        padding: 0 15px;
+    }
+
+    .hero-section {
+        padding: 3em 0;
+    }
+    .hero-section h1 {
+        font-size: 2.2em;
+    }
+    .hero-section p {
+        font-size: 0.95em;
+    }
+
+    .cta-button, .cta-button-secondary {
+        font-size: 0.9em;
+        padding: 10px 20px;
+        display: block; /* Make buttons stack vertically */
+        margin: 0.5em auto; /* Center stacked buttons */
+        width: 80%; /* Give them a defined width */
+        max-width: 300px;
+    }
+    .cta-section .small-text {
+        font-size: 0.85em;
+    }
+    .software-logos img {
+        margin: 0 5px;
+        height: 30px; /* Smallest logo size */
+    }
+    .faq-item details {
+        padding: 0.8em 1em;
+    }
+    .faq-item summary {
+        font-size: 1em;
+        padding-right: 25px;
+    }
+    .faq-item details p {
+        padding-left: 10px;
+        border-left-width: 2px;
+    }
+    .service-block, .service-item {
+        padding: 1.5em;
+    }
+    .content-section {
+        padding: 3em 0;
+    }
+}
+
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(rgba(44, 62, 80, 0.7), rgba(44, 62, 80, 0.8)), url('https://via.placeholder.com/1920x600?text=Modern+Office+Space') no-repeat center center/cover;
+    /* Suggested: Replace placeholder with a professional image of an organized desk, city skyline, or abstract financial graphic */
+    color: #fff;
+    padding: 6em 0;
+    text-align: center;
+}
+
+.hero-section h1 {
+    color: #fff;
+    font-size: 3.5em; /* Larger for hero */
+}
+
+.hero-section p {
+    font-size: 1.2em;
+    margin-bottom: 1.5em;
+    color: #ecf0f1; /* Light Gray */
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-button {
+    background-color: #3498db; /* Primary Blue */
+    color: #fff;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    border: 2px solid #3498db;
+}
+
+.cta-button:hover {
+    background-color: #2980b9; /* Darker Primary Blue */
+    text-decoration: none;
+    border-color: #2980b9;
+}
+
+.cta-button-secondary {
+    background-color: transparent;
+    color: #3498db; /* Primary Blue */
+    padding: 10px 25px; /* Slightly smaller padding if needed */
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border: 2px solid #3498db; /* Primary Blue */
+    margin-right: 10px;
+}
+
+.cta-button-secondary:hover {
+    background-color: #3498db; /* Primary Blue */
+    color: #fff;
+    text-decoration: none;
+}
+
+
+/* Content Sections */
+.content-section {
+    padding: 4em 0;
+    text-align: left;
+}
+
+.content-section.bg-light {
+    background-color: #fff; /* White for contrast */
+}
+.content-section.bg-dark {
+    background-color: #2c3e50; /* Dark Blue */
+    color: #ecf0f1; /* Light Gray */
+}
+.content-section.bg-dark h2, .content-section.bg-dark h3, .content-section.bg-dark p {
+    color: #ecf0f1;
+}
+.content-section.bg-dark h2 {
+    border-bottom: 2px solid #3498db; /* Primary Blue */
+}
+
+.content-section .section-subtitle {
+    text-align: center;
+    font-size: 1.1em;
+    color: #7f8c8d; /* Medium Gray */
+    margin-bottom: 2em;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Software Logos */
+.software-logos {
+    text-align: center;
+    margin-top: 2em;
+}
+.software-logos p {
+    font-weight: 600;
+    margin-bottom: 1em;
+    color: #333;
+}
+.software-logos img {
+    margin: 0 10px;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+    height: 40px; /* Uniform height */
+    width: auto;
+}
+.software-logos img:hover {
+    opacity: 1;
+}
+
+/* Service Blocks (for Corporate & Trust Accounting) */
+.service-blocks {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+    margin-top: 2em;
+}
+.service-block {
+    background-color: #fff;
+    padding: 2em;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    flex: 1 1 400px; /* Flex grow, shrink, basis */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.service-block:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+.service-block img.service-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 1em;
+}
+
+/* Services Grid */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5em;
+    margin-top: 2em;
+}
+
+.service-item {
+    background-color: #ffffff;
+    padding: 1.5em;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.service-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+}
+.service-item h4 {
+    margin-top: 0;
+}
+
+/* Why Trust Us Section */
+.trust-points {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2em;
+    margin-top: 2em;
+    text-align: center;
+}
+.trust-point {
+    background-color: rgba(255,255,255, 0.1); /* Slightly transparent white on dark bg */
+    padding: 1.5em;
+    border-radius: 8px;
+}
+.trust-point svg {
+    fill: #3498db; /* Primary Blue */
+    margin-bottom: 0.5em;
+}
+.trust-point p {
+    color: #ecf0f1; /* Light Gray */
+    font-size: 1em;
+}
+
+/* FAQ Section */
+.faq-item {
+    background-color: #fff;
+    margin-bottom: 1em;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+.faq-item details {
+    padding: 1em 1.5em;
+}
+.faq-item summary {
+    font-weight: 600;
+    cursor: pointer;
+    color: #2c3e50; /* Dark Blue */
+    font-size: 1.1em;
+    position: relative; /* For custom arrow */
+    list-style: none; /* Remove default marker */
+}
+.faq-item summary::after { /* Custom arrow */
+    content: '▼';
+    position: absolute;
+    right: 10px;
+    transition: transform 0.2s ease-in-out;
+}
+.faq-item details[open] summary::after {
+    transform: rotate(180deg);
+}
+.faq-item details p {
+    margin-top: 0.5em;
+    padding-left: 10px; /* Indent answer */
+    border-left: 2px solid #3498db; /* Primary Blue */
+    color: #555;
+}
+
+
+/* CTA Section */
+.cta-section {
+    background-color: #eaf5ff; /* Light blue background */
+    text-align: center;
+}
+.cta-section h2 {
+    color: #2c3e50; /* Dark Blue */
+}
+.cta-section p {
+    margin-bottom: 1.5em;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.cta-section .cta-button, .cta-section .cta-button-secondary {
+    margin: 0.5em;
+}
+.cta-section .small-text {
+    font-size: 0.9em;
+    color: #7f8c8d; /* Medium Gray */
+    margin-top: 1.5em;
+}
+
+
+/* Footer */
+.footer {
+    background-color: #2c3e50; /* Dark Blue */
+    color: #ecf0f1; /* Light Gray */
+    text-align: center;
+    padding: 2em 0;
+    margin-top: 2em;
+}
+.footer p {
+    margin: 0;
+    color: #ecf0f1;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .hero-section h1 {
+        font-size: 2.8em;
+    }
+    h1 { font-size: 2.5em; }
+    h2 { font-size: 2em; }
+    h3 { font-size: 1.6em; }
+    .service-blocks {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2.2em;
+    }
+     .hero-section p {
+        font-size: 1em;
+    }
+    h1 { font-size: 2em; }
+    h2 { font-size: 1.8em; }
+    h3 { font-size: 1.5em; }
+
+    .navbar .container {
+        flex-direction: column;
+    }
+    .navbar .nav-links {
+        margin-top: 10px;
+    }
+    .navbar .nav-links li {
+        margin: 0 10px;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr; /* Stack on smaller screens */
+    }
+    .trust-points {
+        grid-template-columns: 1fr;
+    }
+    .software-logos img {
+        margin: 5px;
+        height: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-section h1 {
+        font-size: 1.8em;
+    }
+    .hero-section p {
+        font-size: 0.9em;
+    }
+    .cta-button, .cta-button-secondary {
+        font-size: 0.9em;
+        padding: 10px 18px;
+        display: block;
+        margin-bottom: 10px;
+    }
+    .cta-button-secondary {
+        margin-right: 0;
+    }
+    .container {
+        width: 95%;
+    }
+    h2 {
+        font-size: 1.6em;
+    }
+}
+
+/* Navbar (placeholder style) */
+nav {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 15px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #fff;
+    text-decoration: none;
+}
+
+nav ul {
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 25px;
+}
+
+nav ul li a {
+    /* color: #fff; */
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    /* color: rgba(255, 255, 255, 0.8); */
+    text-decoration: none;
+}

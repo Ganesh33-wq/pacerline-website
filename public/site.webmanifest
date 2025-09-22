@@ -1,0 +1,65 @@
+{
+  "name": "Pacerline ProBusiness Services - Property Management Experts",
+  "short_name": "Pacerline",
+  "description": "Professional property management accounting, AppFolio and Buildium services, virtual assistants, and digital marketing solutions.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#3B82F6",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "en",
+  "categories": ["business", "finance", "productivity"],
+  "icons": [
+    {
+      "src": "/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-32x32.png", 
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180", 
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Accounting Services",
+      "short_name": "Accounting",
+      "description": "View our professional accounting services",
+      "url": "/accounting",
+      "icons": [{ "src": "/favicon-32x32.png", "sizes": "32x32" }]
+    },
+    {
+      "name": "AppFolio Services", 
+      "short_name": "AppFolio",
+      "description": "AppFolio bookkeeping and administration",
+      "url": "/appfolio",
+      "icons": [{ "src": "/favicon-32x32.png", "sizes": "32x32" }]
+    },
+    {
+      "name": "Buildium Services",
+      "short_name": "Buildium", 
+      "description": "Buildium bookkeeping and administration",
+      "url": "/buildium",
+      "icons": [{ "src": "/favicon-32x32.png", "sizes": "32x32" }]
+    },
+    {
+      "name": "Contact Us",
+      "short_name": "Contact",
+      "description": "Get in touch with our team",
+      "url": "/contact",
+      "icons": [{ "src": "/favicon-32x32.png", "sizes": "32x32" }]
+    }
+  ]
+}
