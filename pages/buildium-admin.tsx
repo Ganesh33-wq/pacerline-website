@@ -27,127 +27,282 @@ const BuildiumAdminPage = () => {
         <Header />
         
         {/* Hero Section */}
-        <section className="relative py-20 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-white/50 to-transparent"></div>
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center">
-              <h1 className="text-5xl lg:text-7xl font-bold text-gray-900 mb-8">
-                <span className="bg-gradient-to-r from-[#092870] to-indigo-600 bg-clip-text text-transparent">Buildium</span> 
-                <br />Administration Service
-              </h1>
-              <div className="text-xl lg:text-2xl text-gray-700 max-w-5xl mx-auto mb-12 leading-relaxed space-y-6">
-                <p>
-                  Rental property management is no easy feat—particularly when you're handling tenant contact, work orders, rental ads, and financial reporting. That's where we step in. At <strong>Pacerline Outsourcing Service Pvt Ltd</strong>, Buildium administrative solutions aimed at assisting U.S. property management firms and landlords to streamline processes, reduce overhead expenses, and maintain attention on business expansion.
-                </p>
-                <p>
-                  Our highly skilled virtual assistants and admin experts are individually trained in Buildium software. From responding to rental inquiries and scheduling maintenance to listing management and email communication, we keep your back-office in top working order—without loading up your in-house team.
-                </p>
+        <section className="relative bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 overflow-hidden">
+          {/* Animated Background Elements */}
+          <div className="absolute inset-0 bg-gradient-to-br from-white/60 to-blue-50/40"></div>
+          <div className="absolute top-10 left-10 w-72 h-72 bg-gradient-to-r from-blue-400/20 to-indigo-400/20 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-10 right-10 w-96 h-96 bg-gradient-to-r from-emerald-400/20 to-blue-400/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gradient-to-r from-indigo-300/10 to-purple-300/10 rounded-full blur-3xl animate-pulse delay-500"></div>
+          
+          {/* Phase 1: Main Title Section */}
+          <div className="relative py-16 lg:py-20">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="text-center">
+                <h1 className="text-5xl lg:text-7xl font-bold text-gray-900 mb-6 animate-fade-in-up">
+                  <span className="bg-gradient-to-r from-[#092870] via-indigo-600 to-[#092870] bg-clip-text text-transparent animate-gradient-x">Buildium</span> 
+                  <br />
+                  <span className="inline-block animate-fade-in-up delay-300">Administration Service</span>
+                </h1>
+                <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-6 shadow-xl max-w-4xl mx-auto border border-white/20 animate-fade-in-up delay-500 hover:shadow-2xl transition-all duration-500 hover:scale-105">
+                  <p className="text-xl text-gray-700 leading-relaxed">
+                    Professional <strong className="bg-gradient-to-r from-[#092870] to-indigo-600 bg-clip-text text-transparent">Buildium Administration Solutions</strong> for U.S. Property Management Companies
+                  </p>
+                  <div className="mt-4 flex justify-center space-x-2">
+                    <div className="w-2 h-2 bg-gradient-to-r from-[#092870] to-indigo-600 rounded-full animate-bounce"></div>
+                    <div className="w-2 h-2 bg-gradient-to-r from-indigo-600 to-[#092870] rounded-full animate-bounce delay-100"></div>
+                    <div className="w-2 h-2 bg-gradient-to-r from-[#092870] to-indigo-600 rounded-full animate-bounce delay-200"></div>
+                  </div>
+                </div>
               </div>
-              <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
-                <button className="bg-gradient-to-r from-[#092870] to-indigo-600 text-white px-10 py-4 rounded-full font-semibold text-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
-                  Get Buildium Admin Support
-                </button>
-                <button className="border-2 border-[#092870] text-[#092870] px-10 py-4 rounded-full font-semibold text-lg hover:bg-[#092870] hover:text-white transition-all duration-300">
-                  View Our Services
-                </button>
-              </div>
-              
-              {/* Key Stats */}
-              <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl max-w-4xl mx-auto">
-                <h2 className="text-2xl font-bold text-gray-900 mb-6">Trusted Buildium Administration Experts</h2>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  <div className="flex items-center justify-center p-4 bg-gradient-to-r from-[#092870] to-indigo-600 rounded-2xl text-white">
-                    <div className="text-center">
-                      <div className="text-3xl font-bold mb-2">14+</div>
-                      <div className="font-semibold">Years Experience</div>
-                      <div className="text-sm opacity-90">Property Management</div>
+            </div>
+          </div>
+
+          {/* Phase 2: Content & CTA Section */}
+          <div className="relative py-16 lg:py-20">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                
+                {/* Left Side - Content */}
+                <div className="space-y-8 animate-slide-in-left">
+                  <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-white/20 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 group">
+                    <h2 className="text-2xl font-bold text-gray-900 mb-6 group-hover:text-[#092870] transition-colors duration-300">
+                      <span className="bg-gradient-to-r from-[#092870] to-indigo-600 bg-clip-text text-transparent">Expert Admin Support</span>
+                      <div className="w-16 h-1 bg-gradient-to-r from-[#092870] to-indigo-600 rounded-full mt-2 group-hover:w-24 transition-all duration-300"></div>
+                    </h2>
+                    <div className="space-y-4 text-gray-700">
+                      <p className="hover:text-gray-900 transition-colors duration-300">
+                        Rental property management is no easy feat—particularly when you're handling tenant contact, work orders, rental ads, and financial reporting. That's where we step in. At <strong className="bg-gradient-to-r from-[#092870] to-indigo-600 bg-clip-text text-transparent">Pacerline Outsourcing Service Pvt Ltd</strong>, we provide Buildium administrative solutions to help U.S. property management firms streamline processes and reduce overhead expenses.
+                      </p>
+                      <p className="hover:text-gray-900 transition-colors duration-300">
+                        Our highly skilled virtual assistants and admin experts are individually trained in Buildium software. From responding to rental inquiries to listing management and email communication, we keep your back-office running smoothly.
+                      </p>
+                    </div>
+                    
+                    <div className="mt-8 flex flex-col sm:flex-row gap-4">
+                      <button className="bg-gradient-to-r from-[#092870] via-indigo-600 to-[#092870] bg-size-200 bg-pos-0 hover:bg-pos-100 text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 flex-1 relative overflow-hidden group">
+                        <span className="relative z-10">Get Buildium Admin Support</span>
+                        <div className="absolute inset-0 bg-gradient-to-r from-indigo-600 to-[#092870] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                      </button>
+                      <button className="border-2 border-[#092870] text-[#092870] px-8 py-4 rounded-full font-semibold text-lg hover:bg-gradient-to-r hover:from-[#092870] hover:to-indigo-600 hover:text-white hover:border-transparent transition-all duration-500 hover:shadow-xl hover:scale-105 flex-1 relative overflow-hidden group">
+                        <span className="relative z-10">View Our Services</span>
+                        <div className="absolute inset-0 bg-gradient-to-r from-[#092870] to-indigo-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+                      </button>
                     </div>
                   </div>
-                  <div className="flex items-center justify-center p-4 bg-gradient-to-r from-[#30a659] to-emerald-600 rounded-2xl text-white">
-                    <div className="text-center">
-                      <div className="text-3xl font-bold mb-2">70%</div>
-                      <div className="font-semibold">Cost Savings</div>
-                      <div className="text-sm opacity-90">Administrative Overhead</div>
-                    </div>
-                  </div>
-                  <div className="flex items-center justify-center p-4 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-2xl text-white">
-                    <div className="text-center">
-                      <div className="text-3xl font-bold mb-2">24/7</div>
-                      <div className="font-semibold">Support</div>
-                      <div className="text-sm opacity-90">All Time Zones</div>
+                </div>
+
+                {/* Right Side - Key Stats */}
+                <div className="space-y-6 animate-slide-in-right">
+                  <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-white/20 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
+                      Trusted Buildium Administration Experts
+                      <div className="w-20 h-1 bg-gradient-to-r from-[#092870] to-indigo-600 rounded-full mx-auto mt-2"></div>
+                    </h3>
+                    <div className="grid grid-cols-1 gap-6">
+                      <div className="flex items-center justify-between p-6 bg-gradient-to-r from-[#092870] via-indigo-600 to-[#092870] bg-size-200 bg-pos-0 hover:bg-pos-100 rounded-2xl text-white transform hover:scale-105 transition-all duration-500 hover:shadow-xl group">
+                        <div>
+                          <div className="text-3xl font-bold group-hover:animate-pulse">14+</div>
+                          <div className="font-semibold">Years Experience</div>
+                          <div className="text-sm opacity-90">Property Management</div>
+                        </div>
+                        <div className="text-4xl group-hover:animate-bounce">🏆</div>
+                      </div>
+                      <div className="flex items-center justify-between p-6 bg-gradient-to-r from-[#30a659] via-emerald-600 to-[#30a659] bg-size-200 bg-pos-0 hover:bg-pos-100 rounded-2xl text-white transform hover:scale-105 transition-all duration-500 hover:shadow-xl group delay-100">
+                        <div>
+                          <div className="text-3xl font-bold group-hover:animate-pulse">70%</div>
+                          <div className="font-semibold">Cost Savings</div>
+                          <div className="text-sm opacity-90">Administrative Overhead</div>
+                        </div>
+                        <div className="text-4xl group-hover:animate-bounce">💰</div>
+                      </div>
+                      <div className="flex items-center justify-between p-6 bg-gradient-to-r from-indigo-500 via-purple-600 to-indigo-500 bg-size-200 bg-pos-0 hover:bg-pos-100 rounded-2xl text-white transform hover:scale-105 transition-all duration-500 hover:shadow-xl group delay-200">
+                        <div>
+                          <div className="text-3xl font-bold group-hover:animate-pulse">24/7</div>
+                          <div className="font-semibold">Support</div>
+                          <div className="text-sm opacity-90">All Time Zones</div>
+                        </div>
+                        <div className="text-4xl group-hover:animate-bounce">🌍</div>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
+
+          <style jsx>{`
+            @keyframes fade-in-up {
+              from {
+                opacity: 0;
+                transform: translateY(30px);
+              }
+              to {
+                opacity: 1;
+                transform: translateY(0);
+              }
+            }
+
+            @keyframes slide-in-left {
+              from {
+                opacity: 0;
+                transform: translateX(-50px);
+              }
+              to {
+                opacity: 1;
+                transform: translateX(0);
+              }
+            }
+
+            @keyframes slide-in-right {
+              from {
+                opacity: 0;
+                transform: translateX(50px);
+              }
+              to {
+                opacity: 1;
+                transform: translateX(0);
+              }
+            }
+
+            @keyframes gradient-x {
+              0%, 100% {
+                background-size: 200% 200%;
+                background-position: left center;
+              }
+              50% {
+                background-size: 200% 200%;
+                background-position: right center;
+              }
+            }
+
+            .animate-fade-in-up {
+              animation: fade-in-up 0.6s ease-out forwards;
+            }
+
+            .animate-slide-in-left {
+              animation: slide-in-left 0.8s ease-out forwards;
+            }
+
+            .animate-slide-in-right {
+              animation: slide-in-right 0.8s ease-out forwards;
+            }
+
+            .animate-gradient-x {
+              animation: gradient-x 3s ease infinite;
+            }
+
+            .bg-size-200 {
+              background-size: 200% 200%;
+            }
+
+            .bg-pos-0 {
+              background-position: 0% 50%;
+            }
+
+            .bg-pos-100 {
+              background-position: 100% 50%;
+            }
+
+            .delay-100 {
+              animation-delay: 0.1s;
+            }
+
+            .delay-200 {
+              animation-delay: 0.2s;
+            }
+
+            .delay-300 {
+              animation-delay: 0.3s;
+            }
+
+            .delay-500 {
+              animation-delay: 0.5s;
+            }
+
+            .delay-1000 {
+              animation-delay: 1s;
+            }
+          `}</style>
         </section>
 
         {/* Why Outsource Admin */}
-        <section className="relative py-20 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="relative py-20 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 overflow-hidden">
+          {/* Background Elements */}
+          <div className="absolute top-10 right-10 w-64 h-64 bg-gradient-to-r from-blue-400/10 to-indigo-400/10 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-10 left-10 w-80 h-80 bg-gradient-to-r from-emerald-400/10 to-blue-400/10 rounded-full blur-3xl"></div>
+          
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-8">
-                Why Outsource Admin in Buildium?
+                Why Outsource Admin in <span className="bg-gradient-to-r from-[#092870] to-indigo-600 bg-clip-text text-transparent">Buildium?</span>
               </h2>
-              <div className="text-xl text-gray-700 max-w-5xl mx-auto space-y-6">
-                <p>
+              <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-8 shadow-xl max-w-5xl mx-auto border border-white/20">
+                <p className="text-xl text-gray-700 mb-6">
                   Buildium is a powerful tool—but like all systems, it needs the right people to drive it to deliver results. When you're short-staffed, swamped with calls, or wasting too much time on low-value admin tasks, outsourcing is the best decision.
                 </p>
-                <p className="text-2xl font-bold text-[#092870]">
+                <p className="text-2xl font-bold bg-gradient-to-r from-[#092870] to-indigo-600 bg-clip-text text-transparent">
                   Our Buildium admin support services enable you to:
                 </p>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
-                  <div className="bg-gradient-to-br from-slate-50 to-blue-50 rounded-2xl p-6 shadow-lg">
-                    <div className="w-12 h-12 bg-gradient-to-r from-[#092870] to-indigo-600 rounded-xl flex items-center justify-center text-white font-bold text-xl mb-4">
-                      💰
-                    </div>
-                    <h3 className="font-bold text-gray-900 mb-2">Turbocharge Operating Costs</h3>
-                    <p className="text-gray-700 text-sm">Save up to 70% on administrative overhead</p>
-                  </div>
-                  <div className="bg-gradient-to-br from-slate-50 to-blue-50 rounded-2xl p-6 shadow-lg">
-                    <div className="w-12 h-12 bg-gradient-to-r from-[#30a659] to-emerald-600 rounded-xl flex items-center justify-center text-white font-bold text-xl mb-4">
-                      👥
-                    </div>
-                    <h3 className="font-bold text-gray-900 mb-2">Free Your Teams</h3>
-                    <p className="text-gray-700 text-sm">Free your leasing and maintenance teams</p>
-                  </div>
-                  <div className="bg-gradient-to-br from-slate-50 to-blue-50 rounded-2xl p-6 shadow-lg">
-                    <div className="w-12 h-12 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-xl flex items-center justify-center text-white font-bold text-xl mb-4">
-                      ⚡
-                    </div>
-                    <h3 className="font-bold text-gray-900 mb-2">Higher Tenant Satisfaction</h3>
-                    <p className="text-gray-700 text-sm">Quicker response times for better service</p>
-                  </div>
-                  <div className="bg-gradient-to-br from-slate-50 to-blue-50 rounded-2xl p-6 shadow-lg">
-                    <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-600 rounded-xl flex items-center justify-center text-white font-bold text-xl mb-4">
-                      🎯
-                    </div>
-                    <h3 className="font-bold text-gray-900 mb-2">Professional Assistance</h3>
-                    <p className="text-gray-700 text-sm">Without hiring in-house or training</p>
-                  </div>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-white/20 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 group">
+                <div className="w-16 h-16 bg-gradient-to-r from-[#092870] to-indigo-600 rounded-2xl flex items-center justify-center text-white font-bold text-2xl mb-6 group-hover:scale-110 transition-transform duration-300">
+                  💰
                 </div>
+                <h3 className="text-lg font-bold text-gray-900 mb-3 group-hover:text-[#092870] transition-colors duration-300">Turbocharge Operating Costs</h3>
+                <p className="text-gray-700 group-hover:text-gray-900 transition-colors duration-300">Save up to 70% on administrative overhead</p>
+              </div>
+              
+              <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-white/20 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 group">
+                <div className="w-16 h-16 bg-gradient-to-r from-[#30a659] to-emerald-600 rounded-2xl flex items-center justify-center text-white font-bold text-2xl mb-6 group-hover:scale-110 transition-transform duration-300">
+                  👥
+                </div>
+                <h3 className="text-lg font-bold text-gray-900 mb-3 group-hover:text-[#30a659] transition-colors duration-300">Free Your Teams</h3>
+                <p className="text-gray-700 group-hover:text-gray-900 transition-colors duration-300">Free your leasing and maintenance teams</p>
+              </div>
+              
+              <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-white/20 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 group">
+                <div className="w-16 h-16 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-2xl flex items-center justify-center text-white font-bold text-2xl mb-6 group-hover:scale-110 transition-transform duration-300">
+                  ⚡
+                </div>
+                <h3 className="text-lg font-bold text-gray-900 mb-3 group-hover:text-indigo-600 transition-colors duration-300">Higher Tenant Satisfaction</h3>
+                <p className="text-gray-700 group-hover:text-gray-900 transition-colors duration-300">Quicker response times for better service</p>
+              </div>
+              
+              <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-white/20 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 group">
+                <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center text-white font-bold text-2xl mb-6 group-hover:scale-110 transition-transform duration-300">
+                  🎯
+                </div>
+                <h3 className="text-lg font-bold text-gray-900 mb-3 group-hover:text-purple-600 transition-colors duration-300">Professional Assistance</h3>
+                <p className="text-gray-700 group-hover:text-gray-900 transition-colors duration-300">Without hiring in-house or training</p>
               </div>
             </div>
           </div>
         </section>
 
         {/* Core Services */}
-        <section className="relative py-20 bg-gradient-to-r from-slate-100 to-blue-100">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="relative py-20 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 overflow-hidden">
+          {/* Background Elements */}
+          <div className="absolute top-20 left-20 w-72 h-72 bg-gradient-to-r from-indigo-400/10 to-purple-400/10 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 right-20 w-96 h-96 bg-gradient-to-r from-emerald-400/10 to-blue-400/10 rounded-full blur-3xl"></div>
+          
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-8">
-                Our Core Buildium Admin Services
+                Our Core <span className="bg-gradient-to-r from-[#092870] to-indigo-600 bg-clip-text text-transparent">Buildium Admin Services</span>
               </h2>
-              <p className="text-xl text-gray-700 max-w-4xl mx-auto">
-                We provide a comprehensive range of administrative support solutions designed specifically for Buildium property management software users. From residential through commercial, HOA, to student housing, our experts adjust to your processes and priorities.
-              </p>
+              <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-8 shadow-xl max-w-4xl mx-auto border border-white/20">
+                <p className="text-xl text-gray-700">
+                  We provide a comprehensive range of administrative support solutions designed specifically for Buildium property management software users. From residential through commercial, HOA, to student housing, our experts adjust to your processes and priorities.
+                </p>
+              </div>
             </div>
 
             <div className="space-y-8">
               {[
                 {
-                  number: "1",
                   title: "Rental Inquiry Call Handling",
                   description: "Our nice and professional staff answers incoming calls from potential renters, answers listing inquiries, arranges property showings, and records all activity within Buildium's CRM.",
                   benefits: [
@@ -159,7 +314,6 @@ const BuildiumAdminPage = () => {
                   color: "from-[#092870] to-indigo-600"
                 },
                 {
-                  number: "2",
                   title: "Maintenance Call Support",
                   description: "We receive maintenance-related phone calls from renters, generate or update service requests, assign vendors, and keep everyone informed—all within Buildium.",
                   process: [
@@ -171,7 +325,6 @@ const BuildiumAdminPage = () => {
                   color: "from-[#30a659] to-emerald-600"
                 },
                 {
-                  number: "3",
                   title: "Outbound Call Services",
                   description: "We place outbound calls to owners, tenants, and vendors to remind them of rent payments, lease renewal, document requests, and service updates—all monitored and recorded within Buildium.",
                   callTypes: [
@@ -183,7 +336,6 @@ const BuildiumAdminPage = () => {
                   color: "from-indigo-500 to-purple-600"
                 },
                 {
-                  number: "4",
                   title: "Email Communication Management",
                   description: "Our virtual assistants assist with tenant and owner email communication directly from Buildium or your integrated email system. From responding to standard questions to alerting you to important issues, we ensure each message receives the respect it merits.",
                   advantages: [
@@ -195,7 +347,6 @@ const BuildiumAdminPage = () => {
                   color: "from-emerald-500 to-teal-600"
                 },
                 {
-                  number: "5",
                   title: "Tenant Screening Coordination",
                   description: "We handle the whole Buildium tenant screening process, such as background investigations, income verification, follow-up on applications, and communicating decisions.",
                   process: [
@@ -208,7 +359,6 @@ const BuildiumAdminPage = () => {
                   color: "from-purple-500 to-pink-600"
                 },
                 {
-                  number: "6",
                   title: "Work Order Management",
                   description: "We manage work order creation, modification, tracking, and completion in Buildium. From assigning appropriate vendors to keeping tenants informed about job progress, we make every service request go smoothly.",
                   benefits: [
@@ -220,7 +370,6 @@ const BuildiumAdminPage = () => {
                   color: "from-cyan-500 to-blue-600"
                 },
                 {
-                  number: "7", 
                   title: "Rental Listing & Ad Posting",
                   description: "We assist in the creation and management of property listings on Buildium and listing them on popular rental websites such as Zillow, Craigslist, Apartments.com, and Facebook Marketplace.",
                   services: [
@@ -233,7 +382,6 @@ const BuildiumAdminPage = () => {
                   color: "from-blue-500 to-indigo-600"
                 },
                 {
-                  number: "8",
                   title: "MLS Listing Coordination",
                   description: "If your properties are on the MLS, we can assist your real estate team by entering property information, uploading media and updating listing statuses and syncing with your Buildium records.",
                   perfectFor: [
@@ -245,81 +393,94 @@ const BuildiumAdminPage = () => {
                   color: "from-indigo-600 to-purple-600"
                 }
               ].map((service, index) => (
-                <div key={index} className="bg-white rounded-3xl p-8 shadow-xl">
-                  <div className="flex items-start">
-                    <div className={`w-20 h-20 bg-gradient-to-r ${service.color} rounded-3xl flex items-center justify-center text-3xl mr-8 flex-shrink-0`}>
+                <div key={index} className="bg-white/90 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-white/20 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                  <div className="flex flex-col lg:flex-row items-start lg:items-center gap-8">
+                    <div className={`w-20 h-20 bg-gradient-to-r ${service.color} rounded-3xl flex items-center justify-center text-3xl flex-shrink-0 hover:scale-110 transition-transform duration-300`}>
                       {service.icon}
                     </div>
                     <div className="flex-1">
-                      <div className="flex items-center mb-4">
-                        <div className="w-8 h-8 bg-gradient-to-r from-[#30a659] to-emerald-600 rounded-full flex items-center justify-center text-white font-bold text-sm mr-4">
-                          {service.number}
-                        </div>
-                        <h3 className="text-2xl font-bold text-gray-900">{service.title}</h3>
-                      </div>
-                      <p className="text-gray-700 mb-6 text-lg">{service.description}</p>
+                      <h3 className="text-2xl font-bold text-gray-900 mb-4 hover:text-[#092870] transition-colors duration-300">{service.title}</h3>
+                      <p className="text-gray-700 mb-6 text-lg leading-relaxed">{service.description}</p>
                       
                       {service.benefits && (
-                        <div>
-                          <h4 className="font-bold text-[#092870] mb-3">Why It Matters:</h4>
-                          <ul className="list-disc list-inside text-gray-600 space-y-2">
+                        <div className="bg-gradient-to-r from-slate-50 to-blue-50 rounded-2xl p-6">
+                          <h4 className="font-bold text-[#092870] mb-3 text-lg">Why It Matters:</h4>
+                          <ul className="space-y-2">
                             {service.benefits.map((benefit, idx) => (
-                              <li key={idx}>{benefit}</li>
+                              <li key={idx} className="flex items-center text-gray-700">
+                                <div className="w-2 h-2 bg-gradient-to-r from-[#092870] to-indigo-600 rounded-full mr-3"></div>
+                                {benefit}
+                              </li>
                             ))}
                           </ul>
                         </div>
                       )}
                       
                       {service.process && (
-                        <div>
-                          <h4 className="font-bold text-[#092870] mb-3">What We Do:</h4>
-                          <ul className="list-disc list-inside text-gray-600 space-y-2">
+                        <div className="bg-gradient-to-r from-slate-50 to-emerald-50 rounded-2xl p-6">
+                          <h4 className="font-bold text-[#30a659] mb-3 text-lg">What We Do:</h4>
+                          <ul className="space-y-2">
                             {service.process.map((step, idx) => (
-                              <li key={idx}>{step}</li>
+                              <li key={idx} className="flex items-center text-gray-700">
+                                <div className="w-2 h-2 bg-gradient-to-r from-[#30a659] to-emerald-600 rounded-full mr-3"></div>
+                                {step}
+                              </li>
                             ))}
                           </ul>
                         </div>
                       )}
                       
                       {service.callTypes && (
-                        <div>
-                          <h4 className="font-bold text-[#092870] mb-3">Typical Outbound Calls:</h4>
-                          <ul className="list-disc list-inside text-gray-600 space-y-2">
+                        <div className="bg-gradient-to-r from-slate-50 to-purple-50 rounded-2xl p-6">
+                          <h4 className="font-bold text-indigo-700 mb-3 text-lg">Typical Outbound Calls:</h4>
+                          <ul className="space-y-2">
                             {service.callTypes.map((type, idx) => (
-                              <li key={idx}>{type}</li>
+                              <li key={idx} className="flex items-center text-gray-700">
+                                <div className="w-2 h-2 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full mr-3"></div>
+                                {type}
+                              </li>
                             ))}
                           </ul>
                         </div>
                       )}
                       
                       {service.advantages && (
-                        <div>
-                          <h4 className="font-bold text-[#092870] mb-3">Advantages:</h4>
-                          <ul className="list-disc list-inside text-gray-600 space-y-2">
+                        <div className="bg-gradient-to-r from-slate-50 to-teal-50 rounded-2xl p-6">
+                          <h4 className="font-bold text-emerald-700 mb-3 text-lg">Advantages:</h4>
+                          <ul className="space-y-2">
                             {service.advantages.map((advantage, idx) => (
-                              <li key={idx}>{advantage}</li>
+                              <li key={idx} className="flex items-center text-gray-700">
+                                <div className="w-2 h-2 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-full mr-3"></div>
+                                {advantage}
+                              </li>
                             ))}
                           </ul>
                         </div>
                       )}
                       
                       {service.services && (
-                        <div>
-                          <h4 className="font-bold text-[#092870] mb-3">Our Listing Services Include:</h4>
-                          <ul className="list-disc list-inside text-gray-600 space-y-2">
+                        <div className="bg-gradient-to-r from-slate-50 to-blue-50 rounded-2xl p-6">
+                          <h4 className="font-bold text-blue-700 mb-3 text-lg">Our Listing Services Include:</h4>
+                          <ul className="space-y-2">
                             {service.services.map((serviceItem, idx) => (
-                              <li key={idx}>{serviceItem}</li>
+                              <li key={idx} className="flex items-center text-gray-700">
+                                <div className="w-2 h-2 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-full mr-3"></div>
+                                {serviceItem}
+                              </li>
                             ))}
                           </ul>
                         </div>
                       )}
                       
                       {service.perfectFor && (
-                        <div>
-                          <h4 className="font-bold text-[#092870] mb-3">Perfect For:</h4>
-                          <ul className="list-disc list-inside text-gray-600 space-y-2">
+                        <div className="bg-gradient-to-r from-slate-50 to-purple-50 rounded-2xl p-6">
+                          <h4 className="font-bold text-purple-700 mb-3 text-lg">Perfect For:</h4>
+                          <ul className="space-y-2">
                             {service.perfectFor.map((item, idx) => (
-                              <li key={idx}>{item}</li>
+                              <li key={idx} className="flex items-center text-gray-700">
+                                <div className="w-2 h-2 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-full mr-3"></div>
+                                {item}
+                              </li>
                             ))}
                           </ul>
                         </div>
@@ -333,16 +494,21 @@ const BuildiumAdminPage = () => {
         </section>
 
         {/* Why Choose Us */}
-        <section className="relative py-20 bg-gradient-to-r from-[#092870] via-indigo-800 to-purple-800">
-          <div className="absolute inset-0 bg-black/20"></div>
+        <section className="relative py-20 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 overflow-hidden">
+          {/* Background Elements */}
+          <div className="absolute top-10 left-10 w-80 h-80 bg-gradient-to-r from-blue-400/10 to-indigo-400/10 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-10 right-10 w-96 h-96 bg-gradient-to-r from-emerald-400/10 to-blue-400/10 rounded-full blur-3xl"></div>
+          
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center text-white mb-16">
-              <h2 className="text-4xl lg:text-5xl font-bold mb-6">
-                Why U.S. Property Managers Choose Us for Buildium Admin Support
+            <div className="text-center mb-16">
+              <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-8">
+                Why U.S. Property Managers Choose Us for <span className="bg-gradient-to-r from-[#092870] to-indigo-600 bg-clip-text text-transparent">Buildium Admin Support</span>
               </h2>
-              <p className="text-xl opacity-90 max-w-4xl mx-auto">
-                Here's why our Buildium virtual assistants stand out from the rest of admin services:
-              </p>
+              <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-8 shadow-xl max-w-4xl mx-auto border border-white/20">
+                <p className="text-xl text-gray-700">
+                  Here's why our Buildium virtual assistants stand out from the rest of admin services:
+                </p>
+              </div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -350,40 +516,46 @@ const BuildiumAdminPage = () => {
                 {
                   title: "Trained on Buildium Software",
                   description: "We're experts on the platform itself—no learning curve involved.",
-                  icon: "🏆"
+                  icon: "🏆",
+                  color: "from-[#092870] to-indigo-600"
                 },
                 {
                   title: "U.S. Time Zone Support",
                   description: "We operate on Eastern, Central, Mountain, and Pacific time zones to align with your office hours or tenant schedule.",
-                  icon: "🕒"
+                  icon: "🕒",
+                  color: "from-[#30a659] to-emerald-600"
                 },
                 {
                   title: "Cost-Effective Plans",
                   description: "Pay for only the services you want—affordable hourly packages or full-time committed admin assistance.",
-                  icon: "💰"
+                  icon: "💰",
+                  color: "from-indigo-500 to-purple-600"
                 },
                 {
                   title: "Real Estate Expertise",
                   description: "Our staff has expertise in property management—not merely software.",
-                  icon: "🏠"
+                  icon: "🏠",
+                  color: "from-emerald-500 to-teal-600"
                 },
                 {
                   title: "Quick Onboarding",
                   description: "We get up to speed in days, not weeks, so you see value right away.",
-                  icon: "🚀"
+                  icon: "🚀",
+                  color: "from-purple-500 to-pink-600"
                 },
                 {
                   title: "14+ Years Experience",
                   description: "With more than 14 years of property management service experience and extensive knowledge in Buildium.",
-                  icon: "⭐"
+                  icon: "⭐",
+                  color: "from-cyan-500 to-blue-600"
                 }
               ].map((feature, index) => (
-                <div key={index} className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-white">
-                  <div className="w-16 h-16 bg-gradient-to-r from-[#30a659] to-emerald-500 rounded-2xl flex items-center justify-center text-2xl mb-6">
+                <div key={index} className="bg-white/90 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-white/20 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 group">
+                  <div className={`w-16 h-16 bg-gradient-to-r ${feature.color} rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform duration-300`}>
                     {feature.icon}
                   </div>
-                  <h3 className="text-xl font-bold mb-4">{feature.title}</h3>
-                  <p className="opacity-90">{feature.description}</p>
+                  <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-[#092870] transition-colors duration-300">{feature.title}</h3>
+                  <p className="text-gray-700 group-hover:text-gray-900 transition-colors duration-300">{feature.description}</p>
                 </div>
               ))}
             </div>
@@ -391,15 +563,21 @@ const BuildiumAdminPage = () => {
         </section>
 
         {/* Who We Serve */}
-        <section className="relative py-20 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="relative py-20 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 overflow-hidden">
+          {/* Background Elements */}
+          <div className="absolute top-16 right-16 w-64 h-64 bg-gradient-to-r from-indigo-400/10 to-purple-400/10 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-16 left-16 w-80 h-80 bg-gradient-to-r from-emerald-400/10 to-blue-400/10 rounded-full blur-3xl"></div>
+          
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-8">
-                Who We Serve
+                Who We <span className="bg-gradient-to-r from-[#092870] to-indigo-600 bg-clip-text text-transparent">Serve</span>
               </h2>
-              <p className="text-xl text-gray-700 max-w-4xl mx-auto mb-12">
-                Our Buildium admin support services are relied on by property management professionals across the United States. No matter if you have 100 or 5,000+ units, we scale with you.
-              </p>
+              <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-8 shadow-xl max-w-4xl mx-auto border border-white/20">
+                <p className="text-xl text-gray-700">
+                  Our Buildium admin support services are relied on by property management professionals across the United States. No matter if you have 100 or 5,000+ units, we scale with you.
+                </p>
+              </div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -439,20 +617,14 @@ const BuildiumAdminPage = () => {
                   description: "Professional support for individual property owners and small investors",
                   icon: "👤",
                   color: "from-cyan-500 to-blue-600"
-                },
-                {
-                  title: "Real Estate Investment Trusts (REITs)",
-                  description: "Enterprise-level administrative support for large-scale property operations",
-                  icon: "📈",
-                  color: "from-blue-500 to-indigo-600"
                 }
               ].map((client, index) => (
-                <div key={index} className="bg-gradient-to-br from-slate-50 to-blue-50 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
-                  <div className={`w-16 h-16 bg-gradient-to-r ${client.color} rounded-2xl flex items-center justify-center text-2xl mb-6`}>
+                <div key={index} className="bg-white/90 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-white/20 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 group">
+                  <div className={`w-16 h-16 bg-gradient-to-r ${client.color} rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform duration-300`}>
                     {client.icon}
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-4">{client.title}</h3>
-                  <p className="text-gray-700">{client.description}</p>
+                  <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-[#092870] transition-colors duration-300">{client.title}</h3>
+                  <p className="text-gray-700 group-hover:text-gray-900 transition-colors duration-300">{client.description}</p>
                 </div>
               ))}
             </div>
@@ -460,60 +632,63 @@ const BuildiumAdminPage = () => {
         </section>
 
         {/* Onboarding Process */}
-        <section className="relative py-20 bg-gradient-to-r from-slate-100 to-blue-100">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="relative py-20 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 overflow-hidden">
+          {/* Background Elements */}
+          <div className="absolute top-10 left-10 w-72 h-72 bg-gradient-to-r from-blue-400/10 to-indigo-400/10 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-10 right-10 w-96 h-96 bg-gradient-to-r from-emerald-400/10 to-blue-400/10 rounded-full blur-3xl"></div>
+          
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-8">
-                A Simple, Proven Onboarding Process
+                A Simple, Proven <span className="bg-gradient-to-r from-[#092870] to-indigo-600 bg-clip-text text-transparent">Onboarding Process</span>
               </h2>
-              <p className="text-xl text-gray-700 max-w-4xl mx-auto">
-                We make it simple to begin working with our team.
-              </p>
+              <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-8 shadow-xl max-w-4xl mx-auto border border-white/20">
+                <p className="text-xl text-gray-700">
+                  We make it simple to begin working with our team.
+                </p>
+              </div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
               {[
                 {
-                  step: "1",
                   title: "Set Up a Free Consultation",
                   description: "Share with us your portfolio, current work volume, and Buildium configuration.",
-                  icon: "💬"
+                  icon: "💬",
+                  color: "from-[#092870] to-indigo-600"
                 },
                 {
-                  step: "2", 
                   title: "Get a Personalized Proposal",
                   description: "We will send you a no-obligation quote and service plan tailored to your needs.",
-                  icon: "📋"
+                  icon: "📋",
+                  color: "from-[#30a659] to-emerald-600"
                 },
                 {
-                  step: "3",
                   title: "Access & SOP Alignment",
                   description: "We remotely connect to your Buildium platform and integrate with your internal processes.",
-                  icon: "🔑"
+                  icon: "🔑",
+                  color: "from-indigo-500 to-purple-600"
                 },
                 {
-                  step: "4",
                   title: "Go Live",
                   description: "Our virtual admin team begins within 3–5 business days.",
-                  icon: "🚀"
+                  icon: "🚀",
+                  color: "from-emerald-500 to-teal-600"
                 },
                 {
-                  step: "5",
                   title: "Weekly Check-ins & Reporting",
                   description: "We offer updates, reports, and feedback channels to guarantee continued success.",
-                  icon: "📊"
+                  icon: "📊",
+                  color: "from-purple-500 to-pink-600"
                 }
               ].map((step, index) => (
-                <div key={index} className="text-center">
-                  <div className="bg-white rounded-2xl p-6 shadow-lg mb-4">
-                    <div className="w-16 h-16 bg-gradient-to-r from-[#092870] to-indigo-600 rounded-full flex items-center justify-center text-2xl mx-auto mb-4">
+                <div key={index} className="text-center h-full">
+                  <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-6 shadow-xl border border-white/20 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 group h-full flex flex-col">
+                    <div className={`w-16 h-16 bg-gradient-to-r ${step.color} rounded-2xl flex items-center justify-center text-2xl mx-auto mb-6 group-hover:scale-110 transition-transform duration-300`}>
                       {step.icon}
                     </div>
-                    <div className="w-8 h-8 bg-gradient-to-r from-[#30a659] to-emerald-600 rounded-full flex items-center justify-center text-white font-bold text-sm mx-auto mb-4">
-                      {step.step}
-                    </div>
-                    <h3 className="text-lg font-bold text-gray-900 mb-3">{step.title}</h3>
-                    <p className="text-gray-700 text-sm">{step.description}</p>
+                    <h3 className="text-lg font-bold text-gray-900 mb-4 group-hover:text-[#092870] transition-colors duration-300">{step.title}</h3>
+                    <p className="text-gray-700 text-sm leading-relaxed group-hover:text-gray-900 transition-colors duration-300 flex-grow">{step.description}</p>
                   </div>
                 </div>
               ))}
@@ -522,39 +697,50 @@ const BuildiumAdminPage = () => {
         </section>
 
         {/* Like Having In-House Team */}
-        <section className="relative py-20 bg-gradient-to-r from-[#30a659] via-emerald-600 to-teal-600">
-          <div className="absolute inset-0 bg-black/20"></div>
+        <section className="relative py-20 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 overflow-hidden">
+          {/* Background Elements */}
+          <div className="absolute top-10 left-10 w-80 h-80 bg-gradient-to-r from-blue-400/10 to-indigo-400/10 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-10 right-10 w-96 h-96 bg-gradient-to-r from-emerald-400/10 to-blue-400/10 rounded-full blur-3xl"></div>
+          
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-8">
-              Buildium Admin Support Like Having an In-House Team
-            </h2>
-            <p className="text-xl text-white/90 max-w-4xl mx-auto mb-8">
-              At Pacerline Outsourcing Service Pvt Ltd, we don't simply "get tasks done"—we join your team. With industry knowledge, Buildium savvy, and top-notch communication, we provide a frictionless extension of your property management office at a fraction of the expense.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-[#30a659] px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-100 transition-colors">
-                Get Expert Buildium Admin Support
-              </button>
-              <button className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-[#30a659] transition-colors">
-                Schedule Free Consultation
-              </button>
+            <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-12 shadow-xl border border-white/20">
+              <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-8">
+                Buildium Admin Support Like Having an <span className="bg-gradient-to-r from-[#092870] to-indigo-600 bg-clip-text text-transparent">In-House Team</span>
+              </h2>
+              <p className="text-xl text-gray-700 max-w-4xl mx-auto mb-8">
+                At <strong className="bg-gradient-to-r from-[#092870] to-indigo-600 bg-clip-text text-transparent">Pacerline Outsourcing Service Pvt Ltd</strong>, we don't simply "get tasks done"—we join your team. With industry knowledge, Buildium savvy, and top-notch communication, we provide a frictionless extension of your property management office at a fraction of the expense.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <button className="bg-gradient-to-r from-[#092870] via-indigo-600 to-[#092870] bg-size-200 bg-pos-0 hover:bg-pos-100 text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 relative overflow-hidden group">
+                  <span className="relative z-10">Get Expert Buildium Admin Support</span>
+                </button>
+                <button className="border-2 border-[#092870] text-[#092870] px-8 py-4 rounded-full font-semibold text-lg hover:bg-gradient-to-r hover:from-[#092870] hover:to-indigo-600 hover:text-white hover:border-transparent transition-all duration-500 hover:shadow-xl hover:scale-105">
+                  Schedule Free Consultation
+                </button>
+              </div>
             </div>
           </div>
         </section>
 
         {/* FAQ Section */}
-        <section className="relative py-20 bg-white">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="relative py-20 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 overflow-hidden">
+          {/* Background Elements */}
+          <div className="absolute top-16 right-16 w-64 h-64 bg-gradient-to-r from-indigo-400/10 to-purple-400/10 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-16 left-16 w-80 h-80 bg-gradient-to-r from-emerald-400/10 to-blue-400/10 rounded-full blur-3xl"></div>
+          
+          <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-                FAQs – Buildium Admin Services
+              <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-8">
+                FAQs – <span className="bg-gradient-to-r from-[#092870] to-indigo-600 bg-clip-text text-transparent">Buildium Admin Services</span>
               </h2>
-              <p className="text-xl text-gray-600">
-                Common questions about our Buildium administration services
-              </p>
+              <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-white/20">
+                <p className="text-xl text-gray-700">
+                  Common questions about our Buildium administration services
+                </p>
+              </div>
             </div>
 
-            <div className="space-y-4">
+            <div className="space-y-6">
               {[
                 {
                   question: "Do you need to train your staff in Buildium?",
@@ -593,24 +779,24 @@ const BuildiumAdminPage = () => {
                   answer: "Yes. We support all types of tenant, vendor, and owner communication—calls, emails, and messages."
                 }
               ].map((faq, index) => (
-                <div key={index} className="bg-gradient-to-r from-slate-50 to-blue-50 rounded-2xl shadow-lg overflow-hidden">
+                <div key={index} className="bg-white/90 backdrop-blur-sm rounded-3xl shadow-xl border border-white/20 overflow-hidden hover:shadow-2xl transition-all duration-300">
                   <button
-                    className="w-full px-8 py-6 text-left focus:outline-none focus:ring-2 focus:ring-[#092870] flex items-center justify-between"
+                    className="w-full px-8 py-6 text-left focus:outline-none focus:ring-2 focus:ring-[#092870] flex items-center justify-between hover:bg-slate-50/50 transition-colors duration-300"
                     onClick={() => toggleFAQ(index)}
                   >
                     <div className="flex items-center">
-                      <div className="w-8 h-8 bg-gradient-to-r from-[#092870] to-indigo-600 rounded-lg flex items-center justify-center mr-4">
-                        <span className="text-white text-sm font-bold">
+                      <div className="w-10 h-10 bg-gradient-to-r from-[#092870] to-indigo-600 rounded-2xl flex items-center justify-center mr-4 hover:scale-110 transition-transform duration-300">
+                        <span className="text-white text-lg font-bold">
                           {openFAQ === index ? '−' : '+'}
                         </span>
                       </div>
-                      <h3 className="text-lg font-semibold text-gray-900">{faq.question}</h3>
+                      <h3 className="text-lg font-semibold text-gray-900 hover:text-[#092870] transition-colors duration-300">{faq.question}</h3>
                     </div>
                   </button>
                   {openFAQ === index && (
-                    <div className="px-8 pb-6">
-                      <div className="ml-12">
-                        <p className="text-gray-700">{faq.answer}</p>
+                    <div className="px-8 pb-6 bg-gradient-to-r from-slate-50/50 to-blue-50/50">
+                      <div className="ml-14">
+                        <p className="text-gray-700 leading-relaxed">{faq.answer}</p>
                       </div>
                     </div>
                   )}
@@ -621,22 +807,27 @@ const BuildiumAdminPage = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="relative py-20 bg-gradient-to-r from-[#092870] via-indigo-700 to-[#30a659]">
-          <div className="absolute inset-0 bg-black/20"></div>
+        <section className="relative py-20 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 overflow-hidden">
+          {/* Background Elements */}
+          <div className="absolute top-10 left-10 w-80 h-80 bg-gradient-to-r from-blue-400/10 to-indigo-400/10 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-10 right-10 w-96 h-96 bg-gradient-to-r from-emerald-400/10 to-blue-400/10 rounded-full blur-3xl"></div>
+          
           <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-              Streamline Your Property Management with Expert Buildium Administration
-            </h2>
-            <p className="text-xl text-white/90 mb-8">
-              Let our Buildium admin experts handle your day-to-day operations while you focus on growing your portfolio. Professional, reliable, and cost-effective solutions tailored for U.S. property management companies.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-[#092870] px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-100 transition-colors">
-                Get Expert Buildium Admin Support
-              </button>
-              <button className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-[#092870] transition-colors">
-                Schedule Free Consultation
-              </button>
+            <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-12 shadow-xl border border-white/20">
+              <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-8">
+                Streamline Your Property Management with <span className="bg-gradient-to-r from-[#092870] to-indigo-600 bg-clip-text text-transparent">Expert Buildium Administration</span>
+              </h2>
+              <p className="text-xl text-gray-700 mb-8">
+                Let our Buildium admin experts handle your day-to-day operations while you focus on growing your portfolio. Professional, reliable, and cost-effective solutions tailored for U.S. property management companies.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <button className="bg-gradient-to-r from-[#092870] via-indigo-600 to-[#092870] bg-size-200 bg-pos-0 hover:bg-pos-100 text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 relative overflow-hidden group">
+                  <span className="relative z-10">Get Expert Buildium Admin Support</span>
+                </button>
+                <button className="border-2 border-[#092870] text-[#092870] px-8 py-4 rounded-full font-semibold text-lg hover:bg-gradient-to-r hover:from-[#092870] hover:to-indigo-600 hover:text-white hover:border-transparent transition-all duration-500 hover:shadow-xl hover:scale-105">
+                  Schedule Free Consultation
+                </button>
+              </div>
             </div>
           </div>
         </section>
