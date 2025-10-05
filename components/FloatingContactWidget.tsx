@@ -1,7 +1,9 @@
 import { useState } from 'react'
+import CalendarBooking from './CalendarBooking'
 
 const FloatingContactWidget = () => {
   const [isOpen, setIsOpen] = useState(false)
+  const [showCalendar, setShowCalendar] = useState(false)
 
   const toggleWidget = () => {
     setIsOpen(!isOpen)
@@ -16,8 +18,8 @@ const FloatingContactWidget = () => {
   }
 
   const handleBookDemo = () => {
-    // You can replace this with your booking system URL
-    window.open('mailto:info@pacerline.com?subject=Book Demo Request&body=Hello! I would like to book a demo of your services.', '_blank')
+    setShowCalendar(true)
+    setIsOpen(false) // Close the main widget
   }
 
   return (
@@ -148,6 +150,12 @@ const FloatingContactWidget = () => {
           onClick={() => setIsOpen(false)}
         />
       )}
+
+      {/* Calendar Booking Modal */}
+      <CalendarBooking 
+        isOpen={showCalendar} 
+        onClose={() => setShowCalendar(false)} 
+      />
     </>
   )
 }

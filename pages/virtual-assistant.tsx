@@ -25,71 +25,217 @@ const VirtualAssistantPage = () => {
       
       <div className="min-h-screen">        
         {/* Hero Section */}
-        <section className="relative py-20 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-white/50 to-transparent"></div>
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center">
-              <h1 className="text-5xl lg:text-7xl font-bold text-gray-900 mb-8">
-                <span className="bg-gradient-to-r from-[#092870] to-indigo-600 bg-clip-text text-transparent">Virtual Assistant</span> 
-                <br />Service
-              </h1>
-              <div className="text-xl lg:text-2xl text-gray-700 max-w-5xl mx-auto mb-12 leading-relaxed space-y-6">
-                <p>
-                  Do you own a business, work in real estate, or manage properties and get bogged down in administrative tasks, phone calls, and scheduling appointments? Do you want to save time and money on operations without compromising on service?
-                </p>
-                <p>
-                  Welcome to <strong>Pacerline Outsourcing Service Pvt Ltd</strong>, your go-to partner for Virtual Assistant Services designed specifically for US-based property management firms, real estate businesses, receptionist services, and call centre activities. We assist companies like yours in alleviating workload, enhancing efficiency, and delivering excellent customer service—without the associated cost of in-house employees.
-                </p>
+        <section className="relative bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 overflow-hidden">
+          {/* Animated Background Elements */}
+          <div className="absolute inset-0 bg-gradient-to-br from-white/60 to-blue-50/40"></div>
+          <div className="absolute top-10 left-10 w-72 h-72 bg-gradient-to-r from-blue-400/20 to-indigo-400/20 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-10 right-10 w-96 h-96 bg-gradient-to-r from-emerald-400/20 to-blue-400/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gradient-to-r from-indigo-300/10 to-purple-300/10 rounded-full blur-3xl animate-pulse delay-500"></div>
+          
+          {/* Phase 1: Main Title Section */}
+          <div className="relative py-16 lg:py-20">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="text-center">
+                <h1 className="text-5xl lg:text-7xl font-bold text-gray-900 mb-6 animate-fade-in-up">
+                  <span className="bg-gradient-to-r from-[#092870] via-indigo-600 to-[#092870] bg-clip-text text-transparent animate-gradient-x">Virtual Assistant</span> 
+                  <br />
+                  <span className="inline-block animate-fade-in-up delay-300">Service</span>
+                </h1>
+                <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-6 shadow-xl max-w-4xl mx-auto border border-white/20 animate-fade-in-up delay-500 hover:shadow-2xl transition-all duration-500 hover:scale-105">
+                  <p className="text-xl text-gray-700 leading-relaxed">
+                    Professional <strong className="bg-gradient-to-r from-[#092870] to-indigo-600 bg-clip-text text-transparent">Virtual Assistant Services</strong> for Property Management & Real Estate Businesses
+                  </p>
+                  <div className="mt-4 flex justify-center space-x-2">
+                    <div className="w-2 h-2 bg-gradient-to-r from-[#092870] to-indigo-600 rounded-full animate-bounce"></div>
+                    <div className="w-2 h-2 bg-gradient-to-r from-indigo-600 to-[#092870] rounded-full animate-bounce delay-100"></div>
+                    <div className="w-2 h-2 bg-gradient-to-r from-[#092870] to-indigo-600 rounded-full animate-bounce delay-200"></div>
+                  </div>
+                </div>
               </div>
-              <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
-                <button className="bg-gradient-to-r from-[#092870] to-indigo-600 text-white px-10 py-4 rounded-full font-semibold text-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
-                  Get Virtual Assistant Support
-                </button>
-                <button className="border-2 border-[#092870] text-[#092870] px-10 py-4 rounded-full font-semibold text-lg hover:bg-[#092870] hover:text-white transition-all duration-300">
-                  View Our Services
-                </button>
-              </div>
-              
-              {/* Key Stats */}
-              <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl max-w-4xl mx-auto">
-                <h2 className="text-2xl font-bold text-gray-900 mb-6">Professional Virtual Assistant Experts</h2>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  <div className="flex items-center justify-center p-4 bg-gradient-to-r from-[#092870] to-indigo-600 rounded-2xl text-white">
-                    <div className="text-center">
-                      <div className="text-3xl font-bold mb-2">10+</div>
-                      <div className="font-semibold">Years Experience</div>
-                      <div className="text-sm opacity-90">US Market Expertise</div>
+            </div>
+          </div>
+
+          {/* Phase 2: Content & CTA Section */}
+          <div className="relative py-16 lg:py-20">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                
+                {/* Left Side - Content */}
+                <div className="space-y-8 animate-slide-in-left">
+                  <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-white/20 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 group">
+                    <h2 className="text-2xl font-bold text-gray-900 mb-6 group-hover:text-[#092870] transition-colors duration-300">
+                      <span className="bg-gradient-to-r from-[#092870] to-indigo-600 bg-clip-text text-transparent">Expert Virtual Support</span>
+                      <div className="w-16 h-1 bg-gradient-to-r from-[#092870] to-indigo-600 rounded-full mt-2 group-hover:w-24 transition-all duration-300"></div>
+                    </h2>
+                    <div className="space-y-4 text-gray-700">
+                      <p className="hover:text-gray-900 transition-colors duration-300">
+                        Do you own a business, work in real estate, or manage properties and get bogged down in administrative tasks, phone calls, and scheduling appointments? Do you want to save time and money on operations without compromising on service?
+                      </p>
+                      <p className="hover:text-gray-900 transition-colors duration-300">
+                        Welcome to <strong className="bg-gradient-to-r from-[#092870] to-indigo-600 bg-clip-text text-transparent">Pacerline Outsourcing Service Pvt Ltd</strong>, your go-to partner for Virtual Assistant Services designed specifically for US-based property management firms, real estate businesses, receptionist services, and call centre activities.
+                      </p>
+                    </div>
+                    
+                    <div className="mt-8 flex flex-col sm:flex-row gap-4">
+                      <button className="bg-gradient-to-r from-[#092870] via-indigo-600 to-[#092870] bg-size-200 bg-pos-0 hover:bg-pos-100 text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 flex-1 relative overflow-hidden group">
+                        <span className="relative z-10">Get Virtual Assistant Support</span>
+                        <div className="absolute inset-0 bg-gradient-to-r from-indigo-600 to-[#092870] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                      </button>
+                      <button className="border-2 border-[#092870] text-[#092870] px-8 py-4 rounded-full font-semibold text-lg hover:bg-gradient-to-r hover:from-[#092870] hover:to-indigo-600 hover:text-white hover:border-transparent transition-all duration-500 hover:shadow-xl hover:scale-105 flex-1 relative overflow-hidden group">
+                        <span className="relative z-10">View Our Services</span>
+                        <div className="absolute inset-0 bg-gradient-to-r from-[#092870] to-indigo-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+                      </button>
                     </div>
                   </div>
-                  <div className="flex items-center justify-center p-4 bg-gradient-to-r from-[#30a659] to-emerald-600 rounded-2xl text-white">
-                    <div className="text-center">
-                      <div className="text-3xl font-bold mb-2">24/7</div>
-                      <div className="font-semibold">Support Available</div>
-                      <div className="text-sm opacity-90">All Time Zones</div>
-                    </div>
-                  </div>
-                  <div className="flex items-center justify-center p-4 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-2xl text-white">
-                    <div className="text-center">
-                      <div className="text-3xl font-bold mb-2">3-5</div>
-                      <div className="font-semibold">Days to Start</div>
-                      <div className="text-sm opacity-90">Quick Onboarding</div>
+                </div>
+
+                {/* Right Side - Key Stats */}
+                <div className="space-y-6 animate-slide-in-right">
+                  <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-white/20 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
+                      Professional Virtual Assistant Experts
+                      <div className="w-20 h-1 bg-gradient-to-r from-[#092870] to-indigo-600 rounded-full mx-auto mt-2"></div>
+                    </h3>
+                    <div className="grid grid-cols-1 gap-6">
+                      <div className="flex items-center justify-between p-6 bg-gradient-to-r from-[#092870] via-indigo-600 to-[#092870] bg-size-200 bg-pos-0 hover:bg-pos-100 rounded-2xl text-white transform hover:scale-105 transition-all duration-500 hover:shadow-xl group">
+                        <div>
+                          <div className="text-3xl font-bold group-hover:animate-pulse">10+</div>
+                          <div className="font-semibold">Years Experience</div>
+                          <div className="text-sm opacity-90">US Market Expertise</div>
+                        </div>
+                        <div className="text-4xl group-hover:animate-bounce">🏆</div>
+                      </div>
+                      <div className="flex items-center justify-between p-6 bg-gradient-to-r from-[#30a659] via-emerald-600 to-[#30a659] bg-size-200 bg-pos-0 hover:bg-pos-100 rounded-2xl text-white transform hover:scale-105 transition-all duration-500 hover:shadow-xl group delay-100">
+                        <div>
+                          <div className="text-3xl font-bold group-hover:animate-pulse">24/7</div>
+                          <div className="font-semibold">Support Available</div>
+                          <div className="text-sm opacity-90">All Time Zones</div>
+                        </div>
+                        <div className="text-4xl group-hover:animate-bounce">🌍</div>
+                      </div>
+                      <div className="flex items-center justify-between p-6 bg-gradient-to-r from-indigo-500 via-purple-600 to-indigo-500 bg-size-200 bg-pos-0 hover:bg-pos-100 rounded-2xl text-white transform hover:scale-105 transition-all duration-500 hover:shadow-xl group delay-200">
+                        <div>
+                          <div className="text-3xl font-bold group-hover:animate-pulse">3-5</div>
+                          <div className="font-semibold">Days to Start</div>
+                          <div className="text-sm opacity-90">Quick Onboarding</div>
+                        </div>
+                        <div className="text-4xl group-hover:animate-bounce">🚀</div>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
+
+          <style jsx>{`
+            @keyframes fade-in-up {
+              from {
+                opacity: 0;
+                transform: translateY(30px);
+              }
+              to {
+                opacity: 1;
+                transform: translateY(0);
+              }
+            }
+
+            @keyframes slide-in-left {
+              from {
+                opacity: 0;
+                transform: translateX(-50px);
+              }
+              to {
+                opacity: 1;
+                transform: translateX(0);
+              }
+            }
+
+            @keyframes slide-in-right {
+              from {
+                opacity: 0;
+                transform: translateX(50px);
+              }
+              to {
+                opacity: 1;
+                transform: translateX(0);
+              }
+            }
+
+            @keyframes gradient-x {
+              0%, 100% {
+                background-size: 200% 200%;
+                background-position: left center;
+              }
+              50% {
+                background-size: 200% 200%;
+                background-position: right center;
+              }
+            }
+
+            .animate-fade-in-up {
+              animation: fade-in-up 0.6s ease-out forwards;
+            }
+
+            .animate-slide-in-left {
+              animation: slide-in-left 0.8s ease-out forwards;
+            }
+
+            .animate-slide-in-right {
+              animation: slide-in-right 0.8s ease-out forwards;
+            }
+
+            .animate-gradient-x {
+              animation: gradient-x 3s ease infinite;
+            }
+
+            .bg-size-200 {
+              background-size: 200% 200%;
+            }
+
+            .bg-pos-0 {
+              background-position: 0% 50%;
+            }
+
+            .bg-pos-100 {
+              background-position: 100% 50%;
+            }
+
+            .delay-100 {
+              animation-delay: 0.1s;
+            }
+
+            .delay-200 {
+              animation-delay: 0.2s;
+            }
+
+            .delay-300 {
+              animation-delay: 0.3s;
+            }
+
+            .delay-500 {
+              animation-delay: 0.5s;
+            }
+
+            .delay-1000 {
+              animation-delay: 1s;
+            }
+          `}</style>
         </section>
 
         {/* Why Choose Us */}
-        <section className="relative py-20 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="relative py-20 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 overflow-hidden">
+          {/* Background Elements */}
+          <div className="absolute top-10 right-10 w-64 h-64 bg-gradient-to-r from-blue-400/10 to-indigo-400/10 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-10 left-10 w-80 h-80 bg-gradient-to-r from-emerald-400/10 to-blue-400/10 rounded-full blur-3xl"></div>
+          
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-8">
-                Why Choose Our Virtual Assistant Services?
+                Why Choose Our <span className="bg-gradient-to-r from-[#092870] to-indigo-600 bg-clip-text text-transparent">Virtual Assistant Services?</span>
               </h2>
-              <div className="text-xl text-gray-700 max-w-5xl mx-auto space-y-6">
-                <p>
+              <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-8 shadow-xl max-w-5xl mx-auto border border-white/20">
+                <p className="text-xl text-gray-700">
                   Our team brings over a decade of experience supporting clients in the property management and real estate sectors. We are a pool of professionals with good understand of USA market to deliver seamless support for your business.
                 </p>
               </div>
@@ -394,15 +540,21 @@ const VirtualAssistantPage = () => {
         </section>
 
         {/* Core Services */}
-        <section className="relative py-20 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="relative py-20 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 overflow-hidden">
+          {/* Background Elements */}
+          <div className="absolute top-20 left-20 w-72 h-72 bg-gradient-to-r from-indigo-400/10 to-purple-400/10 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 right-20 w-96 h-96 bg-gradient-to-r from-emerald-400/10 to-blue-400/10 rounded-full blur-3xl"></div>
+          
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-8">
-                Core Virtual Assistant Services We Provide
+                Core <span className="bg-gradient-to-r from-[#092870] to-indigo-600 bg-clip-text text-transparent">Virtual Assistant Services</span> We Provide
               </h2>
-              <p className="text-xl text-gray-700 max-w-4xl mx-auto">
-                Here's a more detailed look at what we can assist you with:
-              </p>
+              <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-8 shadow-xl max-w-4xl mx-auto border border-white/20">
+                <p className="text-xl text-gray-700">
+                  Here's a more detailed look at what we can assist you with:
+                </p>
+              </div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -450,12 +602,12 @@ const VirtualAssistantPage = () => {
                   color: "from-blue-500 to-indigo-600"
                 }
               ].map((service, index) => (
-                <div key={index} className="bg-gradient-to-br from-slate-50 to-blue-50 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
-                  <div className={`w-16 h-16 bg-gradient-to-r ${service.color} rounded-2xl flex items-center justify-center text-2xl mb-6`}>
+                <div key={index} className="bg-white/90 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-white/20 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 group">
+                  <div className={`w-16 h-16 bg-gradient-to-r ${service.color} rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform duration-300`}>
                     {service.icon}
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-4">{service.title}</h3>
-                  <p className="text-gray-700">{service.description}</p>
+                  <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-[#092870] transition-colors duration-300">{service.title}</h3>
+                  <p className="text-gray-700 group-hover:text-gray-900 transition-colors duration-300">{service.description}</p>
                 </div>
               ))}
             </div>
@@ -463,15 +615,21 @@ const VirtualAssistantPage = () => {
         </section>
 
         {/* Software Proficiency */}
-        <section className="relative py-20 bg-gradient-to-r from-slate-100 to-blue-100">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="relative py-20 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 overflow-hidden">
+          {/* Background Elements */}
+          <div className="absolute top-16 right-16 w-64 h-64 bg-gradient-to-r from-indigo-400/10 to-purple-400/10 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-16 left-16 w-80 h-80 bg-gradient-to-r from-emerald-400/10 to-blue-400/10 rounded-full blur-3xl"></div>
+          
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-8">
-                Software We're Proficient In
+                Software We're <span className="bg-gradient-to-r from-[#092870] to-indigo-600 bg-clip-text text-transparent">Proficient In</span>
               </h2>
-              <p className="text-xl text-gray-700 max-w-4xl mx-auto mb-8">
-                We work with a wide range of industry-standard tools, including:
-              </p>
+              <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-8 shadow-xl max-w-4xl mx-auto border border-white/20">
+                <p className="text-xl text-gray-700">
+                  We work with a wide range of industry-standard tools, including:
+                </p>
+              </div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -501,14 +659,17 @@ const VirtualAssistantPage = () => {
                   color: "from-emerald-500 to-teal-600"
                 }
               ].map((category, index) => (
-                <div key={index} className="bg-white rounded-2xl p-6 shadow-lg">
-                  <div className={`w-12 h-12 bg-gradient-to-r ${category.color} rounded-xl flex items-center justify-center text-xl mb-4`}>
+                <div key={index} className="bg-white/90 backdrop-blur-sm rounded-3xl p-6 shadow-xl border border-white/20 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 group">
+                  <div className={`w-14 h-14 bg-gradient-to-r ${category.color} rounded-2xl flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform duration-300`}>
                     {category.icon}
                   </div>
-                  <h3 className="text-lg font-bold text-gray-900 mb-3">{category.category}</h3>
-                  <ul className="space-y-1">
+                  <h3 className="text-lg font-bold text-gray-900 mb-3 group-hover:text-[#092870] transition-colors duration-300">{category.category}</h3>
+                  <ul className="space-y-2">
                     {category.tools.map((tool, idx) => (
-                      <li key={idx} className="text-gray-700 text-sm">{tool}</li>
+                      <li key={idx} className="text-gray-700 text-sm flex items-center group-hover:text-gray-900 transition-colors duration-300">
+                        <div className="w-2 h-2 bg-gradient-to-r from-[#092870] to-indigo-600 rounded-full mr-2"></div>
+                        {tool}
+                      </li>
                     ))}
                   </ul>
                 </div>
@@ -516,24 +677,31 @@ const VirtualAssistantPage = () => {
             </div>
 
             <div className="mt-12 text-center">
-              <p className="text-lg text-gray-700 bg-white rounded-2xl p-6 shadow-lg inline-block">
-                If you utilize a tool not mentioned here, we're fast learners and can integrate with your processes with minimal training.
-              </p>
+              <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-white/20 inline-block hover:shadow-2xl transition-all duration-500">
+                <p className="text-lg text-gray-700">
+                  If you utilize a tool not mentioned here, we're fast learners and can integrate with your processes with minimal training.
+                </p>
+              </div>
             </div>
           </div>
         </section>
 
         {/* Offshore Partner Benefits */}
-        <section className="relative py-20 bg-gradient-to-r from-[#092870] via-indigo-800 to-purple-800">
-          <div className="absolute inset-0 bg-black/20"></div>
+        <section className="relative py-20 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 overflow-hidden">
+          {/* Background Elements */}
+          <div className="absolute top-10 left-10 w-80 h-80 bg-gradient-to-r from-blue-400/10 to-indigo-400/10 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-10 right-10 w-96 h-96 bg-gradient-to-r from-emerald-400/10 to-blue-400/10 rounded-full blur-3xl"></div>
+          
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center text-white mb-16">
-              <h2 className="text-4xl lg:text-5xl font-bold mb-6">
-                Work With a Trusted Offshore Partner
+            <div className="text-center mb-16">
+              <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-8">
+                Work With a Trusted <span className="bg-gradient-to-r from-[#092870] to-indigo-600 bg-clip-text text-transparent">Offshore Partner</span>
               </h2>
-              <p className="text-xl opacity-90 max-w-4xl mx-auto">
-                Based in India, we provide time zone flexibility, competitive pricing, and committed virtual assistants who work just like your internal team—without the exorbitant overhead. Our staff are English-proficient, highly qualified, and skilled at handling US-based clients.
-              </p>
+              <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-8 shadow-xl max-w-4xl mx-auto border border-white/20">
+                <p className="text-xl text-gray-700">
+                  Based in India, we provide time zone flexibility, competitive pricing, and committed virtual assistants who work just like your internal team—without the exorbitant overhead. Our staff are English-proficient, highly qualified, and skilled at handling US-based clients.
+                </p>
+              </div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -541,40 +709,46 @@ const VirtualAssistantPage = () => {
                 {
                   title: "24/7 Coverage Opportunities",
                   description: "Round-the-clock support availability to match your business needs",
-                  icon: "🌍"
+                  icon: "🌍",
+                  color: "from-[#092870] to-indigo-600"
                 },
                 {
                   title: "Clean Internet and Power Backup",
                   description: "Reliable infrastructure ensuring uninterrupted service delivery",
-                  icon: "🔌"
+                  icon: "🔌",
+                  color: "from-[#30a659] to-emerald-600"
                 },
                 {
                   title: "NDA and Data Privacy Compliance",
                   description: "Strict confidentiality and security measures for your business data",
-                  icon: "🔒"
+                  icon: "🔒",
+                  color: "from-indigo-500 to-purple-600"
                 },
                 {
                   title: "One-on-One Onboarding",
                   description: "Personalized setup and SOP creation for seamless integration",
-                  icon: "👥"
+                  icon: "👥",
+                  color: "from-emerald-500 to-teal-600"
                 },
                 {
                   title: "Transparent Time Tracking",
                   description: "Clear reporting and accountability for all work performed",
-                  icon: "⏰"
+                  icon: "⏰",
+                  color: "from-purple-500 to-pink-600"
                 },
                 {
                   title: "English-Proficient Staff",
                   description: "Native-level English communication skills for US market",
-                  icon: "🗣️"
+                  icon: "🗣️",
+                  color: "from-cyan-500 to-blue-600"
                 }
               ].map((benefit, index) => (
-                <div key={index} className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-white">
-                  <div className="w-16 h-16 bg-gradient-to-r from-[#30a659] to-emerald-500 rounded-2xl flex items-center justify-center text-2xl mb-6">
+                <div key={index} className="bg-white/90 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-white/20 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 group">
+                  <div className={`w-16 h-16 bg-gradient-to-r ${benefit.color} rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform duration-300`}>
                     {benefit.icon}
                   </div>
-                  <h3 className="text-xl font-bold mb-4">{benefit.title}</h3>
-                  <p className="opacity-90">{benefit.description}</p>
+                  <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-[#092870] transition-colors duration-300">{benefit.title}</h3>
+                  <p className="text-gray-700 group-hover:text-gray-900 transition-colors duration-300">{benefit.description}</p>
                 </div>
               ))}
             </div>
@@ -582,18 +756,24 @@ const VirtualAssistantPage = () => {
         </section>
 
         {/* FAQ Section */}
-        <section className="relative py-20 bg-white">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="relative py-20 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 overflow-hidden">
+          {/* Background Elements */}
+          <div className="absolute top-16 right-16 w-64 h-64 bg-gradient-to-r from-indigo-400/10 to-purple-400/10 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-16 left-16 w-80 h-80 bg-gradient-to-r from-emerald-400/10 to-blue-400/10 rounded-full blur-3xl"></div>
+          
+          <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-                Frequently Asked Questions (FAQs)
+              <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-8">
+                Frequently Asked Questions <span className="bg-gradient-to-r from-[#092870] to-indigo-600 bg-clip-text text-transparent">(FAQs)</span>
               </h2>
-              <p className="text-xl text-gray-600">
-                Property Management Virtual Assistant Services
-              </p>
+              <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-white/20">
+                <p className="text-xl text-gray-700">
+                  Property Management Virtual Assistant Services
+                </p>
+              </div>
             </div>
 
-            <div className="space-y-4">
+            <div className="space-y-6">
               {[
                 {
                   question: "What is a Property Management Virtual Assistant?",
@@ -648,24 +828,24 @@ const VirtualAssistantPage = () => {
                   answer: "Yes. We are flexible in services provided. You can add or remove hours or new roles as your business grows or changes."
                 }
               ].map((faq, index) => (
-                <div key={index} className="bg-gradient-to-r from-slate-50 to-blue-50 rounded-2xl shadow-lg overflow-hidden">
+                <div key={index} className="bg-white/90 backdrop-blur-sm rounded-3xl shadow-xl border border-white/20 overflow-hidden hover:shadow-2xl transition-all duration-300">
                   <button
-                    className="w-full px-8 py-6 text-left focus:outline-none focus:ring-2 focus:ring-[#092870] flex items-center justify-between"
+                    className="w-full px-8 py-6 text-left focus:outline-none focus:ring-2 focus:ring-[#092870] flex items-center justify-between hover:bg-slate-50/50 transition-colors duration-300"
                     onClick={() => toggleFAQ(index)}
                   >
                     <div className="flex items-center">
-                      <div className="w-8 h-8 bg-gradient-to-r from-[#092870] to-indigo-600 rounded-lg flex items-center justify-center mr-4">
-                        <span className="text-white text-sm font-bold">
+                      <div className="w-10 h-10 bg-gradient-to-r from-[#092870] to-indigo-600 rounded-2xl flex items-center justify-center mr-4 hover:scale-110 transition-transform duration-300">
+                        <span className="text-white text-lg font-bold">
                           {openFAQ === index ? '−' : '+'}
                         </span>
                       </div>
-                      <h3 className="text-lg font-semibold text-gray-900">{faq.question}</h3>
+                      <h3 className="text-lg font-semibold text-gray-900 hover:text-[#092870] transition-colors duration-300">{faq.question}</h3>
                     </div>
                   </button>
                   {openFAQ === index && (
-                    <div className="px-8 pb-6">
-                      <div className="ml-12">
-                        <p className="text-gray-700">{faq.answer}</p>
+                    <div className="px-8 pb-6 bg-gradient-to-r from-slate-50/50 to-blue-50/50">
+                      <div className="ml-14">
+                        <p className="text-gray-700 leading-relaxed">{faq.answer}</p>
                       </div>
                     </div>
                   )}
@@ -676,22 +856,27 @@ const VirtualAssistantPage = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="relative py-20 bg-gradient-to-r from-[#092870] via-indigo-700 to-[#30a659]">
-          <div className="absolute inset-0 bg-black/20"></div>
+        <section className="relative py-20 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 overflow-hidden">
+          {/* Background Elements */}
+          <div className="absolute top-10 left-10 w-80 h-80 bg-gradient-to-r from-blue-400/10 to-indigo-400/10 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-10 right-10 w-96 h-96 bg-gradient-to-r from-emerald-400/10 to-blue-400/10 rounded-full blur-3xl"></div>
+          
           <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-              Ready to Transform Your Business with Professional Virtual Assistant Support?
-            </h2>
-            <p className="text-xl text-white/90 mb-8">
-              Join hundreds of property management companies, real estate professionals, and businesses who trust Pacerline for expert virtual assistant services. Start saving time and money while improving your customer service today.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-[#092870] px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-100 transition-colors">
-                Get Virtual Assistant Support
-              </button>
-              <button className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-[#092870] transition-colors">
-                Schedule Free Consultation
-              </button>
+            <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-12 shadow-xl border border-white/20">
+              <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-8">
+                Ready to Transform Your Business with <span className="bg-gradient-to-r from-[#092870] to-indigo-600 bg-clip-text text-transparent">Professional Virtual Assistant Support?</span>
+              </h2>
+              <p className="text-xl text-gray-700 mb-8">
+                Join hundreds of property management companies, real estate professionals, and businesses who trust Pacerline for expert virtual assistant services. Start saving time and money while improving your customer service today.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <button className="bg-gradient-to-r from-[#092870] via-indigo-600 to-[#092870] bg-size-200 bg-pos-0 hover:bg-pos-100 text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 relative overflow-hidden group">
+                  <span className="relative z-10">Get Virtual Assistant Support</span>
+                </button>
+                <button className="border-2 border-[#092870] text-[#092870] px-8 py-4 rounded-full font-semibold text-lg hover:bg-gradient-to-r hover:from-[#092870] hover:to-indigo-600 hover:text-white hover:border-transparent transition-all duration-500 hover:shadow-xl hover:scale-105">
+                  Schedule Free Consultation
+                </button>
+              </div>
             </div>
           </div>
         </section>

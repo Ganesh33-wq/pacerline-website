@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
+import FloatingContactWidget from '../components/FloatingContactWidget'
 import { useState } from 'react'
 
 const DigitalMarketingPage = () => {
@@ -27,54 +28,99 @@ const DigitalMarketingPage = () => {
         <Header />
         
         {/* Hero Section */}
-        <section className="relative py-20 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-white/50 to-transparent"></div>
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center">
-              <h1 className="text-5xl lg:text-7xl font-bold text-gray-900 mb-8">
-                <span className="bg-gradient-to-r from-[#092870] to-indigo-600 bg-clip-text text-transparent">Digital Marketing</span> 
-                <br />Services
-              </h1>
-              <div className="text-xl lg:text-2xl text-gray-700 max-w-5xl mx-auto mb-12 leading-relaxed space-y-6">
-                <p>
-                  We are providing Digital Marketing service to companies across the world. We're living in the hyper-connected world so a solid digital presence is no longer a choice - it's a must. If you're a local business, an upstart e-commerce store, or a national brand, the appropriate digital marketing strategy can make all the difference.
-                </p>
-                <p>
-                  <strong>Pacerline Outsourcing Service Pvt Ltd</strong> provide digital marketing services designed specifically for United States businesses and rest of the world. We provide the service like search engine optimization, social media marketing, pay-per-click to email marketing and creating SEO based websites, our skilled team brings results that drive your business forward online.
-                </p>
+        <section className="relative min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 overflow-hidden">
+          {/* Animated Background Elements */}
+          <div className="absolute inset-0 bg-gradient-to-br from-white/60 to-blue-50/40"></div>
+          <div className="absolute top-10 left-10 w-72 h-72 bg-gradient-to-r from-blue-400/20 to-indigo-400/20 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-10 right-10 w-96 h-96 bg-gradient-to-r from-emerald-400/20 to-blue-400/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gradient-to-r from-indigo-300/10 to-purple-300/10 rounded-full blur-3xl animate-pulse delay-500"></div>
+          
+          {/* Phase 1: Main Title Section */}
+          <div className="relative py-16 lg:py-20">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="text-center">
+                <h1 className="text-5xl lg:text-7xl font-bold text-gray-900 mb-6 animate-fade-in-up">
+                  <span className="bg-gradient-to-r from-[#092870] via-indigo-600 to-[#092870] bg-clip-text text-transparent animate-gradient-x">Digital Marketing</span> 
+                  <br />
+                  <span className="inline-block animate-fade-in-up delay-300">Services</span>
+                </h1>
+                <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-6 shadow-xl max-w-4xl mx-auto border border-white/20 animate-fade-in-up delay-500 hover:shadow-2xl transition-all duration-500 hover:scale-105">
+                  <p className="text-xl text-gray-700 leading-relaxed">
+                    Professional <strong className="bg-gradient-to-r from-[#092870] to-indigo-600 bg-clip-text text-transparent">Digital Marketing Solutions</strong> for US Businesses & Global Markets
+                  </p>
+                  <div className="mt-4 flex justify-center space-x-2">
+                    <div className="w-2 h-2 bg-gradient-to-r from-[#092870] to-indigo-600 rounded-full animate-bounce"></div>
+                    <div className="w-2 h-2 bg-gradient-to-r from-indigo-600 to-[#092870] rounded-full animate-bounce delay-100"></div>
+                    <div className="w-2 h-2 bg-gradient-to-r from-[#092870] to-indigo-600 rounded-full animate-bounce delay-200"></div>
+                  </div>
+                </div>
               </div>
-              <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
-                <button className="bg-gradient-to-r from-[#092870] to-indigo-600 text-white px-10 py-4 rounded-full font-semibold text-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
-                  Get Digital Marketing Support
-                </button>
-                <button className="border-2 border-[#092870] text-[#092870] px-10 py-4 rounded-full font-semibold text-lg hover:bg-[#092870] hover:text-white transition-all duration-300">
-                  View Our Services
-                </button>
-              </div>
-              
-              {/* Key Stats */}
-              <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl max-w-4xl mx-auto">
-                <h2 className="text-2xl font-bold text-gray-900 mb-6">Professional Digital Marketing Experts</h2>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  <div className="flex items-center justify-center p-4 bg-gradient-to-r from-[#092870] to-indigo-600 rounded-2xl text-white">
-                    <div className="text-center">
-                      <div className="text-3xl font-bold mb-2">ROI</div>
-                      <div className="font-semibold">Driven Campaigns</div>
-                      <div className="text-sm opacity-90">Proven Results</div>
+            </div>
+          </div>
+
+          {/* Phase 2: Content & CTA Section */}
+          <div className="relative py-16 lg:py-20">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                
+                {/* Left Side - Content */}
+                <div className="space-y-8 animate-slide-in-left">
+                  <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-white/20 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 group">
+                    <h2 className="text-2xl font-bold text-gray-900 mb-6 group-hover:text-[#092870] transition-colors duration-300">
+                      <span className="bg-gradient-to-r from-[#092870] to-indigo-600 bg-clip-text text-transparent">Expert Digital Marketing</span>
+                      <div className="w-16 h-1 bg-gradient-to-r from-[#092870] to-indigo-600 rounded-full mt-2 group-hover:w-24 transition-all duration-300"></div>
+                    </h2>
+                    <div className="space-y-4 text-gray-700">
+                      <p className="hover:text-gray-900 transition-colors duration-300">
+                        We're living in a hyper-connected world where a solid digital presence is no longer a choice - it's a must. Whether you're a local business, an upstart e-commerce store, or a national brand, the right digital marketing strategy can make all the difference.
+                      </p>
+                      <p className="hover:text-gray-900 transition-colors duration-300">
+                        <strong className="bg-gradient-to-r from-[#092870] to-indigo-600 bg-clip-text text-transparent">Pacerline Outsourcing Service Pvt Ltd</strong> provides digital marketing services designed specifically for United States businesses and the rest of the world. From SEO and social media marketing to PPC and email campaigns, our skilled team delivers results that drive your business forward online.
+                      </p>
+                    </div>
+                    
+                    <div className="mt-8 flex flex-col sm:flex-row gap-4">
+                      <button className="bg-gradient-to-r from-[#092870] via-indigo-600 to-[#092870] bg-size-200 bg-pos-0 hover:bg-pos-100 text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 flex-1 relative overflow-hidden group">
+                        <span className="relative z-10">Get Digital Marketing Support</span>
+                        <div className="absolute inset-0 bg-gradient-to-r from-indigo-600 to-[#092870] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                      </button>
+                      <button className="border-2 border-[#092870] text-[#092870] px-8 py-4 rounded-full font-semibold text-lg hover:bg-gradient-to-r hover:from-[#092870] hover:to-indigo-600 hover:text-white hover:border-transparent transition-all duration-500 hover:shadow-xl hover:scale-105 flex-1 relative overflow-hidden group">
+                        <span className="relative z-10">View Our Services</span>
+                        <div className="absolute inset-0 bg-gradient-to-r from-[#092870] to-indigo-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+                      </button>
                     </div>
                   </div>
-                  <div className="flex items-center justify-center p-4 bg-gradient-to-r from-[#30a659] to-emerald-600 rounded-2xl text-white">
-                    <div className="text-center">
-                      <div className="text-3xl font-bold mb-2">US</div>
-                      <div className="font-semibold">Market Focused</div>
-                      <div className="text-sm opacity-90">Targeted Strategies</div>
-                    </div>
-                  </div>
-                  <div className="flex items-center justify-center p-4 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-2xl text-white">
-                    <div className="text-center">
-                      <div className="text-3xl font-bold mb-2">10+</div>
-                      <div className="font-semibold">Services Offered</div>
-                      <div className="text-sm opacity-90">Complete Solutions</div>
+                </div>
+
+                {/* Right Side - Key Stats */}
+                <div className="space-y-6 animate-slide-in-right">
+                  <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-white/20 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
+                      Professional Digital Marketing Experts
+                      <div className="w-20 h-1 bg-gradient-to-r from-[#092870] to-indigo-600 rounded-full mx-auto mt-2"></div>
+                    </h3>
+                    <div className="grid grid-cols-1 gap-6">
+                      <div className="flex items-center justify-between p-6 bg-gradient-to-r from-[#092870] via-indigo-600 to-[#092870] bg-size-200 bg-pos-0 hover:bg-pos-100 rounded-2xl text-white transform hover:scale-105 transition-all duration-500 hover:shadow-xl group">
+                        <div className="text-center flex-1">
+                          <div className="text-3xl font-bold mb-2 group-hover:animate-bounce">ROI</div>
+                          <div className="font-semibold">Driven Campaigns</div>
+                          <div className="text-sm opacity-90">Proven Results</div>
+                        </div>
+                      </div>
+                      <div className="flex items-center justify-between p-6 bg-gradient-to-r from-[#30a659] via-emerald-600 to-[#30a659] bg-size-200 bg-pos-0 hover:bg-pos-100 rounded-2xl text-white transform hover:scale-105 transition-all duration-500 hover:shadow-xl group">
+                        <div className="text-center flex-1">
+                          <div className="text-3xl font-bold mb-2 group-hover:animate-bounce">US</div>
+                          <div className="font-semibold">Market Focused</div>
+                          <div className="text-sm opacity-90">Targeted Strategies</div>
+                        </div>
+                      </div>
+                      <div className="flex items-center justify-between p-6 bg-gradient-to-r from-indigo-500 via-purple-600 to-indigo-500 bg-size-200 bg-pos-0 hover:bg-pos-100 rounded-2xl text-white transform hover:scale-105 transition-all duration-500 hover:shadow-xl group">
+                        <div className="text-center flex-1">
+                          <div className="text-3xl font-bold mb-2 group-hover:animate-bounce">10+</div>
+                          <div className="font-semibold">Services Offered</div>
+                          <div className="text-sm opacity-90">Complete Solutions</div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -161,7 +207,6 @@ const DigitalMarketingPage = () => {
             <div className="space-y-8">
               {[
                 {
-                  number: "1",
                   title: "Search Engine Optimization (SEO)",
                   description: "Do you want your business to appear on Google's first page when clients search for your services? Our SEO specialists assist you in ranking higher, drawing organic traffic, and boosting visibility throughout the USA.",
                   services: [
@@ -175,7 +220,6 @@ const DigitalMarketingPage = () => {
                   color: "from-[#092870] to-indigo-600"
                 },
                 {
-                  number: "2",
                   title: "Pay-Per-Click Advertising (PPC)",
                   description: "We develop high-performing PPC campaigns that position your brand in front of the right consumers at the right moment. Whether you're looking to reach local consumers or national audiences, our Google Ads and Bing Ads campaigns drive quick ROI.",
                   services: [
@@ -189,7 +233,6 @@ const DigitalMarketingPage = () => {
                   color: "from-[#30a659] to-emerald-600"
                 },
                 {
-                  number: "3",
                   title: "Social Media Marketing (SMM)",
                   description: "Your customers are spending hours daily on social sites like Facebook, Instagram, LinkedIn, and TikTok. We assist you in connecting, interacting, and converting with data-driven social media marketing strategies.",
                   services: [
@@ -202,9 +245,7 @@ const DigitalMarketingPage = () => {
                   icon: "📱",
                   color: "from-indigo-500 to-purple-600"
                 },
-                {
-                  number: "4",
-                  title: "Email Marketing",
+                {   title: "Email Marketing",
                   description: "Email is still one of the strongest tools to connect with your audience. Our email marketing solutions assist you in building leads, recovering carts, and remaining top-of-mind with customers.",
                   services: [
                     "Email automation (welcome series, follow-ups, re-engagement)",
@@ -217,7 +258,6 @@ const DigitalMarketingPage = () => {
                   color: "from-emerald-500 to-teal-600"
                 },
                 {
-                  number: "5",
                   title: "Lead Generation Services",
                   description: "More leads, more sales—it's that simple. We craft multi-channel lead generation funnels to regularly bring you qualified leads from throughout the U.S.",
                   services: [
@@ -230,7 +270,6 @@ const DigitalMarketingPage = () => {
                   color: "from-purple-500 to-pink-600"
                 },
                 {
-                  number: "6",
                   title: "Website Design & Development",
                   description: "Your website is your online storefront. We create mobile-friendly, conversion-oriented websites that make a great impression and fuel your growth.",
                   services: [
@@ -244,7 +283,6 @@ const DigitalMarketingPage = () => {
                   color: "from-cyan-500 to-blue-600"
                 },
                 {
-                  number: "7",
                   title: "Content Marketing",
                   description: "Content is king, and we know how to make it work for your brand. We create compelling, SEO-optimized content that builds authority, drives traffic, and supports every step of your sales funnel.",
                   services: [
@@ -258,7 +296,6 @@ const DigitalMarketingPage = () => {
                   color: "from-blue-500 to-indigo-600"
                 },
                 {
-                  number: "8",
                   title: "Analytics & Reporting",
                   description: "What's doing well? What's not? We offer clear, concise reports that allow you to make informed data-driven decisions for improved marketing performance.",
                   services: [
@@ -271,7 +308,6 @@ const DigitalMarketingPage = () => {
                   color: "from-indigo-600 to-purple-600"
                 },
                 {
-                  number: "9",
                   title: "E-Commerce Marketing",
                   description: "We assist online retailers in the U.S. in generating revenue with focused solutions aimed at boosting visibility, cart abandonment reduction, and customer loyalty.",
                   services: [
@@ -285,7 +321,6 @@ const DigitalMarketingPage = () => {
                   color: "from-purple-600 to-pink-600"
                 },
                 {
-                  number: "10",
                   title: "Branding & Online Reputation Management",
                   description: "Your brand is your business identity. We assist you in creating a consistent, reliable, and recognizable brand everywhere you are online and offline while handling online reviews and feedback.",
                   services: [
@@ -306,9 +341,6 @@ const DigitalMarketingPage = () => {
                     </div>
                     <div className="flex-1">
                       <div className="flex items-center mb-4">
-                        <div className="w-8 h-8 bg-gradient-to-r from-[#30a659] to-emerald-600 rounded-full flex items-center justify-center text-white font-bold text-sm mr-4">
-                          {service.number}
-                        </div>
                         <h3 className="text-2xl font-bold text-gray-900">{service.title}</h3>
                       </div>
                       <p className="text-gray-700 mb-6 text-lg">{service.description}</p>
@@ -392,12 +424,6 @@ const DigitalMarketingPage = () => {
                   description: "Specialized digital marketing for healthcare providers and legal professionals",
                   icon: "⚕️",
                   color: "from-cyan-500 to-blue-600"
-                },
-                {
-                  title: "Franchise Owners",
-                  description: "Multi-location marketing strategies for franchise businesses",
-                  icon: "🏪",
-                  color: "from-blue-500 to-indigo-600"
                 }
               ].map((client, index) => (
                 <div key={index} className="bg-gradient-to-br from-slate-50 to-blue-50 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
@@ -413,8 +439,8 @@ const DigitalMarketingPage = () => {
         </section>
 
         {/* Why US Clients Trust Us */}
-        <section className="relative py-20 bg-gradient-to-r from-[#092870] via-indigo-800 to-purple-800">
-          <div className="absolute inset-0 bg-black/20"></div>
+        <section className="relative py-20 bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600">
+          <div className="absolute inset-0 bg-black/10"></div>
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center text-white mb-16">
               <h2 className="text-4xl lg:text-5xl font-bold mb-6">
@@ -606,6 +632,7 @@ const DigitalMarketingPage = () => {
         </section>
 
         <Footer />
+        <FloatingContactWidget />
       </div>
     </>
   )
