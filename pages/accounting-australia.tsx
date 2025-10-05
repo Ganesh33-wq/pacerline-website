@@ -12,56 +12,194 @@ export default function AccountingAustraliaPage() {
   return (
     <Layout>
       <div className="min-h-screen">
-        {/* Hero Section */}
-        <section className="relative py-20 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-white/50 to-transparent"></div>
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center">
-              <h1 className="text-5xl lg:text-7xl font-bold text-gray-900 mb-8">
-                Professional <span className="bg-gradient-to-r from-[#092870] to-indigo-600 bg-clip-text text-transparent">Australian</span> 
-                <br />Accounting & Tax Services
-              </h1>
-              <div className="text-xl lg:text-2xl text-gray-700 max-w-5xl mx-auto mb-12 leading-relaxed space-y-6">
-                <p>
-                  Are you an Australian small business owner, entrepreneur, contractor, or professional seeking professional accounting and tax assistance? You've come to the right location. At <strong>Pacerline Outsourcing Service Pvt Ltd</strong>, we provide high-quality Accounting and Tax Services in Australia that are customized for your business structure, industry and compliance needs.
-                </p>
-                <p>
-                  Pacerline make sure to accurate financial reporting to timely BAS lodgments and tax returns, our experienced accountants are committed to helping Australian businesses stay compliant, minimise tax liability, and grow sustainably. If you're a tradie running a sole proprietorship or a professional services firm managing complex structures, then we're here to simplify your financial world.
-                </p>
+        {/* Hero Section - Clean with Better Background Animations */}
+        <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-white via-blue-50 to-indigo-100 overflow-hidden">
+          {/* Enhanced Background Animations */}
+          <div className="absolute inset-0 overflow-hidden">
+            {/* Geometric Shapes Animation */}
+            <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-gradient-to-br from-blue-200/30 to-indigo-300/20 rounded-full animate-pulse"></div>
+            <div className="absolute top-3/4 right-1/4 w-24 h-24 bg-gradient-to-br from-teal-200/25 to-emerald-300/15 rounded-full animate-pulse animation-delay-2000"></div>
+            <div className="absolute bottom-1/4 left-1/3 w-20 h-20 bg-gradient-to-br from-cyan-200/20 to-blue-300/25 rounded-full animate-pulse animation-delay-3000"></div>
+            
+            {/* Floating Dots */}
+            <div className="absolute top-10 right-10 w-3 h-3 bg-blue-400 rounded-full animate-bounce animation-delay-1000"></div>
+            <div className="absolute top-1/2 left-10 w-2 h-2 bg-teal-500 rounded-full animate-bounce animation-delay-2000"></div>
+            <div className="absolute bottom-20 right-1/3 w-4 h-4 bg-indigo-400 rounded-full animate-bounce animation-delay-3000"></div>
+            
+            {/* Gradient Lines */}
+            <div className="absolute top-0 left-1/2 w-px h-full bg-gradient-to-b from-transparent via-blue-200/50 to-transparent animate-pulse"></div>
+            <div className="absolute top-1/2 left-0 w-full h-px bg-gradient-to-r from-transparent via-indigo-200/30 to-transparent animate-pulse animation-delay-2000"></div>
+          </div>
+
+          {/* Main Content */}
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
+            <div className="animate-fade-in-up">
+              {/* Badge */}
+              <div className="inline-flex items-center px-8 py-4 rounded-full bg-white/80 backdrop-blur-sm border border-blue-200/50 text-blue-700 text-lg font-bold mb-8 shadow-lg">
+                <span className="mr-3 text-2xl animate-pulse">🌟</span>
+                Australia's Premier Accounting Excellence
               </div>
+              
+              {/* Main Title */}
+              <h1 className="text-6xl lg:text-8xl font-bold mb-8 leading-tight">
+                <span className="text-gray-900">Professional</span>
+                <span className="block bg-gradient-to-r from-blue-600 via-teal-500 to-emerald-500 bg-clip-text text-transparent animate-gradient-x">
+                  Australian
+                </span>
+                <span className="block text-gray-800">Accounting & Tax Services</span>
+              </h1>
+              
+              {/* Subtitle */}
+              <p className="text-xl lg:text-2xl text-gray-600 max-w-4xl mx-auto mb-12 leading-relaxed">
+                Empowering Australian businesses with expert financial guidance and compliance solutions
+              </p>
+              
+              {/* Action Buttons */}
               <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
-                <button className="bg-gradient-to-r from-[#092870] to-indigo-600 text-white px-10 py-4 rounded-full font-semibold text-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
-                  Get Free ATO Consultation
+                <button className="group relative px-12 py-5 bg-gradient-to-r from-blue-600 to-indigo-700 text-white rounded-full font-bold text-xl hover:shadow-2xl hover:shadow-blue-500/25 transition-all duration-300 transform hover:scale-105 hover:-translate-y-1">
+                  <span className="relative z-10">Get Free ATO Consultation</span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-indigo-700 to-blue-600 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </button>
-                <button className="border-2 border-[#092870] text-[#092870] px-10 py-4 rounded-full font-semibold text-lg hover:bg-[#092870] hover:text-white transition-all duration-300">
-                  View Australian Services
+                <button className="px-12 py-5 border-2 border-gray-300 text-gray-700 rounded-full font-bold text-xl hover:bg-gray-100 hover:border-gray-400 transition-all duration-300 bg-white/50 backdrop-blur-sm">
+                  Explore Our Services
                 </button>
               </div>
               
-              {/* Key Australian Certifications */}
-              <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl max-w-4xl mx-auto">
-                <h2 className="text-2xl font-bold text-gray-900 mb-6">Fully Certified Australian Tax Professionals</h2>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  <div className="flex items-center justify-center p-4 bg-gradient-to-r from-[#092870] to-indigo-600 rounded-2xl text-white">
-                    <div className="text-center">
-                      <div className="text-2xl mb-2">🇦🇺</div>
-                      <div className="font-semibold">ATO Registered</div>
-                      <div className="text-sm opacity-90">Tax & BAS Agents</div>
+              {/* Scroll Indicator */}
+              <div className="animate-bounce">
+                <div className="w-8 h-12 border-2 border-gray-400 rounded-full flex justify-center bg-white/30 backdrop-blur-sm">
+                  <div className="w-1 h-3 bg-gradient-to-b from-blue-500 to-teal-500 rounded-full mt-2 animate-pulse"></div>
+                </div>
+                <p className="text-gray-500 text-sm mt-2">Scroll to learn more</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Custom Animations */}
+          <style jsx>{`
+            @keyframes fade-in-up {
+              0% {
+                opacity: 0;
+                transform: translateY(50px);
+              }
+              100% {
+                opacity: 1;
+                transform: translateY(0);
+              }
+            }
+            
+            @keyframes gradient-x {
+              0%, 100% {
+                background-size: 200% 200%;
+                background-position: left center;
+              }
+              50% {
+                background-size: 200% 200%;
+                background-position: right center;
+              }
+            }
+            
+            .animate-fade-in-up {
+              animation: fade-in-up 1s ease-out;
+            }
+            
+            .animate-gradient-x {
+              animation: gradient-x 3s ease infinite;
+            }
+            
+            .animation-delay-1000 {
+              animation-delay: 1s;
+            }
+            
+            .animation-delay-2000 {
+              animation-delay: 2s;
+            }
+            
+            .animation-delay-3000 {
+              animation-delay: 3s;
+            }
+            
+            .animation-delay-4000 {
+              animation-delay: 4s;
+            }
+          `}</style>
+        </section>
+
+        {/* About Section with Content and Images */}
+        <section className="relative py-20 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-16">
+              {/* Left Side - Content */}
+              <div className="space-y-8">
+                <div className="inline-flex items-center px-6 py-3 rounded-full bg-[#092870]/10 border border-[#092870]/20 text-[#092870] text-sm font-bold mb-6">
+                  🇦🇺 Expert Australian Accounting Services
+                </div>
+                
+                <div className="text-xl lg:text-2xl text-gray-700 leading-relaxed space-y-6">
+                  <p>
+                    Are you an Australian small business owner, entrepreneur, contractor, or professional seeking professional accounting and tax assistance? You've come to the right location. At <strong>Pacerline Outsourcing Service Pvt Ltd</strong>, we provide high-quality Accounting and Tax Services in Australia that are customized for your business structure, industry and compliance needs.
+                  </p>
+                  <p>
+                    Pacerline make sure to accurate financial reporting to timely BAS lodgments and tax returns, our experienced accountants are committed to helping Australian businesses stay compliant, minimise tax liability, and grow sustainably. If you're a tradie running a sole proprietorship or a professional services firm managing complex structures, then we're here to simplify your financial world.
+                  </p>
+                </div>
+
+                <div className="flex flex-col sm:flex-row gap-6">
+                  <button className="bg-gradient-to-r from-[#092870] to-indigo-600 text-white px-10 py-4 rounded-full font-semibold text-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
+                    Get Free ATO Consultation
+                  </button>
+                  <button className="border-2 border-[#092870] text-[#092870] px-10 py-4 rounded-full font-semibold text-lg hover:bg-[#092870] hover:text-white transition-all duration-300">
+                    View Australian Services
+                  </button>
+                </div>
+              </div>
+
+              {/* Right Side - Images/Visual Elements */}
+              <div className="relative">
+                <div className="relative">
+                  {/* Main Image Placeholder */}
+                  <div className="bg-gradient-to-br from-[#092870]/10 to-indigo-100 rounded-3xl p-8 shadow-xl">
+                    <div className="text-center space-y-6">
+                      <div className="text-6xl">🏢</div>
+                      <h3 className="text-2xl font-bold text-gray-900">Australian Business Focus</h3>
+                      <p className="text-gray-600">Specialized services for Australian businesses, compliance, and tax requirements</p>
                     </div>
                   </div>
-                  <div className="flex items-center justify-center p-4 bg-gradient-to-r from-[#30a659] to-emerald-600 rounded-2xl text-white">
-                    <div className="text-center">
-                      <div className="text-2xl mb-2">📋</div>
-                      <div className="font-semibold">MYOB & Xero</div>
-                      <div className="text-sm opacity-90">Certified Partners</div>
-                    </div>
+                  
+                  {/* Floating Elements */}
+                  <div className="absolute -top-4 -right-4 bg-white rounded-2xl p-4 shadow-lg">
+                    <div className="text-3xl">🇦🇺</div>
                   </div>
-                  <div className="flex items-center justify-center p-4 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-2xl text-white">
-                    <div className="text-center">
-                      <div className="text-2xl mb-2">⚖️</div>
-                      <div className="font-semibold">SMSF Specialists</div>
-                      <div className="text-sm opacity-90">Audit & Compliance</div>
-                    </div>
+                  <div className="absolute -bottom-4 -left-4 bg-white rounded-2xl p-4 shadow-lg">
+                    <div className="text-3xl">📊</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Key Australian Certifications */}
+            <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-3xl p-8 shadow-xl">
+              <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">Fully Certified Australian Tax Professionals</h2>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="flex items-center justify-center p-6 bg-white rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-300">
+                  <div className="text-center">
+                    <div className="text-4xl mb-3">🇦🇺</div>
+                    <div className="font-semibold text-gray-900">ATO Registered</div>
+                    <div className="text-sm text-gray-600">Tax & BAS Agents</div>
+                  </div>
+                </div>
+                <div className="flex items-center justify-center p-6 bg-white rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-300">
+                  <div className="text-center">
+                    <div className="text-4xl mb-3">📋</div>
+                    <div className="font-semibold text-gray-900">MYOB & Xero</div>
+                    <div className="text-sm text-gray-600">Certified Partners</div>
+                  </div>
+                </div>
+                <div className="flex items-center justify-center p-6 bg-white rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-300">
+                  <div className="text-center">
+                    <div className="text-4xl mb-3">⚖️</div>
+                    <div className="font-semibold text-gray-900">SMSF Specialists</div>
+                    <div className="text-sm text-gray-600">Audit & Compliance</div>
                   </div>
                 </div>
               </div>
@@ -169,7 +307,7 @@ export default function AccountingAustraliaPage() {
             {/* Accounting Services Tab */}
             {activeTab === 0 && (
               <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-12 shadow-xl">
-                <h3 className="text-3xl font-bold text-gray-900 mb-8 text-center">1. Our Accounting Services</h3>
+                <h3 className="text-3xl font-bold text-gray-900 mb-8 text-center">Our Accounting Services</h3>
                 <div className="space-y-8">
                   {[
                     {
@@ -231,7 +369,7 @@ export default function AccountingAustraliaPage() {
             {/* Bookkeeping Services Tab */}
             {activeTab === 1 && (
               <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-12 shadow-xl">
-                <h3 className="text-3xl font-bold text-gray-900 mb-8 text-center">2. Our Bookkeeping Services</h3>
+                <h3 className="text-3xl font-bold text-gray-900 mb-8 text-center">Our Bookkeeping Services</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   {[
                     {
@@ -292,7 +430,7 @@ export default function AccountingAustraliaPage() {
             {/* Australian Business Services Tab */}
             {activeTab === 2 && (
               <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-12 shadow-xl">
-                <h3 className="text-3xl font-bold text-gray-900 mb-8 text-center">3. Our Australian Business Services</h3>
+                <h3 className="text-3xl font-bold text-gray-900 mb-8 text-center">Our Australian Business Services</h3>
                 <div className="space-y-8">
                   {[
                     {
@@ -366,7 +504,7 @@ export default function AccountingAustraliaPage() {
             {/* SMSF Services Tab */}
             {activeTab === 3 && (
               <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-12 shadow-xl">
-                <h3 className="text-3xl font-bold text-gray-900 mb-8 text-center">4. Australian SMSF Accounting and Tax Preparation</h3>
+                <h3 className="text-3xl font-bold text-gray-900 mb-8 text-center">Australian SMSF Accounting and Tax Preparation</h3>
                 <div className="space-y-8">
                   {[
                     {
@@ -475,7 +613,7 @@ export default function AccountingAustraliaPage() {
             {/* SMSF Compliance Auditing Tab */}
             {activeTab === 4 && (
               <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-12 shadow-xl">
-                <h3 className="text-3xl font-bold text-gray-900 mb-8 text-center">5. Australian SMSF Compliance Auditing</h3>
+                <h3 className="text-3xl font-bold text-gray-900 mb-8 text-center">Australian SMSF Compliance Auditing</h3>
                 <div className="space-y-6">
                   {[
                     {
@@ -568,7 +706,7 @@ export default function AccountingAustraliaPage() {
             {/* Australian Audit Services Tab */}
             {activeTab === 5 && (
               <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-12 shadow-xl">
-                <h3 className="text-3xl font-bold text-gray-900 mb-8 text-center">6. Australian Audit Services</h3>
+                <h3 className="text-3xl font-bold text-gray-900 mb-8 text-center">Australian Audit Services</h3>
                 <div className="space-y-6">
                   {[
                     {
@@ -658,13 +796,18 @@ export default function AccountingAustraliaPage() {
         </section>
 
         {/* Why Our Services Stand Out */}
-        <section className="relative py-20 bg-gradient-to-r from-[#092870] via-indigo-800 to-purple-800">
-          <div className="absolute inset-0 bg-black/20"></div>
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center text-white mb-16">
-              <h2 className="text-4xl lg:text-5xl font-bold mb-6">
+        <section className="relative py-20 bg-gradient-to-br from-gray-50 via-blue-50 to-indigo-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <div className="inline-flex items-center px-6 py-3 rounded-full bg-[#092870]/10 border border-[#092870]/20 text-[#092870] text-sm font-bold mb-6">
+                ⭐ What Makes Us Different
+              </div>
+              <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
                 Why Our Australian Accounting Services Stand Out
               </h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                Discover the expertise and dedication that sets our accounting services apart in the Australian market
+              </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -672,40 +815,46 @@ export default function AccountingAustraliaPage() {
                 {
                   title: "Registered Australian Tax Agents & BAS Agents",
                   description: "Our team is composed of skilled and qualified professionals who are registered with the Tax Practitioners Board (TPB), ensuring total compliance and professional guidance for all taxation matters.",
-                  icon: "🎯"
+                  icon: "🎯",
+                  color: "from-blue-500 to-indigo-600"
                 },
                 {
                   title: "Customized Solutions for Any Business Size",
                   description: "Whether your business earns $50k or $5M, we provide budget-friendly accounting packages that cater to your business needs and stage of development.",
-                  icon: "📏"
+                  icon: "📏",
+                  color: "from-emerald-500 to-teal-600"
                 },
                 {
                   title: "Xero, MYOB, QuickBooks Certified Partners",
                   description: "We interface with all mainstream accounting software packages used by Australian businesses, so you receive timely financial data and plug-and-play with your systems.",
-                  icon: "💻"
+                  icon: "💻",
+                  color: "from-purple-500 to-violet-600"
                 },
                 {
                   title: "Fixed Fee Plans & Honest Pricing",
                   description: "No shocks! We offer fixed monthly plans, hourly pricing and honest pricing tailored to your business size, complexity, and requirements.",
-                  icon: "💰"
+                  icon: "💰",
+                  color: "from-amber-500 to-orange-600"
                 },
                 {
                   title: "Proactive Tax Planning",
                   description: "We don't just stop at tax return lodging. We advise you year-round on future planning, optimizing your tax plan, and ensuring you only pay what you have to.",
-                  icon: "📈"
+                  icon: "📈",
+                  color: "from-green-500 to-emerald-600"
                 },
                 {
                   title: "Safe and Confidential",
                   description: "Your financial data is treated in strict confidence with the same level of standards applied by leading banks, through bank-level encryption, secure cloud platforms, and strict internal controls.",
-                  icon: "🔒"
+                  icon: "🔒",
+                  color: "from-red-500 to-pink-600"
                 }
               ].map((feature, index) => (
-                <div key={index} className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-white">
-                  <div className="w-16 h-16 bg-gradient-to-r from-[#30a659] to-emerald-500 rounded-2xl flex items-center justify-center text-2xl mb-6">
+                <div key={index} className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-gray-100">
+                  <div className={`w-16 h-16 bg-gradient-to-r ${feature.color} rounded-2xl flex items-center justify-center text-2xl mb-6 shadow-lg`}>
                     {feature.icon}
                   </div>
-                  <h3 className="text-xl font-bold mb-4">{feature.title}</h3>
-                  <p className="opacity-90">{feature.description}</p>
+                  <h3 className="text-xl font-bold text-gray-900 mb-4">{feature.title}</h3>
+                  <p className="text-gray-600 leading-relaxed">{feature.description}</p>
                 </div>
               ))}
             </div>
@@ -713,100 +862,173 @@ export default function AccountingAustraliaPage() {
         </section>
 
         {/* Cloud Accounting Section */}
-        <section className="relative py-20 bg-gradient-to-r from-blue-100 to-indigo-100">
+        <section className="relative py-20 bg-gradient-to-br from-white via-blue-50 to-indigo-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
+              <div className="inline-flex items-center px-6 py-3 rounded-full bg-blue-100 border border-blue-200 text-blue-700 text-sm font-bold mb-6">
+                ☁️ Modern Cloud Solutions
+              </div>
               <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-8">
                 Cloud Accounting for Australian Businesses
               </h2>
-              <p className="text-xl text-gray-700 max-w-4xl mx-auto">
+              <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
                 New companies demand new accounting. We help you move to or enhance your cloud accounting solution, such as setup, training, and support.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {[
                 {
                   title: "Real-time Dashboards",
-                  description: "Access live financial data anytime, anywhere",
-                  icon: "📊"
+                  description: "Access live financial data anytime, anywhere with comprehensive reporting and analytics that help you make informed business decisions.",
+                  color: "from-blue-500 to-blue-600",
+                  bgColor: "from-blue-50 to-blue-100"
                 },
                 {
                   title: "Automated Billing",
-                  description: "Streamlined invoicing and payment processing",
-                  icon: "🔄"
+                  description: "Streamlined invoicing and payment processing with automated workflows that save time and reduce manual errors.",
+                  color: "from-emerald-500 to-emerald-600", 
+                  bgColor: "from-emerald-50 to-emerald-100"
                 },
                 {
                   title: "Mobile Convenience",
-                  description: "Manage your finances on the go",
-                  icon: "📱"
+                  description: "Manage your finances on the go with mobile-optimized interfaces and secure access from any device, anywhere.",
+                  color: "from-purple-500 to-purple-600",
+                  bgColor: "from-purple-50 to-purple-100"
                 },
                 {
                   title: "Secure Document Storage",
-                  description: "Bank-level security for all your documents",
-                  icon: "🔒"
+                  description: "Bank-level security for all your documents with encrypted storage, automatic backups, and controlled access permissions.",
+                  color: "from-amber-500 to-amber-600",
+                  bgColor: "from-amber-50 to-amber-100"
                 }
               ].map((feature, index) => (
-                <div key={index} className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 text-center shadow-lg">
-                  <div className="w-16 h-16 bg-gradient-to-r from-[#092870] to-indigo-600 rounded-2xl flex items-center justify-center text-2xl mx-auto mb-6">
-                    {feature.icon}
+                <div key={index} className={`bg-gradient-to-br ${feature.bgColor} rounded-3xl p-8 border border-white/50 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105`}>
+                  <div className="flex items-start space-x-4">
+                    <div className={`w-4 h-4 bg-gradient-to-r ${feature.color} rounded-full mt-2 flex-shrink-0`}></div>
+                    <div>
+                      <h3 className="text-2xl font-bold text-gray-900 mb-4">{feature.title}</h3>
+                      <p className="text-gray-700 leading-relaxed text-lg">{feature.description}</p>
+                    </div>
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-4">{feature.title}</h3>
-                  <p className="text-gray-700">{feature.description}</p>
                 </div>
               ))}
+            </div>
+
+            {/* Bottom Call-to-Action */}
+            <div className="mt-16 text-center">
+              <div className="bg-white rounded-3xl p-8 shadow-xl border border-gray-100 max-w-3xl mx-auto">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">Ready to Modernize Your Accounting?</h3>
+                <p className="text-gray-600 mb-6">
+                  Let us help you transition to or optimize your cloud accounting setup with personalized training and ongoing support.
+                </p>
+                <button className="bg-gradient-to-r from-blue-600 to-indigo-700 text-white px-8 py-4 rounded-full font-bold text-lg hover:shadow-xl hover:shadow-blue-500/25 transition-all duration-300 transform hover:scale-105">
+                  Start Your Cloud Journey
+                </button>
+              </div>
             </div>
           </div>
         </section>
 
         {/* Our Process */}
-        <section className="relative py-20 bg-white">
+        <section className="relative py-20 bg-gradient-to-br from-gray-50 to-blue-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
+              <div className="inline-flex items-center px-6 py-3 rounded-full bg-emerald-100 border border-emerald-200 text-emerald-700 text-sm font-bold mb-6">
+                🤝 Our Partnership Approach
+              </div>
               <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-                Our Process: How We Work With You
+                How We Work With You
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                It's easy, hassle-free, and all about your business goals starting with us.
+                A streamlined, hassle-free approach designed around your business goals and success.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
-              {[
-                {
-                  step: "01",
-                  title: "Free Consultation",
-                  description: "We discover your business needs, accounting concerns, and compliance position."
-                },
-                {
-                  step: "02", 
-                  title: "Customised Proposal",
-                  description: "You'll receive a fixed-fee quote and service plan tailored to your industry, structure, and size."
-                },
-                {
-                  step: "03",
-                  title: "Onboarding & Setup",
-                  description: "We collect your documents securely, connect to your accounting software, and establish reporting timelines."
-                },
-                {
-                  step: "04",
-                  title: "Ongoing Service",
-                  description: "Our professional team handles your day-to-day accounting process, BAS lodgements, payroll and end-of-year tax returns without fail."
-                },
-                {
-                  step: "05",
-                  title: "Regular Check-Ins",
-                  description: "We will remain current with quarterly or monthly reports, and benefit from year-round tax advice and compliance reminders."
-                }
-              ].map((step, index) => (
-                <div key={index} className="text-center">
-                  <div className="w-20 h-20 bg-gradient-to-r from-[#30a659] to-emerald-600 rounded-3xl flex items-center justify-center mx-auto mb-6">
-                    <span className="text-white text-xl font-bold">{step.step}</span>
+            {/* Process Flow */}
+            <div className="relative">
+              {/* Connecting Line */}
+              <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-200 via-emerald-200 to-purple-200 transform -translate-y-1/2"></div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+                {[
+                  {
+                    title: "Free Consultation",
+                    description: "We discover your business needs, accounting concerns, and compliance position.",
+                    icon: "💬",
+                    color: "from-blue-500 to-blue-600",
+                    bgColor: "from-blue-50 to-blue-100"
+                  },
+                  {
+                    title: "Customised Proposal", 
+                    description: "You'll receive a fixed-fee quote and service plan tailored to your industry, structure, and size.",
+                    icon: "📋",
+                    color: "from-emerald-500 to-emerald-600",
+                    bgColor: "from-emerald-50 to-emerald-100"
+                  },
+                  {
+                    title: "Onboarding & Setup",
+                    description: "We collect your documents securely, connect to your accounting software, and establish reporting timelines.",
+                    icon: "⚙️",
+                    color: "from-purple-500 to-purple-600",
+                    bgColor: "from-purple-50 to-purple-100"
+                  },
+                  {
+                    title: "Ongoing Service",
+                    description: "Our professional team handles your day-to-day accounting process, BAS lodgements, payroll and end-of-year tax returns without fail.",
+                    icon: "🔄",
+                    color: "from-amber-500 to-amber-600",
+                    bgColor: "from-amber-50 to-amber-100"
+                  },
+                  {
+                    title: "Regular Check-Ins",
+                    description: "We will remain current with quarterly or monthly reports, and benefit from year-round tax advice and compliance reminders.",
+                    icon: "📊",
+                    color: "from-teal-500 to-teal-600",
+                    bgColor: "from-teal-50 to-teal-100"
+                  }
+                ].map((step, index) => (
+                  <div key={index} className="relative">
+                    {/* Card */}
+                    <div className={`bg-gradient-to-br ${step.bgColor} rounded-3xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-white/50 h-full flex flex-col`}>
+                      {/* Icon */}
+                      <div className={`w-16 h-16 bg-gradient-to-r ${step.color} rounded-2xl flex items-center justify-center text-2xl mb-4 mx-auto shadow-lg`}>
+                        {step.icon}
+                      </div>
+                      
+                      {/* Content */}
+                      <div className="text-center flex-grow">
+                        <h3 className="text-lg font-bold text-gray-900 mb-3">{step.title}</h3>
+                        <p className="text-gray-700 text-sm leading-relaxed">{step.description}</p>
+                      </div>
+                      
+                      {/* Arrow for desktop */}
+                      {index < 4 && (
+                        <div className="hidden lg:block absolute -right-4 top-1/2 transform -translate-y-1/2 z-10">
+                          <div className="w-8 h-8 bg-white rounded-full shadow-lg flex items-center justify-center">
+                            <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                            </svg>
+                          </div>
+                        </div>
+                      )}
+                    </div>
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">{step.title}</h3>
-                  <p className="text-gray-600">{step.description}</p>
-                </div>
-              ))}
+                ))}
+              </div>
+            </div>
+
+            {/* Bottom CTA */}
+            <div className="mt-16 text-center">
+              <div className="bg-white rounded-3xl p-8 shadow-xl border border-gray-100 max-w-2xl mx-auto">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">Ready to Get Started?</h3>
+                <p className="text-gray-600 mb-6">
+                  Experience our seamless process and discover how we can transform your business accounting.
+                </p>
+                <button className="bg-gradient-to-r from-emerald-600 to-teal-700 text-white px-8 py-4 rounded-full font-bold text-lg hover:shadow-xl hover:shadow-emerald-500/25 transition-all duration-300 transform hover:scale-105">
+                  Book Your Free Consultation
+                </button>
+              </div>
             </div>
           </div>
         </section>

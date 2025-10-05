@@ -282,7 +282,7 @@ const PropertyManagementPage = () => {
             <div className="bg-blue-50 rounded-2xl p-8 border border-blue-100 hover:shadow-lg transition-all duration-300">
               <div className="flex items-start space-x-4">
                 <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-green-500 rounded-full flex items-center justify-center flex-shrink-0">
-                  <span className="text-white text-xl">1</span>
+                  <span className="text-white text-xl">🏢</span>
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-blue-600 mb-3">Set Up Portfolio, Property, Tenant & Vendor</h3>
@@ -299,7 +299,7 @@ const PropertyManagementPage = () => {
             <div className="bg-green-50 rounded-2xl p-8 border border-green-100 hover:shadow-lg transition-all duration-300">
               <div className="flex items-start space-x-4">
                 <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-blue-500 rounded-full flex items-center justify-center flex-shrink-0">
-                  <span className="text-white text-xl">2</span>
+                  <span className="text-white text-xl">📊</span>
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-green-600 mb-3">Tenant Ledger Maintenance</h3>
@@ -315,7 +315,7 @@ const PropertyManagementPage = () => {
             <div className="bg-blue-50 rounded-2xl p-8 border border-blue-100 hover:shadow-lg transition-all duration-300">
               <div className="flex items-start space-x-4">
                 <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-green-500 rounded-full flex items-center justify-center flex-shrink-0">
-                  <span className="text-white text-xl">3</span>
+                  <span className="text-white text-xl">⚙️</span>
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-blue-600 mb-3">Common Area Maintenance (CAM) Reconciliation</h3>
@@ -332,7 +332,7 @@ const PropertyManagementPage = () => {
             <div className="bg-green-50 rounded-2xl p-8 border border-green-100 hover:shadow-lg transition-all duration-300">
               <div className="flex items-start space-x-4">
                 <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-blue-500 rounded-full flex items-center justify-center flex-shrink-0">
-                  <span className="text-white text-xl">4</span>
+                  <span className="text-white text-xl">📋</span>
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-green-600 mb-3">Lease Creation & Tenant Updates</h3>
@@ -349,7 +349,7 @@ const PropertyManagementPage = () => {
             <div className="bg-blue-50 rounded-2xl p-8 border border-blue-100 hover:shadow-lg transition-all duration-300">
               <div className="flex items-start space-x-4">
                 <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-green-500 rounded-full flex items-center justify-center flex-shrink-0">
-                  <span className="text-white text-xl">5</span>
+                  <span className="text-white text-xl">💳</span>
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-blue-600 mb-3">Accounts Payable: Vendor Bill Entry & Payment</h3>
@@ -365,7 +365,7 @@ const PropertyManagementPage = () => {
             <div className="bg-green-50 rounded-2xl p-8 border border-green-100 hover:shadow-lg transition-all duration-300">
               <div className="flex items-start space-x-4">
                 <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-blue-500 rounded-full flex items-center justify-center flex-shrink-0">
-                  <span className="text-white text-xl">6</span>
+                  <span className="text-white text-xl">📄</span>
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-green-600 mb-3">Owner Statement Generation & Ledger Maintenance</h3>
@@ -381,7 +381,7 @@ const PropertyManagementPage = () => {
             <div className="bg-blue-50 rounded-2xl p-8 border border-blue-100 hover:shadow-lg transition-all duration-300">
               <div className="flex items-start space-x-4">
                 <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-green-500 rounded-full flex items-center justify-center flex-shrink-0">
-                  <span className="text-white text-xl">7</span>
+                  <span className="text-white text-xl">🏦</span>
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-blue-600 mb-3">Recording & Reconciliation of Bank Transactions</h3>
@@ -398,7 +398,7 @@ const PropertyManagementPage = () => {
             <div className="bg-green-50 rounded-2xl p-8 border border-green-100 hover:shadow-lg transition-all duration-300">
               <div className="flex items-start space-x-4">
                 <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-blue-500 rounded-full flex items-center justify-center flex-shrink-0">
-                  <span className="text-white text-xl">8</span>
+                  <span className="text-white text-xl">💳</span>
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-green-600 mb-3">Credit Card Reconciliation</h3>
@@ -415,7 +415,7 @@ const PropertyManagementPage = () => {
             <div className="bg-blue-50 rounded-2xl p-8 border border-blue-100 hover:shadow-lg transition-all duration-300">
               <div className="flex items-start space-x-4">
                 <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-green-500 rounded-full flex items-center justify-center flex-shrink-0">
-                  <span className="text-white text-xl">9</span>
+                  <span className="text-white text-xl">📬</span>
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-blue-600 mb-3">Move-In & Move-Out Processing</h3>
@@ -431,7 +431,7 @@ const PropertyManagementPage = () => {
             <div className="bg-green-50 rounded-2xl p-8 border border-green-100 hover:shadow-lg transition-all duration-300">
               <div className="flex items-start space-x-4">
                 <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-blue-500 rounded-full flex items-center justify-center flex-shrink-0">
-                  <span className="text-white text-xl">10</span>
+                  <span className="text-white text-xl">📈</span>
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-green-600 mb-3">Property Budgeting Support</h3>
@@ -447,7 +447,7 @@ const PropertyManagementPage = () => {
             <div className="bg-blue-50 rounded-2xl p-8 border border-blue-100 hover:shadow-lg transition-all duration-300">
               <div className="flex items-start space-x-4">
                 <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-green-500 rounded-full flex items-center justify-center flex-shrink-0">
-                  <span className="text-white text-xl">11</span>
+                  <span className="text-white text-xl">📉</span>
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-blue-600 mb-3">Payroll Services for Property Staff</h3>
@@ -463,7 +463,7 @@ const PropertyManagementPage = () => {
             <div className="bg-green-50 rounded-2xl p-8 border border-green-100 hover:shadow-lg transition-all duration-300">
               <div className="flex items-start space-x-4">
                 <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-blue-500 rounded-full flex items-center justify-center flex-shrink-0">
-                  <span className="text-white text-xl">12</span>
+                  <span className="text-white text-xl">🔎</span>
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-green-600 mb-3">Diagnostic Reports & Error Clearance</h3>
@@ -479,7 +479,7 @@ const PropertyManagementPage = () => {
             <div className="bg-blue-50 rounded-2xl p-8 border border-blue-100 hover:shadow-lg transition-all duration-300">
               <div className="flex items-start space-x-4">
                 <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-green-500 rounded-full flex items-center justify-center flex-shrink-0">
-                  <span className="text-white text-xl">13</span>
+                  <span className="text-white text-xl">🔧</span>
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-blue-600 mb-3">Work Order Closing, Invoicing & Mark-Up Application</h3>
@@ -495,7 +495,7 @@ const PropertyManagementPage = () => {
             <div className="bg-green-50 rounded-2xl p-8 border border-green-100 hover:shadow-lg transition-all duration-300">
               <div className="flex items-start space-x-4">
                 <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-blue-500 rounded-full flex items-center justify-center flex-shrink-0">
-                  <span className="text-white text-xl">14</span>
+                  <span className="text-white text-xl">📈</span>
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-green-600 mb-3">Financial Report Generation</h3>
@@ -511,7 +511,7 @@ const PropertyManagementPage = () => {
             <div className="bg-blue-50 rounded-2xl p-8 border border-blue-100 hover:shadow-lg transition-all duration-300">
               <div className="flex items-start space-x-4">
                 <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-green-500 rounded-full flex items-center justify-center flex-shrink-0">
-                  <span className="text-white text-xl">15</span>
+                  <span className="text-white text-xl">📞</span>
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-blue-600 mb-3">Financial Support and Communication</h3>
@@ -528,7 +528,7 @@ const PropertyManagementPage = () => {
             <div className="bg-green-50 rounded-2xl p-8 border border-green-100 hover:shadow-lg transition-all duration-300">
               <div className="flex items-start space-x-4">
                 <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-blue-500 rounded-full flex items-center justify-center flex-shrink-0">
-                  <span className="text-white text-xl">16</span>
+                  <span className="text-white text-xl">📕</span>
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-green-600 mb-3">General Ledger Management & Month-End Close</h3>
@@ -544,13 +544,30 @@ const PropertyManagementPage = () => {
             <div className="bg-blue-50 rounded-2xl p-8 border border-blue-100 hover:shadow-lg transition-all duration-300">
               <div className="flex items-start space-x-4">
                 <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-green-500 rounded-full flex items-center justify-center flex-shrink-0">
-                  <span className="text-white text-xl">17</span>
+                  <span className="text-white text-xl">📋</span>
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-blue-600 mb-3">IRS 1099 Reporting & Filing</h3>
                   <p className="text-gray-700 leading-relaxed">
                     We collect W-9, generate 1099 (NEC/MISC), and submit to the IRS for all qualified vendors. Our year-end service 
                     saves U.S. property managers from penalties and remains tax compliant—without the headache.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Service 18 */}
+            <div className="bg-green-50 rounded-2xl p-8 border border-green-100 hover:shadow-lg transition-all duration-300">
+              <div className="flex items-start space-x-4">
+                <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-blue-500 rounded-full flex items-center justify-center flex-shrink-0">
+                  <span className="text-white text-xl">🏠</span>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-green-600 mb-3">Property Insurance & Risk Management Support</h3>
+                  <p className="text-gray-700 leading-relaxed">
+                    We assist with insurance claim processing, certificate tracking, and risk assessment documentation. Our team helps 
+                    maintain current insurance records, process claims efficiently, and ensure proper coverage across your entire 
+                    property portfolio for maximum protection and compliance.
                   </p>
                 </div>
               </div>

@@ -27,56 +27,189 @@ const AppFolioPage = () => {
       <div className="min-h-screen">
         <Header />
         
-        {/* Hero Section */}
-        <section className="relative py-20 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-white/50 to-transparent"></div>
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center">
-              <h1 className="text-5xl lg:text-7xl font-bold text-gray-900 mb-8">
-                <span className="bg-gradient-to-r from-[#092870] to-indigo-600 bg-clip-text text-transparent">AppFolio</span> 
-                <br />Property Management Excellence
-              </h1>
-              <div className="text-xl lg:text-2xl text-gray-700 max-w-5xl mx-auto mb-12 leading-relaxed space-y-6">
-                <p>
-                  <strong>AppFolio is cloud-based property management software</strong> that makes it easier for landlords, real estate investors, and property managers to operate their businesses. If you manage single-family homes, multifamily apartments, commercial buildings, or community associations, AppFolio has an all-in-one solution that can help simplify your business.
-                </p>
-                <p>
-                  With accounting, leasing, tenant portals, maintenance tracking, and mobile access integrated into the software, AppFolio allows you to easily manage your properties at any time and from anywhere.
-                </p>
+        {/* Hero Section - Title Only */}
+        <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-white via-blue-50 to-indigo-100 overflow-hidden">
+          {/* Enhanced Background Animations */}
+          <div className="absolute inset-0 overflow-hidden">
+            {/* Geometric Shapes Animation */}
+            <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-gradient-to-br from-blue-200/30 to-indigo-300/20 rounded-full animate-pulse"></div>
+            <div className="absolute top-3/4 right-1/4 w-24 h-24 bg-gradient-to-br from-teal-200/25 to-emerald-300/15 rounded-full animate-pulse animation-delay-2000"></div>
+            <div className="absolute bottom-1/4 left-1/3 w-20 h-20 bg-gradient-to-br from-cyan-200/20 to-blue-300/25 rounded-full animate-pulse animation-delay-3000"></div>
+            
+            {/* Floating Dots */}
+            <div className="absolute top-10 right-10 w-3 h-3 bg-blue-400 rounded-full animate-bounce animation-delay-1000"></div>
+            <div className="absolute top-1/2 left-10 w-2 h-2 bg-teal-500 rounded-full animate-bounce animation-delay-2000"></div>
+            <div className="absolute bottom-20 right-1/3 w-4 h-4 bg-indigo-400 rounded-full animate-bounce animation-delay-3000"></div>
+            
+            {/* Gradient Lines */}
+            <div className="absolute top-0 left-1/2 w-px h-full bg-gradient-to-b from-transparent via-blue-200/50 to-transparent animate-pulse"></div>
+            <div className="absolute top-1/2 left-0 w-full h-px bg-gradient-to-r from-transparent via-indigo-200/30 to-transparent animate-pulse animation-delay-2000"></div>
+          </div>
+
+          {/* Main Content */}
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
+            <div className="animate-fade-in-up">
+              {/* Badge */}
+              <div className="inline-flex items-center px-8 py-4 rounded-full bg-white/80 backdrop-blur-sm border border-blue-200/50 text-blue-700 text-lg font-bold mb-8 shadow-lg">
+                <span className="mr-3 text-2xl animate-pulse">🏢</span>
+                Professional AppFolio Excellence
               </div>
+              
+              {/* Main Title */}
+              <h1 className="text-6xl lg:text-8xl font-bold mb-8 leading-tight">
+                <span className="bg-gradient-to-r from-blue-600 via-teal-500 to-emerald-500 bg-clip-text text-transparent animate-gradient-x">
+                  AppFolio
+                </span>
+                <span className="block text-gray-800">Property Management Excellence</span>
+              </h1>
+              
+              {/* Subtitle */}
+              <p className="text-xl lg:text-2xl text-gray-600 max-w-4xl mx-auto mb-12 leading-relaxed">
+                Expert AppFolio services for modern property management companies
+              </p>
+              
+              {/* Action Buttons */}
               <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
-                <button className="bg-gradient-to-r from-[#092870] to-indigo-600 text-white px-10 py-4 rounded-full font-semibold text-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
-                  Get AppFolio Expert Help
+                <button className="group relative px-12 py-5 bg-gradient-to-r from-blue-600 to-indigo-700 text-white rounded-full font-bold text-xl hover:shadow-2xl hover:shadow-blue-500/25 transition-all duration-300 transform hover:scale-105 hover:-translate-y-1">
+                  <span className="relative z-10">Get AppFolio Expert Help</span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-indigo-700 to-blue-600 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </button>
-                <button className="border-2 border-[#092870] text-[#092870] px-10 py-4 rounded-full font-semibold text-lg hover:bg-[#092870] hover:text-white transition-all duration-300">
+                <button className="px-12 py-5 border-2 border-gray-300 text-gray-700 rounded-full font-bold text-xl hover:bg-gray-100 hover:border-gray-400 transition-all duration-300 bg-white/50 backdrop-blur-sm">
                   View Our AppFolio Services
                 </button>
               </div>
               
-              {/* AppFolio Stats */}
-              <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl max-w-4xl mx-auto">
-                <h2 className="text-2xl font-bold text-gray-900 mb-6">Trusted AppFolio Specialists</h2>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  <div className="flex items-center justify-center p-4 bg-gradient-to-r from-[#092870] to-indigo-600 rounded-2xl text-white">
-                    <div className="text-center">
-                      <div className="text-3xl font-bold mb-2">13+</div>
-                      <div className="font-semibold">Years Experience</div>
-                      <div className="text-sm opacity-90">AppFolio Expertise</div>
+              {/* Scroll Indicator */}
+              <div className="animate-bounce">
+                <div className="w-8 h-12 border-2 border-gray-400 rounded-full flex justify-center bg-white/30 backdrop-blur-sm">
+                  <div className="w-1 h-3 bg-gradient-to-b from-blue-500 to-teal-500 rounded-full mt-2 animate-pulse"></div>
+                </div>
+                <p className="text-gray-500 text-sm mt-2">Scroll to learn more</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Custom Animations */}
+          <style jsx>{`
+            @keyframes fade-in-up {
+              0% {
+                opacity: 0;
+                transform: translateY(50px);
+              }
+              100% {
+                opacity: 1;
+                transform: translateY(0);
+              }
+            }
+            
+            @keyframes gradient-x {
+              0%, 100% {
+                background-size: 200% 200%;
+                background-position: left center;
+              }
+              50% {
+                background-size: 200% 200%;
+                background-position: right center;
+              }
+            }
+            
+            .animate-fade-in-up {
+              animation: fade-in-up 1s ease-out;
+            }
+            
+            .animate-gradient-x {
+              animation: gradient-x 3s ease infinite;
+            }
+            
+            .animation-delay-1000 {
+              animation-delay: 1s;
+            }
+            
+            .animation-delay-2000 {
+              animation-delay: 2s;
+            }
+            
+            .animation-delay-3000 {
+              animation-delay: 3s;
+            }
+          `}</style>
+        </section>
+
+        {/* About Section with Content and Images */}
+        <section className="relative py-20 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-16">
+              {/* Left Side - Content */}
+              <div className="space-y-8">
+                <div className="inline-flex items-center px-6 py-3 rounded-full bg-[#092870]/10 border border-[#092870]/20 text-[#092870] text-sm font-bold mb-6">
+                  🏢 Expert AppFolio Solutions
+                </div>
+                
+                <div className="text-xl lg:text-2xl text-gray-700 leading-relaxed space-y-6">
+                  <p>
+                    <strong>AppFolio is cloud-based property management software</strong> that makes it easier for landlords, real estate investors, and property managers to operate their businesses. If you manage single-family homes, multifamily apartments, commercial buildings, or community associations, AppFolio has an all-in-one solution that can help simplify your business.
+                  </p>
+                  <p>
+                    With accounting, leasing, tenant portals, maintenance tracking, and mobile access integrated into the software, AppFolio allows you to easily manage your properties at any time and from anywhere.
+                  </p>
+                </div>
+
+                <div className="flex flex-col sm:flex-row gap-6">
+                  <button className="bg-gradient-to-r from-[#092870] to-indigo-600 text-white px-10 py-4 rounded-full font-semibold text-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
+                    Get AppFolio Expert Help
+                  </button>
+                  <button className="border-2 border-[#092870] text-[#092870] px-10 py-4 rounded-full font-semibold text-lg hover:bg-[#092870] hover:text-white transition-all duration-300">
+                    View Our AppFolio Services
+                  </button>
+                </div>
+              </div>
+
+              {/* Right Side - Images/Visual Elements */}
+              <div className="relative">
+                <div className="relative">
+                  {/* Main Image Placeholder */}
+                  <div className="bg-gradient-to-br from-[#092870]/10 to-indigo-100 rounded-3xl p-8 shadow-xl">
+                    <div className="text-center space-y-6">
+                      <div className="text-6xl">🏢</div>
+                      <h3 className="text-2xl font-bold text-gray-900">AppFolio Expertise</h3>
+                      <p className="text-gray-600">Comprehensive property management solutions with 13+ years of specialized experience</p>
                     </div>
                   </div>
-                  <div className="flex items-center justify-center p-4 bg-gradient-to-r from-[#30a659] to-emerald-600 rounded-2xl text-white">
-                    <div className="text-center">
-                      <div className="text-3xl font-bold mb-2">18K+</div>
-                      <div className="font-semibold">Businesses</div>
-                      <div className="text-sm opacity-90">Use AppFolio in USA</div>
-                    </div>
+                  
+                  {/* Floating Elements */}
+                  <div className="absolute -top-4 -right-4 bg-white rounded-2xl p-4 shadow-lg">
+                    <div className="text-3xl">📊</div>
                   </div>
-                  <div className="flex items-center justify-center p-4 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-2xl text-white">
-                    <div className="text-center">
-                      <div className="text-3xl font-bold mb-2">100-5K</div>
-                      <div className="font-semibold">Units</div>
-                      <div className="text-sm opacity-90">Scalable Solutions</div>
-                    </div>
+                  <div className="absolute -bottom-4 -left-4 bg-white rounded-2xl p-4 shadow-lg">
+                    <div className="text-3xl">🔧</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* AppFolio Stats */}
+            <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-3xl p-8 shadow-xl">
+              <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">Trusted AppFolio Specialists</h2>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="flex items-center justify-center p-6 bg-white rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-300">
+                  <div className="text-center">
+                    <div className="text-4xl font-bold text-[#092870] mb-3">13+</div>
+                    <div className="font-semibold text-gray-900">Years Experience</div>
+                    <div className="text-sm text-gray-600">AppFolio Expertise</div>
+                  </div>
+                </div>
+                <div className="flex items-center justify-center p-6 bg-white rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-300">
+                  <div className="text-center">
+                    <div className="text-4xl font-bold text-[#30a659] mb-3">18K+</div>
+                    <div className="font-semibold text-gray-900">Businesses</div>
+                    <div className="text-sm text-gray-600">Use AppFolio in USA</div>
+                  </div>
+                </div>
+                <div className="flex items-center justify-center p-6 bg-white rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-300">
+                  <div className="text-center">
+                    <div className="text-4xl font-bold text-indigo-600 mb-3">100-5K</div>
+                    <div className="font-semibold text-gray-900">Units</div>
+                    <div className="text-sm text-gray-600">Scalable Solutions</div>
                   </div>
                 </div>
               </div>
@@ -229,6 +362,11 @@ const AppFolioPage = () => {
                       title: "CAM Reconciliations",
                       description: "Common Area Maintenance reconciliations",
                       icon: "⚙️"
+                    },
+                    {
+                      title: "Lease Management & Tracking",
+                      description: "Automated lease tracking, renewals, and rent escalations with comprehensive lease management tools",
+                      icon: "📋"
                     }
                   ].map((feature, index) => (
                     <div key={index} className="flex items-start p-6 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl">
@@ -482,14 +620,16 @@ const AppFolioPage = () => {
         </section>
 
         {/* Financial Management Section */}
-        <section className="relative py-20 bg-gradient-to-r from-[#092870] via-indigo-800 to-purple-800">
-          <div className="absolute inset-0 bg-black/20"></div>
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center text-white mb-16">
-              <h2 className="text-4xl lg:text-5xl font-bold mb-6">
+        <section className="relative py-20 bg-gradient-to-br from-gray-50 via-blue-50 to-indigo-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <div className="inline-flex items-center px-6 py-3 rounded-full bg-[#092870]/10 border border-[#092870]/20 text-[#092870] text-sm font-bold mb-6">
+                💼 Financial Management Excellence
+              </div>
+              <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
                 AppFolio for Bookkeeping and Financial Management
               </h2>
-              <p className="text-xl opacity-90 max-w-4xl mx-auto mb-12">
+              <p className="text-xl text-gray-600 max-w-4xl mx-auto mb-12 leading-relaxed">
                 Accounting is a core function to managing a property management company and AppFolio software gets it just right. AppFolio software enables you to:
               </p>
             </div>
@@ -499,42 +639,61 @@ const AppFolioPage = () => {
                 {
                   title: "Maintain Clean Books",
                   description: "Keep books clean and ready for audit",
-                  icon: "📚"
+                  icon: "📚",
+                  color: "from-blue-500 to-indigo-600"
                 },
                 {
                   title: "Quick Reconciliations",
                   description: "Quickly reconcile bank accounts and credit cards",
-                  icon: "⚡"
+                  icon: "⚡",
+                  color: "from-emerald-500 to-teal-600"
                 },
                 {
                   title: "Accurate Assignment",
                   description: "Assign income and expenses to correct property and unit",
-                  icon: "🎯"
+                  icon: "🎯",
+                  color: "from-purple-500 to-violet-600"
                 },
                 {
                   title: "Owner Statements",
                   description: "Create owner statements and monthly financial reports",
-                  icon: "📋"
+                  icon: "📋",
+                  color: "from-amber-500 to-orange-600"
                 },
                 {
                   title: "IRS 1099 Compliance",
                   description: "Help with IRS 1099 report filing requirements",
-                  icon: "📄"
+                  icon: "📄",
+                  color: "from-red-500 to-pink-600"
                 },
                 {
                   title: "Audit Ready",
                   description: "Always audit-ready with organized financial data",
-                  icon: "✅"
+                  icon: "✅",
+                  color: "from-green-500 to-emerald-600"
                 }
               ].map((feature, index) => (
-                <div key={index} className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-white">
-                  <div className="w-16 h-16 bg-gradient-to-r from-[#30a659] to-emerald-500 rounded-2xl flex items-center justify-center text-2xl mb-6">
+                <div key={index} className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-gray-100">
+                  <div className={`w-16 h-16 bg-gradient-to-r ${feature.color} rounded-2xl flex items-center justify-center text-2xl mb-6 shadow-lg`}>
                     {feature.icon}
                   </div>
-                  <h3 className="text-xl font-bold mb-4">{feature.title}</h3>
-                  <p className="opacity-90">{feature.description}</p>
+                  <h3 className="text-xl font-bold text-gray-900 mb-4">{feature.title}</h3>
+                  <p className="text-gray-600 leading-relaxed">{feature.description}</p>
                 </div>
               ))}
+            </div>
+
+            {/* Bottom CTA */}
+            <div className="mt-16 text-center">
+              <div className="bg-white rounded-3xl p-8 shadow-xl border border-gray-100 max-w-3xl mx-auto">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">Ready to Streamline Your AppFolio Accounting?</h3>
+                <p className="text-gray-600 mb-6">
+                  Let our experts help you maximize AppFolio's financial management capabilities for your property management business.
+                </p>
+                <button className="bg-gradient-to-r from-[#092870] to-indigo-700 text-white px-8 py-4 rounded-full font-bold text-lg hover:shadow-xl hover:shadow-blue-500/25 transition-all duration-300 transform hover:scale-105">
+                  Get AppFolio Support
+                </button>
+              </div>
             </div>
           </div>
         </section>
@@ -679,59 +838,107 @@ const AppFolioPage = () => {
         </section>
 
         {/* Growth Section */}
-        <section className="relative py-20 bg-gradient-to-r from-[#092870] via-indigo-800 to-purple-800">
-          <div className="absolute inset-0 bg-black/20"></div>
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center text-white mb-16">
-              <h2 className="text-4xl lg:text-5xl font-bold mb-6">
+        <section className="relative py-20 bg-gradient-to-br from-slate-50 via-green-50 to-emerald-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <div className="inline-flex items-center px-6 py-3 rounded-full bg-emerald-100 border border-emerald-200 text-emerald-700 text-sm font-bold mb-6">
+                📈 Growth & Success
+              </div>
+              <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
                 How AppFolio Helps You Grow
               </h2>
-              <p className="text-xl opacity-90 max-w-4xl mx-auto mb-12">
+              <p className="text-xl text-gray-600 max-w-4xl mx-auto mb-12 leading-relaxed">
                 With AppFolio, you don't only save time—you also get a competitive edge. The software helps you to:
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {/* Featured Growth Benefits */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
               {[
                 {
                   title: "Syndicated Listings",
-                  description: "List vacancies with syndication to Zillow, Apartments.com, and other listing sites",
-                  icon: "📢"
+                  description: "List vacancies with syndication to Zillow, Apartments.com, and other listing sites for maximum exposure and faster tenant placement.",
+                  icon: "📢",
+                  color: "from-blue-500 to-indigo-600",
+                  bgColor: "from-blue-50 to-indigo-100"
                 },
                 {
                   title: "Performance Monitoring",
-                  description: "Monitor performance metrics for your entire portfolio",
-                  icon: "📊"
+                  description: "Monitor performance metrics for your entire portfolio with comprehensive analytics and real-time reporting dashboards.",
+                  icon: "📊",
+                  color: "from-emerald-500 to-green-600",
+                  bgColor: "from-emerald-50 to-green-100"
                 },
                 {
                   title: "Task Automation",
-                  description: "Automate tedious tasks such as reminders, follow-ups, and reports",
-                  icon: "🤖"
+                  description: "Automate tedious tasks such as reminders, follow-ups, and reports to focus on high-value activities that grow your business.",
+                  icon: "🤖",
+                  color: "from-purple-500 to-violet-600",
+                  bgColor: "from-purple-50 to-violet-100"
                 },
                 {
                   title: "Data-Driven Decisions",
-                  description: "Make informed decisions with real-time financial information and status",
-                  icon: "📈"
-                },
+                  description: "Make informed decisions with real-time financial information and comprehensive property performance status tracking.",
+                  icon: "📈",
+                  color: "from-amber-500 to-orange-600",
+                  bgColor: "from-amber-50 to-orange-100"
+                }
+              ].map((growth, index) => (
+                <div key={index} className={`bg-gradient-to-br ${growth.bgColor} rounded-3xl p-8 border border-white/50 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105`}>
+                  <div className="flex items-start space-x-6">
+                    <div className={`w-16 h-16 bg-gradient-to-r ${growth.color} rounded-2xl flex items-center justify-center text-2xl flex-shrink-0 shadow-lg`}>
+                      {growth.icon}
+                    </div>
+                    <div>
+                      <h3 className="text-2xl font-bold text-gray-900 mb-4">{growth.title}</h3>
+                      <p className="text-gray-700 leading-relaxed">{growth.description}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Additional Growth Features */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {[
                 {
                   title: "Professional Experience",
-                  description: "Deliver a professional experience to your clients",
-                  icon: "⭐"
+                  description: "Deliver a professional experience to your clients with modern tools and streamlined processes.",
+                  icon: "⭐",
+                  color: "from-pink-500 to-rose-600"
                 },
                 {
                   title: "Scalable Growth",
-                  description: "Grow your business with scalable solutions",
-                  icon: "🚀"
+                  description: "Grow your business with scalable solutions that adapt to your expanding portfolio needs.",
+                  icon: "🚀",
+                  color: "from-cyan-500 to-teal-600"
                 }
               ].map((growth, index) => (
-                <div key={index} className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-white text-center">
-                  <div className="w-16 h-16 bg-gradient-to-r from-[#30a659] to-emerald-500 rounded-2xl flex items-center justify-center text-2xl mx-auto mb-6">
-                    {growth.icon}
+                <div key={index} className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-gray-100">
+                  <div className="flex items-start space-x-4">
+                    <div className={`w-12 h-12 bg-gradient-to-r ${growth.color} rounded-xl flex items-center justify-center text-xl flex-shrink-0 shadow-md`}>
+                      {growth.icon}
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold text-gray-900 mb-3">{growth.title}</h3>
+                      <p className="text-gray-600 leading-relaxed">{growth.description}</p>
+                    </div>
                   </div>
-                  <h3 className="text-lg font-bold mb-4">{growth.title}</h3>
-                  <p className="opacity-90 text-sm">{growth.description}</p>
                 </div>
               ))}
+            </div>
+
+            {/* Bottom CTA */}
+            <div className="mt-16 text-center">
+              <div className="bg-gradient-to-r from-emerald-500 to-teal-600 rounded-3xl p-8 text-white shadow-xl">
+                <h3 className="text-2xl font-bold mb-4">Ready to Accelerate Your Growth?</h3>
+                <p className="text-lg mb-6 opacity-90">
+                  Unlock AppFolio's full potential with expert guidance and support from our experienced team.
+                </p>
+                <button className="bg-white text-emerald-600 px-8 py-4 rounded-full font-bold text-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                  Start Growing Today
+                </button>
+              </div>
             </div>
           </div>
         </section>

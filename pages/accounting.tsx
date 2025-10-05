@@ -285,35 +285,162 @@ const AccountingPage = () => {
             </div>
           </div>
 
-          {/* Software Experience */}
-          <div className="mt-16 bg-gradient-to-r from-blue-500/10 to-green-500/10 rounded-2xl p-8 border border-green-300/20">
-            <div className="text-center mb-8">
-              <h3 className="text-3xl font-bold text-gray-900 mb-4">Property Management Software Experience</h3>
-              <p className="text-lg text-gray-600">
+          {/* Software Experience - Animated Scrolling */}
+          <div className="mt-16 bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100 rounded-3xl p-8 border border-blue-200/30 shadow-xl overflow-hidden">
+            <div className="text-center mb-12">
+              <div className="inline-block px-6 py-3 bg-blue-100/80 backdrop-blur-sm rounded-full mb-6 border border-blue-200/50">
+                <span className="text-blue-600 text-sm font-semibold">🏢 SOFTWARE EXPERTISE</span>
+              </div>
+              <h3 className="text-4xl font-bold text-gray-900 mb-6 bg-gradient-to-r from-blue-600 to-green-500 bg-clip-text text-transparent">
+                Property Management Software Experience
+              </h3>
+              <p className="text-xl text-gray-600 max-w-4xl mx-auto">
                 We are well-versed at managing multiple property management software platforms that help us automate 
                 accounting functions, monitor rental collections, and efficiently manage properties.
               </p>
             </div>
             
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              <div className="text-center p-4 bg-white rounded-lg shadow-md">
-                <div className="text-3xl mb-2">🏢</div>
-                <h4 className="font-semibold text-blue-600">AppFolio</h4>
+            {/* Animated Logo Carousel */}
+            <div className="relative">
+              <div className="flex overflow-hidden">
+                <div className="flex animate-scroll-rtl">
+                  {/* First set of logos */}
+                  <div className="flex items-center space-x-8 px-4">
+                    <div className="flex-shrink-0 bg-white rounded-2xl shadow-lg p-6 w-48 h-32 flex flex-col items-center justify-center border border-green-100/50">
+                      <div className="bg-green-600 rounded-xl px-4 py-2 mb-2">
+                        <span className="text-white font-bold text-sm">Buildium</span>
+                      </div>
+                      <span className="text-green-600 font-semibold text-sm">Software</span>
+                    </div>
+                    
+                    <div className="flex-shrink-0 bg-white rounded-2xl shadow-lg p-6 w-48 h-32 flex flex-col items-center justify-center border border-cyan-100/50">
+                      <div className="text-blue-600 font-bold text-xl mb-2">YARDI</div>
+                      <span className="text-cyan-600 font-semibold text-sm">Platform</span>
+                    </div>
+                    
+                    <div className="flex-shrink-0 bg-white rounded-2xl shadow-lg p-6 w-48 h-32 flex flex-col items-center justify-center border border-orange-100/50">
+                      <img src="/images/logos/rent-manager.svg" alt="Rent Manager" className="h-10 w-auto mb-2" />
+                      <span className="text-orange-600 font-semibold text-sm">Rent Manager</span>
+                    </div>
+                    
+                    <div className="flex-shrink-0 bg-white rounded-2xl shadow-lg p-6 w-48 h-32 flex flex-col items-center justify-center border border-green-200/50">
+                      <div className="bg-gradient-to-r from-green-500 to-blue-500 rounded-xl px-4 py-3 mb-2 shadow-md">
+                        <div className="text-white font-bold text-sm text-center">
+                          <div className="text-xs font-normal">INTUIT</div>
+                          <div className="text-lg">QuickBooks</div>
+                        </div>
+                      </div>
+                      <span className="text-green-600 font-semibold text-sm">Accounting</span>
+                    </div>
+                    
+                    <div className="flex-shrink-0 bg-white rounded-2xl shadow-lg p-6 w-48 h-32 flex flex-col items-center justify-center border border-emerald-100/50">
+                      <img src="/images/logos/xero.svg" alt="Xero" className="h-12 w-auto mb-2" />
+                      <span className="text-emerald-600 font-semibold text-sm">Xero</span>
+                    </div>
+                    
+                    <div className="flex-shrink-0 bg-white rounded-2xl shadow-lg p-6 w-48 h-32 flex flex-col items-center justify-center border border-pink-100/50">
+                      <img src="/images/logos/sage.svg" alt="Sage" className="h-12 w-auto mb-2" />
+                      <span className="text-pink-600 font-semibold text-sm">Sage</span>
+                    </div>
+                    
+                    <div className="flex-shrink-0 bg-white rounded-2xl shadow-lg p-6 w-48 h-32 flex flex-col items-center justify-center border border-rose-100/50">
+                      <img src="/images/logos/tenant-cloud.svg" alt="TenantCloud" className="h-12 w-auto mb-2" />
+                      <span className="text-rose-600 font-semibold text-sm">TenantCloud</span>
+                    </div>
+                    
+                    <div className="flex-shrink-0 bg-white rounded-2xl shadow-lg p-6 w-48 h-32 flex flex-col items-center justify-center border border-purple-100/50">
+                      <img src="/images/logos/realpage.svg" alt="RealPage" className="h-12 w-auto mb-2" />
+                      <span className="text-purple-600 font-semibold text-sm">RealPage</span>
+                    </div>
+                    
+                    <div className="flex-shrink-0 bg-white rounded-2xl shadow-lg p-6 w-48 h-32 flex flex-col items-center justify-center border border-teal-100/50">
+                      <img src="/images/logos/avail.svg" alt="Avail" className="h-12 w-auto mb-2" />
+                      <span className="text-teal-600 font-semibold text-sm">Avail</span>
+                    </div>
+                  </div>
+                  
+                  {/* Duplicate set for seamless loop */}
+                  <div className="flex items-center space-x-8 px-4">
+                    <div className="flex-shrink-0 bg-white rounded-2xl shadow-lg p-6 w-48 h-32 flex flex-col items-center justify-center border border-green-100/50">
+                      <div className="bg-green-600 rounded-xl px-4 py-2 mb-2">
+                        <span className="text-white font-bold text-sm">Buildium</span>
+                      </div>
+                      <span className="text-green-600 font-semibold text-sm">Software</span>
+                    </div>
+                    
+                    <div className="flex-shrink-0 bg-white rounded-2xl shadow-lg p-6 w-48 h-32 flex flex-col items-center justify-center border border-cyan-100/50">
+                      <div className="text-blue-600 font-bold text-xl mb-2">YARDI</div>
+                      <span className="text-cyan-600 font-semibold text-sm">Platform</span>
+                    </div>
+                    
+                    <div className="flex-shrink-0 bg-white rounded-2xl shadow-lg p-6 w-48 h-32 flex flex-col items-center justify-center border border-orange-100/50">
+                      <img src="/images/logos/rent-manager.svg" alt="Rent Manager" className="h-10 w-auto mb-2" />
+                      <span className="text-orange-600 font-semibold text-sm">Rent Manager</span>
+                    </div>
+                    
+                    <div className="flex-shrink-0 bg-white rounded-2xl shadow-lg p-6 w-48 h-32 flex flex-col items-center justify-center border border-green-200/50">
+                      <div className="bg-gradient-to-r from-green-500 to-blue-500 rounded-xl px-4 py-3 mb-2 shadow-md">
+                        <div className="text-white font-bold text-sm text-center">
+                          <div className="text-xs font-normal">INTUIT</div>
+                          <div className="text-lg">QuickBooks</div>
+                        </div>
+                      </div>
+                      <span className="text-green-600 font-semibold text-sm">Accounting</span>
+                    </div>
+                    
+                    <div className="flex-shrink-0 bg-white rounded-2xl shadow-lg p-6 w-48 h-32 flex flex-col items-center justify-center border border-emerald-100/50">
+                      <img src="/images/logos/xero.svg" alt="Xero" className="h-12 w-auto mb-2" />
+                      <span className="text-emerald-600 font-semibold text-sm">Xero</span>
+                    </div>
+                    
+                    <div className="flex-shrink-0 bg-white rounded-2xl shadow-lg p-6 w-48 h-32 flex flex-col items-center justify-center border border-pink-100/50">
+                      <img src="/images/logos/sage.svg" alt="Sage" className="h-12 w-auto mb-2" />
+                      <span className="text-pink-600 font-semibold text-sm">Sage</span>
+                    </div>
+                    
+                    <div className="flex-shrink-0 bg-white rounded-2xl shadow-lg p-6 w-48 h-32 flex flex-col items-center justify-center border border-rose-100/50">
+                      <img src="/images/logos/tenant-cloud.svg" alt="TenantCloud" className="h-12 w-auto mb-2" />
+                      <span className="text-rose-600 font-semibold text-sm">TenantCloud</span>
+                    </div>
+                    
+                    <div className="flex-shrink-0 bg-white rounded-2xl shadow-lg p-6 w-48 h-32 flex flex-col items-center justify-center border border-purple-100/50">
+                      <img src="/images/logos/realpage.svg" alt="RealPage" className="h-12 w-auto mb-2" />
+                      <span className="text-purple-600 font-semibold text-sm">RealPage</span>
+                    </div>
+                    
+                    <div className="flex-shrink-0 bg-white rounded-2xl shadow-lg p-6 w-48 h-32 flex flex-col items-center justify-center border border-teal-100/50">
+                      <img src="/images/logos/avail.svg" alt="Avail" className="h-12 w-auto mb-2" />
+                      <span className="text-teal-600 font-semibold text-sm">Avail</span>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div className="text-center p-4 bg-white rounded-lg shadow-md">
-                <div className="text-3xl mb-2">🏗️</div>
-                <h4 className="font-semibold text-green-600">Buildium</h4>
-              </div>
-              <div className="text-center p-4 bg-white rounded-lg shadow-md">
-                <div className="text-3xl mb-2">🔧</div>
-                <h4 className="font-semibold text-blue-600">Rentvine</h4>
-              </div>
-              <div className="text-center p-4 bg-white rounded-lg shadow-md">
-                <div className="text-3xl mb-2">🏠</div>
-                <h4 className="font-semibold text-green-600">Propertyware</h4>
-              </div>
+              
+              {/* Gradient overlays for smooth edges */}
+              <div className="absolute top-0 left-0 w-32 h-full bg-gradient-to-r from-slate-50 to-transparent pointer-events-none"></div>
+              <div className="absolute top-0 right-0 w-32 h-full bg-gradient-to-l from-slate-50 to-transparent pointer-events-none"></div>
             </div>
           </div>
+          
+          {/* Custom CSS for animation */}
+          <style jsx>{`
+            @keyframes scroll-rtl {
+              0% {
+                transform: translateX(0);
+              }
+              100% {
+                transform: translateX(-50%);
+              }
+            }
+            
+            .animate-scroll-rtl {
+              animation: scroll-rtl 30s linear infinite;
+            }
+            
+            .animate-scroll-rtl:hover {
+              animation-play-state: paused;
+            }
+          `}</style>
         </div>
       </section>
 
@@ -338,8 +465,8 @@ const AccountingPage = () => {
             {/* US Service 1 */}
             <div className="bg-white rounded-2xl shadow-lg p-8 hover:shadow-2xl transition-all duration-300">
               <div className="text-center mb-6">
-                <div className="text-center mb-4">
-                  <span className="text-4xl">📚</span>
+                <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-white text-2xl">�</span>
                 </div>
                 <h3 className="text-xl font-bold text-blue-600 mb-3">Bookkeeping & General Accounting</h3>
               </div>
@@ -353,8 +480,8 @@ const AccountingPage = () => {
             {/* US Service 2 */}
             <div className="bg-white rounded-2xl shadow-lg p-8 hover:shadow-2xl transition-all duration-300">
               <div className="text-center mb-6">
-                <div className="text-center mb-4">
-                  <span className="text-4xl">💰</span>
+                <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-white text-2xl">�</span>
                 </div>
                 <h3 className="text-xl font-bold text-green-600 mb-3">Payroll Processing</h3>
               </div>
@@ -367,8 +494,8 @@ const AccountingPage = () => {
             {/* US Service 3 */}
             <div className="bg-white rounded-2xl shadow-lg p-8 hover:shadow-2xl transition-all duration-300">
               <div className="text-center mb-6">
-                <div className="text-center mb-4">
-                  <span className="text-4xl">📋</span>
+                <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-white text-2xl">�</span>
                 </div>
                 <h3 className="text-xl font-bold text-blue-600 mb-3">Tax Preparation & Filing</h3>
               </div>
