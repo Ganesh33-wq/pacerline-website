@@ -27,53 +27,143 @@ const AppFolioBookkeepingPage = () => {
       <div className="min-h-screen">
         <Header />
         
-        {/* Hero Section */}
-        <section className="relative py-20 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-white/50 to-transparent"></div>
+        {/* Hero Section - First Row */}
+        <section className="relative py-16 bg-gradient-to-br from-white via-gray-50 to-slate-100 overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-white/80 to-gray-50/60"></div>
+          <div className="absolute inset-0 opacity-20">
+            <div className="w-full h-full" style={{
+              backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%239C92AC' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+              backgroundSize: '60px 60px'
+            }}></div>
+          </div>
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center">
-              <h1 className="text-5xl lg:text-7xl font-bold text-gray-900 mb-8">
-                <span className="bg-gradient-to-r from-[#092870] to-indigo-600 bg-clip-text text-transparent">AppFolio</span> 
-                <br />Bookkeeping Service
+              <h1 className="text-5xl lg:text-8xl font-bold text-gray-900 mb-6 tracking-tight">
+                <span className="bg-gradient-to-r from-[#06b6d4] via-[#3b82f6] to-[#8b5cf6] bg-clip-text text-transparent">AppFolio</span>
+                <br />
+                <span className="text-gray-900">Bookkeeping Service</span>
               </h1>
-              <div className="text-xl lg:text-2xl text-gray-700 max-w-5xl mx-auto mb-12 leading-relaxed space-y-6">
-                <p>
-                  <strong>Expert AppFolio bookkeeping support</strong> that maximizes your property management software investment. With specialized expertise, ongoing data management, and precise financial procedures tailored specifically for AppFolio users.
-                </p>
-              </div>
-              <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
-                <button className="bg-gradient-to-r from-[#092870] to-indigo-600 text-white px-10 py-4 rounded-full font-semibold text-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
+              <div className="flex flex-col sm:flex-row gap-6 justify-center mt-12">
+                <button className="bg-gradient-to-r from-[#06b6d4] to-[#3b82f6] text-white px-10 py-4 rounded-full font-semibold text-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 hover:from-[#0891b2] hover:to-[#2563eb] shadow-lg">
                   Get AppFolio Bookkeeping Help
                 </button>
-                <button className="border-2 border-[#092870] text-[#092870] px-10 py-4 rounded-full font-semibold text-lg hover:bg-[#092870] hover:text-white transition-all duration-300">
+                <button className="border-2 border-gray-800 text-gray-800 px-10 py-4 rounded-full font-semibold text-lg hover:bg-gray-800 hover:text-white transition-all duration-300 shadow-lg">
                   View Our Services
                 </button>
               </div>
-              
-              {/* Key Stats */}
-              <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl max-w-4xl mx-auto">
-                <h2 className="text-2xl font-bold text-gray-900 mb-6">Trusted AppFolio Bookkeeping Experts</h2>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  <div className="flex items-center justify-center p-4 bg-gradient-to-r from-[#092870] to-indigo-600 rounded-2xl text-white">
-                    <div className="text-center">
-                      <div className="text-3xl font-bold mb-2">13+</div>
-                      <div className="font-semibold">Years Experience</div>
-                      <div className="text-sm opacity-90">AppFolio Expertise</div>
+            </div>
+          </div>
+        </section>
+
+        {/* Hero Section - Second Row with Content and Images */}
+        <section className="relative py-20 bg-gradient-to-br from-white via-gray-50 to-slate-50">
+          <div className="absolute inset-0 bg-gradient-to-br from-white/90 to-gray-50/60"></div>
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              {/* Left Content */}
+              <div className="space-y-8">
+                <div className="space-y-6">
+                  <h2 className="text-3xl lg:text-4xl font-bold text-gray-900">
+                    <span className="bg-gradient-to-r from-[#1f2937] to-[#3b82f6] bg-clip-text text-transparent">Expert AppFolio bookkeeping support</span> that maximizes your property management software investment
+                  </h2>
+                  <p className="text-xl text-gray-700 leading-relaxed">
+                    With specialized expertise, ongoing data management, and precise financial procedures tailored specifically for AppFolio users.
+                  </p>
+                  <div className="flex flex-wrap gap-4">
+                    <div className="flex items-center space-x-2 bg-white/80 px-4 py-2 rounded-full shadow-sm">
+                      <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                      <span className="text-sm font-medium text-gray-700">13+ Years Experience</span>
+                    </div>
+                    <div className="flex items-center space-x-2 bg-white/80 px-4 py-2 rounded-full shadow-sm">
+                      <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
+                      <span className="text-sm font-medium text-gray-700">100+ US Companies</span>
+                    </div>
+                    <div className="flex items-center space-x-2 bg-white/80 px-4 py-2 rounded-full shadow-sm">
+                      <div className="w-3 h-3 bg-purple-500 rounded-full"></div>
+                      <span className="text-sm font-medium text-gray-700">10K+ Properties</span>
                     </div>
                   </div>
-                  <div className="flex items-center justify-center p-4 bg-gradient-to-r from-[#30a659] to-emerald-600 rounded-2xl text-white">
-                    <div className="text-center">
-                      <div className="text-3xl font-bold mb-2">100+</div>
-                      <div className="font-semibold">US Companies</div>
-                      <div className="text-sm opacity-90">Served Successfully</div>
+                </div>
+
+                {/* Key Stats Cards */}
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-6 shadow-xl border border-white/20">
+                    <div className="flex items-center space-x-3">
+                      <div className="w-12 h-12 bg-gradient-to-r from-[#374151] to-[#4b5563] rounded-xl flex items-center justify-center shadow-lg">
+                        <span className="text-white text-xl font-bold">📊</span>
+                      </div>
+                      <div>
+                        <div className="text-2xl font-bold text-gray-900">13+</div>
+                        <div className="text-sm text-gray-600">Years Experience</div>
+                      </div>
                     </div>
                   </div>
-                  <div className="flex items-center justify-center p-4 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-2xl text-white">
-                    <div className="text-center">
-                      <div className="text-3xl font-bold mb-2">10K+</div>
-                      <div className="font-semibold">Properties</div>
-                      <div className="text-sm opacity-90">Under Management</div>
+                  <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-6 shadow-xl border border-white/20">
+                    <div className="flex items-center space-x-3">
+                      <div className="w-12 h-12 bg-gradient-to-r from-[#06b6d4] to-[#0891b2] rounded-xl flex items-center justify-center shadow-lg">
+                        <span className="text-white text-xl font-bold">🏢</span>
+                      </div>
+                      <div>
+                        <div className="text-2xl font-bold text-gray-900">100+</div>
+                        <div className="text-sm text-gray-600">US Companies</div>
+                      </div>
                     </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Right Side - Who We Help */}
+              <div className="space-y-6">
+                <h3 className="text-2xl font-bold text-gray-900 mb-6">Who We Help</h3>
+                
+                {/* Three column cards */}
+                <div className="grid grid-cols-1 gap-4">
+                  <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-white/20 hover:shadow-xl transition-all duration-300">
+                    <div className="flex items-center space-x-4">
+                      <div className="w-12 h-12 bg-gradient-to-r from-[#374151] to-[#4b5563] rounded-xl flex items-center justify-center text-white text-lg font-bold shadow-lg">
+                        🏢
+                      </div>
+                      <div>
+                        <h4 className="text-lg font-semibold text-gray-900">Property Management Companies</h4>
+                        <p className="text-sm text-gray-600">(Residential & Commercial)</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-white/20 hover:shadow-xl transition-all duration-300">
+                    <div className="flex items-center space-x-4">
+                      <div className="w-12 h-12 bg-gradient-to-r from-[#06b6d4] to-[#0891b2] rounded-xl flex items-center justify-center text-white text-lg font-bold shadow-lg">
+                        💼
+                      </div>
+                      <div>
+                        <h4 className="text-lg font-semibold text-gray-900">Real Estate Investors & Landlords</h4>
+                        <p className="text-sm text-gray-600">Portfolio Management</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-white/20 hover:shadow-xl transition-all duration-300">
+                    <div className="flex items-center space-x-4">
+                      <div className="w-12 h-12 bg-gradient-to-r from-[#059669] to-[#10b981] rounded-xl flex items-center justify-center text-white text-lg font-bold shadow-lg">
+                        🏘️
+                      </div>
+                      <div>
+                        <h4 className="text-lg font-semibold text-gray-900">HOA and Community Managers</h4>
+                        <p className="text-sm text-gray-600">Association Management</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Stats display */}
+                <div className="grid grid-cols-2 gap-4 mt-6">
+                  <div className="bg-gradient-to-r from-[#374151] to-[#4b5563] rounded-2xl p-4 text-white text-center shadow-xl">
+                    <div className="text-2xl font-bold mb-1 text-cyan-400">13+</div>
+                    <div className="text-xs opacity-90">Years Experience</div>
+                  </div>
+                  <div className="bg-gradient-to-r from-[#06b6d4] to-[#0891b2] rounded-2xl p-4 text-white text-center shadow-xl">
+                    <div className="text-2xl font-bold mb-1">100+</div>
+                    <div className="text-xs opacity-90">US Companies</div>
                   </div>
                 </div>
               </div>
@@ -103,75 +193,7 @@ const AppFolioBookkeepingPage = () => {
           </div>
         </section>
 
-        {/* Who We Help Section */}
-        <section className="relative py-20 bg-gradient-to-r from-slate-100 to-blue-100">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-8">
-                Who We Help
-              </h2>
-              <p className="text-xl text-gray-700 max-w-4xl mx-auto mb-12">
-                We cater to firms of all scales—startups with 50 doors to large-scale managers having 10,000+ doors.
-              </p>
-            </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {[
-                {
-                  title: "Property Management Companies",
-                  subtitle: "(Residential & Commercial)",
-                  description: "Complete bookkeeping solutions for professional property management firms",
-                  icon: "🏢",
-                  color: "from-[#092870] to-indigo-600"
-                },
-                {
-                  title: "Real Estate Investors & Landlords",
-                  subtitle: "Portfolio Management",
-                  description: "Streamlined accounting for individual and portfolio investors",
-                  icon: "💼",
-                  color: "from-indigo-500 to-purple-600"
-                },
-                {
-                  title: "HOA and Community Managers",
-                  subtitle: "Association Management",
-                  description: "Specialized bookkeeping for homeowner associations and communities",
-                  icon: "🏘️",
-                  color: "from-[#30a659] to-emerald-600"
-                },
-                {
-                  title: "Real Estate Asset Managers",
-                  subtitle: "Investment Management",
-                  description: "Professional asset management accounting and reporting",
-                  icon: "📊",
-                  color: "from-emerald-500 to-teal-600"
-                },
-                {
-                  title: "AppFolio Users",
-                  subtitle: "From Other Platforms",
-                  description: "Seamless migration and setup support for new AppFolio users",
-                  icon: "🔄",
-                  color: "from-purple-500 to-pink-600"
-                },
-                {
-                  title: "All Scale Operations",
-                  subtitle: "50 to 10,000+ Doors",
-                  description: "Scalable solutions for businesses of every size",
-                  icon: "📈",
-                  color: "from-cyan-500 to-blue-600"
-                }
-              ].map((client, index) => (
-                <div key={index} className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
-                  <div className={`w-16 h-16 bg-gradient-to-r ${client.color} rounded-2xl flex items-center justify-center text-2xl mb-6`}>
-                    {client.icon}
-                  </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">{client.title}</h3>
-                  <p className="text-sm font-semibold text-[#092870] mb-3">{client.subtitle}</p>
-                  <p className="text-gray-700">{client.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
 
         {/* Full-Service Solutions */}
         <section className="relative py-20 bg-white">
@@ -185,31 +207,16 @@ const AppFolioBookkeepingPage = () => {
               </p>
             </div>
 
-            <div className="text-center mb-8">
-              <div className="bg-white/80 backdrop-blur-sm rounded-full p-2 shadow-lg inline-block">
-                <div className="flex flex-wrap justify-center gap-2">
-                  {['Setup & Migration', 'Daily Operations', 'Financial Management', 'Reporting & Compliance'].map((tab, index) => (
-                    <button 
-                      key={index}
-                      onClick={() => setActiveTab(index)}
-                      className={`px-4 py-2 rounded-full font-semibold transition-all duration-300 text-sm md:text-base ${
-                        activeTab === index 
-                          ? 'bg-gradient-to-r from-indigo-500 via-purple-500 to-indigo-600 text-white shadow-lg' 
-                          : 'text-gray-600 hover:text-indigo-600'
-                      }`}
-                    >
-                      {tab}
-                    </button>
-                  ))}
+            {/* Setup & Migration Services */}
+            <div className="mb-16">
+              <div className="bg-gradient-to-br from-slate-50 to-blue-50 rounded-3xl p-8 shadow-xl">
+                <div className="flex items-center mb-8">
+                  <div className="w-16 h-16 bg-gradient-to-r from-[#374151] to-[#4b5563] rounded-2xl flex items-center justify-center text-2xl mr-6">
+                    🚀
+                  </div>
+                  <h3 className="text-3xl font-bold text-gray-900">Setup & Migration Services</h3>
                 </div>
-              </div>
-            </div>
-
-            {/* Setup & Migration Tab */}
-            {activeTab === 0 && (
-              <div className="bg-gradient-to-br from-slate-50 to-blue-50 rounded-3xl p-12 shadow-xl">
-                <h3 className="text-3xl font-bold text-gray-900 mb-8 text-center">Setup & Migration Services</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {[
                     {
                       title: "AppFolio Software Setup & Onboarding",
@@ -233,28 +240,37 @@ const AppFolioBookkeepingPage = () => {
                     }
                   ].map((service, index) => (
                     <div key={index} className="p-6 bg-white rounded-2xl shadow-lg">
-                      <div className="w-16 h-16 bg-gradient-to-r from-[#092870] to-indigo-600 rounded-2xl flex items-center justify-center text-2xl mb-6">
-                        {service.icon}
+                      <div className="flex items-start">
+                        <div className="w-12 h-12 bg-gradient-to-r from-[#374151] to-[#4b5563] rounded-xl flex items-center justify-center text-lg mr-4 flex-shrink-0">
+                          {service.icon}
+                        </div>
+                        <div>
+                          <h4 className="text-lg font-bold text-gray-900 mb-3">{service.title}</h4>
+                          <p className="text-gray-700 text-sm">{service.description}</p>
+                        </div>
                       </div>
-                      <h4 className="text-xl font-bold text-gray-900 mb-4">{service.title}</h4>
-                      <p className="text-gray-700">{service.description}</p>
                     </div>
                   ))}
                 </div>
               </div>
-            )}
+            </div>
 
-            {/* Daily Operations Tab */}
-            {activeTab === 1 && (
-              <div className="bg-gradient-to-br from-slate-50 to-blue-50 rounded-3xl p-12 shadow-xl">
-                <h3 className="text-3xl font-bold text-gray-900 mb-8 text-center">Daily Operations Management</h3>
-                <div className="space-y-6">
+            {/* Daily Operations Management */}
+            <div className="mb-16">
+              <div className="bg-gradient-to-br from-emerald-50 to-cyan-50 rounded-3xl p-8 shadow-xl">
+                <div className="flex items-center mb-8">
+                  <div className="w-16 h-16 bg-gradient-to-r from-[#059669] to-[#10b981] rounded-2xl flex items-center justify-center text-2xl mr-6">
+                    📋
+                  </div>
+                  <h3 className="text-3xl font-bold text-gray-900">Daily Operations Management</h3>
+                </div>
+                <div className="space-y-4">
                   {[
                     {
                       title: "Tenant Ledger Management",
                       description: "We keep tenant ledgers up to date by posting rent payments, late charges, Section 8 subsidies, utility charges, security deposits, and additional charges. We have good knowledge to post a credit in the tenant ledger. We will setup late fee as an auto charge in the tenant ledger if the rent payment delayed. We also reconcile move-out balances and deposits, keeping you accurate and compliant.",
                       icon: "📋",
-                      color: "from-[#30a659] to-emerald-600"
+                      color: "from-[#059669] to-[#10b981]"
                     },
                     {
                       title: "Lease Entry & Updates",
@@ -266,7 +282,7 @@ const AppFolioBookkeepingPage = () => {
                       title: "Accounts Payable (Vendor Bill Processing)",
                       description: "We enter vendor invoices, assign expenses to the appropriate GL codes, add invoices, and automate payment scheduling in AppFolio. AppFolio providing Smart bill entry feature to save time. If you have owners or tenants you charge markups to, we make sure those are posted correctly.",
                       icon: "💰",
-                      color: "from-[#092870] to-indigo-600"
+                      color: "from-[#374151] to-[#4b5563]"
                     },
                     {
                       title: "Move-In & Move-Out Processing",
@@ -283,31 +299,36 @@ const AppFolioBookkeepingPage = () => {
                   ].map((service, index) => (
                     <div key={index} className="p-6 bg-white rounded-2xl shadow-lg">
                       <div className="flex items-start">
-                        <div className={`w-16 h-16 bg-gradient-to-r ${service.color} rounded-2xl flex items-center justify-center text-2xl mr-6 flex-shrink-0`}>
+                        <div className={`w-12 h-12 bg-gradient-to-r ${service.color} rounded-xl flex items-center justify-center text-lg mr-4 flex-shrink-0`}>
                           {service.icon}
                         </div>
                         <div>
-                          <h4 className="text-xl font-bold text-gray-900 mb-3">{service.title}</h4>
-                          <p className="text-gray-700">{service.description}</p>
+                          <h4 className="text-lg font-bold text-gray-900 mb-3">{service.title}</h4>
+                          <p className="text-gray-700 text-sm">{service.description}</p>
                         </div>
                       </div>
                     </div>
                   ))}
                 </div>
               </div>
-            )}
+            </div>
 
-            {/* Financial Management Tab */}
-            {activeTab === 2 && (
-              <div className="bg-gradient-to-br from-slate-50 to-blue-50 rounded-3xl p-12 shadow-xl">
-                <h3 className="text-3xl font-bold text-gray-900 mb-8 text-center">Financial Management & Reconciliation</h3>
-                <div className="space-y-6">
+            {/* Financial Management & Reconciliation */}
+            <div className="mb-16">
+              <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-3xl p-8 shadow-xl">
+                <div className="flex items-center mb-8">
+                  <div className="w-16 h-16 bg-gradient-to-r from-[#06b6d4] to-[#3b82f6] rounded-2xl flex items-center justify-center text-2xl mr-6">
+                    🏦
+                  </div>
+                  <h3 className="text-3xl font-bold text-gray-900">Financial Management & Reconciliation</h3>
+                </div>
+                <div className="space-y-4">
                   {[
                     {
                       title: "Bank Reconciliation",
                       description: "We will help you to sync bank accounts with AppFolio. It helps to save time for bank reconciliation. If you do not want to sync the bank account then we download and post transactions from bank feeds, apply them to the correct accounts, and complete monthly reconciliations. You'll always know your books match your bank balances.",
                       icon: "🏦",
-                      color: "from-[#092870] to-indigo-600"
+                      color: "from-[#06b6d4] to-[#3b82f6]"
                     },
                     {
                       title: "Credit Card Reconciliation",
@@ -319,7 +340,7 @@ const AppFolioBookkeepingPage = () => {
                       title: "Accurate 3-Way Reconciliation",
                       description: "We provide accurate 3-way reconciliation services in AppFolio software, ensuring the bank statement, AppFolio bank ledger, and property balances are perfectly matched. Our team reviews and reconciles all transactions monthly to maintain compliance with trust accounting regulations. With our expertise, you can rely on clean, audit-ready books and complete financial transparency across your property management portfolio.",
                       icon: "⚖️",
-                      color: "from-[#30a659] to-emerald-600"
+                      color: "from-[#059669] to-[#10b981]"
                     },
                     {
                       title: "CAM (Common Area Maintenance) Reconciliation",
@@ -342,31 +363,36 @@ const AppFolioBookkeepingPage = () => {
                   ].map((service, index) => (
                     <div key={index} className="p-6 bg-white rounded-2xl shadow-lg">
                       <div className="flex items-start">
-                        <div className={`w-16 h-16 bg-gradient-to-r ${service.color} rounded-2xl flex items-center justify-center text-2xl mr-6 flex-shrink-0`}>
+                        <div className={`w-12 h-12 bg-gradient-to-r ${service.color} rounded-xl flex items-center justify-center text-lg mr-4 flex-shrink-0`}>
                           {service.icon}
                         </div>
                         <div>
-                          <h4 className="text-xl font-bold text-gray-900 mb-3">{service.title}</h4>
-                          <p className="text-gray-700">{service.description}</p>
+                          <h4 className="text-lg font-bold text-gray-900 mb-3">{service.title}</h4>
+                          <p className="text-gray-700 text-sm">{service.description}</p>
                         </div>
                       </div>
                     </div>
                   ))}
                 </div>
               </div>
-            )}
+            </div>
 
-            {/* Reporting & Compliance Tab */}
-            {activeTab === 3 && (
-              <div className="bg-gradient-to-br from-slate-50 to-blue-50 rounded-3xl p-12 shadow-xl">
-                <h3 className="text-3xl font-bold text-gray-900 mb-8 text-center">Reporting & Compliance Services</h3>
-                <div className="space-y-6">
+            {/* Reporting & Compliance Services */}
+            <div className="mb-16">
+              <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-3xl p-8 shadow-xl">
+                <div className="flex items-center mb-8">
+                  <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center text-2xl mr-6">
+                    📊
+                  </div>
+                  <h3 className="text-3xl font-bold text-gray-900">Reporting & Compliance Services</h3>
+                </div>
+                <div className="space-y-4">
                   {[
                     {
                       title: "Owner Statements & Ledger Maintenance",
                       description: "We create and deliver monthly or quarterly owner statements. Every report contains income, expenses, distributions, and contributions-tied to a completely reconciled general ledger.",
                       icon: "📋",
-                      color: "from-[#092870] to-indigo-600"
+                      color: "from-purple-500 to-pink-600"
                     },
                     {
                       title: "Financial Reports (P&L, Balance Sheet, Custom Reports)",
@@ -378,7 +404,7 @@ const AppFolioBookkeepingPage = () => {
                       title: "IRS 1099 Filing & Compliance",
                       description: "We gather W-9s, create 1099s within AppFolio, and file them with the IRS and vendors prior to the deadline. We save you from penalties and provide complete compliance with U.S. tax law.",
                       icon: "📄",
-                      color: "from-[#30a659] to-emerald-600"
+                      color: "from-[#059669] to-[#10b981]"
                     },
                     {
                       title: "Budgeting Support",
@@ -389,31 +415,31 @@ const AppFolioBookkeepingPage = () => {
                   ].map((service, index) => (
                     <div key={index} className="p-6 bg-white rounded-2xl shadow-lg">
                       <div className="flex items-start">
-                        <div className={`w-16 h-16 bg-gradient-to-r ${service.color} rounded-2xl flex items-center justify-center text-2xl mr-6 flex-shrink-0`}>
+                        <div className={`w-12 h-12 bg-gradient-to-r ${service.color} rounded-xl flex items-center justify-center text-lg mr-4 flex-shrink-0`}>
                           {service.icon}
                         </div>
                         <div>
-                          <h4 className="text-xl font-bold text-gray-900 mb-3">{service.title}</h4>
-                          <p className="text-gray-700">{service.description}</p>
+                          <h4 className="text-lg font-bold text-gray-900 mb-3">{service.title}</h4>
+                          <p className="text-gray-700 text-sm">{service.description}</p>
                         </div>
                       </div>
                     </div>
                   ))}
                 </div>
               </div>
-            )}
+            </div>
           </div>
         </section>
 
         {/* Why Choose Section */}
-        <section className="relative py-20 bg-gradient-to-r from-[#092870] via-indigo-800 to-purple-800">
-          <div className="absolute inset-0 bg-black/20"></div>
+        <section className="relative py-20 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">
+          <div className="absolute inset-0 bg-gradient-to-br from-white/80 to-blue-50/60"></div>
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center text-white mb-16">
+            <div className="text-center text-gray-900 mb-16">
               <h2 className="text-4xl lg:text-5xl font-bold mb-6">
                 Why Choose Our AppFolio Bookkeeping Services?
               </h2>
-              <p className="text-xl opacity-90 max-w-4xl mx-auto">
+              <p className="text-xl text-gray-700 max-w-4xl mx-auto">
                 Comprehensive solutions designed specifically for AppFolio users
               </p>
             </div>
@@ -423,40 +449,46 @@ const AppFolioBookkeepingPage = () => {
                 {
                   title: "13+ Years AppFolio Experience",
                   description: "Extensive hands-on experience with hundreds of U.S. property management firms",
-                  icon: "🏆"
+                  icon: "🏆",
+                  color: "from-[#374151] to-[#4b5563]"
                 },
                 {
                   title: "End-to-End Virtual Services",
                   description: "Complete bookkeeping solutions customized specifically for AppFolio users",
-                  icon: "🔄"
+                  icon: "🔄",
+                  color: "from-[#06b6d4] to-[#0891b2]"
                 },
                 {
                   title: "Audit-Ready Books",
                   description: "U.S.-style reports, auditable ledgers, and compliance-ready records",
-                  icon: "✅"
+                  icon: "✅",
+                  color: "from-[#059669] to-[#10b981]"
                 },
                 {
                   title: "All Property Types",
                   description: "Residential, commercial, HOA, and community association expertise",
-                  icon: "🏢"
+                  icon: "🏢",
+                  color: "from-[#3b82f6] to-[#1d4ed8]"
                 },
                 {
                   title: "Scalable Solutions",
                   description: "From 50 doors to 10,000+ doors - we scale with your growth",
-                  icon: "📈"
+                  icon: "📈",
+                  color: "from-purple-500 to-purple-700"
                 },
                 {
                   title: "Real-Time Operations",
                   description: "Work directly in your live AppFolio environment with complete transparency",
-                  icon: "⚡"
+                  icon: "⚡",
+                  color: "from-emerald-500 to-teal-600"
                 }
               ].map((feature, index) => (
-                <div key={index} className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-white">
-                  <div className="w-16 h-16 bg-gradient-to-r from-[#30a659] to-emerald-500 rounded-2xl flex items-center justify-center text-2xl mb-6">
+                <div key={index} className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-white/20 hover:shadow-2xl transition-all duration-300">
+                  <div className={`w-16 h-16 bg-gradient-to-r ${feature.color} rounded-2xl flex items-center justify-center text-2xl mb-6 shadow-lg`}>
                     {feature.icon}
                   </div>
-                  <h3 className="text-xl font-bold mb-4">{feature.title}</h3>
-                  <p className="opacity-90">{feature.description}</p>
+                  <h3 className="text-xl font-bold mb-4 text-gray-900">{feature.title}</h3>
+                  <p className="text-gray-700">{feature.description}</p>
                 </div>
               ))}
             </div>

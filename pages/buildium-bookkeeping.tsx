@@ -27,60 +27,197 @@ const BuildiumBookkeepingPage = () => {
         <Header />
         
         {/* Hero Section */}
-        <section className="relative py-20 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-white/50 to-transparent"></div>
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center">
-              <h1 className="text-5xl lg:text-7xl font-bold text-gray-900 mb-8">
-                <span className="bg-gradient-to-r from-[#092870] to-indigo-600 bg-clip-text text-transparent">Buildium</span> 
-                <br />Accounting Services
-              </h1>
-              <div className="text-xl lg:text-2xl text-gray-700 max-w-5xl mx-auto mb-12 leading-relaxed space-y-6">
-                <p>
-                  <strong>Pacerline Outsourcing Service Pvt Ltd</strong> providing expert Back-Office Bookkeeping Support to U.S. Property Management Firms and Real Estate companies.
-                </p>
-                <p className="text-2xl font-bold text-[#092870]">
-                  Maximize Your Buildium Investment with Expert Bookkeeping Support
-                </p>
+        <section className="relative bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 overflow-hidden">
+          {/* Animated Background Elements */}
+          <div className="absolute inset-0 bg-gradient-to-br from-white/60 to-blue-50/40"></div>
+          <div className="absolute top-10 left-10 w-72 h-72 bg-gradient-to-r from-blue-400/20 to-indigo-400/20 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-10 right-10 w-96 h-96 bg-gradient-to-r from-emerald-400/20 to-blue-400/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gradient-to-r from-indigo-300/10 to-purple-300/10 rounded-full blur-3xl animate-pulse delay-500"></div>
+          
+          {/* Phase 1: Main Title Section */}
+          <div className="relative py-16 lg:py-20">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="text-center">
+                <h1 className="text-5xl lg:text-7xl font-bold text-gray-900 mb-6 animate-fade-in-up">
+                  <span className="bg-gradient-to-r from-[#092870] via-indigo-600 to-[#092870] bg-clip-text text-transparent animate-gradient-x">Buildium</span> 
+                  <br />
+                  <span className="inline-block animate-fade-in-up delay-300">Accounting Services</span>
+                </h1>
+                <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-6 shadow-xl max-w-4xl mx-auto border border-white/20 animate-fade-in-up delay-500 hover:shadow-2xl transition-all duration-500 hover:scale-105">
+                  <p className="text-xl text-gray-700 leading-relaxed mb-4">
+                    <strong className="bg-gradient-to-r from-[#092870] to-indigo-600 bg-clip-text text-transparent">Pacerline Outsourcing Service Pvt Ltd</strong> providing expert Back-Office Bookkeeping Support to U.S. Property Management Firms and Real Estate companies.
+                  </p>
+                  <div className="mt-4 flex justify-center space-x-2">
+                    <div className="w-2 h-2 bg-gradient-to-r from-[#092870] to-indigo-600 rounded-full animate-bounce"></div>
+                    <div className="w-2 h-2 bg-gradient-to-r from-indigo-600 to-[#092870] rounded-full animate-bounce delay-100"></div>
+                    <div className="w-2 h-2 bg-gradient-to-r from-[#092870] to-indigo-600 rounded-full animate-bounce delay-200"></div>
+                  </div>
+                </div>
               </div>
-              <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
-                <button className="bg-gradient-to-r from-[#092870] to-indigo-600 text-white px-10 py-4 rounded-full font-semibold text-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
-                  Get Expert Buildium Bookkeeping
-                </button>
-                <button className="border-2 border-[#092870] text-[#092870] px-10 py-4 rounded-full font-semibold text-lg hover:bg-[#092870] hover:text-white transition-all duration-300">
-                  View Our Services
-                </button>
-              </div>
-              
-              {/* Key Stats */}
-              <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl max-w-4xl mx-auto">
-                <h2 className="text-2xl font-bold text-gray-900 mb-6">Trusted Buildium Bookkeeping Experts</h2>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  <div className="flex items-center justify-center p-4 bg-gradient-to-r from-[#092870] to-indigo-600 rounded-2xl text-white">
-                    <div className="text-center">
-                      <div className="text-3xl font-bold mb-2">14+</div>
-                      <div className="font-semibold">Years Experience</div>
-                      <div className="text-sm opacity-90">Buildium Expertise</div>
+            </div>
+          </div>
+
+          {/* Phase 2: Content & CTA Section */}
+          <div className="relative py-16 lg:py-20">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                
+                {/* Left Side - Content */}
+                <div className="space-y-8 animate-slide-in-left">
+                  <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-white/20 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 group">
+                    <h2 className="text-2xl font-bold text-gray-900 mb-6 group-hover:text-[#092870] transition-colors duration-300">
+                      <span className="bg-gradient-to-r from-[#092870] to-indigo-600 bg-clip-text text-transparent">Maximize Your Buildium Investment</span>
+                      <div className="w-16 h-1 bg-gradient-to-r from-[#092870] to-indigo-600 rounded-full mt-2 group-hover:w-24 transition-all duration-300"></div>
+                    </h2>
+                    <p className="text-xl text-gray-700 leading-relaxed mb-6 hover:text-gray-900 transition-colors duration-300">
+                      With Expert Bookkeeping Support from our certified professionals who understand the intricacies of property management accounting.
+                    </p>
+                    
+                    <div className="flex flex-col sm:flex-row gap-4">
+                      <button className="bg-gradient-to-r from-[#092870] via-indigo-600 to-[#092870] bg-size-200 bg-pos-0 hover:bg-pos-100 text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 flex-1 relative overflow-hidden group">
+                        <span className="relative z-10">Get Expert Buildium Bookkeeping</span>
+                        <div className="absolute inset-0 bg-gradient-to-r from-indigo-600 to-[#092870] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                      </button>
+                      <button className="border-2 border-[#092870] text-[#092870] px-8 py-4 rounded-full font-semibold text-lg hover:bg-gradient-to-r hover:from-[#092870] hover:to-indigo-600 hover:text-white hover:border-transparent transition-all duration-500 hover:shadow-xl hover:scale-105 flex-1 relative overflow-hidden group">
+                        <span className="relative z-10">View Our Services</span>
+                        <div className="absolute inset-0 bg-gradient-to-r from-[#092870] to-indigo-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+                      </button>
                     </div>
                   </div>
-                  <div className="flex items-center justify-center p-4 bg-gradient-to-r from-[#30a659] to-emerald-600 rounded-2xl text-white">
-                    <div className="text-center">
-                      <div className="text-3xl font-bold mb-2">100+</div>
-                      <div className="font-semibold">US Clients</div>
-                      <div className="text-sm opacity-90">Successfully Served</div>
-                    </div>
-                  </div>
-                  <div className="flex items-center justify-center p-4 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-2xl text-white">
-                    <div className="text-center">
-                      <div className="text-3xl font-bold mb-2">18</div>
-                      <div className="font-semibold">Services</div>
-                      <div className="text-sm opacity-90">Comprehensive Support</div>
+                </div>
+
+                {/* Right Side - Key Stats */}
+                <div className="space-y-6 animate-slide-in-right">
+                  <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-white/20 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
+                      Trusted Buildium Bookkeeping Experts
+                      <div className="w-20 h-1 bg-gradient-to-r from-[#092870] to-indigo-600 rounded-full mx-auto mt-2"></div>
+                    </h3>
+                    <div className="grid grid-cols-1 gap-6">
+                      <div className="flex items-center justify-between p-6 bg-gradient-to-r from-[#092870] via-indigo-600 to-[#092870] bg-size-200 bg-pos-0 hover:bg-pos-100 rounded-2xl text-white transform hover:scale-105 transition-all duration-500 hover:shadow-xl group">
+                        <div>
+                          <div className="text-3xl font-bold group-hover:animate-pulse">14+</div>
+                          <div className="font-semibold">Years Experience</div>
+                          <div className="text-sm opacity-90">Buildium Expertise</div>
+                        </div>
+                        <div className="text-4xl group-hover:animate-bounce">🏆</div>
+                      </div>
+                      <div className="flex items-center justify-between p-6 bg-gradient-to-r from-[#30a659] via-emerald-600 to-[#30a659] bg-size-200 bg-pos-0 hover:bg-pos-100 rounded-2xl text-white transform hover:scale-105 transition-all duration-500 hover:shadow-xl group delay-100">
+                        <div>
+                          <div className="text-3xl font-bold group-hover:animate-pulse">100+</div>
+                          <div className="font-semibold">US Clients</div>
+                          <div className="text-sm opacity-90">Successfully Served</div>
+                        </div>
+                        <div className="text-4xl group-hover:animate-bounce">🇺🇸</div>
+                      </div>
+                      <div className="flex items-center justify-between p-6 bg-gradient-to-r from-indigo-500 via-purple-600 to-indigo-500 bg-size-200 bg-pos-0 hover:bg-pos-100 rounded-2xl text-white transform hover:scale-105 transition-all duration-500 hover:shadow-xl group delay-200">
+                        <div>
+                          <div className="text-3xl font-bold group-hover:animate-pulse">18</div>
+                          <div className="font-semibold">Services</div>
+                          <div className="text-sm opacity-90">Comprehensive Support</div>
+                        </div>
+                        <div className="text-4xl group-hover:animate-bounce">⚙️</div>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
+
+          <style jsx>{`
+            @keyframes fade-in-up {
+              from {
+                opacity: 0;
+                transform: translateY(30px);
+              }
+              to {
+                opacity: 1;
+                transform: translateY(0);
+              }
+            }
+
+            @keyframes slide-in-left {
+              from {
+                opacity: 0;
+                transform: translateX(-50px);
+              }
+              to {
+                opacity: 1;
+                transform: translateX(0);
+              }
+            }
+
+            @keyframes slide-in-right {
+              from {
+                opacity: 0;
+                transform: translateX(50px);
+              }
+              to {
+                opacity: 1;
+                transform: translateX(0);
+              }
+            }
+
+            @keyframes gradient-x {
+              0%, 100% {
+                background-size: 200% 200%;
+                background-position: left center;
+              }
+              50% {
+                background-size: 200% 200%;
+                background-position: right center;
+              }
+            }
+
+            .animate-fade-in-up {
+              animation: fade-in-up 0.6s ease-out forwards;
+            }
+
+            .animate-slide-in-left {
+              animation: slide-in-left 0.8s ease-out forwards;
+            }
+
+            .animate-slide-in-right {
+              animation: slide-in-right 0.8s ease-out forwards;
+            }
+
+            .animate-gradient-x {
+              animation: gradient-x 3s ease infinite;
+            }
+
+            .bg-size-200 {
+              background-size: 200% 200%;
+            }
+
+            .bg-pos-0 {
+              background-position: 0% 50%;
+            }
+
+            .bg-pos-100 {
+              background-position: 100% 50%;
+            }
+
+            .delay-100 {
+              animation-delay: 0.1s;
+            }
+
+            .delay-200 {
+              animation-delay: 0.2s;
+            }
+
+            .delay-300 {
+              animation-delay: 0.3s;
+            }
+
+            .delay-500 {
+              animation-delay: 0.5s;
+            }
+
+            .delay-1000 {
+              animation-delay: 1s;
+            }
+          `}</style>
         </section>
 
         {/* About Buildium Software */}
