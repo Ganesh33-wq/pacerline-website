@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 60" fill="none">
+  <circle cx="25" cy="30" r="15" fill="#5AC8FA"/>
+  <text x="45" y="35" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#5AC8FA">
+    Xero
+  </text>
+  <path d="M18 23l14 14m0-14l-14 14" stroke="white" stroke-width="3"/>
+</svg>

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 60" fill="none">
+  <rect x="10" y="15" width="25" height="25" rx="4" fill="#E67E22"/>
+  <text x="40" y="32" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#E67E22">
+    Rentec Direct
+  </text>
+  <path d="M15 22h15v2h-15v-2zm0 4h12v2h-12v-2zm0 4h18v2h-18v-2zm0 4h10v2h-10v-2z" fill="white"/>
+</svg>

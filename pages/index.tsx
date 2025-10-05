@@ -156,81 +156,159 @@ export default function Home() {
         {/* Technical SEO */}
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://pacerline.com" />
+        
+        {/* Custom Animations */}
+        <style jsx>{`
+          @keyframes float-right {
+            0% {
+              transform: translateX(-100%);
+            }
+            100% {
+              transform: translateX(100vw);
+            }
+          }
+          
+          @keyframes float-left {
+            0% {
+              transform: translateX(100vw);
+            }
+            100% {
+              transform: translateX(-100%);
+            }
+          }
+          
+          @keyframes float-move {
+            0%, 100% { 
+              transform: translateY(0px) translateX(0px) rotate(0deg) scale(1); 
+            }
+            25% { 
+              transform: translateY(-40px) translateX(20px) rotate(3deg) scale(1.05); 
+            }
+            50% { 
+              transform: translateY(-20px) translateX(-15px) rotate(-2deg) scale(1.1); 
+            }
+            75% { 
+              transform: translateY(-35px) translateX(10px) rotate(4deg) scale(1.05); 
+            }
+          }
+          
+          @keyframes float-up-down {
+            0%, 100% {
+              transform: translateY(0px) rotate(0deg);
+            }
+            25% {
+              transform: translateY(-15px) rotate(2deg);
+            }
+            50% {
+              transform: translateY(-30px) rotate(0deg);
+            }
+            75% {
+              transform: translateY(-15px) rotate(-2deg);
+            }
+          }
+        `}</style>
       </Head>
       
-      {/* Hero Section - Property Management Accounting Service */}
-      <section className="hero-section relative bg-gradient-to-br from-blue-50 via-white to-green-50 text-gray-800 min-h-screen flex items-center overflow-hidden">
-        {/* Animated Background Elements */}
-        <div className="absolute inset-0">
-          <div className="absolute top-20 left-10 w-32 h-32 bg-blue-200/20 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-20 right-10 w-40 h-40 bg-green-200/20 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute top-1/2 left-1/3 w-24 h-24 bg-blue-100/30 rounded-full blur-2xl animate-bounce"></div>
-          <div className="absolute top-1/4 right-1/4 w-20 h-20 bg-green-100/30 rounded-full blur-xl animate-pulse"></div>
+      {/* Hero Section - First Row */}
+      <section className="hero-section relative bg-gradient-to-br from-blue-50 via-white to-green-50 text-gray-800 py-20 overflow-hidden">
+        {/* Floating Software Logos Background */}
+        <div className="absolute inset-0 opacity-30 pointer-events-none">
+          {/* Clean and Professional Floating Logos */}
+          
+          {/* AppFolio - Top Left */}
+          <div className="absolute top-20 left-20 w-16 h-16 bg-white/90 backdrop-blur-sm rounded-xl shadow-lg border border-blue-100 flex items-center justify-center animate-[float-move_8s_ease-in-out_infinite] hover:scale-105 transition-all duration-300">
+            <div className="text-blue-600 font-semibold text-xs">AppFolio</div>
+          </div>
+          
+          {/* QuickBooks - Top Center */}
+          <div className="absolute top-16 left-1/2 transform -translate-x-1/2 w-18 h-18 bg-white/90 backdrop-blur-sm rounded-xl shadow-lg border border-green-100 flex items-center justify-center animate-[float-move_6s_ease-in-out_infinite_1s] hover:scale-105 transition-all duration-300">
+            <div className="text-green-600 font-semibold text-sm">QuickBooks</div>
+          </div>
+          
+          {/* Yardi - Top Right */}
+          <div className="absolute top-20 right-20 w-16 h-16 bg-white/90 backdrop-blur-sm rounded-xl shadow-lg border border-purple-100 flex items-center justify-center animate-[float-move_7s_ease-in-out_infinite_2s] hover:scale-105 transition-all duration-300">
+            <div className="text-purple-600 font-semibold text-sm">YARDI</div>
+          </div>
+          
+          {/* Buildium - Left Middle */}
+          <div className="absolute top-1/2 left-16 transform -translate-y-1/2 w-20 h-20 bg-white/90 backdrop-blur-sm rounded-xl shadow-lg border border-emerald-100 flex items-center justify-center animate-[float-move_9s_ease-in-out_infinite_0.5s] hover:scale-105 transition-all duration-300">
+            <div className="text-emerald-600 font-semibold text-sm">Buildium</div>
+          </div>
+          
+          {/* Xero - Right Middle */}
+          <div className="absolute top-1/2 right-16 transform -translate-y-1/2 w-16 h-16 bg-white/90 backdrop-blur-sm rounded-xl shadow-lg border border-cyan-100 flex items-center justify-center animate-[float-move_5s_ease-in-out_infinite_3s] hover:scale-105 transition-all duration-300">
+            <div className="text-cyan-600 font-semibold text-sm">Xero</div>
+          </div>
+          
+          {/* Sage - Bottom Left */}
+          <div className="absolute bottom-24 left-24 w-16 h-16 bg-white/90 backdrop-blur-sm rounded-xl shadow-lg border border-orange-100 flex items-center justify-center animate-[float-move_6s_ease-in-out_infinite_1.5s] hover:scale-105 transition-all duration-300">
+            <div className="text-orange-600 font-semibold text-sm">Sage</div>
+          </div>
+          
+          {/* PropertyWare - Bottom Center */}
+          <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 w-20 h-20 bg-white/90 backdrop-blur-sm rounded-xl shadow-lg border border-teal-100 flex items-center justify-center animate-[float-move_7s_ease-in-out_infinite_2.5s] hover:scale-105 transition-all duration-300">
+            <div className="text-teal-600 font-semibold text-xs text-center">Property<br/>Ware</div>
+          </div>
+          
+          {/* RealPage - Bottom Right */}
+          <div className="absolute bottom-24 right-24 w-16 h-16 bg-white/90 backdrop-blur-sm rounded-xl shadow-lg border border-red-100 flex items-center justify-center animate-[float-move_8s_ease-in-out_infinite_4s] hover:scale-105 transition-all duration-300">
+            <div className="text-red-600 font-semibold text-xs text-center">Real<br/>Page</div>
+          </div>
         </div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center">
+            {/* Main Title */}
+            <div className="opacity-0 animate-[fadeInUp_1s_ease-out_0.2s_forwards]">
+              <div className="inline-flex items-center px-6 py-3 bg-[#092870]/10 border border-[#092870]/20 rounded-full mb-8">
+                <span className="text-[#30a659] text-sm font-bold uppercase tracking-wider">🌟 Top Software Training Institute</span>
+              </div>
+              <h1 className="text-5xl md:text-7xl font-black mb-6 leading-tight">
+                <span className="block text-4xl md:text-6xl mb-4 text-[#30a659]">
+                  Property Management
+                </span>
+                <span className="block text-4xl md:text-6xl bg-gradient-to-r from-[#092870] to-[#30a659] bg-clip-text text-transparent">
+                  Accounting Service
+                </span>
+              </h1>
+              <p className="text-xl md:text-2xl text-gray-600 font-medium mb-8 max-w-3xl mx-auto">
+                Master in-demand skills and kickstart your IT career.
+              </p>
+              
+              {/* CTA Button */}
+              <div className="">
+                <Link href="/contact" className="inline-flex items-center px-8 py-4 bg-[#30a659] hover:bg-[#092870] text-white font-bold text-lg rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">
+                  Explore Our Services
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Content Section - Second Row */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="max-w-2xl">
-              {/* Main Hero Content */}
-              <div className="mb-8 opacity-0 animate-[fadeInUp_1s_ease-out_0.2s_forwards]">
-                <div className="inline-flex items-center px-6 py-3 bg-[#092870]/10 border border-[#092870]/20 rounded-full mb-6">
-                  <span className="text-[#30a659] text-sm font-bold uppercase tracking-wider">🌟 Trusted Outsourcing Partner</span>
-                </div>
-                <h1 className="text-4xl md:text-6xl font-black mb-6 leading-tight">
-                  <span className="block text-3xl md:text-5xl mb-4 bg-gradient-to-r from-[#092870] via-[#30a659] to-[#092870] bg-clip-text text-transparent">
-                    Property Management<br/>Accounting Service
-                  </span>
-                </h1>
-              </div>
-              
-              {/* Company Description */}
-              <div className="mb-8 opacity-0 animate-[fadeInUp_1s_ease-out_0.8s_forwards]">
-                <h2 className="text-2xl md:text-3xl font-bold text-[#092870] mb-4">
-                  Pacerline Outsourcing Services Pvt. Ltd.
-                </h2>
-                <p className="text-lg md:text-xl text-gray-700 leading-relaxed mb-6">
-                  Pacerline Outsourcing Services Pvt. Ltd. is a trustworthy partner offering end-to-end bookkeeping, 
-                  accounting, administrative, and digital marketing services to real estate investors, property managers, 
-                  homeowner associations (HOAs), and small businesses in the United States, Australia, and across the world. 
-                  With over 13 years of experience, we combine matured expertise with state-of-the-art technology to deliver 
-                  scalable, customized outsourcing solutions to help businesses focus on growth while we take care of their 
-                  operation needs.
-                </p>
-              </div>
-              
-              {/* Software Expertise Logos */}
-              <div className="mb-8 opacity-0 animate-[fadeInUp_1s_ease-out_1s_forwards]">
-                <h3 className="text-lg font-semibold text-[#092870] mb-4">Software Expertise</h3>
-                <div className="grid grid-cols-4 gap-4">
-                  <div className="bg-white rounded-xl shadow-lg p-3 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                    <img src="/images/account/appfolio_logo.png" alt="AppFolio" className="h-8 w-auto mx-auto" />
-                  </div>
-                  <div className="bg-white rounded-xl shadow-lg p-3 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                    <img src="/images/account/buildium_logo.png" alt="Buildium" className="h-8 w-auto mx-auto" />
-                  </div>
-                  <div className="bg-white rounded-xl shadow-lg p-3 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                    <img src="/images/account/quickbooks_logo.png" alt="QuickBooks" className="h-8 w-auto mx-auto" />
-                  </div>
-                  <div className="bg-white rounded-xl shadow-lg p-3 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                    <img src="/images/account/propertyware_logo.png" alt="Propertyware" className="h-8 w-auto mx-auto" />
-                  </div>
-                </div>
-              </div>
-              
-              {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 mb-8 opacity-0 animate-[fadeInUp_1s_ease-out_1s_forwards]">
-                <Link href="/contact" className="bg-gradient-to-r from-[#092870] via-[#30a659] to-[#092870] hover:from-[#30a659] hover:via-[#092870] hover:to-[#30a659] text-white font-bold py-4 px-8 rounded-full transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:-translate-y-1 hover:scale-105 text-center relative overflow-hidden group">
-                  <span className="relative z-10">WORK WITH US</span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                </Link>
-                <Link href="/about" className="border-2 border-[#092870] text-[#092870] hover:bg-[#092870] hover:text-white font-bold py-4 px-8 rounded-full transition-all duration-300 transform hover:scale-105 text-center">
-                  READ MORE
-                </Link>
-              </div>
+            {/* Left Side - Content */}
+            <div className="opacity-0 animate-[fadeInUp_1s_ease-out_0.2s_forwards]">
+              <h2 className="text-3xl md:text-4xl font-bold text-[#092870] mb-6">
+                Pacerline Outsourcing Services Pvt. Ltd.
+              </h2>
+              <p className="text-lg text-gray-700 leading-relaxed mb-6">
+                Pacerline Outsourcing Services Pvt. Ltd. is a trustworthy partner offering end-to-end bookkeeping, 
+                accounting, administrative, and digital marketing services to real estate investors, property managers, 
+                homeowner associations (HOAs), and small businesses in the United States, Australia, and across the world.
+              </p>
+              <p className="text-lg text-gray-700 leading-relaxed mb-8">
+                With over 13 years of experience, we combine matured expertise with state-of-the-art technology to deliver 
+                scalable, customized outsourcing solutions to help businesses focus on growth while we take care of their 
+                operation needs.
+              </p>
               
               {/* Contact Info */}
-              <div className="opacity-0 animate-[fadeInUp_1s_ease-out_1.2s_forwards]">
-                <h3 className="text-lg font-semibold text-[#092870] mb-3">Contact Us For A Competitive Price</h3>
+              <div className="mb-8">
+                <h3 className="text-lg font-semibold text-[#092870] mb-4">Contact Us For A Competitive Price</h3>
                 <div className="flex flex-col sm:flex-row gap-4 text-gray-700">
                   <a href="mailto:info@pacerline.com" className="flex items-center space-x-2 hover:text-[#30a659] transition-colors">
                     <span className="text-[#30a659]">📧</span>
@@ -242,9 +320,19 @@ export default function Home() {
                   </a>
                 </div>
               </div>
+              
+              {/* CTA Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link href="/contact" className="bg-gradient-to-r from-[#092870] to-[#30a659] hover:from-[#30a659] hover:to-[#092870] text-white font-bold py-4 px-8 rounded-full transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:-translate-y-1 hover:scale-105 text-center">
+                  WORK WITH US
+                </Link>
+                <Link href="/about" className="border-2 border-[#092870] text-[#092870] hover:bg-[#092870] hover:text-white font-bold py-4 px-8 rounded-full transition-all duration-300 transform hover:scale-105 text-center">
+                  READ MORE
+                </Link>
+              </div>
             </div>
             
-            {/* Hero Image with 500+ Clients Badge */}
+            {/* Right Side - Image/Visual */}
             <div className="relative opacity-0 animate-[fadeInRight_1s_ease-out_0.4s_forwards]">
               <div className="relative transform hover:scale-105 transition-transform duration-500">
                 <div className="bg-gradient-to-br from-[#092870] to-[#30a659] p-8 rounded-3xl shadow-2xl text-white">
@@ -283,125 +371,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Software Partners Section */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-white overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Section Header */}
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Software <span className="bg-gradient-to-r from-[#092870] to-[#30a659] bg-clip-text text-transparent">Expertise</span>
-            </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              We are certified experts in all major property management and accounting software platforms
-            </p>
-          </div>
 
-          {/* Software Logos Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 mb-12">
-            {/* AppFolio */}
-            <div className="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 group">
-              <div className="flex flex-col items-center">
-                <div className="w-16 h-16 bg-blue-500 rounded-xl flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300">
-                  <span className="text-white font-bold text-lg">A</span>
-                </div>
-                <h3 className="text-sm font-semibold text-gray-900">AppFolio</h3>
-                <p className="text-xs text-gray-500 text-center mt-1">Property Management</p>
-              </div>
-            </div>
-            
-            {/* QuickBooks */}
-            <div className="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 group">
-              <div className="flex flex-col items-center">
-                <div className="w-16 h-16 bg-blue-600 rounded-xl flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300">
-                  <span className="text-white font-bold text-sm">QB</span>
-                </div>
-                <h3 className="text-sm font-semibold text-gray-900">QuickBooks</h3>
-                <p className="text-xs text-gray-500 text-center mt-1">Online</p>
-              </div>
-            </div>
-            
-            {/* Buildium */}
-            <div className="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 group">
-              <div className="flex flex-col items-center">
-                <div className="w-16 h-16 bg-green-600 rounded-xl flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300">
-                  <span className="text-white font-bold text-lg">🏢</span>
-                </div>
-                <h3 className="text-sm font-semibold text-gray-900">Buildium</h3>
-                <p className="text-xs text-gray-500 text-center mt-1">Property Management</p>
-              </div>
-            </div>
-            
-            {/* Propertyware */}
-            <div className="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 group">
-              <div className="flex flex-col items-center">
-                <div className="w-16 h-16 bg-green-500 rounded-xl flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300">
-                  <span className="text-white font-bold text-lg">🏠</span>
-                </div>
-                <h3 className="text-sm font-semibold text-gray-900">Propertyware</h3>
-                <p className="text-xs text-gray-500 text-center mt-1">Property Management Software</p>
-              </div>
-            </div>
-            
-            {/* Xero */}
-            <div className="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 group">
-              <div className="flex flex-col items-center">
-                <div className="w-16 h-16 bg-blue-400 rounded-xl flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300">
-                  <span className="text-white font-bold text-lg">X</span>
-                </div>
-                <h3 className="text-sm font-semibold text-gray-900">Xero</h3>
-                <p className="text-xs text-gray-500 text-center mt-1">Cloud Accounting</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Secondary Software Row */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {/* Sage */}
-            <div className="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 group">
-              <div className="flex flex-col items-center">
-                <div className="w-16 h-16 bg-green-700 rounded-xl flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300">
-                  <span className="text-white font-bold text-lg">S</span>
-                </div>
-                <h3 className="text-sm font-semibold text-gray-900">Sage</h3>
-                <p className="text-xs text-gray-500 text-center mt-1">Accounting</p>
-              </div>
-            </div>
-            
-            {/* Rentec */}
-            <div className="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 group">
-              <div className="flex flex-col items-center">
-                <div className="w-16 h-16 bg-purple-600 rounded-xl flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300">
-                  <span className="text-white font-bold text-lg">R</span>
-                </div>
-                <h3 className="text-sm font-semibold text-gray-900">Rentec</h3>
-                <p className="text-xs text-gray-500 text-center mt-1">Property Management</p>
-              </div>
-            </div>
-            
-            {/* TenantCloud */}
-            <div className="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 group">
-              <div className="flex flex-col items-center">
-                <div className="w-16 h-16 bg-orange-500 rounded-xl flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300">
-                  <span className="text-white font-bold text-sm">TC</span>
-                </div>
-                <h3 className="text-sm font-semibold text-gray-900">TenantCloud</h3>
-                <p className="text-xs text-gray-500 text-center mt-1">Property Management</p>
-              </div>
-            </div>
-            
-            {/* Rentvine */}
-            <div className="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 group">
-              <div className="flex flex-col items-center">
-                <div className="w-16 h-16 bg-green-500 rounded-xl flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300">
-                  <span className="text-white font-bold text-sm">RV</span>
-                </div>
-                <h3 className="text-sm font-semibold text-gray-900">Rentvine</h3>
-                <p className="text-xs text-gray-500 text-center mt-1">Property Management</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Global Reach Section */}
       <section className="py-20 bg-white">
