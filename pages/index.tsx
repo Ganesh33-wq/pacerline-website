@@ -268,9 +268,6 @@ export default function Home() {
                   Accounting Service
                 </span>
               </h1>
-              <p className="text-xl md:text-2xl text-gray-600 font-medium mb-8 max-w-3xl mx-auto">
-                Master in-demand skills and kickstart your IT career.
-              </p>
               
               {/* CTA Button */}
               <div className="">
@@ -281,6 +278,71 @@ export default function Home() {
             </div>
           </div>
         </div>
+      </section>
+
+      {/* Trusted Software Partners - Scrolling Logos */}
+      <section className="py-16 md:py-20 bg-gray-50 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h3 className="text-2xl md:text-3xl font-bold text-gray-800 mb-3">Trusted Software Partners</h3>
+            <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto">We work with industry-leading platforms to serve you better</p>
+          </div>
+          
+          {/* Scrolling Logo Container */}
+          <div className="relative">
+            <div className="flex animate-scroll-left space-x-8 md:space-x-16 items-center">
+              {/* First set of logos */}
+              <div className="flex space-x-8 md:space-x-16 items-center flex-shrink-0">
+                <img src="/images/logos/yardi.svg" alt="Yardi" className="h-16 md:h-20 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300" />
+                <img src="/images/logos/realpage.svg" alt="RealPage" className="h-16 md:h-20 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300" />
+                <img src="/images/logos/rent-manager.svg" alt="Rent Manager" className="h-16 md:h-20 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300" />
+                <img src="/images/logos/doorloop.svg" alt="DoorLoop" className="h-16 md:h-20 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300" />
+                <img src="/images/logos/xero.svg" alt="Xero" className="h-16 md:h-20 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300" />
+                <img src="/images/logos/freshbooks.svg" alt="FreshBooks" className="h-16 md:h-20 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300" />
+                <img src="/images/logos/sage.svg" alt="Sage" className="h-16 md:h-20 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300" />
+                <img src="/images/logos/yardi-breeze.svg" alt="Yardi Breeze" className="h-16 md:h-20 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300" />
+              </div>
+              
+              {/* Duplicate set for seamless loop */}
+              <div className="flex space-x-8 md:space-x-16 items-center flex-shrink-0">
+                <img src="/images/logos/yardi.svg" alt="Yardi" className="h-16 md:h-20 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300" />
+                <img src="/images/logos/realpage.svg" alt="RealPage" className="h-16 md:h-20 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300" />
+                <img src="/images/logos/rent-manager.svg" alt="Rent Manager" className="h-16 md:h-20 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300" />
+                <img src="/images/logos/doorloop.svg" alt="DoorLoop" className="h-16 md:h-20 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300" />
+                <img src="/images/logos/xero.svg" alt="Xero" className="h-16 md:h-20 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300" />
+                <img src="/images/logos/freshbooks.svg" alt="FreshBooks" className="h-16 md:h-20 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300" />
+                <img src="/images/logos/sage.svg" alt="Sage" className="h-16 md:h-20 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300" />
+                <img src="/images/logos/yardi-breeze.svg" alt="Yardi Breeze" className="h-16 md:h-20 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300" />
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        {/* Custom CSS for animation */}
+        <style jsx>{`
+          @keyframes scroll-left {
+            0% {
+              transform: translateX(0);
+            }
+            100% {
+              transform: translateX(-50%);
+            }
+          }
+          
+          .animate-scroll-left {
+            animation: scroll-left 25s linear infinite;
+          }
+          
+          .animate-scroll-left:hover {
+            animation-play-state: paused;
+          }
+          
+          @media (max-width: 768px) {
+            .animate-scroll-left {
+              animation: scroll-left 30s linear infinite;
+            }
+          }
+        `}</style>
       </section>
 
       {/* Content Section - Second Row */}
@@ -329,39 +391,86 @@ export default function Home() {
               </div>
             </div>
             
-            {/* Right Side - Image/Visual */}
+            {/* Right Side - Who Can Benefits Section */}
             <div className="relative opacity-0 animate-[fadeInRight_1s_ease-out_0.4s_forwards]">
-              <div className="relative transform hover:scale-105 transition-transform duration-500">
-                <div className="bg-gradient-to-br from-[#092870] to-[#30a659] p-8 rounded-3xl shadow-2xl text-white">
-                  <div className="text-center mb-6">
-                    <div className="text-4xl font-bold mb-2 text-white">Property Management</div>
-                    <div className="text-2xl text-white/90">Accounting Excellence</div>
-                  </div>
-                  
-                  <div className="grid grid-cols-3 gap-4 mb-6">
-                    <div className="bg-white/10 backdrop-blur-sm p-4 rounded-xl text-center">
-                      <div className="text-2xl mb-2">📊</div>
-                      <div className="text-sm font-semibold">Advanced Reporting</div>
-                    </div>
-                    <div className="bg-white/10 backdrop-blur-sm p-4 rounded-xl text-center">
-                      <div className="text-2xl mb-2">🏠</div>
-                      <div className="text-sm font-semibold">Property Focus</div>
-                    </div>
-                    <div className="bg-white/10 backdrop-blur-sm p-4 rounded-xl text-center">
-                      <div className="text-2xl mb-2">📈</div>
-                      <div className="text-sm font-semibold">Growth Support</div>
+              <div className="bg-gradient-to-br from-blue-50 to-green-50 p-8 rounded-3xl shadow-2xl border border-blue-100">
+                {/* Header */}
+                <div className="text-center mb-8">
+                  <h3 className="text-2xl md:text-3xl font-bold text-[#092870] mb-3">
+                    Who Can Benefits from Our 
+                    <span className="block text-[#30a659]">AppFolio Administration Services?</span>
+                  </h3>
+                </div>
+                
+                {/* Benefits List */}
+                <div className="space-y-4">
+                  {/* Property Management Firms */}
+                  <div className="flex items-start space-x-4 p-3 bg-white/70 rounded-xl hover:bg-white/90 transition-all duration-300 hover:shadow-md">
+                    <div className="text-2xl flex-shrink-0">🏢</div>
+                    <div>
+                      <h4 className="font-semibold text-[#092870] mb-1">Property Management Firms</h4>
+                      <p className="text-sm text-gray-600">Complete administration solutions for professional property management companies</p>
                     </div>
                   </div>
                   
-                  <div className="text-center">
-                    <div className="text-3xl font-bold text-yellow-400">500+</div>
-                    <div className="text-sm text-white/80">Happy Clients</div>
+                  {/* Real Estate Companies */}
+                  <div className="flex items-start space-x-4 p-3 bg-white/70 rounded-xl hover:bg-white/90 transition-all duration-300 hover:shadow-md">
+                    <div className="text-2xl flex-shrink-0">🏠</div>
+                    <div>
+                      <h4 className="font-semibold text-[#092870] mb-1">Real Estate Companies</h4>
+                      <p className="text-sm text-gray-600">Streamlined admin support for real estate firms managing rental properties</p>
+                    </div>
+                  </div>
+                  
+                  {/* Independent Property Owners */}
+                  <div className="flex items-start space-x-4 p-3 bg-white/70 rounded-xl hover:bg-white/90 transition-all duration-300 hover:shadow-md">
+                    <div className="text-2xl flex-shrink-0">👤</div>
+                    <div>
+                      <h4 className="font-semibold text-[#092870] mb-1">Independent Property Owners</h4>
+                      <p className="text-sm text-gray-600">Professional admin support for individual property owners and investors</p>
+                    </div>
+                  </div>
+                  
+                  {/* Multifamily Housing Operators */}
+                  <div className="flex items-start space-x-4 p-3 bg-white/70 rounded-xl hover:bg-white/90 transition-all duration-300 hover:shadow-md">
+                    <div className="text-2xl flex-shrink-0">🏘️</div>
+                    <div>
+                      <h4 className="font-semibold text-[#092870] mb-1">Multifamily Housing Operators</h4>
+                      <p className="text-sm text-gray-600">Specialized administration for apartment complexes and multifamily properties</p>
+                    </div>
+                  </div>
+                  
+                  {/* Student Housing Operators */}
+                  <div className="flex items-start space-x-4 p-3 bg-white/70 rounded-xl hover:bg-white/90 transition-all duration-300 hover:shadow-md">
+                    <div className="text-2xl flex-shrink-0">🎓</div>
+                    <div>
+                      <h4 className="font-semibold text-[#092870] mb-1">Student Housing Operators</h4>
+                      <p className="text-sm text-gray-600">Tailored admin services for student housing and university properties</p>
+                    </div>
+                  </div>
+                  
+                  {/* HOA and Community Managers */}
+                  <div className="flex items-start space-x-4 p-3 bg-white/70 rounded-xl hover:bg-white/90 transition-all duration-300 hover:shadow-md">
+                    <div className="text-2xl flex-shrink-0">🏡</div>
+                    <div>
+                      <h4 className="font-semibold text-[#092870] mb-1">HOA and Community Managers</h4>
+                      <p className="text-sm text-gray-600">Administrative support for homeowner associations and community management</p>
+                    </div>
+                  </div>
+                  
+                  {/* CPA Firms */}
+                  <div className="flex items-start space-x-4 p-3 bg-white/70 rounded-xl hover:bg-white/90 transition-all duration-300 hover:shadow-md">
+                    <div className="text-2xl flex-shrink-0">📊</div>
+                    <div>
+                      <h4 className="font-semibold text-[#092870] mb-1">CPA Firms</h4>
+                      <p className="text-sm text-gray-600">Professional AppFolio administration support for accounting firms</p>
+                    </div>
                   </div>
                 </div>
                 
                 {/* Decorative elements */}
-                <div className="absolute -top-6 -left-6 w-24 h-24 bg-gradient-to-r from-[#092870]/20 to-[#30a659]/20 rounded-full animate-pulse"></div>
-                <div className="absolute top-1/2 -right-4 w-16 h-16 bg-[#30a659]/30 rounded-full animate-bounce"></div>
+                <div className="absolute -top-4 -left-4 w-16 h-16 bg-gradient-to-r from-[#092870]/10 to-[#30a659]/10 rounded-full animate-pulse"></div>
+                <div className="absolute top-1/4 -right-3 w-12 h-12 bg-[#30a659]/20 rounded-full animate-bounce"></div>
               </div>
             </div>
           </div>
@@ -460,9 +569,10 @@ export default function Home() {
                   <Link 
                     href="/contact" 
                     className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-[#092870] to-[#30a659] text-white font-semibold rounded-full hover:from-[#30a659] hover:to-[#092870] transition-all duration-300 transform hover:scale-105 group-hover:shadow-lg"
+                    style={{ color: 'white !important' }}
                   >
-                    Get Started
-                    <span className="ml-2 transform group-hover:translate-x-1 transition-transform duration-300">→</span>
+                    <span style={{ color: 'white' }}>Get Started</span>
+                    <span className="ml-2 transform group-hover:translate-x-1 transition-transform duration-300" style={{ color: 'white' }}>→</span>
                   </Link>
                 </div>
               </div>
@@ -545,7 +655,7 @@ export default function Home() {
                   
                   <div className="bg-white rounded-2xl shadow-lg p-4 border-2 border-blue-100 w-44 h-32 flex flex-col justify-center text-center">
                     <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-[#092870] rounded-xl mx-auto mb-2 flex items-center justify-center">
-                      <span className="text-white text-lg">🤝</span>
+                      <span className="text-white text-lg animate-bounce">👋</span>
                     </div>
                     <h3 className="text-sm font-bold text-[#092870] mb-1">Support</h3>
                     <p className="text-gray-700 text-xs mb-1 font-medium">Ongoing growth</p>
@@ -553,18 +663,19 @@ export default function Home() {
                   </div>
                 </div>
 
-                {/* Bottom Path - Express Service */}
+                 {/* Bottom Path - Express Service */}
                 <div className="flex items-center space-x-3">
-                  <div className="bg-gradient-to-br from-[#30a659] to-[#092870] rounded-3xl shadow-xl p-6 text-white w-56 text-center">
-                    <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl mx-auto mb-4 flex items-center justify-center">
-                      <span className="text-2xl">�</span>
+                  <div className="bg-white rounded-2xl shadow-lg p-4 border-2 border-green-200 w-44 h-32 flex flex-col justify-center text-center">
+                    <div className="w-10 h-10 bg-gradient-to-br from-[#30a659] to-[#092870] rounded-xl mx-auto mb-2 flex items-center justify-center">
+                      <span className="text-white text-lg">📞</span>
                     </div>
-                    <h3 className="text-lg font-bold mb-2">Initial Call with Person</h3>
-                    <p className="text-white/80 text-sm mb-2">Immediate assessment & action plan</p>
-                    <span className="text-xs font-medium text-[#30a659] bg-white/20 backdrop-blur-sm px-2 py-1 rounded-full border border-white/30">15-30 mins</span>
+                    <h3 className="text-sm font-bold text-[#092870] mb-1">Initial Call</h3>
+                    <p className="text-gray-700 text-xs mb-1 font-medium">Assessment & plan</p>
+                    <span className="text-xs font-bold text-[#30a659] bg-green-100 px-2 py-1 rounded-full">15-30 mins</span>
                   </div>
                   
                   <div className="w-4 h-1 bg-[#30a659] rounded-full"></div>
+
                   
                   <div className="bg-white rounded-2xl shadow-lg p-4 border-2 border-green-200 w-44 h-32 flex flex-col justify-center text-center">
                     <div className="w-10 h-10 bg-gradient-to-br from-[#30a659] to-[#092870] rounded-xl mx-auto mb-2 flex items-center justify-center">
@@ -590,7 +701,7 @@ export default function Home() {
                   
                   <div className="bg-white rounded-2xl shadow-lg p-4 border-2 border-green-200 w-44 h-32 flex flex-col justify-center text-center">
                     <div className="w-10 h-10 bg-gradient-to-br from-[#30a659] to-[#092870] rounded-xl mx-auto mb-2 flex items-center justify-center">
-                      <span className="text-white text-lg">🔄</span>
+                      <span className="text-white text-lg animate-bounce">👋</span>
                     </div>
                     <h3 className="text-sm font-bold text-[#092870] mb-1">Support</h3>
                     <p className="text-gray-700 text-xs mb-1 font-medium">Seamless transition</p>
@@ -715,8 +826,8 @@ export default function Home() {
       <section className="py-20 bg-gradient-to-br from-[#092870] to-[#30a659] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Ready to <span className="bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent">Transform</span> Your Business?
+           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
+              Ready to <span className="text-white">Transform</span> Your Business?
             </h2>
             <p className="text-xl mb-8 max-w-3xl mx-auto opacity-90">
               Join hundreds of satisfied clients worldwide who trust Pacerline for their outsourcing needs

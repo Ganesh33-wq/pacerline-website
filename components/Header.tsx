@@ -243,8 +243,8 @@ const Header = () => {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Link href="/contact" className="relative overflow-hidden bg-gradient-to-r from-indigo-600 via-purple-600 to-indigo-700 hover:from-purple-600 hover:via-indigo-600 hover:to-purple-700 text-white font-bold py-2 px-4 md:py-3 md:px-6 lg:py-3 lg:px-8 rounded-full transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:-translate-y-1 group text-sm md:text-base">
-              <span className="relative z-10">Get Started</span>
+            <Link href="/contact" className="relative overflow-hidden bg-gradient-to-r from-indigo-600 via-purple-600 to-indigo-700 hover:from-purple-600 hover:via-indigo-600 hover:to-purple-700 text-white font-bold py-2 px-4 md:py-3 md:px-6 lg:py-3 lg:px-8 rounded-full transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:-translate-y-1 group text-sm md:text-base" style={{ color: 'white' }}>
+              <span className="relative z-10" style={{ color: 'white' }}>Get Started</span>
               <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               <div className="absolute inset-0 rounded-full bg-gradient-to-r from-indigo-400 to-purple-400 opacity-0 group-hover:opacity-20 blur-lg transition-opacity duration-300"></div>
             </Link>
@@ -363,6 +363,7 @@ const Header = () => {
               <Link
                 href="/contact"
                 className="block w-full text-center bg-gradient-to-r from-indigo-600 to-indigo-700 hover:from-indigo-700 hover:to-indigo-800 text-white font-bold py-3 sm:py-4 px-4 sm:px-6 rounded-xl transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:-translate-y-1 text-sm sm:text-base"
+                style={{ color: 'white' }}
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Get Started
