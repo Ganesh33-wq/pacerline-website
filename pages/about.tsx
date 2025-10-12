@@ -58,74 +58,7 @@ const AboutPage = () => {
           <div className="absolute bottom-20 right-20 w-60 h-60 bg-gradient-to-r from-purple-400 to-pink-500 rounded-full blur-3xl animate-float-delayed"></div>
         </div>
         
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Why Choose <span className="bg-gradient-to-r from-blue-600 to-green-500 bg-clip-text text-transparent">Pacerline?</span>
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Our value proposition is founded on extensive experience, customer-first philosophy, and capacity to deliver measurable results
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="group text-center bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-blue-200 transform hover:-translate-y-3 relative overflow-hidden">
-              {/* Hover Effect Background */}
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-green-50 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              
-              <div className="relative z-10">
-                <div className="text-6xl mb-6 transform group-hover:scale-110 transition-transform duration-300">🏢</div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-blue-700 transition-colors duration-300">
-                  14 Years of U.S.-Centric Expertise
-                </h3>
-                <p className="text-gray-600 leading-relaxed">
-                  Having vast experience within the U.S. real estate sector, we understand property management operations and compliance laws nuances
-                </p>
-                
-                {/* Progress Bar Animation */}
-                <div className="mt-6 bg-gray-200 rounded-full h-2 overflow-hidden">
-                  <div className="h-full bg-gradient-to-r from-blue-500 to-green-600 rounded-full transform translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-1000"></div>
-                </div>
-              </div>
-            </div>
-            
-            <div className="group text-center bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-green-200 transform hover:-translate-y-3 relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-green-50 to-blue-50 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              
-              <div className="relative z-10">
-                <div className="text-6xl mb-6 transform group-hover:scale-110 transition-transform duration-300">👥</div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-green-700 transition-colors duration-300">
-                  400+ Active Clients in 30+ States
-                </h3>
-                <p className="text-gray-600 leading-relaxed">
-                  We serve diverse clientele ranging from small property management firms to large HOA firms across the U.S.
-                </p>
-                
-                <div className="mt-6 bg-gray-200 rounded-full h-2 overflow-hidden">
-                  <div className="h-full bg-gradient-to-r from-green-500 to-blue-600 rounded-full transform translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-1000 delay-200"></div>
-                </div>
-              </div>
-            </div>
-            
-            <div className="group text-center bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-blue-200 transform hover:-translate-y-3 relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-green-50 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              
-              <div className="relative z-10">
-                <div className="text-6xl mb-6 transform group-hover:scale-110 transition-transform duration-300">🛡️</div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-blue-700 transition-colors duration-300">
-                  U.S. Regulatory Expertise
-                </h3>
-                <p className="text-gray-600 leading-relaxed">
-                  Current with latest U.S. regulations, including SEC rules, to offer compliant reporting and business operations support
-                </p>
-                
-                <div className="mt-6 bg-gray-200 rounded-full h-2 overflow-hidden">
-                  <div className="h-full bg-gradient-to-r from-blue-500 to-green-600 rounded-full transform translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-1000 delay-400"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+ 
       </section>
 
       {/* Company Overview Section */}
