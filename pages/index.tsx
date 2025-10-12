@@ -124,10 +124,10 @@ export default function Home() {
   ]
 
   const globalReach = [
-    { country: 'USA', flag: '🇺🇸', clients: '200+' },
-    { country: 'UK', flag: '🇬🇧', clients: '150+' },
-    { country: 'Canada', flag: '🇨🇦', clients: '100+' },
-    { country: 'Australia', flag: '🇦🇺', clients: '75+' }
+    { countryCode: 'US', country: 'USA', flag: '🇺🇸', clients: '200+' },
+    { countryCode: 'GB', country: 'UK', flag: '🇬🇧', clients: '150+' },
+    { countryCode: 'CA', country: 'Canada', flag: '🇨🇦', clients: '100+' },
+    { countryCode: 'AU', country: 'Australia', flag: '🇦🇺', clients: '75+' }
   ]
 
   return (
@@ -280,13 +280,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Trusted Software Partners - Scrolling Logos */}
+      {/* Partner Logos - Scrolling */}
       <section className="py-16 md:py-20 bg-gray-50 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h3 className="text-2xl md:text-3xl font-bold text-gray-800 mb-3">Trusted Software Partners</h3>
-            <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto">We work with industry-leading platforms to serve you better</p>
-          </div>
           
           {/* Scrolling Logo Container */}
           <div className="relative">
@@ -296,6 +292,12 @@ export default function Home() {
                 <img src="/images/logos/yardi.svg" alt="Yardi" className="h-16 md:h-20 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300" />
                 <img src="/images/logos/realpage.svg" alt="RealPage" className="h-16 md:h-20 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300" />
                 <img src="/images/logos/rent-manager.svg" alt="Rent Manager" className="h-16 md:h-20 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300" />
+                <img src="/images/logos/propertyware.jpeg" alt="propertyware" className="h-12 md:h-16 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300" />
+                <img src="/images/logos/rentvine.jpeg" alt="rentvine" className="h-12 md:h-16 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300" />
+                <img src="/images/logos/quickbook.jpeg" alt="quickbook" className="h-12 md:h-16 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300" />
+                <img src="/images/logos/AppFolio.jpeg" alt="appfolio" className="h-12 md:h-16 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300" />
+                <img src="/images/logos/TenantCloud.jpeg" alt="tenantcloud" className="h-12 md:h-16 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300" />
+                <img src="/images/logos/Buildium.jpeg" alt="buildium" className="h-12 md:h-16 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300" />  
                 <img src="/images/logos/doorloop.svg" alt="DoorLoop" className="h-16 md:h-20 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300" />
                 <img src="/images/logos/xero.svg" alt="Xero" className="h-16 md:h-20 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300" />
                 <img src="/images/logos/freshbooks.svg" alt="FreshBooks" className="h-16 md:h-20 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300" />
@@ -365,6 +367,21 @@ export default function Home() {
                 operation needs.
               </p>
               
+              {/* Short-Term & Long-Term Rental Accounting Section */}
+              <div className="mb-8 p-6 bg-gradient-to-br from-blue-50 to-green-50 rounded-xl border border-blue-100">
+                <h3 className="text-xl font-bold text-[#092870] mb-4">Short-Term & Long-Term Rental Accounting</h3>
+                <p className="text-gray-700 leading-relaxed mb-4">
+                  Pacerline Outsourcing Service Pvt Ltd offer customized bookkeeping for Short-Term Rentals (AirBnb, VRBO, vacation homes) and Long-Term Rentals (Residential, Commercial). Our accountants are trained to provide accurate tracking of rental revenue, operating expenses, maintenance expenses, occupancy levels for rental marketplaces and detailed financial reports.
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="px-3 py-1 bg-green-100 text-black text-sm rounded-full border border-green-200">AirBnb</span>
+                  <span className="px-3 py-1 bg-green-100 text-black text-sm rounded-full border border-green-200">VRBO</span>
+                  <span className="px-3 py-1 bg-green-100 text-black text-sm rounded-full border border-green-200">Vacation Homes</span>
+                  <span className="px-3 py-1 bg-blue-100 text-black text-sm rounded-full border border-blue-200">Residential</span>
+                  <span className="px-3 py-1 bg-blue-100 text-black text-sm rounded-full border border-blue-200">Commercial</span>
+                </div>
+              </div>
+
               {/* Contact Info */}
               <div className="mb-8">
                 <h3 className="text-lg font-semibold text-[#092870] mb-4">Contact Us For A Competitive Price</h3>
@@ -385,7 +402,7 @@ export default function Home() {
                 <Link href="/contact" className="bg-gradient-to-r from-[#092870] to-[#30a659] hover:from-[#30a659] hover:to-[#092870] text-white font-bold py-4 px-8 rounded-full transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:-translate-y-1 hover:scale-105 text-center">
                   WORK WITH US
                 </Link>
-                <Link href="/about" className="border-2 border-[#092870] text-[#092870] hover:bg-[#092870] hover:text-white font-bold py-4 px-8 rounded-full transition-all duration-300 transform hover:scale-105 text-center">
+                <Link href="/about" className="bg-gradient-to-r from-[#092870] to-[#30a659] hover:from-[#30a659] hover:to-[#092870] text-white font-bold py-4 px-8 rounded-full transition-all duration-300 transform hover:scale-105 text-center">
                   READ MORE
                 </Link>
               </div>
@@ -496,19 +513,25 @@ export default function Home() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {globalReach.map((location, index) => (
               <div key={index} className="text-center group">
-                {/* Card Container */}
-                <div className="bg-gradient-to-br from-gray-50 to-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-8 border-2 border-gray-100 hover:border-[#30a659] transform hover:-translate-y-2">
+                {/* Card Container matching your design */}
+                <div className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 border border-gray-200 hover:border-[#30a659] transform hover:-translate-y-2">
                   
-                  {/* Flag Icon Only (no country code letters) */}
-                  <div className="text-6xl mb-4 transform group-hover:scale-110 transition-transform duration-300">
-                    {location.flag}
+                  {/* Flag Image with Country Code */}
+                  <div className="relative mb-4 flex justify-center">
+                    <div className="relative">
+                      <img 
+                        src={`/images/flags/${location.countryCode.toLowerCase()}.svg`}
+                        alt={`${location.country} flag`}
+                        className="w-16 h-12 object-cover rounded-lg border-2 border-gray-300 shadow-md transform group-hover:scale-110 transition-transform duration-300"
+                      />
+                    </div>
                   </div>
                   
                   {/* Country Name */}
-                  <h3 className="text-lg font-bold text-gray-700 mb-4">{location.country}</h3>
+                  <h3 className="text-lg font-semibold text-gray-600 mb-4">{location.country}</h3>
                   
-                  {/* Client Count with Better Visibility */}
-                  <div className="inline-block px-6 py-2 bg-[#30a659] rounded-full text-white font-bold text-sm shadow-md hover:bg-[#092870] transition-colors duration-300">
+                  {/* Client Count Button */}
+                  <div className="inline-block px-6 py-2 bg-[#30a659] hover:bg-[#092870] rounded-full text-white font-bold text-sm shadow-md transition-colors duration-300">
                     {location.clients} Clients
                   </div>
                 </div>
@@ -593,120 +616,178 @@ export default function Home() {
             </p>
           </div>
 
-          {/* Horizontal Flowchart Design */}
-          <div className="relative max-w-7xl mx-auto">
+          {/* Compact Horizontal Workflow Design */}
+          <div className="relative max-w-6xl mx-auto">
             
-            <div className="flex items-center justify-between w-full px-4">
-              
-              {/* Initial Call - Starting Point */}
-              <div className="flex-shrink-0">
-                <div className="bg-white rounded-2xl shadow-lg p-4 border-2 border-blue-100 hover:border-[#092870]/30 transition-all duration-500 w-44 h-32 flex flex-col justify-center text-center">
+            {/* Desktop View */}
+            <div className="hidden md:block">
+              <div className="flex items-center justify-center space-x-6">
+                
+                {/* Starting Point - Initial Call with Person */}
+                <div className="bg-white rounded-2xl shadow-lg p-4 border-2 border-blue-100 hover:border-[#092870]/30 transition-all duration-300 w-44 h-32 flex flex-col justify-center text-center">
                   <div className="w-10 h-10 bg-gradient-to-br from-[#092870] to-blue-600 rounded-xl mx-auto mb-2 flex items-center justify-center">
                     <span className="text-white text-lg">📞</span>
                   </div>
                   <h3 className="text-sm font-bold text-[#092870] mb-1">Initial Call with Person</h3>
-                  <p className="text-gray-700 text-xs mb-1 font-medium">Detailed consultation to understand your needs</p>
+                  <p className="text-gray-700 text-xs font-medium">Detailed consultation to understand your needs</p>
+                </div>
+
+                {/* Arrow Right */}
+                <div className="flex items-center">
+                  <div className="w-8 h-1 bg-gradient-to-r from-[#092870] to-gray-400 rounded-full"></div>
+                  <div className="w-0 h-0 border-t-4 border-b-4 border-l-4 border-t-transparent border-b-transparent border-l-gray-400 ml-1"></div>
+                </div>
+
+                {/* Two Parallel Paths Container */}
+                <div className="flex flex-col space-y-4">
+                  
+                  {/* Top Path - Standard Process */}
+                  <div className="flex items-center space-x-2">
+                    <div className="bg-white rounded-2xl shadow-lg p-3 border-2 border-blue-100 w-36 h-24 flex flex-col justify-center text-center">
+                      <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-[#092870] rounded-lg mx-auto mb-1 flex items-center justify-center">
+                        <span className="text-white text-sm">⚡</span>
+                      </div>
+                      <h3 className="text-xs font-bold text-[#092870] mb-1">Onboarding</h3>
+                      <p className="text-gray-700 text-xs">Complete setup</p>
+                      <span className="text-xs font-bold text-[#092870] bg-blue-100 px-2 py-1 rounded-full mt-1">24 hours</span>
+                    </div>
+                    
+                    <div className="flex items-center">
+                      <div className="w-4 h-1 bg-[#092870] rounded-full"></div>
+                      <div className="w-0 h-0 border-t-2 border-b-2 border-l-2 border-t-transparent border-b-transparent border-l-[#092870] ml-1"></div>
+                    </div>
+                    
+                    <div className="bg-white rounded-2xl shadow-lg p-3 border-2 border-blue-100 w-36 h-24 flex flex-col justify-center text-center">
+                      <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-[#092870] rounded-lg mx-auto mb-1 flex items-center justify-center">
+                        <span className="text-white text-sm">✅</span>
+                      </div>
+                      <h3 className="text-xs font-bold text-[#092870] mb-1">Deliver</h3>
+                      <p className="text-gray-700 text-xs">Quality delivery</p>
+                      <span className="text-xs font-bold text-[#092870] bg-blue-100 px-2 py-1 rounded-full mt-1">Scheduled</span>
+                    </div>
+                  </div>
+
+                  {/* Bottom Path - Express Service */}
+                  <div className="flex items-center space-x-2">
+                    <div className="bg-white rounded-2xl shadow-lg p-3 border-2 border-green-200 w-36 h-24 flex flex-col justify-center text-center">
+                      <div className="w-8 h-8 bg-gradient-to-br from-[#30a659] to-[#092870] rounded-lg mx-auto mb-1 flex items-center justify-center">
+                        <span className="text-white text-sm">🚀</span>
+                      </div>
+                      <h3 className="text-xs font-bold text-[#092870] mb-1">Bullet Service</h3>
+                      <p className="text-gray-700 text-xs">Instant deployment</p>
+                      <span className="text-xs font-bold text-[#30a659] bg-green-100 px-2 py-1 rounded-full mt-1">Within hours</span>
+                    </div>
+                    
+                    <div className="flex items-center">
+                      <div className="w-4 h-1 bg-[#30a659] rounded-full"></div>
+                      <div className="w-0 h-0 border-t-2 border-b-2 border-l-2 border-t-transparent border-b-transparent border-l-[#30a659] ml-1"></div>
+                    </div>
+                    
+                    <div className="bg-white rounded-2xl shadow-lg p-3 border-2 border-green-200 w-36 h-24 flex flex-col justify-center text-center">
+                      <div className="w-8 h-8 bg-gradient-to-br from-[#30a659] to-[#092870] rounded-lg mx-auto mb-1 flex items-center justify-center">
+                        <span className="text-white text-sm">🌍</span>
+                      </div>
+                      <h3 className="text-xs font-bold text-[#092870] mb-1">24/7 Work</h3>
+                      <p className="text-gray-700 text-xs">Round the clock</p>
+                      <span className="text-xs font-bold text-[#30a659] bg-green-100 px-2 py-1 rounded-full mt-1">24/7 support</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Arrow Right to Support */}
+                <div className="flex items-center">
+                  <div className="w-8 h-1 bg-gradient-to-r from-gray-400 to-purple-600 rounded-full"></div>
+                  <div className="w-0 h-0 border-t-4 border-b-4 border-l-4 border-t-transparent border-b-transparent border-l-purple-600 ml-1"></div>
+                </div>
+
+                {/* Final Support Card */}
+                <div className="bg-white rounded-2xl shadow-lg p-4 border-2 border-purple-200 hover:border-purple-400 transition-all duration-300 w-44 h-32 flex flex-col justify-center text-center">
+                  <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-purple-700 rounded-xl mx-auto mb-2 flex items-center justify-center">
+                    <span className="text-white text-lg animate-bounce">👋</span>
+                  </div>
+                  <h3 className="text-sm font-bold text-[#092870] mb-1">Support</h3>
+                  <p className="text-gray-700 text-xs font-medium">Ongoing growth & seamless transition</p>
                 </div>
               </div>
+            </div>
 
-              {/* Arrow Right */}
-              <div className="flex items-center mx-2">
-                <div className="w-8 h-1 bg-gradient-to-r from-[#092870] to-[#30a659] rounded-full"></div>
-                <div className="w-0 h-0 border-t-6 border-b-6 border-l-6 border-t-transparent border-b-transparent border-l-[#30a659] ml-1"></div>
-              </div>
-
-              {/* Two Paths - Side by Side */}
-              <div className="flex flex-col space-y-6 flex-1">
+            {/* Mobile View - Vertical Stack */}
+            <div className="block md:hidden">
+              <div className="flex flex-col items-center space-y-6">
                 
-                {/* Top Path - Standard Process */}
-                <div className="flex items-center space-x-3">
-                  <div className="bg-white rounded-2xl shadow-lg p-4 border-2 border-blue-100 hover:border-[#092870]/30 transition-all duration-500 w-44 h-32 flex flex-col justify-center text-center">
-                    <div className="w-10 h-10 bg-gradient-to-br from-[#092870] to-blue-600 rounded-xl mx-auto mb-2 flex items-center justify-center">
-                      <span className="text-white text-lg">📞</span>
+                {/* Starting Point */}
+                <div className="bg-white rounded-2xl shadow-lg p-4 border-2 border-blue-100 w-64 h-32 flex flex-col justify-center text-center">
+                  <div className="w-10 h-10 bg-gradient-to-br from-[#092870] to-blue-600 rounded-xl mx-auto mb-2 flex items-center justify-center">
+                    <span className="text-white text-lg">📞</span>
+                  </div>
+                  <h3 className="text-sm font-bold text-[#092870] mb-1">Initial Call with Person</h3>
+                  <p className="text-gray-700 text-xs font-medium">Detailed consultation to understand your needs</p>
+                </div>
+
+                {/* Down Arrow */}
+                <div className="flex flex-col items-center">
+                  <div className="w-1 h-8 bg-gradient-to-b from-[#092870] to-gray-400 rounded-full"></div>
+                  <div className="w-0 h-0 border-l-4 border-r-4 border-t-4 border-l-transparent border-r-transparent border-t-gray-400"></div>
+                </div>
+
+                {/* Two Paths */}
+                <div className="grid grid-cols-2 gap-4 w-full max-w-lg">
+                  {/* Path 1 */}
+                  <div className="flex flex-col items-center space-y-3">
+                    <div className="bg-white rounded-2xl shadow-lg p-3 border-2 border-blue-100 w-full h-24 flex flex-col justify-center text-center">
+                      <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-[#092870] rounded-lg mx-auto mb-1 flex items-center justify-center">
+                        <span className="text-white text-sm">⚡</span>
+                      </div>
+                      <h3 className="text-xs font-bold text-[#092870]">Onboarding</h3>
+                      <span className="text-xs font-bold text-[#092870] bg-blue-100 px-2 py-1 rounded-full">24 hours</span>
                     </div>
-                    <h3 className="text-sm font-bold text-[#092870] mb-1">Initial Call</h3>
-                    <p className="text-gray-700 text-xs mb-1 font-medium">Detailed consultation</p>
-                    <span className="text-xs font-bold text-[#092870] bg-blue-100 px-2 py-1 rounded-full">30-60 mins</span>
+                    
+                    <div className="w-1 h-4 bg-[#092870] rounded-full"></div>
+                    
+                    <div className="bg-white rounded-2xl shadow-lg p-3 border-2 border-blue-100 w-full h-24 flex flex-col justify-center text-center">
+                      <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-[#092870] rounded-lg mx-auto mb-1 flex items-center justify-center">
+                        <span className="text-white text-sm">✅</span>
+                      </div>
+                      <h3 className="text-xs font-bold text-[#092870]">Deliver</h3>
+                      <span className="text-xs font-bold text-[#092870] bg-blue-100 px-2 py-1 rounded-full">Scheduled</span>
+                    </div>
                   </div>
                   
-                  <div className="w-4 h-1 bg-[#092870] rounded-full"></div>
-                  
-                  <div className="bg-white rounded-2xl shadow-lg p-4 border-2 border-blue-100 w-44 h-32 flex flex-col justify-center text-center">
-                    <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-[#092870] rounded-xl mx-auto mb-2 flex items-center justify-center">
-                      <span className="text-white text-lg">⚡</span>
+                  {/* Path 2 */}
+                  <div className="flex flex-col items-center space-y-3">
+                    <div className="bg-white rounded-2xl shadow-lg p-3 border-2 border-green-200 w-full h-24 flex flex-col justify-center text-center">
+                      <div className="w-8 h-8 bg-gradient-to-br from-[#30a659] to-[#092870] rounded-lg mx-auto mb-1 flex items-center justify-center">
+                        <span className="text-white text-sm">🚀</span>
+                      </div>
+                      <h3 className="text-xs font-bold text-[#092870]">Bullet Service</h3>
+                      <span className="text-xs font-bold text-[#30a659] bg-green-100 px-2 py-1 rounded-full">Within hours</span>
                     </div>
-                    <h3 className="text-sm font-bold text-[#092870] mb-1">Onboarding</h3>
-                    <p className="text-gray-700 text-xs mb-1 font-medium">Complete setup</p>
-                    <span className="text-xs font-bold text-[#092870] bg-blue-100 px-2 py-1 rounded-full">24 hours</span>
-                  </div>
-                  
-                  <div className="w-4 h-1 bg-[#092870] rounded-full"></div>
-                  
-                  <div className="bg-white rounded-2xl shadow-lg p-4 border-2 border-blue-100 w-44 h-32 flex flex-col justify-center text-center">
-                    <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-[#092870] rounded-xl mx-auto mb-2 flex items-center justify-center">
-                      <span className="text-white text-lg">✅</span>
+                    
+                    <div className="w-1 h-4 bg-[#30a659] rounded-full"></div>
+                    
+                    <div className="bg-white rounded-2xl shadow-lg p-3 border-2 border-green-200 w-full h-24 flex flex-col justify-center text-center">
+                      <div className="w-8 h-8 bg-gradient-to-br from-[#30a659] to-[#092870] rounded-lg mx-auto mb-1 flex items-center justify-center">
+                        <span className="text-white text-sm">🌍</span>
+                      </div>
+                      <h3 className="text-xs font-bold text-[#092870]">24/7 Work</h3>
+                      <span className="text-xs font-bold text-[#30a659] bg-green-100 px-2 py-1 rounded-full">24/7 support</span>
                     </div>
-                    <h3 className="text-sm font-bold text-[#092870] mb-1">Deliver</h3>
-                    <p className="text-gray-700 text-xs mb-1 font-medium">Quality delivery</p>
-                    <span className="text-xs font-bold text-[#092870] bg-blue-100 px-2 py-1 rounded-full">Scheduled</span>
-                  </div>
-                  
-                  <div className="w-4 h-1 bg-[#092870] rounded-full"></div>
-                  
-                  <div className="bg-white rounded-2xl shadow-lg p-4 border-2 border-blue-100 w-44 h-32 flex flex-col justify-center text-center">
-                    <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-[#092870] rounded-xl mx-auto mb-2 flex items-center justify-center">
-                      <span className="text-white text-lg animate-bounce">👋</span>
-                    </div>
-                    <h3 className="text-sm font-bold text-[#092870] mb-1">Support</h3>
-                    <p className="text-gray-700 text-xs mb-1 font-medium">Ongoing growth</p>
-                    <span className="text-xs font-bold text-[#092870] bg-blue-100 px-2 py-1 rounded-full">Long-term</span>
                   </div>
                 </div>
 
-                 {/* Bottom Path - Express Service */}
-                <div className="flex items-center space-x-3">
-                  <div className="bg-white rounded-2xl shadow-lg p-4 border-2 border-green-200 w-44 h-32 flex flex-col justify-center text-center">
-                    <div className="w-10 h-10 bg-gradient-to-br from-[#30a659] to-[#092870] rounded-xl mx-auto mb-2 flex items-center justify-center">
-                      <span className="text-white text-lg">📞</span>
-                    </div>
-                    <h3 className="text-sm font-bold text-[#092870] mb-1">Initial Call</h3>
-                    <p className="text-gray-700 text-xs mb-1 font-medium">Assessment & plan</p>
-                    <span className="text-xs font-bold text-[#30a659] bg-green-100 px-2 py-1 rounded-full">15-30 mins</span>
-                  </div>
-                  
-                  <div className="w-4 h-1 bg-[#30a659] rounded-full"></div>
+                {/* Down Arrow to Support */}
+                <div className="flex flex-col items-center">
+                  <div className="w-1 h-8 bg-gradient-to-b from-gray-400 to-purple-600 rounded-full"></div>
+                  <div className="w-0 h-0 border-l-4 border-r-4 border-t-4 border-l-transparent border-r-transparent border-t-purple-600"></div>
+                </div>
 
-                  
-                  <div className="bg-white rounded-2xl shadow-lg p-4 border-2 border-green-200 w-44 h-32 flex flex-col justify-center text-center">
-                    <div className="w-10 h-10 bg-gradient-to-br from-[#30a659] to-[#092870] rounded-xl mx-auto mb-2 flex items-center justify-center">
-                      <span className="text-white text-lg">🚀</span>
-                    </div>
-                    <h3 className="text-sm font-bold text-[#092870] mb-1">Bullet Service</h3>
-                    <p className="text-gray-700 text-xs mb-1 font-medium">Instant deployment</p>
-                    <span className="text-xs font-bold text-[#30a659] bg-green-100 px-2 py-1 rounded-full">Within hours</span>
+                {/* Final Support Card */}
+                <div className="bg-white rounded-2xl shadow-lg p-4 border-2 border-purple-200 w-64 h-32 flex flex-col justify-center text-center">
+                  <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-purple-700 rounded-xl mx-auto mb-2 flex items-center justify-center">
+                    <span className="text-white text-lg animate-bounce">👋</span>
                   </div>
-                  
-                  <div className="w-4 h-1 bg-[#30a659] rounded-full"></div>
-                  
-                  <div className="bg-white rounded-2xl shadow-lg p-4 border-2 border-green-200 w-44 h-32 flex flex-col justify-center text-center">
-                    <div className="w-10 h-10 bg-gradient-to-br from-[#30a659] to-[#092870] rounded-xl mx-auto mb-2 flex items-center justify-center">
-                      <span className="text-white text-lg">🌍</span>
-                    </div>
-                    <h3 className="text-sm font-bold text-[#092870] mb-1">24/7 Work</h3>
-                    <p className="text-gray-700 text-xs mb-1 font-medium">Round the clock</p>
-                    <span className="text-xs font-bold text-[#30a659] bg-green-100 px-2 py-1 rounded-full">24/7 support</span>
-                  </div>
-                  
-                  <div className="w-4 h-1 bg-[#30a659] rounded-full"></div>
-                  
-                  <div className="bg-white rounded-2xl shadow-lg p-4 border-2 border-green-200 w-44 h-32 flex flex-col justify-center text-center">
-                    <div className="w-10 h-10 bg-gradient-to-br from-[#30a659] to-[#092870] rounded-xl mx-auto mb-2 flex items-center justify-center">
-                      <span className="text-white text-lg animate-bounce">👋</span>
-                    </div>
-                    <h3 className="text-sm font-bold text-[#092870] mb-1">Support</h3>
-                    <p className="text-gray-700 text-xs mb-1 font-medium">Seamless transition</p>
-                    <span className="text-xs font-bold text-[#30a659] bg-green-100 px-2 py-1 rounded-full">Continuous</span>
-                  </div>
+                  <h3 className="text-sm font-bold text-[#092870] mb-1">Support</h3>
+                  <p className="text-gray-700 text-xs font-medium">Ongoing growth & seamless transition</p>
                 </div>
               </div>
             </div>
@@ -716,13 +797,13 @@ export default function Home() {
           <div className="text-center">
             <p className="text-lg text-gray-600 mb-8">Ready to get started? Choose your preferred workflow or let us help you decide.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contact" className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-[#092870] to-blue-600 text-white font-semibold rounded-full hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-                Start Standard Process
-                <span className="ml-2">→</span>
+              <Link href="/contact" className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-[#092870] to-blue-600 text-white font-semibold rounded-full hover:shadow-xl transition-all duration-300 transform hover:scale-105" style={{ color: 'white !important' }}>
+                <span style={{ color: 'white !important' }}>Start Standard Process</span>
+                <span className="ml-2" style={{ color: 'white !important' }}>→</span>
               </Link>
-              <Link href="/contact" className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-[#30a659] to-[#092870] text-white font-semibold rounded-full hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-                Get Express Service
-                <span className="ml-2">⚡</span>
+              <Link href="/contact" className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-[#30a659] to-[#092870] text-white font-semibold rounded-full hover:shadow-xl transition-all duration-300 transform hover:scale-105" style={{ color: 'white !important' }}>
+                <span style={{ color: 'white !important' }}>Get Express Service</span>
+                <span className="ml-2" style={{ color: 'white !important' }}>⚡</span>
               </Link>
             </div>
           </div>
@@ -833,10 +914,10 @@ export default function Home() {
               Join hundreds of satisfied clients worldwide who trust Pacerline for their outsourcing needs
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contact" className="bg-white text-[#092870] hover:bg-gray-100 font-bold py-4 px-8 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">
+              <Link href="/contact" className="bg-gradient-to-r from-[#092870] to-[#30a659] hover:from-[#30a659] hover:to-[#092870] text-white font-bold py-4 px-8 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">
                 Start Your Project Today
               </Link>
-              <Link href="/services" className="border-2 border-white text-white hover:bg-white hover:text-[#092870] font-bold py-4 px-8 rounded-full transition-all duration-300 transform hover:scale-105">
+              <Link href="/services" className="bg-gradient-to-r from-[#092870] to-[#30a659] hover:from-[#30a659] hover:to-[#092870] text-white font-bold py-4 px-8 rounded-full transition-all duration-300 transform hover:scale-105">
                 Explore All Services
               </Link>
             </div>

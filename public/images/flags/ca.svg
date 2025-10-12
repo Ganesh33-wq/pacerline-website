@@ -1,0 +1,10 @@
+<svg width="60" height="40" viewBox="0 0 60 40" xmlns="http://www.w3.org/2000/svg">
+  <rect width="60" height="40" fill="#FF0000"/>
+  <rect width="20" height="40" fill="#FFFFFF"/>
+  <rect width="20" height="40" x="40" fill="#FFFFFF"/>
+  <g fill="#FF0000">
+    <path d="M15,15 L25,15 L30,20 L25,25 L15,25 L20,20 Z"/>
+    <path d="M35,15 L45,15 L40,20 L45,25 L35,25 L30,20 Z"/>
+  </g>
+  <text x="30" y="25" font-family="Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="#FF0000">CA</text>
+</svg>

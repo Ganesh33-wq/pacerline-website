@@ -32,6 +32,8 @@ const Header = () => {
         ]
       }
     },
+    { name: 'Careers', href: '/careers' },
+    { name: 'Blog', href: '/blog' },
     { name: 'Contact Us', href: '/contact' },
   ]
 

@@ -60,18 +60,18 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-center space-x-2 !text-white">
                 <span className="text-primary-400">📧</span>
-                <span className="!text-white">info@probusiness.com</span>
+                <a href="mailto:info@pacerline.com" className="!text-white hover:text-primary-400 transition-colors">info@pacerline.com</a>
               </li>
               <li className="flex items-center space-x-2 !text-white">
-                <span className="text-primary-400">📞</span>
-                <span className="!text-white">+1 (555) 123-4567</span>
+                <span className="text-primary-400">🌐</span>
+                <a href="https://www.pacerline.com" className="!text-white hover:text-primary-400 transition-colors">www.pacerline.com</a>
               </li>
               <li className="flex items-center space-x-2 !text-white">
                 <span className="text-primary-400">📍</span>
                 <div className="!text-white">
-                  <div className="!text-white">123 Business St</div>
-                  <div className="!text-white">Suite 100</div>
-                  <div className="!text-white">Business City, BC 12345</div>
+                  <div className="!text-white">No.215, First Floor</div>
+                  <div className="!text-white">Bharathiyar Road, New Sidhaputhur</div>
+                  <div className="!text-white">Coimbatore, Tamil Nadu - 641044</div>
                 </div>
               </li>
             </ul>
@@ -79,7 +79,12 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-gray-600 mt-12 pt-8 text-center">
-          <p className="!text-white">&copy; 2025 Pacerline Outsourcing Service Pvt. Ltd. | Outsourced Accounting, Bookkeeping & Property Management Support for USA Companies | Based in India | Privacy Policy | Terms of Use</p>
+          <p className="!text-white mb-4">&copy; 2025 Pacerline Outsourcing Service Pvt. Ltd. | Outsourced Accounting, Bookkeeping & Property Management Support for USA Companies | Based in India</p>
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-4 text-sm">
+            <a href="/privacy-policy" className="!text-white hover:text-primary-400 transition-colors duration-300">Privacy Policy</a>
+            <span className="!text-white hidden sm:block">|</span>
+            <a href="/terms-of-service" className="!text-white hover:text-primary-400 transition-colors duration-300">Terms of Service</a>
+          </div>
         </div>
       </div>
     </footer>
