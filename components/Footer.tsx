@@ -10,7 +10,7 @@ const Footer = () => {
                 <span className="text-white font-bold text-lg">P</span>
               </div>
               <h3 className="text-2xl font-bold !text-white">
-                ProBusiness Services
+                Pacerline Outsourcing Service Pvt. Ltd.
               </h3>
             </div>
             <p className="!text-white mb-6 leading-relaxed">
@@ -79,7 +79,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-gray-600 mt-12 pt-8 text-center">
-          <p className="!text-white">&copy; 2025 ProBusiness Services. All rights reserved.</p>
+          <p className="!text-white">&copy; 2025 Pacerline Outsourcing Service Pvt. Ltd. | Outsourced Accounting, Bookkeeping & Property Management Support for USA Companies | Based in India | Privacy Policy | Terms of Use</p>
         </div>
       </div>
     </footer>

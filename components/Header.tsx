@@ -11,33 +11,27 @@ const Header = () => {
   const navigation = [
     { name: 'Home', href: '/' },
     { name: 'About Us', href: '/about' },
-    {
-      name: 'Accounting',
-      href: '/accounting',
-      dropdown: [
-        { name: 'Property Management Accounting', href: '/property-management' },
-        { name: 'Bookkeeping and Tax Service (USA)', href: '/bookkeeping-usa' },
-        { name: 'Accounting and Tax Services (Australia)', href: '/accounting-australia' },
-      ]
+    { 
+      name: 'Services',
+      href: '/services',
+      megaMenu: {
+        accountingServices: [
+          { name: 'Property Management Accounting (USA)', href: '/property-management', icon: '🏢' },
+          { name: 'Bookkeeping & Tax Services (USA)', href: '/bookkeeping-usa', icon: '🇺🇸' },
+          { name: 'Accounting & Tax Services (Australia)', href: '/accounting-australia', icon: '🇦🇺' },
+          { name: 'AppFolio Bookkeeping Service', href: '/appfolio-bookkeeping', icon: '📊' },
+          { name: 'Buildium Bookkeeping Service', href: '/buildium-bookkeeping', icon: '📋' },
+        ],
+        virtualAssistant: [
+          { name: 'Virtual Assistant Service', href: '/virtual-assistant', icon: '👩‍💼' },
+          { name: 'AppFolio Administrator Service', href: '/appfolio-admin', icon: '⚙️' },
+          { name: 'Buildium Administration', href: '/buildium-admin', icon: '🔧' },
+        ],
+        digitalMarketing: [
+          { name: 'Digital Marketing', href: '/digital-marketing', icon: '📱' },
+        ]
+      }
     },
-    {
-      name: 'AppFolio',
-      href: '/appfolio',
-      dropdown: [
-        { name: 'AppFolio Bookkeeping Service', href: '/appfolio-bookkeeping' },
-        { name: 'AppFolio Administration Service', href: '/appfolio-admin' },
-      ]
-    },
-    {
-      name: 'Buildium',
-      href: '/buildium',
-      dropdown: [
-        { name: 'Buildium Bookkeeping Service', href: '/buildium-bookkeeping' },
-        { name: 'Buildium Administration Service', href: '/buildium-admin' },
-      ]
-    },
-    { name: 'Virtual Assistant', href: '/virtual-assistant' },
-    { name: 'Digital Marketing', href: '/digital-marketing' },
     { name: 'Contact Us', href: '/contact' },
   ]
 
@@ -74,21 +68,15 @@ const Header = () => {
     <header className="bg-white/95 backdrop-blur-lg shadow-lg border-b border-indigo-100/50 sticky top-0 z-50 transition-all duration-300 w-full">
       <nav className="w-full" ref={dropdownRef}>
         <div className="flex justify-between items-center py-3 sm:py-4 lg:py-6 px-3 sm:px-4 md:px-6 lg:px-8 w-full min-h-[64px]">
-          {/* Logo */}
-          <div className="flex items-center space-x-2 sm:space-x-3 group flex-shrink-0">
-            <div className="relative">
+          {/* Logo (as home link, no text) */}
+          <div className="flex items-center group flex-shrink-0 ml-[10px]">
+            <Link href="/" className="relative block">
               <img 
                 src="/images/home/company-logo.png" 
                 alt="Pacerline Company Logo" 
                 className="h-12 sm:h-14 w-auto transition-transform duration-300 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/20 to-purple-500/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            </div>
-            <Link href="/" className="text-base sm:text-lg lg:text-xl font-bold bg-gradient-to-r from-[#092870] via-[#30a659] to-[#092870] bg-clip-text text-transparent hover:from-[#30a659] hover:to-[#092870] transition-all duration-300 hidden sm:block">
-              Pacerline
-            </Link>
-            <Link href="/" className="text-sm font-bold bg-gradient-to-r from-[#092870] via-[#30a659] to-[#092870] bg-clip-text text-transparent hover:from-[#30a659] hover:to-[#092870] transition-all duration-300 sm:hidden">
-              ProBusiness
             </Link>
           </div>
 
@@ -96,7 +84,7 @@ const Header = () => {
           <div className="hidden xl:flex items-center space-x-1">
             {navigation.map((item) => (
               <div key={item.name} className="relative group">
-                {item.dropdown ? (
+                {item.megaMenu ? (
                   <div 
                     className="relative"
                     onMouseEnter={() => handleMouseEnter(item.name)}
@@ -107,30 +95,106 @@ const Header = () => {
                       <ChevronDownIcon className={`ml-2 h-4 w-4 transition-all duration-300 ${activeDropdown === item.name ? 'rotate-180 text-indigo-500' : 'group-hover:text-white'}`} />
                     </Link>
                     
-                    <div className={`absolute top-full left-0 mt-2 w-80 bg-white/95 backdrop-blur-sm border border-gray-200 rounded-2xl shadow-2xl z-[9999] py-4 transition-all duration-300 ${
+                    {/* Mega Menu - 3 Column Layout */}
+                    <div className={`absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-[900px] bg-white border border-gray-300 rounded-2xl shadow-2xl z-[9999] py-6 transition-all duration-500 ${
                       activeDropdown === item.name 
                         ? 'opacity-100 transform translate-y-0 pointer-events-auto visible' 
-                        : 'opacity-0 transform -translate-y-2 pointer-events-none invisible'
+                        : 'opacity-0 transform -translate-y-4 pointer-events-none invisible'
                     }`}>
-                      <div className="px-2">
-                        <div className="text-xs font-semibold text-indigo-600 uppercase tracking-wider mb-3 px-4">
-                          {item.name} Services
-                        </div>
-                        {item.dropdown.map((dropdownItem, index) => (
-                          <Link
-                            key={dropdownItem.name}
-                            href={dropdownItem.href}
-                            className="flex items-center px-4 py-3 text-sm text-gray-700 hover:bg-gradient-to-r hover:from-indigo-50 hover:to-purple-50 hover:text-indigo-700 rounded-xl transition-all duration-300 transform hover:scale-[1.02] hover:shadow-md group mb-1"
-                          >
-                            <div className="w-2 h-2 bg-gradient-to-r from-indigo-400 to-purple-500 rounded-full mr-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                            <span className="font-medium group-hover:font-semibold transition-all duration-300">{dropdownItem.name}</span>
-                            <div className="ml-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                              <svg className="w-4 h-4 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                              </svg>
+                      <div className="px-6">
+                        <div className="grid grid-cols-3 gap-8">
+                          
+                          {/* Column 1: Accounting Services */}
+                          <div className="space-y-1">
+                            <h3 className="text-sm font-bold text-indigo-600 uppercase tracking-wider mb-4 pb-2 border-b border-indigo-100">
+                              Accounting Services
+                            </h3>
+                            {item.megaMenu.accountingServices.map((service) => (
+                              <Link
+                                key={service.name}
+                                href={service.href}
+                                className="flex items-center px-3 py-3 text-sm text-gray-800 hover:bg-gradient-to-r hover:from-indigo-50 hover:to-blue-50 hover:text-indigo-700 rounded-xl transition-all duration-300 transform hover:scale-[1.02] hover:shadow-md group border border-transparent hover:border-indigo-200"
+                              >
+                                <span className="text-lg mr-3 opacity-70 group-hover:opacity-100 transition-opacity duration-300">{service.icon}</span>
+                                <div>
+                                  <span className="font-medium group-hover:font-semibold transition-all duration-300 block leading-tight">
+                                    {service.name}
+                                  </span>
+                                </div>
+                                <div className="ml-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                  <svg className="w-4 h-4 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                                  </svg>
+                                </div>
+                              </Link>
+                            ))}
+                          </div>
+
+                          {/* Column 2: Virtual Assistant Services */}
+                          <div className="space-y-1">
+                            <h3 className="text-sm font-bold text-purple-600 uppercase tracking-wider mb-4 pb-2 border-b border-purple-100">
+                              Virtual Assistant Services
+                            </h3>
+                            {item.megaMenu.virtualAssistant.map((service) => (
+                              <Link
+                                key={service.name}
+                                href={service.href}
+                                className="flex items-center px-3 py-3 text-sm text-gray-800 hover:bg-gradient-to-r hover:from-purple-50 hover:to-pink-50 hover:text-purple-700 rounded-xl transition-all duration-300 transform hover:scale-[1.02] hover:shadow-md group border border-transparent hover:border-purple-200"
+                              >
+                                <span className="text-lg mr-3 opacity-70 group-hover:opacity-100 transition-opacity duration-300">{service.icon}</span>
+                                <div>
+                                  <span className="font-medium group-hover:font-semibold transition-all duration-300 block leading-tight">
+                                    {service.name}
+                                  </span>
+                                </div>
+                                <div className="ml-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                  <svg className="w-4 h-4 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                                  </svg>
+                                </div>
+                              </Link>
+                            ))}
+                          </div>
+
+                          {/* Column 3: Digital Marketing */}
+                          <div className="space-y-1">
+                            <h3 className="text-sm font-bold text-green-600 uppercase tracking-wider mb-4 pb-2 border-b border-green-100">
+                              Digital Marketing
+                            </h3>
+                            {item.megaMenu.digitalMarketing.map((service) => (
+                              <Link
+                                key={service.name}
+                                href={service.href}
+                                className="flex items-center px-3 py-3 text-sm text-gray-800 hover:bg-gradient-to-r hover:from-green-50 hover:to-emerald-50 hover:text-green-700 rounded-xl transition-all duration-300 transform hover:scale-[1.02] hover:shadow-md group border border-transparent hover:border-green-200"
+                              >
+                                <span className="text-lg mr-3 opacity-70 group-hover:opacity-100 transition-opacity duration-300">{service.icon}</span>
+                                <div>
+                                  <span className="font-medium group-hover:font-semibold transition-all duration-300 block leading-tight">
+                                    {service.name}
+                                  </span>
+                                </div>
+                                <div className="ml-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                  <svg className="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                                  </svg>
+                                </div>
+                              </Link>
+                            ))}
+                            
+                            {/* Call to Action in Digital Marketing Column */}
+                            <div className="mt-6 p-4 bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl border border-green-100">
+                              <h4 className="text-sm font-semibold text-green-800 mb-2">Need Custom Solutions?</h4>
+                              <p className="text-xs text-green-600 mb-3">Let us create a tailored service package for your business needs.</p>
+                              <Link 
+                                href="/contact" 
+                                className="inline-block bg-green-600 text-white text-xs font-semibold px-4 py-2 rounded-lg hover:bg-green-700 transition-colors duration-300"
+                              >
+                                Get Quote
+                              </Link>
                             </div>
-                          </Link>
-                        ))}
+                          </div>
+
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -154,13 +218,24 @@ const Header = () => {
               <button className="px-3 py-2 text-sm font-medium text-gray-700 hover:text-indigo-600 hover:bg-indigo-50 rounded-lg transition-all duration-300 flex items-center">
                 Services <ChevronDownIcon className="ml-1 h-4 w-4" />
               </button>
-              <div className="absolute top-full left-0 mt-1 w-64 bg-white/95 backdrop-blur-sm border border-gray-200 rounded-2xl shadow-xl z-[9999] py-3 opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:translate-y-0 -translate-y-2 pointer-events-none group-hover:pointer-events-auto">
-                <Link href="/services" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gradient-to-r hover:from-indigo-50 hover:to-purple-50 hover:text-indigo-600 rounded-lg mx-2 transition-all duration-300">All Services</Link>
-                <Link href="/accounting" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gradient-to-r hover:from-indigo-50 hover:to-purple-50 hover:text-indigo-600 rounded-lg mx-2 transition-all duration-300">Accounting</Link>
-                <Link href="/appfolio" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gradient-to-r hover:from-indigo-50 hover:to-purple-50 hover:text-indigo-600 rounded-lg mx-2 transition-all duration-300">AppFolio</Link>
-                <Link href="/buildium" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gradient-to-r hover:from-indigo-50 hover:to-purple-50 hover:text-indigo-600 rounded-lg mx-2 transition-all duration-300">Buildium</Link>
-                <Link href="/virtual-assistant" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gradient-to-r hover:from-indigo-50 hover:to-purple-50 hover:text-indigo-600 rounded-lg mx-2 transition-all duration-300">Virtual Assistant</Link>
-                <Link href="/digital-marketing" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gradient-to-r hover:from-indigo-50 hover:to-purple-50 hover:text-indigo-600 rounded-lg mx-2 transition-all duration-300">Digital Marketing</Link>
+              <div className="absolute top-full left-0 mt-1 w-80 bg-white border border-gray-300 rounded-2xl shadow-xl z-[9999] py-4 opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:translate-y-0 -translate-y-2 pointer-events-none group-hover:pointer-events-auto">
+                <div className="px-2">
+                  <div className="mb-4">
+                    <h4 className="text-xs font-semibold text-indigo-600 uppercase tracking-wider mb-2 px-3">Accounting Services</h4>
+                    <Link href="/property-management" className="block px-3 py-2 text-sm text-gray-800 hover:bg-gradient-to-r hover:from-indigo-50 hover:to-purple-50 hover:text-indigo-600 rounded-lg mx-1 transition-all duration-300 border border-transparent hover:border-indigo-200">🏢 Property Management (USA)</Link>
+                    <Link href="/bookkeeping-usa" className="block px-3 py-2 text-sm text-gray-800 hover:bg-gradient-to-r hover:from-indigo-50 hover:to-purple-50 hover:text-indigo-600 rounded-lg mx-1 transition-all duration-300 border border-transparent hover:border-indigo-200">🇺🇸 Bookkeeping & Tax (USA)</Link>
+                    <Link href="/accounting-australia" className="block px-3 py-2 text-sm text-gray-800 hover:bg-gradient-to-r hover:from-indigo-50 hover:to-purple-50 hover:text-indigo-600 rounded-lg mx-1 transition-all duration-300 border border-transparent hover:border-indigo-200">🇦🇺 Accounting (Australia)</Link>
+                  </div>
+                  <div className="mb-4">
+                    <h4 className="text-xs font-semibold text-purple-600 uppercase tracking-wider mb-2 px-3">Virtual Assistant</h4>
+                    <Link href="/virtual-assistant" className="block px-3 py-2 text-sm text-gray-800 hover:bg-gradient-to-r hover:from-purple-50 hover:to-pink-50 hover:text-purple-600 rounded-lg mx-1 transition-all duration-300 border border-transparent hover:border-purple-200">👩‍💼 Virtual Assistant</Link>
+                    <Link href="/appfolio-admin" className="block px-3 py-2 text-sm text-gray-800 hover:bg-gradient-to-r hover:from-purple-50 hover:to-pink-50 hover:text-purple-600 rounded-lg mx-1 transition-all duration-300 border border-transparent hover:border-purple-200">⚙️ AppFolio Admin</Link>
+                  </div>
+                  <div>
+                    <h4 className="text-xs font-semibold text-green-600 uppercase tracking-wider mb-2 px-3">Digital Marketing</h4>
+                    <Link href="/digital-marketing" className="block px-3 py-2 text-sm text-gray-800 hover:bg-gradient-to-r hover:from-green-50 hover:to-emerald-50 hover:text-green-600 rounded-lg mx-1 transition-all duration-300 border border-transparent hover:border-green-200">📱 Digital Marketing</Link>
+                  </div>
+                </div>
               </div>
             </div>
             <Link href="/contact" className="px-3 py-2 text-sm font-medium text-gray-700 hover:text-indigo-600 hover:bg-indigo-50 rounded-lg transition-all duration-300">Contact</Link>
@@ -201,7 +276,7 @@ const Header = () => {
                 className="animate-in slide-in-from-left-4 duration-300"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
-                {item.dropdown ? (
+                {item.megaMenu ? (
                   <div>
                     <button
                       onClick={() => setActiveDropdown(activeDropdown === item.name ? null : item.name)}
@@ -210,20 +285,66 @@ const Header = () => {
                       <span>{item.name}</span>
                       <ChevronDownIcon className={`h-4 w-4 sm:h-5 sm:w-5 transition-transform duration-300 ${activeDropdown === item.name ? 'rotate-180 text-indigo-500' : ''}`} />
                     </button>
-                    <div className={`overflow-hidden transition-all duration-300 ${activeDropdown === item.name ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
-                      <div className="pl-3 sm:pl-4 space-y-1">
-                        {item.dropdown.map((dropdownItem, dropdownIndex) => (
-                          <Link
-                            key={dropdownItem.name}
-                            href={dropdownItem.href}
-                            className="flex items-center px-3 sm:px-4 py-2 sm:py-3 text-xs sm:text-sm text-gray-600 hover:text-indigo-600 hover:bg-indigo-50 rounded-lg transition-all duration-300 transform hover:scale-[1.02] border-l-2 border-transparent hover:border-indigo-400"
-                            onClick={() => setMobileMenuOpen(false)}
-                            style={{ animationDelay: `${dropdownIndex * 50}ms` }}
-                          >
-                            <div className="w-1 h-1 sm:w-1.5 sm:h-1.5 bg-indigo-400 rounded-full mr-2 sm:mr-3"></div>
-                            {dropdownItem.name}
-                          </Link>
-                        ))}
+                    <div className={`overflow-hidden transition-all duration-500 ${activeDropdown === item.name ? 'max-h-[600px] opacity-100' : 'max-h-0 opacity-0'}`}>
+                      <div className="pl-2 sm:pl-3 space-y-3 pt-2">
+                        
+                        {/* Accounting Services Section */}
+                        <div className="bg-gradient-to-r from-indigo-50 to-blue-50 rounded-xl p-3">
+                          <h4 className="text-xs font-bold text-indigo-600 uppercase tracking-wider mb-2">Accounting Services</h4>
+                          <div className="space-y-1">
+                            {item.megaMenu.accountingServices.map((service, serviceIndex) => (
+                              <Link
+                                key={service.name}
+                                href={service.href}
+                                className="flex items-center px-3 py-2 text-xs sm:text-sm text-gray-600 hover:text-indigo-600 hover:bg-white/70 rounded-lg transition-all duration-300 transform hover:scale-[1.02]"
+                                onClick={() => setMobileMenuOpen(false)}
+                                style={{ animationDelay: `${serviceIndex * 50}ms` }}
+                              >
+                                <span className="text-sm mr-2">{service.icon}</span>
+                                <span className="font-medium">{service.name}</span>
+                              </Link>
+                            ))}
+                          </div>
+                        </div>
+
+                        {/* Virtual Assistant Services Section */}
+                        <div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl p-3">
+                          <h4 className="text-xs font-bold text-purple-600 uppercase tracking-wider mb-2">Virtual Assistant</h4>
+                          <div className="space-y-1">
+                            {item.megaMenu.virtualAssistant.map((service, serviceIndex) => (
+                              <Link
+                                key={service.name}
+                                href={service.href}
+                                className="flex items-center px-3 py-2 text-xs sm:text-sm text-gray-600 hover:text-purple-600 hover:bg-white/70 rounded-lg transition-all duration-300 transform hover:scale-[1.02]"
+                                onClick={() => setMobileMenuOpen(false)}
+                                style={{ animationDelay: `${serviceIndex * 50}ms` }}
+                              >
+                                <span className="text-sm mr-2">{service.icon}</span>
+                                <span className="font-medium">{service.name}</span>
+                              </Link>
+                            ))}
+                          </div>
+                        </div>
+
+                        {/* Digital Marketing Services Section */}
+                        <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl p-3">
+                          <h4 className="text-xs font-bold text-green-600 uppercase tracking-wider mb-2">Digital Marketing</h4>
+                          <div className="space-y-1">
+                            {item.megaMenu.digitalMarketing.map((service, serviceIndex) => (
+                              <Link
+                                key={service.name}
+                                href={service.href}
+                                className="flex items-center px-3 py-2 text-xs sm:text-sm text-gray-600 hover:text-green-600 hover:bg-white/70 rounded-lg transition-all duration-300 transform hover:scale-[1.02]"
+                                onClick={() => setMobileMenuOpen(false)}
+                                style={{ animationDelay: `${serviceIndex * 50}ms` }}
+                              >
+                                <span className="text-sm mr-2">{service.icon}</span>
+                                <span className="font-medium">{service.name}</span>
+                              </Link>
+                            ))}
+                          </div>
+                        </div>
+
                       </div>
                     </div>
                   </div>

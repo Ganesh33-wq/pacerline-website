@@ -9,7 +9,7 @@ export default function Home() {
       subtitle: 'GAAP & IRS COMPLIANT',
       description: 'Complete financial management following IRS regulations and GAAP by our Certified Public Accountants (CPAs) for all 50 states.',
       icon: '🇺🇸',
-      features: ['General Bookkeeping', 'Accounts Payable/Receivable', 'Financial Reporting', 'Tax Preparation Services', 'Audit-Ready Records'],
+      features: ['General Bookkeeping', 'Accounts Payable/Receivable', 'Financial Reporting', 'Tax Preparation Services', 'Audit-Ready Financial Statements'],
       color: 'from-indigo-500 to-purple-600'
     },
     {
@@ -260,9 +260,6 @@ export default function Home() {
           <div className="text-center">
             {/* Main Title */}
             <div className="opacity-0 animate-[fadeInUp_1s_ease-out_0.2s_forwards]">
-              <div className="inline-flex items-center px-6 py-3 bg-[#092870]/10 border border-[#092870]/20 rounded-full mb-8">
-                <span className="text-[#30a659] text-sm font-bold uppercase tracking-wider">🌟 Top Software Training Institute</span>
-              </div>
               <h1 className="text-5xl md:text-7xl font-black mb-6 leading-tight">
                 <span className="block text-4xl md:text-6xl mb-4 text-[#30a659]">
                   Property Management
@@ -393,16 +390,9 @@ export default function Home() {
                 {/* Card Container */}
                 <div className="bg-gradient-to-br from-gray-50 to-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-8 border-2 border-gray-100 hover:border-[#30a659] transform hover:-translate-y-2">
                   
-                  {/* Flag Icon */}
+                  {/* Flag Icon Only (no country code letters) */}
                   <div className="text-6xl mb-4 transform group-hover:scale-110 transition-transform duration-300">
                     {location.flag}
-                  </div>
-                  
-                  {/* Country Code - Large and Bold */}
-                  <div className="text-4xl font-black mb-2 text-gray-900">
-                    {location.country === 'USA' ? 'US' : 
-                     location.country === 'UK' ? 'GB' : 
-                     location.country === 'Canada' ? 'CA' : 'AU'}
                   </div>
                   
                   {/* Country Name */}
@@ -493,144 +483,118 @@ export default function Home() {
             </p>
           </div>
 
-          {/* Workflow Comparison */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
+          {/* Horizontal Flowchart Design */}
+          <div className="relative max-w-7xl mx-auto">
             
-            {/* Standard Flow */}
-            <div className="relative">
-              <div className="bg-white rounded-3xl shadow-xl p-8 border-2 border-blue-100 hover:border-[#092870]/30 transition-all duration-500 group">
-                <div className="text-center mb-8">
-                  <div className="w-20 h-20 bg-gradient-to-br from-[#092870] to-blue-600 rounded-2xl mx-auto mb-4 flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300">
-                    <span className="text-white text-2xl">🏢</span>
+            <div className="flex items-center justify-between w-full px-4">
+              
+              {/* Initial Call - Starting Point */}
+              <div className="flex-shrink-0">
+                <div className="bg-white rounded-2xl shadow-lg p-4 border-2 border-blue-100 hover:border-[#092870]/30 transition-all duration-500 w-44 h-32 flex flex-col justify-center text-center">
+                  <div className="w-10 h-10 bg-gradient-to-br from-[#092870] to-blue-600 rounded-xl mx-auto mb-2 flex items-center justify-center">
+                    <span className="text-white text-lg">📞</span>
                   </div>
-                  <h3 className="text-2xl font-bold text-[#092870] mb-2">Standard Process</h3>
-                  <p className="text-gray-600">Comprehensive & Systematic Approach</p>
-                </div>
-
-                {/* Flow Steps */}
-                <div className="space-y-6">
-                  {[
-                    {
-                      title: "Initial Call with Person",
-                      description: "Detailed consultation to understand your needs",
-                      icon: "📞",
-                      time: "30-60 mins"
-                    },
-                    {
-                      title: "Onboarding 24 Hours",
-                      description: "Complete setup with documentation & training",
-                      icon: "⚡",
-                      time: "24 hours"
-                    },
-                    {
-                      title: "Deliver on Time",
-                      description: "Systematic delivery with quality checkpoints",
-                      icon: "✅",
-                      time: "As scheduled"
-                    },
-                    {
-                      title: "Ongoing Support",
-                      description: "Continuous optimization & growth support",
-                      icon: "🤝",
-                      time: "Long-term"
-                    }
-                  ].map((step, index) => (
-                    <div key={index} className="flex items-start space-x-4 group/step">
-                      <div className="flex-shrink-0">
-                        <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-[#092870] rounded-xl flex items-center justify-center text-white text-xl group-hover/step:scale-110 transition-transform duration-300">
-                          {step.icon}
-                        </div>
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <div className="flex items-center justify-between mb-1">
-                          <h4 className="text-lg font-semibold text-gray-900">{step.title}</h4>
-                          <span className="text-xs font-medium text-[#092870] bg-blue-50 px-2 py-1 rounded-full">
-                            {step.time}
-                          </span>
-                        </div>
-                        <p className="text-gray-600 text-sm">{step.description}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-
-                <div className="mt-8 p-4 bg-blue-50 rounded-xl border border-blue-200">
-                  <div className="text-center">
-                    <span className="text-[#092870] font-bold text-sm">✓ Best for long-term partnerships</span>
-                  </div>
+                  <h3 className="text-sm font-bold text-[#092870] mb-1">Initial Call with Person</h3>
+                  <p className="text-gray-700 text-xs mb-1 font-medium">Detailed consultation to understand your needs</p>
                 </div>
               </div>
-            </div>
 
-            {/* Express Flow */}
-            <div className="relative">
-              <div className="bg-gradient-to-br from-[#30a659] to-[#092870] rounded-3xl shadow-xl p-8 text-white group overflow-hidden relative">
-                {/* Background Pattern */}
-                <div className="absolute inset-0 opacity-10">
-                  <div className="absolute top-10 right-10 w-32 h-32 bg-white rounded-full"></div>
-                  <div className="absolute bottom-10 left-10 w-24 h-24 bg-white rounded-full"></div>
+              {/* Arrow Right */}
+              <div className="flex items-center mx-2">
+                <div className="w-8 h-1 bg-gradient-to-r from-[#092870] to-[#30a659] rounded-full"></div>
+                <div className="w-0 h-0 border-t-6 border-b-6 border-l-6 border-t-transparent border-b-transparent border-l-[#30a659] ml-1"></div>
+              </div>
+
+              {/* Two Paths - Side by Side */}
+              <div className="flex flex-col space-y-6 flex-1">
+                
+                {/* Top Path - Standard Process */}
+                <div className="flex items-center space-x-3">
+                  <div className="bg-white rounded-2xl shadow-lg p-4 border-2 border-blue-100 hover:border-[#092870]/30 transition-all duration-500 w-44 h-32 flex flex-col justify-center text-center">
+                    <div className="w-10 h-10 bg-gradient-to-br from-[#092870] to-blue-600 rounded-xl mx-auto mb-2 flex items-center justify-center">
+                      <span className="text-white text-lg">📞</span>
+                    </div>
+                    <h3 className="text-sm font-bold text-[#092870] mb-1">Initial Call</h3>
+                    <p className="text-gray-700 text-xs mb-1 font-medium">Detailed consultation</p>
+                    <span className="text-xs font-bold text-[#092870] bg-blue-100 px-2 py-1 rounded-full">30-60 mins</span>
+                  </div>
+                  
+                  <div className="w-4 h-1 bg-[#092870] rounded-full"></div>
+                  
+                  <div className="bg-white rounded-2xl shadow-lg p-4 border-2 border-blue-100 w-44 h-32 flex flex-col justify-center text-center">
+                    <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-[#092870] rounded-xl mx-auto mb-2 flex items-center justify-center">
+                      <span className="text-white text-lg">⚡</span>
+                    </div>
+                    <h3 className="text-sm font-bold text-[#092870] mb-1">Onboarding</h3>
+                    <p className="text-gray-700 text-xs mb-1 font-medium">Complete setup</p>
+                    <span className="text-xs font-bold text-[#092870] bg-blue-100 px-2 py-1 rounded-full">24 hours</span>
+                  </div>
+                  
+                  <div className="w-4 h-1 bg-[#092870] rounded-full"></div>
+                  
+                  <div className="bg-white rounded-2xl shadow-lg p-4 border-2 border-blue-100 w-44 h-32 flex flex-col justify-center text-center">
+                    <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-[#092870] rounded-xl mx-auto mb-2 flex items-center justify-center">
+                      <span className="text-white text-lg">✅</span>
+                    </div>
+                    <h3 className="text-sm font-bold text-[#092870] mb-1">Deliver</h3>
+                    <p className="text-gray-700 text-xs mb-1 font-medium">Quality delivery</p>
+                    <span className="text-xs font-bold text-[#092870] bg-blue-100 px-2 py-1 rounded-full">Scheduled</span>
+                  </div>
+                  
+                  <div className="w-4 h-1 bg-[#092870] rounded-full"></div>
+                  
+                  <div className="bg-white rounded-2xl shadow-lg p-4 border-2 border-blue-100 w-44 h-32 flex flex-col justify-center text-center">
+                    <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-[#092870] rounded-xl mx-auto mb-2 flex items-center justify-center">
+                      <span className="text-white text-lg">🤝</span>
+                    </div>
+                    <h3 className="text-sm font-bold text-[#092870] mb-1">Support</h3>
+                    <p className="text-gray-700 text-xs mb-1 font-medium">Ongoing growth</p>
+                    <span className="text-xs font-bold text-[#092870] bg-blue-100 px-2 py-1 rounded-full">Long-term</span>
+                  </div>
                 </div>
 
-                <div className="relative z-10">
-                  <div className="text-center mb-8">
-                    <div className="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-2xl mx-auto mb-4 flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300">
-                      <span className="text-white text-2xl">🚀</span>
+                {/* Bottom Path - Express Service */}
+                <div className="flex items-center space-x-3">
+                  <div className="bg-gradient-to-br from-[#30a659] to-[#092870] rounded-3xl shadow-xl p-6 text-white w-56 text-center">
+                    <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl mx-auto mb-4 flex items-center justify-center">
+                      <span className="text-2xl">�</span>
                     </div>
-                    <h3 className="text-2xl font-bold mb-2">Express Bullet Service</h3>
-                    <p className="text-white/80">Rapid Deployment & Immediate Results</p>
+                    <h3 className="text-lg font-bold mb-2">Initial Call with Person</h3>
+                    <p className="text-white/80 text-sm mb-2">Immediate assessment & action plan</p>
+                    <span className="text-xs font-medium text-[#30a659] bg-white/20 backdrop-blur-sm px-2 py-1 rounded-full border border-white/30">15-30 mins</span>
                   </div>
-
-                  {/* Flow Steps */}
-                  <div className="space-y-6">
-                    {[
-                      {
-                        title: "Initial Call with Person",
-                        description: "Immediate assessment & action plan",
-                        icon: "📞",
-                        time: "15-30 mins"
-                      },
-                      {
-                        title: "Bullet Service",
-                        description: "Instant team deployment for urgent needs",
-                        icon: "🚀",
-                        time: "Within hours"
-                      },
-                      {
-                        title: "Work Around the Clock",
-                        description: "24/7 dedicated team for rapid completion",
-                        icon: "🌍",
-                        time: "24/7 support"
-                      },
-                      {
-                        title: "Ongoing Support",
-                        description: "Seamless transition to regular support",
-                        icon: "🔄",
-                        time: "Continuous"
-                      }
-                    ].map((step, index) => (
-                      <div key={index} className="flex items-start space-x-4 group/step">
-                        <div className="flex-shrink-0">
-                          <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center text-white text-xl group-hover/step:scale-110 transition-transform duration-300 border border-white/30">
-                            {step.icon}
-                          </div>
-                        </div>
-                        <div className="flex-1 min-w-0">
-                          <div className="flex items-center justify-between mb-1">
-                            <h4 className="text-lg font-semibold text-white">{step.title}</h4>
-                            <span className="text-xs font-medium text-[#30a659] bg-white/20 backdrop-blur-sm px-2 py-1 rounded-full border border-white/30">
-                              {step.time}
-                            </span>
-                          </div>
-                          <p className="text-white/80 text-sm">{step.description}</p>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-
-                  <div className="mt-8 p-4 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20">
-                    <div className="text-center">
-                      <span className="text-yellow-300 font-bold text-sm">⚡ URGENT RESULTS: 48-72 hours delivery</span>
+                  
+                  <div className="w-4 h-1 bg-[#30a659] rounded-full"></div>
+                  
+                  <div className="bg-white rounded-2xl shadow-lg p-4 border-2 border-green-200 w-44 h-32 flex flex-col justify-center text-center">
+                    <div className="w-10 h-10 bg-gradient-to-br from-[#30a659] to-[#092870] rounded-xl mx-auto mb-2 flex items-center justify-center">
+                      <span className="text-white text-lg">🚀</span>
                     </div>
+                    <h3 className="text-sm font-bold text-[#092870] mb-1">Bullet Service</h3>
+                    <p className="text-gray-700 text-xs mb-1 font-medium">Instant deployment</p>
+                    <span className="text-xs font-bold text-[#30a659] bg-green-100 px-2 py-1 rounded-full">Within hours</span>
+                  </div>
+                  
+                  <div className="w-4 h-1 bg-[#30a659] rounded-full"></div>
+                  
+                  <div className="bg-white rounded-2xl shadow-lg p-4 border-2 border-green-200 w-44 h-32 flex flex-col justify-center text-center">
+                    <div className="w-10 h-10 bg-gradient-to-br from-[#30a659] to-[#092870] rounded-xl mx-auto mb-2 flex items-center justify-center">
+                      <span className="text-white text-lg">🌍</span>
+                    </div>
+                    <h3 className="text-sm font-bold text-[#092870] mb-1">24/7 Work</h3>
+                    <p className="text-gray-700 text-xs mb-1 font-medium">Round the clock</p>
+                    <span className="text-xs font-bold text-[#30a659] bg-green-100 px-2 py-1 rounded-full">24/7 support</span>
+                  </div>
+                  
+                  <div className="w-4 h-1 bg-[#30a659] rounded-full"></div>
+                  
+                  <div className="bg-white rounded-2xl shadow-lg p-4 border-2 border-green-200 w-44 h-32 flex flex-col justify-center text-center">
+                    <div className="w-10 h-10 bg-gradient-to-br from-[#30a659] to-[#092870] rounded-xl mx-auto mb-2 flex items-center justify-center">
+                      <span className="text-white text-lg">🔄</span>
+                    </div>
+                    <h3 className="text-sm font-bold text-[#092870] mb-1">Support</h3>
+                    <p className="text-gray-700 text-xs mb-1 font-medium">Seamless transition</p>
+                    <span className="text-xs font-bold text-[#30a659] bg-green-100 px-2 py-1 rounded-full">Continuous</span>
                   </div>
                 </div>
               </div>
@@ -658,7 +622,7 @@ export default function Home() {
       <section className="py-20 bg-gradient-to-br from-gray-800 to-[#092870] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: '#ffffff !important' }}>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 !text-white">
               What Our Clients Say
             </h2>
             <p className="text-xl text-gray-200 max-w-3xl mx-auto">

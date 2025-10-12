@@ -506,14 +506,22 @@ const AboutPage = () => {
                 </div>
               </div>
 
-              {/* Why Choose Pacerline - Key Points */}
+              {/* 
+              ==============================
+              WHY CHOOSE PACERLINE SECTION - COMMENTED OUT
+              ==============================
+              This section is commented out for now but can be easily uncommented in the future when needed.
+              To enable this section, simply uncomment the code block below.
+              */}
+              
+              {/* UNCOMMENT THE ENTIRE BLOCK BELOW TO SHOW "WHY CHOOSE PACERLINE" SECTION
+              
               <div className="mb-12">
                 <h4 className="text-3xl font-bold text-center text-gray-900 mb-8">
                   Why Choose <span className="text-green-600">Pacerline?</span>
                 </h4>
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                  {/* Point 1 */}
                   <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group border-l-4 border-blue-500">
                     <div className="flex items-start space-x-4">
                       <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
@@ -528,7 +536,6 @@ const AboutPage = () => {
                     </div>
                   </div>
 
-                  {/* Point 2 */}
                   <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group border-l-4 border-green-500">
                     <div className="flex items-start space-x-4">
                       <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-green-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
@@ -543,7 +550,6 @@ const AboutPage = () => {
                     </div>
                   </div>
 
-                  {/* Point 3 */}
                   <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group border-l-4 border-purple-500">
                     <div className="flex items-start space-x-4">
                       <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-purple-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
@@ -558,7 +564,6 @@ const AboutPage = () => {
                     </div>
                   </div>
 
-                  {/* Point 4 */}
                   <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group border-l-4 border-orange-500">
                     <div className="flex items-start space-x-4">
                       <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
@@ -573,7 +578,6 @@ const AboutPage = () => {
                     </div>
                   </div>
 
-                  {/* Point 5 */}
                   <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group border-l-4 border-teal-500">
                     <div className="flex items-start space-x-4">
                       <div className="w-12 h-12 bg-gradient-to-r from-teal-500 to-teal-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
@@ -588,7 +592,6 @@ const AboutPage = () => {
                     </div>
                   </div>
 
-                  {/* Point 6 */}
                   <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group border-l-4 border-rose-500">
                     <div className="flex items-start space-x-4">
                       <div className="w-12 h-12 bg-gradient-to-r from-rose-500 to-rose-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
@@ -605,7 +608,6 @@ const AboutPage = () => {
                 </div>
               </div>
 
-              {/* Key Statistics */}
               <div className="bg-gradient-to-r from-blue-500 to-green-500 rounded-2xl p-8 text-white">
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
                   <div className="group">
@@ -627,7 +629,6 @@ const AboutPage = () => {
                 </div>
               </div>
 
-              {/* Bottom Message */}
               <div className="mt-8 text-center">
                 <p className="text-lg text-gray-700 leading-relaxed max-w-4xl mx-auto">
                   <strong className="text-blue-600">By employing Pacerline,</strong> you get to utilize experts who understand the competitive property 
@@ -635,6 +636,9 @@ const AboutPage = () => {
                   and achieve sustainable growth in your business.
                 </p>
               </div>
+              
+              END OF COMMENTED SECTION */}
+
             </div>
           </div>
         </div>
