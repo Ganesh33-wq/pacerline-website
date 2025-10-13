@@ -1,12 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
   trailingSlash: false,
   reactStrictMode: true,
   swcMinify: true,
   
   images: {
-    unoptimized: true, // Required for static export
+    domains: ['localhost'], // Add domains for image optimization
   },
 
   // Remove powered by header for security

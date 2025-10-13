@@ -1,0 +1,114 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+// Admin Users Table
+model Admin {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  password  String
+  name      String
+  role      String   @default("admin")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+// Contact Form Submissions
+model Contact {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  phone     String?
+  query     String?
+  documents String?  // JSON string for file paths
+  status    String   @default("new") // new, replied, closed
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+// About Form Submissions
+model About {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  phone     String
+  query     String?
+  documents String?  // JSON string for file paths
+  status    String   @default("new")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+// Blog Posts
+model Blog {
+  id          String   @id @default(cuid())
+  title       String
+  content     String
+  excerpt     String?
+  image       String?
+  slug        String   @unique
+  published   Boolean  @default(false)
+  tags        String?  // JSON string for tags array
+  createdBy   String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+// Job Openings
+model Job {
+  id          String   @id @default(cuid())
+  title       String
+  department  String
+  location    String
+  type        String   // full-time, part-time, contract
+  description String
+  requirements String
+  salary      String?
+  published   Boolean  @default(false)
+  createdBy   String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  
+  applications JobApplication[]
+}
+
+// Job Applications
+model JobApplication {
+  id        String   @id @default(cuid())
+  jobId     String
+  name      String
+  email     String
+  phone     String
+  resume    String   // file path
+  coverLetter String?
+  status    String   @default("applied") // applied, reviewing, interview, rejected, hired
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  
+  job       Job      @relation(fields: [jobId], references: [id])
+}
+
+// Demo Bookings
+model DemoBooking {
+  id          String   @id @default(cuid())
+  name        String
+  email       String
+  phone       String
+  company     String?
+  meetingType String
+  title       String
+  message     String?
+  date        String
+  time        String
+  status      String   @default("scheduled") // scheduled, completed, cancelled
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}

@@ -1,7 +1,62 @@
 import Head from 'next/head'
+import { useState } from 'react'
 import Layout from '../components/Layout'
+import { useNotificationContext } from '../contexts/NotificationContext'
 
 const AboutPage = () => {
+  const { showSuccess, showError } = useNotificationContext()
+  const [isSubmitting, setIsSubmitting] = useState(false)
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    setIsSubmitting(true)
+
+    try {
+      const formData = new FormData(e.currentTarget)
+      const data = {
+        name: formData.get('name') as string,
+        email: formData.get('email') as string,
+        phone: formData.get('phone') as string,
+        query: formData.get('query') as string,
+      }
+
+      const response = await fetch('/api/about', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      })
+
+      const result = await response.json()
+
+      if (response.ok) {
+        showSuccess(
+          'Form Submitted Successfully!',
+          'Thank you for your query. We will get back to you within 24 hours.',
+          6000
+        )
+        // Reset form
+        ;(e.target as HTMLFormElement).reset()
+      } else {
+        showError(
+          'Submission Failed',
+          result.message || 'Something went wrong. Please try again.',
+          6000
+        )
+      }
+    } catch (error) {
+      console.error('Form submission error:', error)
+      showError(
+        'Network Error',
+        'Unable to submit form. Please check your connection and try again.',
+        6000
+      )
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
+
   return (
     <Layout>
       <Head>
@@ -716,7 +771,7 @@ const AboutPage = () => {
           </div>
           
           <div className="max-w-4xl mx-auto">
-            <form className="space-y-6 bg-white/10 backdrop-blur-lg p-8 rounded-2xl border border-white/20 shadow-2xl">
+            <form onSubmit={handleSubmit} className="space-y-6 bg-white/10 backdrop-blur-lg p-8 rounded-2xl border border-white/20 shadow-2xl">
               {/* Mandatory Fields Section */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
@@ -784,12 +839,29 @@ const AboutPage = () => {
               {/* Submit Button */}
               <div className="text-center pt-4">
                 <button 
-                  type="submit" 
-                  className="bg-white text-blue-600 hover:bg-blue-50 font-bold py-4 px-12 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-2xl border-2 border-transparent hover:border-blue-200"
+                  type="submit"
+                  disabled={isSubmitting}
+                  className={`font-bold py-4 px-12 rounded-xl transition-all duration-300 transform shadow-lg border-2 ${
+                    isSubmitting
+                      ? 'bg-gray-400 text-gray-600 cursor-not-allowed border-gray-300'
+                      : 'bg-white text-blue-600 hover:bg-blue-50 hover:scale-105 hover:shadow-2xl border-transparent hover:border-blue-200'
+                  }`}
                 >
                   <span className="flex items-center justify-center">
-                    <span className="mr-2">📤</span>
-                    Submit Your Query
+                    {isSubmitting ? (
+                      <>
+                        <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-gray-600" fill="none" viewBox="0 0 24 24">
+                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
+                        Submitting...
+                      </>
+                    ) : (
+                      <>
+                        <span className="mr-2">📤</span>
+                        Submit Your Query
+                      </>
+                    )}
                   </span>
                 </button>
               </div>
