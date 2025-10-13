@@ -10,15 +10,15 @@ const FloatingContactWidget = () => {
   }
 
   const handleWhatsApp = () => {
-    window.open('https://wa.me/1234567890?text=Hello! I would like to know more about your services.', '_blank')
+    window.open('https://wa.me/918608691085?text=Hello! I would like to know more about your services.', '_blank')
   }
 
   const handleCall = () => {
-    window.open('tel:+1234567890', '_self')
+    window.open('tel:+918608691085', '_self')
   }
 
   const handleBookDemo = () => {
-    setShowCalendar(true)
+    window.location.href = '/book-demo'
     setIsOpen(false) // Close the main widget
   }
 

@@ -206,6 +206,28 @@ export default function Home() {
               transform: translateY(-15px) rotate(-2deg);
             }
           }
+          
+          @keyframes fadeInUp {
+            from {
+              opacity: 0;
+              transform: translateY(30px);
+            }
+            to {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+          
+          @keyframes fadeInRight {
+            from {
+              opacity: 0;
+              transform: translateX(30px);
+            }
+            to {
+              opacity: 1;
+              transform: translateX(0);
+            }
+          }
         `}</style>
       </Head>
       
@@ -324,15 +346,16 @@ export default function Home() {
         <style jsx>{`
           @keyframes scroll-left {
             0% {
-              transform: translateX(0);
+              transform: translateX(0%);
             }
             100% {
-              transform: translateX(-50%);
+              transform: translateX(-100%);
             }
           }
           
           .animate-scroll-left {
-            animation: scroll-left 25s linear infinite;
+            animation: scroll-left 30s linear infinite;
+            width: 200%;  /* Double the width to ensure seamless loop */
           }
           
           .animate-scroll-left:hover {
@@ -341,7 +364,7 @@ export default function Home() {
           
           @media (max-width: 768px) {
             .animate-scroll-left {
-              animation: scroll-left 30s linear infinite;
+              animation: scroll-left 35s linear infinite;
             }
           }
         `}</style>
@@ -516,14 +539,17 @@ export default function Home() {
                 {/* Card Container matching your design */}
                 <div className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 border border-gray-200 hover:border-[#30a659] transform hover:-translate-y-2">
                   
-                  {/* Flag Image with Country Code */}
+                  {/* Show Flag on Both Desktop and Mobile */}
                   <div className="relative mb-4 flex justify-center">
                     <div className="relative">
-                      <img 
-                        src={`/images/flags/${location.countryCode.toLowerCase()}.svg`}
-                        alt={`${location.country} flag`}
-                        className="w-16 h-12 object-cover rounded-lg border-2 border-gray-300 shadow-md transform group-hover:scale-110 transition-transform duration-300"
-                      />
+                      {/* Flag Emoji - Always visible */}
+                      <div className="text-6xl mb-2 transform group-hover:scale-110 transition-transform duration-300">
+                        {location.flag}
+                      </div>
+                      {/* Country Code - Hidden on mobile, shown on desktop as overlay */}
+                      <div className="hidden md:block absolute -bottom-2 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white text-xs px-2 py-1 rounded opacity-75">
+                        {location.countryCode}
+                      </div>
                     </div>
                   </div>
                   
@@ -705,7 +731,7 @@ export default function Home() {
                   <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-purple-700 rounded-xl mx-auto mb-2 flex items-center justify-center">
                     <span className="text-white text-lg animate-bounce">👋</span>
                   </div>
-                  <h3 className="text-sm font-bold text-[#092870] mb-1">Support</h3>
+                  <h3 className="text-sm font-bold text-[#092870] mb-1">Ongoing Support</h3>
                   <p className="text-gray-700 text-xs font-medium">Ongoing growth & seamless transition</p>
                 </div>
               </div>

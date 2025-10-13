@@ -706,58 +706,99 @@ const AboutPage = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold mb-6">
-              Let's Grow Together
+              Get in Touch with Us
             </h2>
             <p className="text-lg text-green-100 max-w-3xl mx-auto leading-relaxed">
               Ready to optimize your operations, save money, and grow your property management business? 
-              Join hands with Pacerline Outsourcing Service Pvt Ltd and feel the difference of working 
-              with a trustworthy, U.S.-focused outsourcing partner.
+              Share your details and query with us. Join hands with Pacerline Outsourcing Service Pvt Ltd 
+              and feel the difference of working with a trustworthy, U.S.-focused outsourcing partner.
             </p>
           </div>
           
           <div className="max-w-4xl mx-auto">
-            <form className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <input type="text" placeholder="Your name*" className="w-full p-4 rounded-lg border border-gray-300 text-gray-900" required />
+            <form className="space-y-6 bg-white/10 backdrop-blur-lg p-8 rounded-2xl border border-white/20 shadow-2xl">
+              {/* Mandatory Fields Section */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="space-y-2">
+                  <label className="block text-sm font-semibold text-white">Full Name *</label>
+                  <input 
+                    type="text" 
+                    name="name"
+                    placeholder="Enter your full name" 
+                    className="w-full p-4 rounded-xl border-2 border-white/30 bg-white/20 backdrop-blur-sm text-white placeholder-white/70 focus:border-white focus:ring-2 focus:ring-white/50 transition-all duration-300" 
+                    required 
+                  />
+                </div>
+                <div className="space-y-2">
+                  <label className="block text-sm font-semibold text-white">Email Address *</label>
+                  <input 
+                    type="email" 
+                    name="email"
+                    placeholder="Enter your email address" 
+                    className="w-full p-4 rounded-xl border-2 border-white/30 bg-white/20 backdrop-blur-sm text-white placeholder-white/70 focus:border-white focus:ring-2 focus:ring-white/50 transition-all duration-300" 
+                    required 
+                  />
+                </div>
               </div>
-              <div>
-                <input type="text" placeholder="Company name" className="w-full p-4 rounded-lg border border-gray-300 text-gray-900" />
+              
+              <div className="space-y-2">
+                <label className="block text-sm font-semibold text-white">Phone Number *</label>
+                <input 
+                  type="tel" 
+                  name="phone"
+                  placeholder="Enter your phone number" 
+                  className="w-full p-4 rounded-xl border-2 border-white/30 bg-white/20 backdrop-blur-sm text-white placeholder-white/70 focus:border-white focus:ring-2 focus:ring-white/50 transition-all duration-300" 
+                  required 
+                />
               </div>
-              <div>
-                <input type="text" placeholder="Job title" className="w-full p-4 rounded-lg border border-gray-300 text-gray-900" />
+
+              {/* Query Section */}
+              <div className="space-y-2">
+                <label className="block text-sm font-semibold text-white">What is your query?</label>
+                <textarea 
+                  name="query"
+                  placeholder="Please describe your specific query or requirements in detail..." 
+                  rows={4} 
+                  className="w-full p-4 rounded-xl border-2 border-white/30 bg-white/20 backdrop-blur-sm text-white placeholder-white/70 focus:border-white focus:ring-2 focus:ring-white/50 transition-all duration-300 resize-none"
+                ></textarea>
               </div>
-              <div>
-                <select className="w-full p-4 rounded-lg border border-gray-300 text-gray-900">
-                  <option>Country</option>
-                  <option>USA</option>
-                  <option>UK</option>
-                  <option>Canada</option>
-                  <option>Australia</option>
-                </select>
+
+              {/* File Upload Section */}
+              <div className="space-y-2">
+                <label className="block text-sm font-semibold text-white">Upload Documents (Optional)</label>
+                <div className="relative">
+                  <input 
+                    type="file" 
+                    name="documents"
+                    accept=".jpg,.jpeg,.png,.pdf,.doc,.docx,.xlsx,.xls" 
+                    className="w-full p-4 rounded-xl border-2 border-white/30 bg-white/20 backdrop-blur-sm text-white file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-white file:text-blue-600 hover:file:bg-blue-50 focus:border-white focus:ring-2 focus:ring-white/50 transition-all duration-300" 
+                    multiple
+                  />
+                </div>
+                <p className="text-sm text-green-200 mt-2 flex items-center">
+                  <span className="mr-2">📎</span>
+                  Supported formats: JPG, PNG, PDF, Word, Excel (Max 10MB per file)
+                </p>
               </div>
-              <div>
-                <input type="tel" placeholder="Your Phone*" className="w-full p-4 rounded-lg border border-gray-300 text-gray-900" required />
-              </div>
-              <div>
-                <input type="text" placeholder="Your company size" className="w-full p-4 rounded-lg border border-gray-300 text-gray-900" />
-              </div>
-              <div>
-                <input type="email" placeholder="Business email*" className="w-full p-4 rounded-lg border border-gray-300 text-gray-900" required />
-              </div>
-              <div>
-                <input type="url" placeholder="Company website URL" className="w-full p-4 rounded-lg border border-gray-300 text-gray-900" />
-              </div>
-              <div className="md:col-span-2">
-                <textarea placeholder="Please briefly describe your business and the services you offer." rows={4} className="w-full p-4 rounded-lg border border-gray-300 text-gray-900"></textarea>
-              </div>
-              <div className="md:col-span-2">
-                <input type="file" accept="jpg,png,pdf,word,xlsx" className="w-full p-4 rounded-lg border border-gray-300 text-gray-900" />
-                <p className="text-sm text-green-200 mt-2">Attach Documents jpg, png, pdf, word, xlsx</p>
-              </div>
-              <div className="md:col-span-2 text-center">
-                <button type="submit" className="bg-white text-blue-600 hover:bg-blue-50 font-bold py-4 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
-                  Submit Application
+
+              {/* Submit Button */}
+              <div className="text-center pt-4">
+                <button 
+                  type="submit" 
+                  className="bg-white text-blue-600 hover:bg-blue-50 font-bold py-4 px-12 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-2xl border-2 border-transparent hover:border-blue-200"
+                >
+                  <span className="flex items-center justify-center">
+                    <span className="mr-2">📤</span>
+                    Submit Your Query
+                  </span>
                 </button>
+              </div>
+
+              {/* Required Fields Note */}
+              <div className="text-center">
+                <p className="text-sm text-green-200">
+                  <span className="text-white">*</span> Required fields
+                </p>
               </div>
             </form>
           </div>
