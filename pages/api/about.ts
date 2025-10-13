@@ -1,5 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 import { prisma } from '../../lib/prisma'
+import { sendEmail, emailTemplates } from '../../lib/email'
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method === 'POST') {
@@ -39,9 +40,40 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         timestamp: aboutSubmission.createdAt
       })
 
+      // Send emails
+      const emailData = {
+        name: aboutSubmission.name,
+        email: aboutSubmission.email,
+        phone: aboutSubmission.phone,
+        company: '', // About form doesn't have company field
+        interest: 'Company Information',
+        message: aboutSubmission.query
+      }
+
+      try {
+        // Send detailed email to admin
+        await sendEmail({
+          to: process.env.ADMIN_EMAIL!,
+          subject: `ℹ️ New About Us Inquiry - ${aboutSubmission.name}`,
+          html: emailTemplates.aboutAdmin(emailData)
+        })
+
+        // Send acknowledgment email to client
+        await sendEmail({
+          to: aboutSubmission.email,
+          subject: 'Thank You for Your Interest in Pacerline',
+          html: emailTemplates.aboutClient(emailData)
+        })
+
+        console.log('✅ About form emails sent successfully')
+      } catch (emailError) {
+        console.error('❌ Failed to send about form emails:', emailError)
+        // Don't fail the API call if email fails
+      }
+
       res.status(201).json({
         success: true,
-        message: 'Your query has been submitted successfully!',
+        message: 'Your query has been submitted successfully! You will receive a confirmation email shortly.',
         id: aboutSubmission.id
       })
 

@@ -1,5 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 import { prisma } from '../../lib/prisma'
+import { sendEmail, emailTemplates } from '../../lib/email'
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method === 'POST') {
@@ -38,9 +39,40 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         timestamp: contact.createdAt
       })
 
+      // Send emails
+      const emailData = {
+        name: contact.name,
+        email: contact.email,
+        phone: contact.phone,
+        company: '', // Contact form doesn't have company field
+        subject: 'General Inquiry',
+        message: contact.query
+      }
+
+      try {
+        // Send detailed email to admin
+        await sendEmail({
+          to: process.env.ADMIN_EMAIL!,
+          subject: `📧 New Contact Form - ${contact.name}`,
+          html: emailTemplates.contactAdmin(emailData)
+        })
+
+        // Send acknowledgment email to client
+        await sendEmail({
+          to: contact.email,
+          subject: 'Thank You for Contacting Pacerline',
+          html: emailTemplates.contactClient(emailData)
+        })
+
+        console.log('✅ Contact form emails sent successfully')
+      } catch (emailError) {
+        console.error('❌ Failed to send contact form emails:', emailError)
+        // Don't fail the API call if email fails
+      }
+
       res.status(201).json({
         success: true,
-        message: 'Your message has been sent successfully!',
+        message: 'Your message has been sent successfully! You will receive a confirmation email shortly.',
         id: contact.id
       })
     } catch (error) {

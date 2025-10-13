@@ -4,6 +4,7 @@ import { PrismaClient } from '@prisma/client'
 import formidable from 'formidable'
 import fs from 'fs'
 import path from 'path'
+import { sendEmail, emailTemplates } from '../../lib/email'
 
 const prisma = new PrismaClient()
 
@@ -102,6 +103,27 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         }
       })
 
+      // Send acknowledgment email to client only (no admin email for job applications)
+      const emailData = {
+        name: jobApplication.name,
+        email: jobApplication.email,
+        position: job.title
+      }
+
+      try {
+        // Send acknowledgment email to client
+        await sendEmail({
+          to: jobApplication.email,
+          subject: 'Application Received - Pacerline Careers',
+          html: emailTemplates.jobApplicationClient(emailData)
+        })
+
+        console.log('✅ Job application acknowledgment email sent successfully')
+      } catch (emailError) {
+        console.error('❌ Failed to send job application email:', emailError)
+        // Don't fail the API call if email fails
+      }
+
       return res.status(201).json({
         success: true,
         application: {
@@ -113,7 +135,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           status: jobApplication.status,
           appliedAt: jobApplication.createdAt
         },
-        message: 'Job application submitted successfully'
+        message: 'Job application submitted successfully! You will receive a confirmation email shortly.'
       })
 
     } catch (error) {

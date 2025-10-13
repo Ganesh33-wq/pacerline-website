@@ -1,5 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 import { prisma } from '../../lib/prisma'
+import { sendEmail, emailTemplates } from '../../lib/email'
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method === 'POST') {
@@ -67,9 +68,42 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         timestamp: demoBooking.createdAt
       })
 
+      // Send emails
+      const emailData = {
+        name: demoBooking.name,
+        email: demoBooking.email,
+        phone: demoBooking.phone,
+        company: demoBooking.company,
+        date: demoBooking.date,
+        time: demoBooking.time,
+        service: demoBooking.title,
+        message: demoBooking.message
+      }
+
+      try {
+        // Send detailed email to admin
+        await sendEmail({
+          to: process.env.ADMIN_EMAIL!,
+          subject: `🎯 New Demo Booking - ${demoBooking.name} (${demoBooking.date} at ${demoBooking.time})`,
+          html: emailTemplates.demoBookingAdmin(emailData)
+        })
+
+        // Send acknowledgment email to client
+        await sendEmail({
+          to: demoBooking.email,
+          subject: 'Demo Request Confirmed - Pacerline',
+          html: emailTemplates.demoBookingClient(emailData)
+        })
+
+        console.log('✅ Demo booking emails sent successfully')
+      } catch (emailError) {
+        console.error('❌ Failed to send demo booking emails:', emailError)
+        // Don't fail the API call if email fails
+      }
+
       res.status(201).json({
         success: true,
-        message: 'Your demo meeting has been scheduled successfully!',
+        message: 'Your demo meeting has been scheduled successfully! You will receive a confirmation email shortly.',
         booking: {
           id: demoBooking.id,
           date: demoBooking.date,
