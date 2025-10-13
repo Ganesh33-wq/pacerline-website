@@ -2,13 +2,14 @@
 // Run with: node test-email.js
 
 const nodemailer = require('nodemailer');
+require('dotenv').config({ path: '.env.local' });
 
 // Email configuration from .env.local
-const EMAIL_HOST = 'smtp.gmail.com';
-const EMAIL_PORT = 587;
-const EMAIL_USER = 'info@pacerline.com';
-const EMAIL_PASS = 'pacerline100%';
-const ADMIN_EMAIL = 'ramy@pacerline.com';
+const EMAIL_HOST = process.env.EMAIL_HOST;
+const EMAIL_PORT = process.env.EMAIL_PORT;
+const EMAIL_USER = process.env.EMAIL_USER;
+const EMAIL_PASS = process.env.EMAIL_PASS;
+const ADMIN_EMAIL = process.env.ADMIN_EMAIL;
 
 // Create transporter
 const transporter = nodemailer.createTransport({
