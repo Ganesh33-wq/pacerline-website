@@ -69,6 +69,7 @@ model Job {
   department  String
   location    String
   type        String   // full-time, part-time, contract
+  experience  String?  // experience required (e.g., "2+ years", "5+ years")
   description String
   requirements String
   salary      String?
