@@ -27,6 +27,12 @@ const AdminDashboard = () => {
     about: [],
     demoBookings: []
   })
+  const [searchTerm, setSearchTerm] = useState('')
+  const [filteredData, setFilteredData] = useState<any[]>([])
+  const [isModalOpen, setIsModalOpen] = useState(false)
+  const [modalMode, setModalMode] = useState<'add' | 'edit'>('add')
+  const [currentRecord, setCurrentRecord] = useState<any>(null)
+  const [formData, setFormData] = useState<any>({})
 
   // Check authentication on component mount
   useEffect(() => {
@@ -149,6 +155,110 @@ const AdminDashboard = () => {
     router.push('/admin/login')
   }
 
+  const handleEdit = (table: string, id: any) => {
+    const currentData = adminData[activeTab as keyof AdminData]
+    const record = currentData.find((item: any) => item.id === id)
+    
+    if (record) {
+      setCurrentRecord(record)
+      setFormData({ ...record })
+      setModalMode('edit')
+      setIsModalOpen(true)
+    }
+  }
+
+  const handleDelete = async (table: string, id: any) => {
+    if (!confirm(`Are you sure you want to delete this ${table} record?`)) {
+      return
+    }
+    
+    try {
+      const response = await fetch(`/api/admin/${table}/${id}`, {
+        method: 'DELETE',
+        headers: {
+          'Authorization': `Bearer ${localStorage.getItem('adminToken')}`
+        }
+      })
+      
+      if (response.ok) {
+        showSuccess('Success', 'Record deleted successfully', 3000)
+        // Refresh the data
+        fetchAdminData()
+      } else {
+        const error = await response.json()
+        showError('Error', error.message || 'Failed to delete record', 5000)
+      }
+    } catch (error) {
+      console.error('Delete error:', error)
+      showError('Error', 'Failed to delete record', 5000)
+    }
+  }
+
+  const handleAddNew = (table: string) => {
+    // Create empty form data based on the current table structure
+    const currentData = adminData[activeTab as keyof AdminData]
+    if (currentData && currentData.length > 0) {
+      const emptyRecord: any = {}
+      Object.keys(currentData[0]).forEach(key => {
+        if (key !== 'id' && key !== 'createdAt' && key !== 'updatedAt') {
+          emptyRecord[key] = ''
+        }
+      })
+      setFormData(emptyRecord)
+    } else {
+      setFormData({})
+    }
+    
+    setCurrentRecord(null)
+    setModalMode('add')
+    setIsModalOpen(true)
+  }
+
+  const handleSave = async () => {
+    try {
+      const token = localStorage.getItem('adminToken')
+      const url = modalMode === 'add' 
+        ? `/api/admin/${activeTab}`
+        : `/api/admin/${activeTab}/${currentRecord.id}`
+      
+      const method = modalMode === 'add' ? 'POST' : 'PUT'
+      
+      const response = await fetch(url, {
+        method: method,
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`
+        },
+        body: JSON.stringify(formData)
+      })
+      
+      if (response.ok) {
+        showSuccess('Success', `Record ${modalMode === 'add' ? 'added' : 'updated'} successfully`, 3000)
+        setIsModalOpen(false)
+        fetchAdminData() // Refresh data
+      } else {
+        const error = await response.json()
+        showError('Error', error.message || `Failed to ${modalMode} record`, 5000)
+      }
+    } catch (error) {
+      console.error('Save error:', error)
+      showError('Error', `Failed to ${modalMode} record`, 5000)
+    }
+  }
+
+  const handleCancel = () => {
+    setIsModalOpen(false)
+    setFormData({})
+    setCurrentRecord(null)
+  }
+
+  const handleInputChange = (field: string, value: any) => {
+    setFormData((prev: any) => ({
+      ...prev,
+      [field]: value
+    }))
+  }
+
   if (authLoading) {
     return (
       <div className="min-h-screen bg-gray-100 flex items-center justify-center">
@@ -196,11 +306,25 @@ const AdminDashboard = () => {
       return (
         <div className="text-center py-12">
           <p className="text-gray-600">No data available for {activeTab}</p>
+          <button
+            onClick={() => handleAddNew(activeTab)}
+            className="mt-4 bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg transition-colors"
+          >
+            Add First Record
+          </button>
         </div>
       )
     }
 
     const columns = Object.keys(currentData[0])
+    
+    // Filter data based on search term
+    const displayData = currentData.filter((item: any) => {
+      if (!searchTerm) return true
+      return Object.values(item).some((value: any) => 
+        String(value).toLowerCase().includes(searchTerm.toLowerCase())
+      )
+    })
     
     return (
       <div className="overflow-x-auto">
@@ -212,10 +336,13 @@ const AdminDashboard = () => {
                   {column.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase())}
                 </th>
               ))}
+              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                Actions
+              </th>
             </tr>
           </thead>
           <tbody className="bg-white divide-y divide-gray-200">
-            {currentData.map((item: any, index: number) => (
+            {displayData.map((item: any, index: number) => (
               <tr key={item.id || index} className="hover:bg-gray-50">
                 {columns.map((column) => (
                   <td key={column} className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
@@ -227,10 +354,116 @@ const AdminDashboard = () => {
                     }
                   </td>
                 ))}
+                <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                  <div className="flex space-x-2">
+                    <button
+                      onClick={() => handleEdit(activeTab, item.id || index)}
+                      className="text-indigo-600 hover:text-indigo-900 bg-indigo-100 hover:bg-indigo-200 px-3 py-1 rounded-md transition-colors"
+                    >
+                      Edit
+                    </button>
+                    <button
+                      onClick={() => handleDelete(activeTab, item.id || index)}
+                      className="text-red-600 hover:text-red-900 bg-red-100 hover:bg-red-200 px-3 py-1 rounded-md transition-colors"
+                    >
+                      Delete
+                    </button>
+                  </div>
+                </td>
               </tr>
             ))}
           </tbody>
         </table>
+      </div>
+    )
+  }
+
+  const renderModal = () => {
+    if (!isModalOpen) return null
+
+    const currentData = adminData[activeTab as keyof AdminData]
+    const fields = currentData && currentData.length > 0 
+      ? Object.keys(currentData[0]).filter(key => key !== 'id' && key !== 'createdAt' && key !== 'updatedAt')
+      : Object.keys(formData)
+
+    return (
+      <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+        <div className="bg-white rounded-lg p-6 w-full max-w-md max-h-96 overflow-y-auto">
+          <div className="flex justify-between items-center mb-4">
+            <h3 className="text-lg font-semibold">
+              {modalMode === 'add' ? `Add New ${activeTab}` : `Edit ${activeTab}`}
+            </h3>
+            <button
+              onClick={handleCancel}
+              className="text-gray-400 hover:text-gray-600"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+          
+          <div className="space-y-4">
+            {fields.map((field) => (
+              <div key={field}>
+                <label className="block text-sm font-medium text-gray-700 mb-1">
+                  {field.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase())}
+                </label>
+                {field === 'message' || field === 'content' || field === 'description' ? (
+                  <textarea
+                    value={formData[field] || ''}
+                    onChange={(e) => handleInputChange(field, e.target.value)}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500"
+                    rows={3}
+                  />
+                ) : field === 'email' ? (
+                  <input
+                    type="email"
+                    value={formData[field] || ''}
+                    onChange={(e) => handleInputChange(field, e.target.value)}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500"
+                  />
+                ) : field === 'phone' ? (
+                  <input
+                    type="tel"
+                    value={formData[field] || ''}
+                    onChange={(e) => handleInputChange(field, e.target.value)}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500"
+                  />
+                ) : field.includes('Date') || field.includes('date') ? (
+                  <input
+                    type="datetime-local"
+                    value={formData[field] ? new Date(formData[field]).toISOString().slice(0, 16) : ''}
+                    onChange={(e) => handleInputChange(field, e.target.value)}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500"
+                  />
+                ) : (
+                  <input
+                    type="text"
+                    value={formData[field] || ''}
+                    onChange={(e) => handleInputChange(field, e.target.value)}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500"
+                  />
+                )}
+              </div>
+            ))}
+          </div>
+          
+          <div className="flex justify-end space-x-3 mt-6">
+            <button
+              onClick={handleCancel}
+              className="px-4 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-50 transition-colors"
+            >
+              Cancel
+            </button>
+            <button
+              onClick={handleSave}
+              className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
+            >
+              {modalMode === 'add' ? 'Add' : 'Save'}
+            </button>
+          </div>
+        </div>
       </div>
     )
   }
@@ -250,12 +483,23 @@ const AdminDashboard = () => {
               <div className="flex items-center">
                 <h1 className="text-3xl font-bold text-gray-900">Admin Dashboard</h1>
               </div>
-              <button
-                onClick={handleLogout}
-                className="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-lg transition-colors"
-              >
-                Logout
-              </button>
+              <div className="flex gap-3">
+                <button
+                  onClick={() => window.open('http://localhost:5555/api/admin/prisma-studio', '_blank')}
+                  className="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded-lg transition-colors flex items-center gap-2"
+                >
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 7v10c0 2.21 1.79 4 4 4h8c0-2.21-1.79-4-4-4V7c0-2.21-1.79-4-4-4H8c-2.21 0-4 1.79-4 4z" />
+                  </svg>
+                  Database Studio
+                </button>
+                <button
+                  onClick={handleLogout}
+                  className="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-lg transition-colors"
+                >
+                  Logout
+                </button>
+              </div>
             </div>
           </div>
         </header>
@@ -310,6 +554,51 @@ const AdminDashboard = () => {
               </nav>
             </div>
 
+            {/* Controls */}
+            <div className="p-6 border-b border-gray-200">
+              <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                <div className="flex-1 max-w-sm">
+                  <div className="relative">
+                    <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                      <svg className="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                      </svg>
+                    </div>
+                    <input
+                      type="text"
+                      placeholder={`Search ${activeTab}...`}
+                      value={searchTerm}
+                      onChange={(e) => setSearchTerm(e.target.value)}
+                      className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md leading-5 bg-white placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 focus:ring-1 focus:ring-blue-500 focus:border-blue-500"
+                    />
+                  </div>
+                </div>
+                <div className="flex gap-2">
+                  <button
+                    onClick={() => {
+                      setSearchTerm('')
+                      fetchAdminData()
+                    }}
+                    className="bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded-lg transition-colors flex items-center gap-2"
+                  >
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                    </svg>
+                    Refresh
+                  </button>
+                  <button
+                    onClick={() => handleAddNew(activeTab)}
+                    className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg transition-colors flex items-center gap-2"
+                  >
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                    </svg>
+                    Add New
+                  </button>
+                </div>
+              </div>
+            </div>
+
             {/* Table Content */}
             <div className="p-6">
               {renderTable()}
@@ -317,6 +606,9 @@ const AdminDashboard = () => {
           </div>
         </main>
       </div>
+      
+      {/* Modal */}
+      {renderModal()}
     </>
   )
 }

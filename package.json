@@ -5,6 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "admin": "node server-admin.js",
+    "studio": "npx prisma studio --port 5556",
+    "admin-full": "concurrently \"npm run admin\" \"npm run studio\"",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -30,6 +32,7 @@
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "concurrently": "^9.2.1",
     "critters": "^0.0.23",
     "eslint": "^8",
     "eslint-config-next": "14.0.0",

@@ -1,4 +1,4 @@
-// Admin API to get all jobs
+// Admin API to handle individual contact operations
 import { NextApiRequest, NextApiResponse } from 'next'
 import { PrismaClient } from '@prisma/client'
 import jwt from 'jsonwebtoken'
@@ -6,6 +6,7 @@ import jwt from 'jsonwebtoken'
 const prisma = new PrismaClient()
 const JWT_SECRET = process.env.JWT_SECRET || 'your-jwt-secret-key'
 
+// Middleware to verify JWT token
 const verifyAdmin = (token: string) => {
   try {
     const decoded = jwt.verify(token, JWT_SECRET) as any
@@ -16,6 +17,8 @@ const verifyAdmin = (token: string) => {
 }
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+  const { id } = req.query
+  
   // Check authorization for all methods
   const token = req.headers.authorization?.replace('Bearer ', '')
   if (!token || !verifyAdmin(token)) {
@@ -26,43 +29,41 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   }
 
   try {
-    if (req.method === 'GET') {
-      const jobs = await prisma.job.findMany({
-        orderBy: {
-          createdAt: 'desc'
-        }
+    if (req.method === 'PUT') {
+      const contactData = req.body
+      
+      const updatedContact = await prisma.contact.update({
+        where: { id: id as string },
+        data: contactData
       })
 
       return res.status(200).json({
         success: true,
-        data: jobs,
-        message: 'Jobs fetched successfully'
+        data: updatedContact,
+        message: 'Contact updated successfully'
       })
     }
 
-    if (req.method === 'POST') {
-      const jobData = req.body
-      
-      const newJob = await prisma.job.create({
-        data: jobData
+    if (req.method === 'DELETE') {
+      await prisma.contact.delete({
+        where: { id: id as string }
       })
 
-      return res.status(201).json({
+      return res.status(200).json({
         success: true,
-        data: newJob,
-        message: 'Job created successfully'
+        message: 'Contact deleted successfully'
       })
     }
 
   } catch (error) {
-    console.error('Error in jobs API:', error)
+    console.error('Error in contact API:', error)
     return res.status(500).json({
       success: false,
       message: 'Internal server error'
     })
   }
 
-  res.setHeader('Allow', ['GET', 'POST'])
+  res.setHeader('Allow', ['PUT', 'DELETE'])
   return res.status(405).json({
     success: false,
     message: `Method ${req.method} not allowed`
