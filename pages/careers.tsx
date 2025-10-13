@@ -145,8 +145,118 @@ const CareersPage = () => {
         </div>
       </section>
 
+      {/* Why Join Our Team Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">
+              Why <span className="bg-gradient-to-r from-blue-600 to-green-600 bg-clip-text text-transparent">Join Our Team?</span>
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Discover what makes Pacerline an exceptional place to build your career and grow professionally.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+            {/* Benefit 1 */}
+            <div className="group bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+              <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-blue-700 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Remote Flexibility</h3>
+              <p className="text-gray-600 leading-relaxed">
+                Work from anywhere with full remote flexibility. We believe in work-life balance and trust our team to deliver exceptional results from their preferred environment.
+              </p>
+            </div>
+
+            {/* Benefit 2 */}
+            <div className="group bg-gradient-to-br from-green-50 to-green-100 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+              <div className="w-16 h-16 bg-gradient-to-r from-green-600 to-green-700 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C20.832 18.477 19.246 18 17.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Continuous Learning</h3>
+              <p className="text-gray-600 leading-relaxed">
+                Invest in your professional growth with access to training programs, certifications, and industry conferences. We support your journey to become an expert in your field.
+              </p>
+            </div>
+
+            {/* Benefit 3 */}
+            <div className="group bg-gradient-to-br from-purple-50 to-purple-100 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+              <div className="w-16 h-16 bg-gradient-to-r from-purple-600 to-purple-700 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Collaborative Culture</h3>
+              <p className="text-gray-600 leading-relaxed">
+                Join a supportive team environment where collaboration thrives. Work with talented professionals who are passionate about delivering excellence for our clients.
+              </p>
+            </div>
+
+            {/* Benefit 4 */}
+            <div className="group bg-gradient-to-br from-orange-50 to-orange-100 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+              <div className="w-16 h-16 bg-gradient-to-r from-orange-600 to-orange-700 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Competitive Benefits</h3>
+              <p className="text-gray-600 leading-relaxed">
+                Enjoy competitive salaries, comprehensive health benefits, performance bonuses, and other perks that recognize and reward your valuable contributions.
+              </p>
+            </div>
+
+            {/* Benefit 5 */}
+            <div className="group bg-gradient-to-br from-teal-50 to-teal-100 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+              <div className="w-16 h-16 bg-gradient-to-r from-teal-600 to-teal-700 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Career Growth</h3>
+              <p className="text-gray-600 leading-relaxed">
+                Build a long-term career with clear advancement paths and leadership opportunities. We promote from within and support your professional aspirations.
+              </p>
+            </div>
+
+            {/* Benefit 6 */}
+            <div className="group bg-gradient-to-br from-pink-50 to-pink-100 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+              <div className="w-16 h-16 bg-gradient-to-r from-pink-600 to-pink-700 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Industry Impact</h3>
+              <p className="text-gray-600 leading-relaxed">
+                Make a meaningful impact in the property management industry. Work on projects that help businesses optimize their operations and achieve success.
+              </p>
+            </div>
+          </div>
+
+          {/* Call to Action */}
+          <div className="text-center bg-gradient-to-r from-blue-600 to-green-600 rounded-3xl p-12 text-white">
+            <h3 className="text-3xl font-bold mb-4">Ready to Start Your Journey?</h3>
+            <p className="text-xl mb-8 opacity-90">
+              Join our team of dedicated professionals and take your career to the next level.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a href="#openings" className="bg-white text-blue-600 font-bold py-4 px-8 rounded-full hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                View Open Positions
+              </a>
+              <a href="#openings" className="border-2 border-white text-white hover:bg-white hover:text-blue-600 font-bold py-4 px-8 rounded-full transition-all duration-300">
+                Learn More
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Jobs Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-gray-50" id="openings">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
