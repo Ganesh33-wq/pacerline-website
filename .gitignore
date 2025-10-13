@@ -32,6 +32,19 @@ yarn-error.log*
 .env.test.local
 .env.production.local
 
+# Database files (exclude from git)
+*.db
+*.sqlite
+*.sqlite3
+dev.db
+production.db
+prisma/dev.db
+prisma/production.db
+
+# Uploads directory (keep structure but exclude files)
+uploads/*
+!uploads/.gitkeep
+
 # vercel
 .vercel
 
