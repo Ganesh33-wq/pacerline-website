@@ -34,6 +34,15 @@ const AdminDashboard = () => {
   const [currentRecord, setCurrentRecord] = useState<any>(null)
   const [formData, setFormData] = useState<any>({})
 
+  // Helper function to map frontend tab names to API endpoint names
+  const getApiEndpoint = (tab: string) => {
+    const mapping: Record<string, string> = {
+      'jobApplications': 'job-applications',
+      'demoBookings': 'demo-bookings'
+    }
+    return mapping[tab] || tab
+  }
+
   // Check authentication on component mount
   useEffect(() => {
     // Small delay to allow login page to set token first
@@ -173,7 +182,8 @@ const AdminDashboard = () => {
     }
     
     try {
-      const response = await fetch(`/api/admin/${table}/${id}`, {
+      const endpoint = getApiEndpoint(table)
+      const response = await fetch(`/api/admin/${endpoint}/${id}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('adminToken')}`
@@ -195,31 +205,87 @@ const AdminDashboard = () => {
   }
 
   const handleAddNew = (table: string) => {
-    // Create empty form data based on the current table structure
-    const currentData = adminData[activeTab as keyof AdminData]
-    if (currentData && currentData.length > 0) {
-      const emptyRecord: any = {}
-      Object.keys(currentData[0]).forEach(key => {
-        if (key !== 'id' && key !== 'createdAt' && key !== 'updatedAt') {
-          emptyRecord[key] = ''
-        }
-      })
-      setFormData(emptyRecord)
-    } else {
-      setFormData({})
-    }
-    
+    // Create form data with default values based on the current table
+    const defaultFormData = getDefaultFormData(table)
+    setFormData(defaultFormData)
     setCurrentRecord(null)
     setModalMode('add')
     setIsModalOpen(true)
   }
 
+  const getDefaultFormData = (table: string) => {
+    const baseDefaults = {
+      contacts: {
+        name: '',
+        email: '',
+        phone: '',
+        query: '',
+        documents: '',
+        status: 'new'
+      },
+      jobs: {
+        title: '',
+        department: 'Engineering',
+        location: 'Remote',
+        type: 'Full-time',
+        experience: 'Mid-level',
+        description: '',
+        requirements: '',
+        salary: '',
+        published: false,
+        createdBy: 'Admin'
+      },
+      blogs: {
+        title: '',
+        content: '',
+        excerpt: '',
+        image: '',
+        slug: '',
+        published: false,
+        tags: '',
+        createdBy: 'Admin'
+      },
+      jobApplications: {
+        jobId: '',
+        name: '',
+        email: '',
+        phone: '',
+        resume: '',
+        coverLetter: '',
+        status: 'applied'
+      },
+      demoBookings: {
+        name: '',
+        email: '',
+        phone: '',
+        company: '',
+        meetingType: 'Demo',
+        title: '',
+        message: '',
+        date: new Date().toISOString().slice(0, 10),
+        time: '10:00',
+        status: 'scheduled'
+      },
+      about: {
+        name: '',
+        email: '',
+        phone: '',
+        query: '',
+        documents: '',
+        status: 'new'
+      }
+    }
+
+    return baseDefaults[table as keyof typeof baseDefaults] || {}
+  }
+
   const handleSave = async () => {
     try {
       const token = localStorage.getItem('adminToken')
+      const endpoint = getApiEndpoint(activeTab)
       const url = modalMode === 'add' 
-        ? `/api/admin/${activeTab}`
-        : `/api/admin/${activeTab}/${currentRecord.id}`
+        ? `/api/admin/${endpoint}`
+        : `/api/admin/${endpoint}/${currentRecord.id}`
       
       const method = modalMode === 'add' ? 'POST' : 'PUT'
       
@@ -253,10 +319,25 @@ const AdminDashboard = () => {
   }
 
   const handleInputChange = (field: string, value: any) => {
-    setFormData((prev: any) => ({
-      ...prev,
-      [field]: value
-    }))
+    setFormData((prev: any) => {
+      const newData = {
+        ...prev,
+        [field]: value
+      }
+      
+      // Auto-generate slug from title for blogs
+      if (field === 'title' && activeTab === 'blogs' && value && typeof value === 'string') {
+        const slug = value
+          .toLowerCase()
+          .replace(/[^\w\s-]/g, '')
+          .replace(/\s+/g, '-')
+          .replace(/--+/g, '-')
+          .trim()
+        newData.slug = slug
+      }
+      
+      return newData
+    })
   }
 
   if (authLoading) {
@@ -378,6 +459,234 @@ const AdminDashboard = () => {
     )
   }
 
+  const getFieldOptions = (field: string) => {
+    const options: Record<string, string[]> = {
+      // Contact/About status options
+      status: ['new', 'replied', 'closed', 'applied', 'reviewing', 'interview', 'rejected', 'hired', 'scheduled', 'completed', 'cancelled'],
+      
+      // Job related options
+      department: ['Engineering', 'Marketing', 'Sales', 'HR', 'Finance', 'Operations', 'Customer Success', 'Design', 'Product'],
+      location: ['Remote', 'New York', 'San Francisco', 'London', 'Sydney', 'Toronto', 'Berlin', 'Los Angeles', 'Chicago'],
+      type: ['Full-time', 'Part-time', 'Contract', 'Internship', 'Freelance'],
+      experience: ['Entry-level', 'Junior', 'Mid-level', 'Senior', 'Lead', 'Principal', '1+ years', '2+ years', '3+ years', '5+ years'],
+      
+      // Demo booking options
+      meetingType: ['Demo', 'Consultation', 'Training', 'Support', 'Discovery Call', 'Product Walkthrough'],
+      
+      // Blog/Content options
+      createdBy: ['Admin', 'Editor', 'Content Manager', 'Marketing Team'],
+      
+      // Time slots for demos
+      time: ['09:00', '09:30', '10:00', '10:30', '11:00', '11:30', '12:00', '12:30', '13:00', '13:30', '14:00', '14:30', '15:00', '15:30', '16:00', '16:30', '17:00']
+    }
+    return options[field] || []
+  }
+
+  const renderFormField = (field: string) => {
+    const fieldOptions = getFieldOptions(field)
+    const fieldLabel = field.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase())
+    const isRequired = ['title', 'name', 'email', 'content', 'slug'].includes(field)
+
+    // Handle boolean fields
+    if (field === 'published' || field === 'featured') {
+      return (
+        <div className="flex items-center space-x-2">
+          <input
+            type="checkbox"
+            id={field}
+            checked={Boolean(formData[field])}
+            onChange={(e) => handleInputChange(field, e.target.checked)}
+            className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+          />
+          <label htmlFor={field} className="text-sm font-medium text-gray-700">
+            {fieldLabel} {isRequired && <span className="text-red-500">*</span>}
+          </label>
+        </div>
+      )
+    }
+
+    // Handle dropdown fields
+    if (fieldOptions.length > 0) {
+      return (
+        <select
+          value={formData[field] || ''}
+          onChange={(e) => handleInputChange(field, e.target.value)}
+          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white"
+          required={isRequired}
+        >
+          <option value="">Select {fieldLabel}</option>
+          {fieldOptions.map((option) => (
+            <option key={option} value={option}>
+              {option}
+            </option>
+          ))}
+        </select>
+      )
+    }
+
+    // Handle textarea fields
+    if (['message', 'content', 'description', 'requirements', 'coverLetter', 'skills', 'query'].includes(field)) {
+      const rows = field === 'content' ? 8 : field === 'description' || field === 'requirements' ? 6 : 4
+      return (
+        <textarea
+          value={formData[field] || ''}
+          onChange={(e) => handleInputChange(field, e.target.value)}
+          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 resize-vertical"
+          rows={rows}
+          placeholder={`Enter ${fieldLabel.toLowerCase()}...`}
+          required={isRequired}
+        />
+      )
+    }
+
+    // Handle title field (special handling for demo bookings where it might be longer)
+    if (field === 'title') {
+      if (activeTab === 'demoBookings') {
+        return (
+          <textarea
+            value={formData[field] || ''}
+            onChange={(e) => handleInputChange(field, e.target.value)}
+            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 resize-vertical"
+            rows={2}
+            placeholder="Enter meeting title..."
+            required={isRequired}
+          />
+        )
+      } else {
+        return (
+          <input
+            type="text"
+            value={formData[field] || ''}
+            onChange={(e) => handleInputChange(field, e.target.value)}
+            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+            placeholder="Enter title..."
+            required={isRequired}
+          />
+        )
+      }
+    }
+
+    // Handle file/image fields
+    if (['image', 'resume', 'documents'].includes(field)) {
+      return (
+        <div className="space-y-2">
+          <input
+            type="file"
+            onChange={(e) => {
+              const file = e.target.files?.[0]
+              if (file) {
+                // For now, just store the filename - you can implement file upload later
+                handleInputChange(field, file.name)
+              }
+            }}
+            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+            accept={field === 'image' ? 'image/*' : field === 'resume' ? '.pdf,.doc,.docx' : '*'}
+          />
+          {formData[field] && (
+            <div className="text-sm text-gray-600 bg-gray-50 p-2 rounded">
+              Current: {formData[field]}
+            </div>
+          )}
+        </div>
+      )
+    }
+
+    // Handle time fields
+    if (field === 'time') {
+      return (
+        <select
+          value={formData[field] || ''}
+          onChange={(e) => handleInputChange(field, e.target.value)}
+          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white"
+          required={isRequired}
+        >
+          <option value="">Select Time</option>
+          {getFieldOptions('time').map((option) => (
+            <option key={option} value={option}>
+              {option}
+            </option>
+          ))}
+        </select>
+      )
+    }
+
+    // Handle number fields
+    if (['salary', 'order', 'rating'].includes(field)) {
+      return (
+        <input
+          type="number"
+          value={formData[field] || ''}
+          onChange={(e) => handleInputChange(field, e.target.value)}
+          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+          placeholder={`Enter ${fieldLabel.toLowerCase()}...`}
+          min={field === 'rating' ? 0 : undefined}
+          max={field === 'rating' ? 10 : undefined}
+          required={isRequired}
+        />
+      )
+    }
+
+    // Handle date fields
+    if (field.includes('Date') || field.includes('date') || field === 'date') {
+      const inputType = field === 'date' ? 'date' : 'datetime-local'
+      const value = formData[field] 
+        ? (field === 'date' 
+          ? formData[field].slice(0, 10) 
+          : new Date(formData[field]).toISOString().slice(0, 16))
+        : ''
+        
+      return (
+        <input
+          type={inputType}
+          value={value}
+          onChange={(e) => handleInputChange(field, e.target.value)}
+          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+          required={isRequired}
+        />
+      )
+    }
+
+    // Handle email fields
+    if (field.includes('email') || field.includes('Email')) {
+      return (
+        <input
+          type="email"
+          value={formData[field] || ''}
+          onChange={(e) => handleInputChange(field, e.target.value)}
+          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+          placeholder="Enter email address..."
+          required={isRequired}
+        />
+      )
+    }
+
+    // Handle phone fields
+    if (field.includes('phone') || field.includes('Phone')) {
+      return (
+        <input
+          type="tel"
+          value={formData[field] || ''}
+          onChange={(e) => handleInputChange(field, e.target.value)}
+          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+          placeholder="Enter phone number..."
+          required={isRequired}
+        />
+      )
+    }
+
+    // Default text input
+    return (
+      <input
+        type="text"
+        value={formData[field] || ''}
+        onChange={(e) => handleInputChange(field, e.target.value)}
+        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+        placeholder={`Enter ${fieldLabel.toLowerCase()}...`}
+        required={isRequired}
+      />
+    )
+  }
+
   const renderModal = () => {
     if (!isModalOpen) return null
 
@@ -387,80 +696,75 @@ const AdminDashboard = () => {
       : Object.keys(formData)
 
     return (
-      <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-        <div className="bg-white rounded-lg p-6 w-full max-w-md max-h-96 overflow-y-auto">
-          <div className="flex justify-between items-center mb-4">
-            <h3 className="text-lg font-semibold">
-              {modalMode === 'add' ? `Add New ${activeTab}` : `Edit ${activeTab}`}
-            </h3>
-            <button
-              onClick={handleCancel}
-              className="text-gray-400 hover:text-gray-600"
-            >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
-          </div>
-          
-          <div className="space-y-4">
-            {fields.map((field) => (
-              <div key={field}>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
-                  {field.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase())}
-                </label>
-                {field === 'message' || field === 'content' || field === 'description' ? (
-                  <textarea
-                    value={formData[field] || ''}
-                    onChange={(e) => handleInputChange(field, e.target.value)}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500"
-                    rows={3}
-                  />
-                ) : field === 'email' ? (
-                  <input
-                    type="email"
-                    value={formData[field] || ''}
-                    onChange={(e) => handleInputChange(field, e.target.value)}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500"
-                  />
-                ) : field === 'phone' ? (
-                  <input
-                    type="tel"
-                    value={formData[field] || ''}
-                    onChange={(e) => handleInputChange(field, e.target.value)}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500"
-                  />
-                ) : field.includes('Date') || field.includes('date') ? (
-                  <input
-                    type="datetime-local"
-                    value={formData[field] ? new Date(formData[field]).toISOString().slice(0, 16) : ''}
-                    onChange={(e) => handleInputChange(field, e.target.value)}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500"
-                  />
-                ) : (
-                  <input
-                    type="text"
-                    value={formData[field] || ''}
-                    onChange={(e) => handleInputChange(field, e.target.value)}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500"
-                  />
-                )}
+      <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+        <div className="bg-white rounded-xl shadow-2xl w-full max-w-4xl max-h-[90vh] overflow-hidden flex flex-col">
+          {/* Header */}
+          <div className="px-6 py-4 border-b border-gray-200 bg-gradient-to-r from-blue-500 to-purple-600">
+            <div className="flex justify-between items-center">
+              <div>
+                <h3 className="text-xl font-bold text-white">
+                  {modalMode === 'add' ? '✨ Add New' : '📝 Edit'} {activeTab.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase())}
+                </h3>
+                <p className="text-blue-100 text-sm mt-1">
+                  {modalMode === 'add' ? 'Create a new record with default values' : 'Update existing record'}
+                </p>
               </div>
-            ))}
+              <button
+                onClick={handleCancel}
+                className="text-white hover:text-gray-200 transition-colors p-2 rounded-full hover:bg-white hover:bg-opacity-10"
+              >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
           </div>
           
-          <div className="flex justify-end space-x-3 mt-6">
+          {/* Form Content */}
+          <div className="flex-1 overflow-y-auto p-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {fields.map((field) => {
+                const isWideField = ['content', 'description', 'requirements', 'coverLetter', 'message', 'query', 'title'].includes(field)
+                const isRequired = ['title', 'name', 'email', 'content', 'slug'].includes(field)
+                
+                return (
+                  <div key={field} className={`${isWideField ? 'md:col-span-2' : ''}`}>
+                    <label className="block text-sm font-semibold text-gray-700 mb-2">
+                      {field.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase())}
+                      {isRequired && <span className="text-red-500 ml-1">*</span>}
+                    </label>
+                    {renderFormField(field)}
+                    {field === 'slug' && (
+                      <p className="text-xs text-gray-500 mt-1">URL-friendly version (auto-generated from title)</p>
+                    )}
+                    {field === 'image' && (
+                      <p className="text-xs text-gray-500 mt-1">Upload blog featured image</p>
+                    )}
+                    {field === 'documents' && (
+                      <p className="text-xs text-gray-500 mt-1">Upload supporting documents</p>
+                    )}
+                    {field === 'resume' && (
+                      <p className="text-xs text-gray-500 mt-1">Upload resume (PDF, DOC, DOCX)</p>
+                    )}
+                  </div>
+                )
+              })}
+            </div>
+          </div>
+          
+          {/* Footer */}
+          <div className="px-6 py-4 border-t border-gray-200 bg-gray-50 flex justify-end space-x-3">
             <button
               onClick={handleCancel}
-              className="px-4 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-50 transition-colors"
+              className="px-6 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors font-medium"
             >
               Cancel
             </button>
             <button
               onClick={handleSave}
-              className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
+              className="px-6 py-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg hover:from-blue-600 hover:to-purple-700 transition-all duration-200 font-medium shadow-md hover:shadow-lg"
             >
-              {modalMode === 'add' ? 'Add' : 'Save'}
+              {modalMode === 'add' ? '➕ Add Record' : '💾 Save Changes'}
             </button>
           </div>
         </div>

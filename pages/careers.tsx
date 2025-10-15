@@ -131,16 +131,40 @@ const CareersPage = () => {
       </Head>
 
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-blue-600 via-purple-600 to-green-600 text-white py-20">
-        <div className="absolute inset-0 bg-black/20"></div>
+      <section className="relative bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 py-20 overflow-hidden">
+        {/* Simple animated background shapes */}
+        <div className="absolute inset-0">
+          <div className="absolute top-10 left-10 w-32 h-32 bg-blue-200 rounded-full opacity-20 animate-float"></div>
+          <div className="absolute top-20 right-20 w-24 h-24 bg-purple-200 rounded-full opacity-30 animate-float-delayed"></div>
+          <div className="absolute bottom-20 left-1/4 w-20 h-20 bg-indigo-200 rounded-full opacity-25 animate-float-slow"></div>
+        </div>
+        
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
+            {/* Icon */}
+            <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-100 rounded-full mb-6 shadow-md animate-bounce-gentle">
+              <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+              </svg>
+            </div>
+            
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-800 animate-fade-in-up">
               Join Our Team
             </h1>
-            <p className="text-xl text-blue-100 max-w-3xl mx-auto">
-              Build your career with us. We're looking for talented individuals to join our growing team of professionals.
+            <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed animate-fade-in-up delay-200">
+              Build your career with us. We're looking for talented individuals to join our 
+              <span className="text-blue-600 font-semibold"> growing team of professionals</span>.
             </p>
+            
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8 animate-fade-in-up delay-400">
+              <button className="bg-blue-600 text-white px-8 py-3 rounded-lg font-medium text-lg hover:bg-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                View Open Positions
+              </button>
+              <button className="border-2 border-blue-600 text-blue-600 px-8 py-3 rounded-lg font-medium text-lg hover:bg-blue-600 hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                Learn More
+              </button>
+            </div>
           </div>
         </div>
       </section>

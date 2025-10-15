@@ -30,11 +30,22 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
   try {
     if (req.method === 'PUT') {
-      const jobData = req.body
+      const { title, department, location, type, salary, description, requirements, experience, published, createdBy } = req.body
       
       const updatedJob = await prisma.job.update({
         where: { id: id as string },
-        data: jobData
+        data: {
+          title: title?.trim(),
+          department: department?.trim(),
+          location: location?.trim(),
+          type: type?.trim(),
+          salary: salary?.trim() || '',
+          description: description?.trim(),
+          requirements: requirements?.trim(),
+          experience: experience?.trim() || '',
+          published: published === true || published === 'true' || published === '1',
+          createdBy: createdBy?.trim() || 'admin'
+        }
       })
 
       return res.status(200).json({

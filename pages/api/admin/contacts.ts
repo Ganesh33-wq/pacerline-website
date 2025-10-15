@@ -42,10 +42,24 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     }
 
     if (req.method === 'POST') {
-      const contactData = req.body
+      const { name, email, phone, query, status } = req.body
       
+      // Validate required fields
+      if (!name || !email || !phone) {
+        return res.status(400).json({
+          success: false,
+          message: 'Missing required fields: name, email, and phone are required'
+        })
+      }
+
       const newContact = await prisma.contact.create({
-        data: contactData
+        data: {
+          name: name.trim(),
+          email: email.trim().toLowerCase(),
+          phone: phone.trim(),
+          query: query?.trim() || '',
+          status: status?.trim() || 'new'
+        }
       })
 
       return res.status(201).json({

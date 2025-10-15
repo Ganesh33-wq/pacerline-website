@@ -84,16 +84,64 @@ const ContactPage = () => {
       </Head>
       
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white py-20">
-        <div className="absolute inset-0 bg-black/20"></div>
+      <section className="relative bg-gradient-to-br from-green-50 via-emerald-50 to-teal-50 py-20 overflow-hidden">
+        {/* Simple animated background shapes */}
+        <div className="absolute inset-0">
+          <div className="absolute top-16 left-16 w-28 h-28 bg-green-200 rounded-full opacity-20 animate-float"></div>
+          <div className="absolute top-32 right-16 w-20 h-20 bg-emerald-200 rounded-full opacity-25 animate-float-delayed"></div>
+          <div className="absolute bottom-16 left-1/3 w-24 h-24 bg-teal-200 rounded-full opacity-30 animate-float-slow"></div>
+        </div>
+        
+        {/* Simple floating icons */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-20 left-10 animate-bounce-gentle delay-300">
+            <svg className="w-6 h-6 text-green-300 opacity-40" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
+            </svg>
+          </div>
+          <div className="absolute top-32 right-20 animate-bounce-gentle delay-700">
+            <svg className="w-5 h-5 text-emerald-300 opacity-40" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
+              <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+            </svg>
+          </div>
+        </div>
+        
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              Contact us
+            {/* Main Icon */}
+            <div className="inline-flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mb-6 shadow-md animate-bounce-gentle">
+              <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+              </svg>
+            </div>
+            
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-800 animate-fade-in-up">
+              Contact Us
             </h1>
-            <p className="text-xl md:text-2xl text-green-400">
-              We are truthful – we value honest and frequent feedback
+            <p className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed mb-4 animate-fade-in-up delay-200">
+              We are truthful – we value 
+              <span className="text-green-600 font-semibold"> honest and frequent feedback</span>
             </p>
+            <p className="text-base text-gray-500 max-w-3xl mx-auto animate-fade-in-up delay-300">
+              Whatever are your needs, contact us & we would develop a solution for you!
+            </p>
+            
+            {/* Contact Stats */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10 max-w-4xl mx-auto animate-fade-in-up delay-500">
+              <div className="bg-white rounded-xl p-6 shadow-md border border-green-100 hover:shadow-lg transition-shadow duration-300">
+                <div className="text-2xl font-bold text-green-600">24/7</div>
+                <div className="text-gray-600 text-sm">Support Available</div>
+              </div>
+              <div className="bg-white rounded-xl p-6 shadow-md border border-green-100 hover:shadow-lg transition-shadow duration-300">
+                <div className="text-2xl font-bold text-green-600">&lt;1hr</div>
+                <div className="text-gray-600 text-sm">Response Time</div>
+              </div>
+              <div className="bg-white rounded-xl p-6 shadow-md border border-green-100 hover:shadow-lg transition-shadow duration-300">
+                <div className="text-2xl font-bold text-green-600">100%</div>
+                <div className="text-gray-600 text-sm">Client Satisfaction</div>
+              </div>
+            </div>
           </div>
         </div>
       </section>

@@ -41,10 +41,29 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     }
 
     if (req.method === 'POST') {
-      const jobData = req.body
+      const { title, department, location, type, salary, description, requirements, experience, published, createdBy } = req.body
       
+      // Validate required fields
+      if (!title || !department || !location || !type || !description || !requirements) {
+        return res.status(400).json({
+          success: false,
+          message: 'Missing required fields: title, department, location, type, description, and requirements are required'
+        })
+      }
+
       const newJob = await prisma.job.create({
-        data: jobData
+        data: {
+          title: title.trim(),
+          department: department.trim(),
+          location: location.trim(),
+          type: type.trim(),
+          salary: salary?.trim() || '',
+          description: description.trim(),
+          requirements: requirements.trim(),
+          experience: experience?.trim() || '',
+          published: published === true || published === 'true' || published === '1',
+          createdBy: createdBy?.trim() || 'admin'
+        }
       })
 
       return res.status(201).json({
@@ -56,10 +75,24 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
   } catch (error) {
     console.error('Error in jobs API:', error)
+    
+    // Handle specific database errors
+    if (error instanceof Error) {
+      if (error.message.includes('Unique constraint')) {
+        return res.status(400).json({
+          success: false,
+          message: 'Job with this title already exists'
+        })
+      }
+    }
+    
     return res.status(500).json({
       success: false,
-      message: 'Internal server error'
+      message: 'Internal server error',
+      details: process.env.NODE_ENV === 'development' ? String(error) : undefined
     })
+  } finally {
+    await prisma.$disconnect()
   }
 
   res.setHeader('Allow', ['GET', 'POST'])
