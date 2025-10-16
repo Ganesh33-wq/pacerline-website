@@ -43,12 +43,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       const employee = await prisma.employee.create({
         data: {
           name: fields.name,
+          email: fields.email,
+          phone: fields.phone,
           photo: photoPath,
           role: fields.role,
-          yearsExperience: parseInt(fields.yearsExperience, 10),
-          dateOfJoin: new Date(fields.dateOfJoin),
-          experience: fields.experience,
-          bioData: fields.bioData,
         },
       });
       return res.status(201).json(employee);
@@ -73,12 +71,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         where: { id },
         data: {
           name: fields.name,
+          email: fields.email,
+          phone: fields.phone,
           photo: photoPath,
           role: fields.role,
-          yearsExperience: parseInt(fields.yearsExperience, 10),
-          dateOfJoin: new Date(fields.dateOfJoin),
-          experience: fields.experience,
-          bioData: fields.bioData,
         },
       });
       return res.status(200).json(employee);
