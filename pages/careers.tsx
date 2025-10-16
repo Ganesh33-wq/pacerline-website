@@ -22,6 +22,7 @@ const CareersPage = () => {
   const [jobs, setJobs] = useState<Job[]>([])
   const [loading, setLoading] = useState(true)
   const [selectedJob, setSelectedJob] = useState<Job | null>(null)
+  const [showFullDesc, setShowFullDesc] = useState(false)
   const [showApplicationForm, setShowApplicationForm] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [applicationData, setApplicationData] = useState({
@@ -347,21 +348,37 @@ const CareersPage = () => {
                                     )}
                                   </div>
                                 </div>
-                                {job.salary && (
-                                  <div className="text-right">
-                                    <p className="text-sm text-gray-500">Salary</p>
-                                    <p className="text-lg font-bold text-green-600">{job.salary}</p>
-                                  </div>
-                                )}
                               </div>
 
                               <div className="mb-4">
                                 <p className="text-gray-600 text-sm line-clamp-3">
-                                  {job.description.length > 150 
-                                    ? `${job.description.substring(0, 150)}...` 
-                                    : job.description
+                                  {(selectedJob?.id === job.id && showFullDesc)
+                                    ? job.description
+                                    : job.description.length > 80
+                                      ? `${job.description.substring(0, 80)}...`
+                                      : job.description
                                   }
                                 </p>
+                                <p className="text-gray-600 text-sm line-clamp-3 mt-2">
+                                  <span className="font-semibold">Requirements: </span>
+                                  {(selectedJob?.id === job.id && showFullDesc)
+                                    ? job.requirements
+                                    : job.requirements.length > 80
+                                      ? `${job.requirements.substring(0, 80)}...`
+                                      : job.requirements
+                                  }
+                                </p>
+                                {(job.description.length > 80 || job.requirements.length > 80) && (
+                                  <button
+                                    className="text-blue-600 text-xs font-semibold mt-1 focus:outline-none"
+                                    onClick={() => {
+                                      setSelectedJob(job)
+                                      setShowFullDesc(selectedJob?.id === job.id ? !showFullDesc : true)
+                                    }}
+                                  >
+                                    {selectedJob?.id === job.id && showFullDesc ? 'Show Less' : 'Show More'}
+                                  </button>
+                                )}
                               </div>
 
                               <div className="flex items-center justify-between">
@@ -381,9 +398,9 @@ const CareersPage = () => {
                       </div>
                     )}
                     
-                    {/* Second Row - 2 Cards */}
+                    {/* Second Row - Responsive 3 Cards */}
                     {secondRowJobs.length > 0 && (
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 justify-items-center max-w-4xl mx-auto">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center w-full mx-auto">
                         {secondRowJobs.map((job) => (
                           <div key={job.id} className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100 w-full max-w-sm">
                             <div className="p-6">
@@ -408,21 +425,28 @@ const CareersPage = () => {
                                     )}
                                   </div>
                                 </div>
-                                {job.salary && (
-                                  <div className="text-right">
-                                    <p className="text-sm text-gray-500">Salary</p>
-                                    <p className="text-lg font-bold text-green-600">{job.salary}</p>
-                                  </div>
-                                )}
                               </div>
 
                               <div className="mb-4">
                                 <p className="text-gray-600 text-sm line-clamp-3">
-                                  {job.description.length > 150 
-                                    ? `${job.description.substring(0, 150)}...` 
-                                    : job.description
+                                  {selectedJob?.id === job.id && showFullDesc
+                                    ? job.description
+                                    : job.description.length > 150
+                                      ? `${job.description.substring(0, 150)}...`
+                                      : job.description
                                   }
                                 </p>
+                                {job.description.length > 150 && (
+                                  <button
+                                    className="text-blue-600 text-xs font-semibold mt-1 focus:outline-none"
+                                    onClick={() => {
+                                      setSelectedJob(job)
+                                      setShowFullDesc(selectedJob?.id === job.id ? !showFullDesc : true)
+                                    }}
+                                  >
+                                    {selectedJob?.id === job.id && showFullDesc ? 'Show Less' : 'Show More'}
+                                  </button>
+                                )}
                               </div>
 
                               <div className="flex items-center justify-between">

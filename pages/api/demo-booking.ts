@@ -3,6 +3,18 @@ import { prisma } from '../../lib/prisma'
 import { sendEmail, emailTemplates } from '../../lib/email'
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+  if (req.method === 'GET') {
+    // Return all booked demo slots (date + time)
+    try {
+      const bookings = await prisma.demoBooking.findMany({
+        where: { status: 'scheduled' },
+        select: { date: true, time: true }
+      })
+      return res.status(200).json({ success: true, bookings })
+    } catch (error) {
+      return res.status(500).json({ success: false, message: 'Failed to fetch bookings', error })
+    }
+  }
   if (req.method === 'POST') {
     try {
       const { 

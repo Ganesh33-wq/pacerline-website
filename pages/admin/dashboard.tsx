@@ -844,7 +844,18 @@ const AdminDashboard = () => {
           <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center py-4 gap-4">
               <div className="flex items-center w-full sm:w-auto">
-                <h1 className="text-2xl sm:text-3xl font-bold text-gray-900">Admin Dashboard</h1>
+                <div className="flex flex-col items-center pt-6 pb-2">
+                  <div className="bg-gradient-to-r from-blue-500 via-green-400 to-purple-500 rounded-full p-2 shadow-lg">
+                    <img
+                      src="/images/home/company-logo.png"
+                      alt="Pacerline Company Logo"
+                      className="h-14 w-auto drop-shadow-xl"
+                    />
+                  </div>
+                  <span className="mt-2 text-lg font-bold text-blue-700 tracking-wide drop-shadow-sm">Pacerline</span>
+                  <span className="text-xs text-gray-500 font-medium">Outsourcing Service Pvt. Ltd.</span>
+                </div>
+                <h1 className="text-4xl font-bold text-gray-900 mb-8 text-center">Admin Dashboard</h1>
               </div>
               <div className="flex gap-2 w-full sm:w-auto justify-end flex-wrap">
                 <button

@@ -72,7 +72,7 @@ const Header = () => {
         <div className="flex justify-between items-center py-3 sm:py-4 lg:py-6 px-3 sm:px-4 md:px-6 lg:px-8 w-full min-h-[64px]">
           {/* Logo (as home link, no text) */}
           <div className="flex items-center group flex-shrink-0 ml-[10px]">
-            <Link href="/" className="relative block">
+            <Link href="/admin/dashboard" className="relative block">
               <img 
                 src="/images/home/company-logo.png" 
                 alt="Pacerline Company Logo" 

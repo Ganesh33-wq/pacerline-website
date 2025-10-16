@@ -163,9 +163,12 @@ const ContactPage = () => {
                 </svg>
               </div>
               <h3 className="text-xl font-bold text-blue-600 mb-4">Phone</h3>
-              <a href="tel:+918608691085" className="text-lg text-green-600 hover:text-green-700 font-semibold transition-colors duration-300">
-                +91 8608691085
-              </a>
+              <button
+                onClick={() => window.location.href = 'tel:+918608691085'}
+                className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg"
+              >
+                Call Now
+              </button>
             </div>
             
             <div className="group text-center bg-gradient-to-br from-green-50 to-green-100 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-green-200 transform hover:-translate-y-2">
@@ -176,9 +179,12 @@ const ContactPage = () => {
                 </svg>
               </div>
               <h3 className="text-xl font-bold text-green-600 mb-4">Email</h3>
-              <a href="mailto:info@pacerline.com" className="text-lg text-green-600 hover:text-green-700 font-semibold transition-colors duration-300">
-                info@pacerline.com
-              </a>
+              <button
+                onClick={() => window.location.href = 'mailto:info@pacerline.com'}
+                className="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg"
+              >
+                Email Now
+              </button>
             </div>
 
             <div className="group text-center bg-gradient-to-br from-purple-50 to-purple-100 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-purple-200 transform hover:-translate-y-2">
@@ -198,7 +204,7 @@ const ContactPage = () => {
 
             <div className="group text-center bg-gradient-to-br from-emerald-50 to-emerald-100 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-emerald-200 transform hover:-translate-y-2">
               <div className="w-16 h-16 bg-gradient-to-r from-emerald-500 to-emerald-600 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                <span className="text-white text-2xl">💬</span>
+                <img src="/images/whatsapp.svg" alt="WhatsApp" className="w-10 h-10" />
               </div>
               <h3 className="text-xl font-bold text-emerald-600 mb-4">WhatsApp</h3>
               <a 

@@ -1,9 +1,12 @@
 import Head from 'next/head'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import { useNotificationContext } from '../contexts/NotificationContext'
+import { DateTime } from 'luxon';
+
+const EST_ZONE = 'America/New_York';
 
 const BookDemoPage = () => {
   const router = useRouter()
@@ -20,79 +23,68 @@ const BookDemoPage = () => {
     title: '',
     message: ''
   })
+  const [bookedSlots, setBookedSlots] = useState<{date: string, time: string}[]>([])
 
   const [currentMonth, setCurrentMonth] = useState(new Date())
 
+  useEffect(() => {
+    // Fetch all booked demo slots
+    fetch('/api/demo-booking')
+      .then(res => res.json())
+      .then(data => {
+        if (data.success && Array.isArray(data.bookings)) {
+          setBookedSlots(data.bookings)
+        }
+      })
+      .catch(() => setBookedSlots([]))
+  }, [])
+
+  // Get EST current date/time
+  const getEstNow = () => DateTime.now().setZone(EST_ZONE);
+
   // Generate calendar dates
   const generateCalendarDates = () => {
-    const year = currentMonth.getFullYear()
-    const month = currentMonth.getMonth()
-    const firstDay = new Date(year, month, 1)
-    const lastDay = new Date(year, month + 1, 0)
-    const startDate = new Date(firstDay)
-    startDate.setDate(startDate.getDate() - firstDay.getDay())
-    
-    const dates = []
-    const today = new Date()
-    today.setHours(0, 0, 0, 0)
-    
+    const year = currentMonth.getFullYear();
+    const month = currentMonth.getMonth();
+    const firstDay = DateTime.fromObject({ year, month: month + 1, day: 1 }, { zone: EST_ZONE });
+    const startDate = firstDay.minus({ days: firstDay.weekday % 7 });
+    const today = getEstNow().startOf('day');
+    const dates = [];
     for (let i = 0; i < 42; i++) {
-      const date = new Date(startDate)
-      date.setDate(startDate.getDate() + i)
-      
-      const isCurrentMonth = date.getMonth() === month
-      const isPast = date < today
-      const isToday = date.toDateString() === new Date().toDateString()
-      
+      const date = startDate.plus({ days: i });
+      const isCurrentMonth = date.month === month + 1;
+      const isPast = date < today;
+      const isToday = date.hasSame(today, 'day');
       dates.push({
         date: date,
-        dateString: date.toISOString().split('T')[0],
-        day: date.getDate(),
+        dateString: date.toFormat('yyyy-MM-dd'),
+        day: date.day,
         isCurrentMonth,
         isPast,
         isToday
-      })
+      });
     }
-    
-    return dates
+    return dates;
   }
 
-  const timeSlots = [
-    '9:00 AM', '9:30 AM', '10:00 AM', '10:30 AM', '11:00 AM', '11:30 AM',
-    '12:00 PM', '12:30 PM', '1:00 PM', '1:30 PM', '2:00 PM', '2:30 PM',
-    '3:00 PM', '3:30 PM', '4:00 PM', '4:30 PM', '5:00 PM', '5:30 PM'
-  ]
+  // Generate 24-hour time slots
+  const timeSlots = Array.from({ length: 24 }, (_, i) => {
+    const hour = i.toString().padStart(2, '0');
+    return `${hour}:00`;
+  });
 
   // Function to check if time slot is in the past for today's date
   const isTimeSlotDisabled = (timeSlot: string) => {
-    if (selectedDate !== new Date().toISOString().split('T')[0]) {
-      return false // Not today, so no time restrictions
+    // Only allow current/future times for today
+    if (selectedDate === new Date().toISOString().split('T')[0]) {
+      const now = new Date()
+      const currentHour = now.getHours()
+      const currentMinute = now.getMinutes()
+      const [hours, minutes] = timeSlot.split(':').map(Number)
+      if (hours < currentHour || (hours === currentHour && minutes <= currentMinute)) return true
     }
-    
-    const now = new Date()
-    const currentHour = now.getHours()
-    const currentMinute = now.getMinutes()
-    
-    const [time, period] = timeSlot.split(' ')
-    const [hours, minutes] = time.split(':')
-    let slotHour = parseInt(hours)
-    const slotMinute = parseInt(minutes)
-    
-    // Convert to 24-hour format
-    if (period === 'PM' && slotHour !== 12) {
-      slotHour += 12
-    } else if (period === 'AM' && slotHour === 12) {
-      slotHour = 0
-    }
-    
-    // Check if the slot time has passed
-    if (slotHour < currentHour) {
-      return true // Past hour
-    } else if (slotHour === currentHour && slotMinute <= currentMinute) {
-      return true // Same hour but past or current minute
-    }
-    
-    return false // Future time, available
+    // Disable if already booked
+    return bookedSlots.some(slot => slot.date === selectedDate && slot.time === timeSlot)
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -209,12 +201,12 @@ const BookDemoPage = () => {
       </section>
 
       {/* Booking Section */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <section className="py-8 sm:py-12 md:py-16">
+        <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12">
             
             {/* Calendar Section */}
-            <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
+            <div className="bg-white rounded-2xl shadow-xl p-4 sm:p-8 border border-gray-100 overflow-x-auto">
               <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">
                 Choose Date & Time
               </h2>
@@ -251,106 +243,89 @@ const BookDemoPage = () => {
                   ))}
                 </div>
                 
-                <div className="grid grid-cols-7 gap-1">
-                  {generateCalendarDates().map((dateObj, index) => (
-                    <button
-                      key={index}
-                      onClick={() => {
-                        if (!dateObj.isPast && dateObj.isCurrentMonth) {
-                          const newDate = dateObj.dateString
-                          setSelectedDate(newDate)
-                          
-                          // Clear selected time if it becomes invalid for the new date
-                          if (selectedTime) {
-                            // Check if the selected time would be disabled for the new date
-                            const tempSelectedDate = selectedDate
-                            // Temporarily set the new date to check time validity
-                            if (newDate === new Date().toISOString().split('T')[0]) {
-                              const now = new Date()
-                              const currentHour = now.getHours()
-                              const currentMinute = now.getMinutes()
-                              
-                              const [time, period] = selectedTime.split(' ')
-                              const [hours, minutes] = time.split(':')
-                              let slotHour = parseInt(hours)
-                              const slotMinute = parseInt(minutes)
-                              
-                              if (period === 'PM' && slotHour !== 12) {
-                                slotHour += 12
-                              } else if (period === 'AM' && slotHour === 12) {
-                                slotHour = 0
-                              }
-                              
-                              if (slotHour < currentHour || (slotHour === currentHour && slotMinute <= currentMinute)) {
-                                setSelectedTime('')
-                              }
-                            }
+                <div className="grid grid-cols-7 gap-1 text-xs sm:text-sm md:text-base">
+                  {generateCalendarDates().map((dateObj, index) => {
+                    // Disable dates before today using Luxon
+                    const today = getEstNow().startOf('day');
+                    const isDisabled = dateObj.date < today;
+                    return (
+                      <button
+                        key={index}
+                        onClick={() => {
+                          if (!isDisabled) {
+                            setSelectedDate(dateObj.dateString)
+                            setSelectedTime('')
                           }
-                        }
-                      }}
-                      disabled={dateObj.isPast || !dateObj.isCurrentMonth}
-                      className={`p-2 text-sm rounded-lg transition-all duration-200 ${
-                        selectedDate === dateObj.dateString
-                          ? 'bg-blue-600 text-white shadow-lg'
-                          : dateObj.isToday
-                          ? 'bg-green-100 text-green-700 border border-green-300'
-                          : dateObj.isPast || !dateObj.isCurrentMonth
-                          ? 'text-gray-300 cursor-not-allowed'
-                          : 'hover:bg-blue-50 hover:text-blue-600'
-                      }`}
-                    >
-                      {dateObj.day}
-                    </button>
-                  ))}
+                        }}
+                        disabled={isDisabled}
+                        className={`p-2 text-sm rounded-lg transition-all duration-200 ${
+                          selectedDate === dateObj.dateString
+                            ? 'bg-blue-600 text-white shadow-lg'
+                            : dateObj.isToday
+                            ? 'bg-green-100 text-green-700 border border-green-300'
+                            : isDisabled
+                            ? 'text-gray-300 cursor-not-allowed'
+                            : 'hover:bg-blue-50 hover:text-blue-600'
+                        }`}
+                      >
+                        {dateObj.day}
+                      </button>
+                    )
+                  })}
                 </div>
               </div>
 
               {/* Time Slots */}
               {selectedDate && (
                 <div>
-                  <h4 className="text-lg font-semibold text-gray-900 mb-4">Available Times</h4>
-                  <div className="grid grid-cols-3 gap-2">
-                    {timeSlots.map((time) => {
-                      const isDisabled = isTimeSlotDisabled(time)
+                  <h4 className="text-lg font-semibold text-gray-900 mb-4">Available Times (EST)</h4>
+                  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2">
+                    {timeSlots.filter(time => {
+                      if (selectedDate === getEstNow().toFormat('yyyy-MM-dd')) {
+                        const now = getEstNow();
+                        const [slotHour, slotMinute] = time.split(':').map(Number);
+                        if (slotHour < now.hour || (slotHour === now.hour && slotMinute <= now.minute)) {
+                          return false;
+                        }
+                      }
+                      return true;
+                    }).map((time) => {
+                      const isBooked = bookedSlots.some(slot => slot.date === selectedDate && slot.time === time);
                       return (
-                        <button
-                          key={time}
-                          onClick={() => !isDisabled && setSelectedTime(time)}
-                          disabled={isDisabled}
-                          className={`p-3 text-sm rounded-lg border transition-all duration-200 ${
-                            isDisabled
-                              ? 'bg-gray-100 text-gray-400 border-gray-200 cursor-not-allowed opacity-50'
-                              : selectedTime === time
-                              ? 'bg-green-600 text-white border-green-600 shadow-md'
-                              : 'border-gray-200 hover:border-green-300 hover:bg-green-50'
-                          }`}
-                        >
-                          {time}
-                        </button>
+                        <div className="relative" key={time}>
+                          <button
+                            onClick={() => !isBooked && setSelectedTime(time)}
+                            disabled={isBooked}
+                            className={`p-3 text-sm rounded-lg border transition-all duration-200 w-full min-w-[60px] ${
+                              isBooked
+                                ? 'bg-red-100 text-red-600 border-red-300 cursor-not-allowed opacity-80'
+                                : selectedTime === time
+                                ? 'bg-green-600 text-white border-green-600 shadow-md'
+                                : 'border-gray-200 hover:border-green-300 hover:bg-green-50'
+                            }`}
+                            onMouseOver={isBooked ? (e) => {
+                              if (!e.currentTarget.parentElement) return;
+                              const tooltip = document.createElement('div');
+                              tooltip.innerText = 'Already booked';
+                              tooltip.className = 'absolute z-10 left-1/2 -translate-x-1/2 top-full mt-1 px-2 py-1 text-xs bg-red-600 text-white rounded shadow-lg pointer-events-none';
+                              e.currentTarget.parentElement.appendChild(tooltip);
+                              e.currentTarget.onmouseleave = () => {
+                                if (tooltip.parentElement) tooltip.parentElement.removeChild(tooltip);
+                              };
+                            } : undefined}
+                          >
+                            {time}
+                          </button>
+                        </div>
                       )
                     })}
                   </div>
-                  {selectedDate === new Date().toISOString().split('T')[0] && (
-                    <div className="mt-4 p-3 bg-yellow-50 border border-yellow-200 rounded-lg">
-                      <p className="text-sm text-yellow-700 flex items-center">
-                        <span className="mr-2">⏰</span>
-                        Past time slots are disabled for today. Please select a future time.
-                      </p>
-                      <p className="text-xs text-yellow-600 mt-1">
-                        Current time: {new Date().toLocaleTimeString('en-US', { 
-                          hour: 'numeric', 
-                          minute: '2-digit',
-                          hour12: true 
-                        })}
-                      </p>
-                    </div>
-                  )}
                 </div>
               )}
             </div>
 
             {/* Form Section */}
-            <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
+            <div className="bg-white rounded-2xl shadow-xl p-4 sm:p-8 border border-gray-100">
               <h2 className="text-2xl font-bold text-gray-900 mb-6">
                 Meeting Details
               </h2>
