@@ -1,11 +1,43 @@
 import Head from 'next/head'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+
+type Employee = {
+  id: string | number;
+  name: string;
+  email: string;
+  phone: string;
+  role: string;
+  photo?: string;
+};
 import Layout from '../components/Layout'
 import { useNotificationContext } from '../contexts/NotificationContext'
 
 const AboutPage = () => {
   const { showSuccess, showError } = useNotificationContext()
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [employees, setEmployees] = useState<Employee[]>([])
+  const [loadingEmployees, setLoadingEmployees] = useState(true)
+  const [employeeError, setEmployeeError] = useState('')
+
+  useEffect(() => {
+    const fetchEmployees = async () => {
+      try {
+        setLoadingEmployees(true)
+        const res = await fetch('/api/employees')
+        const data = await res.json()
+        if (data.success) {
+          setEmployees(data.employees)
+        } else {
+          setEmployeeError(data.message || 'Failed to load employees')
+        }
+      } catch (err) {
+        setEmployeeError('Failed to load employees')
+      } finally {
+        setLoadingEmployees(false)
+      }
+    }
+    fetchEmployees()
+  }, [])
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -643,118 +675,31 @@ const AboutPage = () => {
               Dedicated professionals working around the clock to deliver exceptional property management services
             </p>
           </div>
-          
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
-            {/* Team Member 1 */}
-            <div className="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group border border-gray-100">
-              <div className="text-center">
-                <div className="w-24 h-24 bg-gradient-to-br from-blue-500 to-green-500 rounded-full mx-auto mb-4 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <span className="text-white text-2xl font-bold">SA</span>
+          {loadingEmployees ? (
+            <div className="text-center text-lg text-gray-500 py-12">Loading team...</div>
+          ) : employeeError ? (
+            <div className="text-center text-red-500 py-12">{employeeError}</div>
+          ) : employees.length === 0 ? (
+            <div className="text-center text-gray-500 py-12">No team members found.</div>
+          ) : (
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+              {employees.map((emp: Employee) => (
+                <div key={emp.id} className="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group border border-gray-100">
+                  <div className="text-center">
+                    {emp.photo ? (
+                      <img src={emp.photo} alt={emp.name} className="w-24 h-24 rounded-full mx-auto mb-4 object-cover border-4 border-blue-100" />
+                    ) : (
+                      <div className="w-24 h-24 bg-gradient-to-br from-blue-500 to-green-500 rounded-full mx-auto mb-4 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                        <span className="text-white text-2xl font-bold">{emp.name?.split(' ').map((n: string) => n[0]).join('').toUpperCase()}</span>
+                      </div>
+                    )}
+                    <h3 className="text-lg font-semibold text-gray-900 mb-1">{emp.name}</h3>
+                    <p className="text-sm text-blue-600 font-medium">{emp.role}</p>
+                  </div>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-1">Sarah Anderson</h3>
-                <p className="text-sm text-blue-600 font-medium">Senior Accountant</p>
-              </div>
+              ))}
             </div>
-
-            {/* Team Member 2 */}
-            <div className="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group border border-gray-100">
-              <div className="text-center">
-                <div className="w-24 h-24 bg-gradient-to-br from-green-500 to-blue-500 rounded-full mx-auto mb-4 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <span className="text-white text-2xl font-bold">MP</span>
-                </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-1">Michael Patel</h3>
-                <p className="text-sm text-green-600 font-medium">AppFolio Specialist</p>
-              </div>
-            </div>
-
-            {/* Team Member 3 */}
-            <div className="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group border border-gray-100">
-              <div className="text-center">
-                <div className="w-24 h-24 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full mx-auto mb-4 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <span className="text-white text-2xl font-bold">LJ</span>
-                </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-1">Lisa Johnson</h3>
-                <p className="text-sm text-purple-600 font-medium">Buildium Expert</p>
-              </div>
-            </div>
-
-            {/* Team Member 4 */}
-            <div className="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group border border-gray-100">
-              <div className="text-center">
-                <div className="w-24 h-24 bg-gradient-to-br from-orange-500 to-red-500 rounded-full mx-auto mb-4 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <span className="text-white text-2xl font-bold">DM</span>
-                </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-1">David Martinez</h3>
-                <p className="text-sm text-orange-600 font-medium">QuickBooks Analyst</p>
-              </div>
-            </div>
-
-            {/* Team Member 5 */}
-            <div className="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group border border-gray-100">
-              <div className="text-center">
-                <div className="w-24 h-24 bg-gradient-to-br from-teal-500 to-cyan-500 rounded-full mx-auto mb-4 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <span className="text-white text-2xl font-bold">EC</span>
-                </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-1">Emily Chen</h3>
-                <p className="text-sm text-teal-600 font-medium">Virtual Assistant</p>
-              </div>
-            </div>
-
-            {/* Team Member 6 */}
-            <div className="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group border border-gray-100">
-              <div className="text-center">
-                <div className="w-24 h-24 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-full mx-auto mb-4 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <span className="text-white text-2xl font-bold">RK</span>
-                </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-1">Robert Kim</h3>
-                <p className="text-sm text-indigo-600 font-medium">Property Manager</p>
-              </div>
-            </div>
-
-            {/* Team Member 7 */}
-            <div className="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group border border-gray-100">
-              <div className="text-center">
-                <div className="w-24 h-24 bg-gradient-to-br from-pink-500 to-rose-500 rounded-full mx-auto mb-4 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <span className="text-white text-2xl font-bold">MR</span>
-                </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-1">Maria Rodriguez</h3>
-                <p className="text-sm text-pink-600 font-medium">Tax Specialist</p>
-              </div>
-            </div>
-
-            {/* Team Member 8 */}
-            <div className="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group border border-gray-100">
-              <div className="text-center">
-                <div className="w-24 h-24 bg-gradient-to-br from-yellow-500 to-orange-500 rounded-full mx-auto mb-4 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <span className="text-white text-2xl font-bold">JW</span>
-                </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-1">James Wilson</h3>
-                <p className="text-sm text-yellow-600 font-medium">Data Analyst</p>
-              </div>
-            </div>
-
-            {/* Team Member 9 */}
-            <div className="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group border border-gray-100">
-              <div className="text-center">
-                <div className="w-24 h-24 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-full mx-auto mb-4 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <span className="text-white text-2xl font-bold">NT</span>
-                </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-1">Nina Thompson</h3>
-                <p className="text-sm text-emerald-600 font-medium">Admin Support</p>
-              </div>
-            </div>
-
-            {/* Team Member 10 */}
-            <div className="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group border border-gray-100">
-              <div className="text-center">
-                <div className="w-24 h-24 bg-gradient-to-br from-slate-500 to-gray-600 rounded-full mx-auto mb-4 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <span className="text-white text-2xl font-bold">AB</span>
-                </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-1">Alex Brown</h3>
-                <p className="text-sm text-slate-600 font-medium">Quality Assurance</p>
-              </div>
-          </div>
-        </div>
+          )}
         </div>
       </section>      {/* Become a Partner Section */}
       <section className="py-16 bg-gradient-to-br from-green-500 to-blue-600 text-white">

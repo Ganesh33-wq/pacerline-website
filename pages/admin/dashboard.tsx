@@ -10,6 +10,7 @@ interface AdminData {
   blogs: any[]
   about: any[]
   demoBookings: any[]
+  employees: any[]
 }
 
 const AdminDashboard = () => {
@@ -25,7 +26,8 @@ const AdminDashboard = () => {
     jobApplications: [],
     blogs: [],
     about: [],
-    demoBookings: []
+    demoBookings: [],
+    employees: []
   })
   const [searchTerm, setSearchTerm] = useState('')
   const [filteredData, setFilteredData] = useState<any[]>([])
@@ -109,7 +111,8 @@ const AdminDashboard = () => {
         '/api/admin/job-applications',
         '/api/admin/blogs',
         '/api/admin/about',
-        '/api/admin/demo-bookings'
+        '/api/admin/demo-bookings',
+        '/api/admin/employees'
       ]
 
       console.log('Fetching data from endpoints:', endpoints)
@@ -142,7 +145,8 @@ const AdminDashboard = () => {
         jobApplications: data[2].status === 'fulfilled' ? data[2].value.data || [] : [],
         blogs: data[3].status === 'fulfilled' ? data[3].value.data || [] : [],
         about: data[4].status === 'fulfilled' ? data[4].value.data || [] : [],
-        demoBookings: data[5].status === 'fulfilled' ? data[5].value.data || [] : []
+        demoBookings: data[5].status === 'fulfilled' ? data[5].value.data || [] : [],
+        employees: data[6].status === 'fulfilled' ? data[6].value.data || [] : []
       }
       
       console.log('Final admin data:', adminDataResult)
@@ -273,42 +277,69 @@ const AdminDashboard = () => {
         query: '',
         documents: '',
         status: 'new'
+      },
+      employees: {
+        name: '',
+        email: '',
+        phone: '',
+        role: '',
+        photo: ''
       }
     }
-
     return baseDefaults[table as keyof typeof baseDefaults] || {}
   }
 
   const handleSave = async () => {
     try {
-      const token = localStorage.getItem('adminToken')
-      const endpoint = getApiEndpoint(activeTab)
-      const url = modalMode === 'add' 
+      const token = localStorage.getItem('adminToken');
+      const endpoint = getApiEndpoint(activeTab);
+      const url = modalMode === 'add'
         ? `/api/admin/${endpoint}`
-        : `/api/admin/${endpoint}/${currentRecord.id}`
-      
-      const method = modalMode === 'add' ? 'POST' : 'PUT'
-      
-      const response = await fetch(url, {
-        method: method,
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${token}`
-        },
-        body: JSON.stringify(formData)
-      })
-      
-      if (response.ok) {
-        showSuccess('Success', `Record ${modalMode === 'add' ? 'added' : 'updated'} successfully`, 3000)
-        setIsModalOpen(false)
-        fetchAdminData() // Refresh data
+        : `/api/admin/${endpoint}/${currentRecord?.id}`;
+      const method = modalMode === 'add' ? 'POST' : 'PUT';
+
+      let response;
+      // Special handling for Employees photo upload
+      if (activeTab === 'employees') {
+        const form = new FormData();
+        // Only append minimal fields
+        ['name', 'email', 'phone', 'role'].forEach((key) => {
+          if (formData[key]) form.append(key, formData[key]);
+        });
+        if (formData.photo instanceof File) {
+          form.append('photo', formData.photo);
+        }
+        if (modalMode === 'edit' && currentRecord?.id) {
+          form.append('id', currentRecord.id);
+        }
+        response = await fetch(url, {
+          method,
+          headers: {
+            'Authorization': `Bearer ${token}`
+          },
+          body: form
+        });
       } else {
-        const error = await response.json()
-        showError('Error', error.message || `Failed to ${modalMode} record`, 5000)
+        response = await fetch(url, {
+          method,
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+          },
+          body: JSON.stringify(formData)
+        });
+      }
+      if (response.ok) {
+        showSuccess('Success', `Record ${modalMode === 'add' ? 'added' : 'updated'} successfully`, 3000);
+        setIsModalOpen(false);
+        fetchAdminData(); // Refresh data
+      } else {
+        const error = await response.json();
+        showError('Error', error.message || `Failed to ${modalMode} record`, 5000);
       }
     } catch (error) {
-      console.error('Save error:', error)
-      showError('Error', `Failed to ${modalMode} record`, 5000)
+      console.error('Save error:', error);
+      showError('Error', `Failed to ${modalMode} record`, 5000);
     }
   }
 
@@ -369,6 +400,7 @@ const AdminDashboard = () => {
     { id: 'blogs', name: 'Blogs', count: adminData.blogs.length },
     { id: 'about', name: 'About', count: adminData.about.length },
     { id: 'demoBookings', name: 'Demo Bookings', count: adminData.demoBookings.length },
+    { id: 'employees', name: 'Employees', count: adminData.employees.length },
   ]
 
   const renderTable = () => {
@@ -409,15 +441,15 @@ const AdminDashboard = () => {
     
     return (
       <div className="overflow-x-auto">
-        <table className="min-w-full bg-white">
+        <table className="min-w-full bg-white text-xs sm:text-sm">
           <thead className="bg-gray-50">
             <tr>
               {columns.map((column) => (
-                <th key={column} className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                <th key={column} className="px-2 sm:px-4 md:px-6 py-2 sm:py-3 text-left font-medium text-gray-500 uppercase tracking-wider whitespace-nowrap">
                   {column.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase())}
                 </th>
               ))}
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              <th className="px-2 sm:px-4 md:px-6 py-2 sm:py-3 text-left font-medium text-gray-500 uppercase tracking-wider whitespace-nowrap">
                 Actions
               </th>
             </tr>
@@ -426,7 +458,7 @@ const AdminDashboard = () => {
             {displayData.map((item: any, index: number) => (
               <tr key={item.id || index} className="hover:bg-gray-50">
                 {columns.map((column) => (
-                  <td key={column} className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                  <td key={column} className="px-2 sm:px-4 md:px-6 py-2 sm:py-4 whitespace-nowrap text-gray-900">
                     {typeof item[column] === 'boolean' 
                       ? item[column] ? 'Yes' : 'No'
                       : item[column] && typeof item[column] === 'object' 
@@ -435,17 +467,17 @@ const AdminDashboard = () => {
                     }
                   </td>
                 ))}
-                <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                  <div className="flex space-x-2">
+                <td className="px-2 sm:px-4 md:px-6 py-2 sm:py-4 whitespace-nowrap font-medium">
+                  <div className="flex flex-col sm:flex-row gap-1 sm:gap-2">
                     <button
                       onClick={() => handleEdit(activeTab, item.id || index)}
-                      className="text-indigo-600 hover:text-indigo-900 bg-indigo-100 hover:bg-indigo-200 px-3 py-1 rounded-md transition-colors"
+                      className="text-indigo-600 hover:text-indigo-900 bg-indigo-100 hover:bg-indigo-200 px-2 sm:px-3 py-1 rounded-md transition-colors text-xs sm:text-sm"
                     >
                       Edit
                     </button>
                     <button
                       onClick={() => handleDelete(activeTab, item.id || index)}
-                      className="text-red-600 hover:text-red-900 bg-red-100 hover:bg-red-200 px-3 py-1 rounded-md transition-colors"
+                      className="text-red-600 hover:text-red-900 bg-red-100 hover:bg-red-200 px-2 sm:px-3 py-1 rounded-md transition-colors text-xs sm:text-sm"
                     >
                       Delete
                     </button>
@@ -567,20 +599,43 @@ const AdminDashboard = () => {
     }
 
     // Handle file/image fields
-    if (['image', 'resume', 'documents'].includes(field)) {
+    if (["image", "resume", "documents", "photo"].includes(field)) {
+      // Only show file upload for 'photo' in Employees tab
+      if (field === "photo" && activeTab === "employees") {
+        return (
+          <div className="space-y-2">
+            <input
+              type="file"
+              accept="image/*"
+              onChange={(e) => {
+                const file = e.target.files?.[0];
+                if (file) {
+                  handleInputChange(field, file);
+                }
+              }}
+              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+            />
+            {formData[field] && typeof formData[field] === "string" && (
+              <div className="text-sm text-gray-600 bg-gray-50 p-2 rounded">
+                Current: <img src={formData[field]} alt="Employee Photo" className="h-12 inline-block" />
+              </div>
+            )}
+          </div>
+        );
+      }
+      // Default for other file/image fields
       return (
         <div className="space-y-2">
           <input
             type="file"
             onChange={(e) => {
-              const file = e.target.files?.[0]
+              const file = e.target.files?.[0];
               if (file) {
-                // For now, just store the filename - you can implement file upload later
-                handleInputChange(field, file.name)
+                handleInputChange(field, file.name);
               }
             }}
             className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-            accept={field === 'image' ? 'image/*' : field === 'resume' ? '.pdf,.doc,.docx' : '*'}
+            accept={field === "image" ? "image/*" : field === "resume" ? ".pdf,.doc,.docx" : "*"}
           />
           {formData[field] && (
             <div className="text-sm text-gray-600 bg-gray-50 p-2 rounded">
@@ -588,7 +643,7 @@ const AdminDashboard = () => {
             </div>
           )}
         </div>
-      )
+      );
     }
 
     // Handle time fields
@@ -691,9 +746,13 @@ const AdminDashboard = () => {
     if (!isModalOpen) return null
 
     const currentData = adminData[activeTab as keyof AdminData]
-    const fields = currentData && currentData.length > 0 
+    let fields = currentData && currentData.length > 0 
       ? Object.keys(currentData[0]).filter(key => key !== 'id' && key !== 'createdAt' && key !== 'updatedAt')
-      : Object.keys(formData)
+      : Object.keys(formData);
+    // For employees, only show minimal fields
+    if (activeTab === 'employees') {
+      fields = ['name', 'email', 'phone', 'role', 'photo'];
+    }
 
     return (
       <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
@@ -782,24 +841,15 @@ const AdminDashboard = () => {
       <div className="min-h-screen bg-gray-100">
         {/* Header */}
         <header className="bg-white shadow">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex justify-between items-center py-6">
-              <div className="flex items-center">
-                <h1 className="text-3xl font-bold text-gray-900">Admin Dashboard</h1>
+          <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center py-4 gap-4">
+              <div className="flex items-center w-full sm:w-auto">
+                <h1 className="text-2xl sm:text-3xl font-bold text-gray-900">Admin Dashboard</h1>
               </div>
-              <div className="flex gap-3">
-                <button
-                  onClick={() => window.open('http://localhost:5555/api/admin/prisma-studio', '_blank')}
-                  className="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded-lg transition-colors flex items-center gap-2"
-                >
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 7v10c0 2.21 1.79 4 4 4h8c0-2.21-1.79-4-4-4V7c0-2.21-1.79-4-4-4H8c-2.21 0-4 1.79-4 4z" />
-                  </svg>
-                  Database Studio
-                </button>
+              <div className="flex gap-2 w-full sm:w-auto justify-end flex-wrap">
                 <button
                   onClick={handleLogout}
-                  className="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-lg transition-colors"
+                  className="bg-red-100 hover:bg-red-200 text-red-700 font-bold py-2 px-4 rounded-lg transition-colors border border-red-300"
                 >
                   Logout
                 </button>
@@ -809,9 +859,9 @@ const AdminDashboard = () => {
         </header>
 
         {/* Main Content */}
-        <main className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+        <main className="max-w-7xl mx-auto py-4 px-2 sm:px-6 lg:px-8">
           {/* Stats Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mb-6 md:mb-8">
             {tabs.map((tab) => (
               <div key={tab.id} className="bg-white overflow-hidden shadow rounded-lg">
                 <div className="p-5">
@@ -837,20 +887,20 @@ const AdminDashboard = () => {
 
           {/* Tabs */}
           <div className="bg-white shadow rounded-lg">
-            <div className="border-b border-gray-200">
-              <nav className="-mb-px flex space-x-8 px-6">
+            <div className="border-b border-gray-200 overflow-x-auto">
+              <nav className="-mb-px flex flex-nowrap space-x-4 sm:space-x-8 px-2 sm:px-6">
                 {tabs.map((tab) => (
                   <button
                     key={tab.id}
                     onClick={() => setActiveTab(tab.id)}
-                    className={`py-4 px-1 border-b-2 font-medium text-sm ${
+                    className={`py-3 sm:py-4 px-2 sm:px-1 border-b-2 font-medium text-xs sm:text-sm whitespace-nowrap ${
                       activeTab === tab.id
                         ? 'border-blue-500 text-blue-600'
                         : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
                     }`}
                   >
                     {tab.name}
-                    <span className="ml-2 bg-gray-100 text-gray-900 py-0.5 px-2.5 rounded-full text-xs">
+                    <span className="ml-2 bg-gray-100 text-gray-900 py-0.5 px-2 rounded-full text-xs">
                       {tab.count}
                     </span>
                   </button>
@@ -859,9 +909,9 @@ const AdminDashboard = () => {
             </div>
 
             {/* Controls */}
-            <div className="p-6 border-b border-gray-200">
-              <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-                <div className="flex-1 max-w-sm">
+            <div className="p-4 sm:p-6 border-b border-gray-200">
+              <div className="flex flex-col md:flex-row justify-between items-stretch md:items-center gap-3 md:gap-4">
+                <div className="w-full md:w-1/2 max-w-md">
                   <div className="relative">
                     <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                       <svg className="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -873,17 +923,17 @@ const AdminDashboard = () => {
                       placeholder={`Search ${activeTab}...`}
                       value={searchTerm}
                       onChange={(e) => setSearchTerm(e.target.value)}
-                      className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md leading-5 bg-white placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 focus:ring-1 focus:ring-blue-500 focus:border-blue-500"
+                      className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md leading-5 bg-white placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 focus:ring-1 focus:ring-blue-500 focus:border-blue-500 text-xs sm:text-sm"
                     />
                   </div>
                 </div>
-                <div className="flex gap-2">
+                <div className="flex flex-row flex-wrap gap-2 w-full md:w-auto justify-end">
                   <button
                     onClick={() => {
                       setSearchTerm('')
                       fetchAdminData()
                     }}
-                    className="bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded-lg transition-colors flex items-center gap-2"
+                    className="bg-gray-100 hover:bg-gray-200 text-gray-800 font-bold px-4 py-2 rounded-lg transition-colors flex items-center gap-2 border border-gray-300"
                   >
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
@@ -892,7 +942,7 @@ const AdminDashboard = () => {
                   </button>
                   <button
                     onClick={() => handleAddNew(activeTab)}
-                    className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg transition-colors flex items-center gap-2"
+                    className="bg-green-100 hover:bg-green-200 text-green-700 font-bold px-4 py-2 rounded-lg transition-colors flex items-center gap-2 border border-green-300"
                   >
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />

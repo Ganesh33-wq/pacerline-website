@@ -124,10 +124,10 @@ export default function Home() {
   ]
 
   const globalReach = [
-    { countryCode: 'US', country: 'USA', flag: '🇺🇸', clients: '200+' },
-    { countryCode: 'GB', country: 'UK', flag: '🇬🇧', clients: '150+' },
-    { countryCode: 'CA', country: 'Canada', flag: '🇨🇦', clients: '100+' },
-    { countryCode: 'AU', country: 'Australia', flag: '🇦🇺', clients: '75+' }
+    { countryCode: 'US', country: 'USA', flag: '/images/flags/us.svg', clients: '200+' },
+    { countryCode: 'GB', country: 'UK', flag: '/images/flags/gb.svg', clients: '150+' },
+    { countryCode: 'CA', country: 'Canada', flag: '/images/flags/ca.svg', clients: '100+' },
+    { countryCode: 'AU', country: 'Australia', flag: '/images/flags/au.svg', clients: '75+' }
   ]
 
   return (
@@ -542,14 +542,9 @@ export default function Home() {
                   {/* Show Flag on Both Desktop and Mobile */}
                   <div className="relative mb-4 flex justify-center">
                     <div className="relative">
-                      {/* Flag Emoji - Always visible */}
-                      <div className="text-6xl mb-2 transform group-hover:scale-110 transition-transform duration-300">
-                        {location.flag}
-                      </div>
-                      {/* Country Code - Hidden on mobile, shown on desktop as overlay */}
-                      <div className="hidden md:block absolute -bottom-2 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white text-xs px-2 py-1 rounded opacity-75">
-                        {location.countryCode}
-                      </div>
+                      {/* Flag Image - Always visible */}
+                      <img src={location.flag} alt={location.country + ' flag'} className="h-14 w-14 md:h-16 md:w-16 mb-2 rounded shadow group-hover:scale-110 transition-transform duration-300 border border-gray-200" />
+                      {/* Country Code overlay removed */}
                     </div>
                   </div>
                   
