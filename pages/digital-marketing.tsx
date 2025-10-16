@@ -80,13 +80,11 @@ const DigitalMarketingPage = () => {
                     </div>
                     
                     <div className="mt-8 flex flex-col sm:flex-row gap-4">
-                      <button className="bg-gradient-to-r from-[#092870] via-indigo-600 to-[#092870] bg-size-200 bg-pos-0 hover:bg-pos-100 text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 flex-1 relative overflow-hidden group">
+                      <button className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 flex-1 hover:from-blue-700 hover:to-indigo-700">
                         <span className="relative z-10">Get Digital Marketing Support</span>
-                        <div className="absolute inset-0 bg-gradient-to-r from-indigo-600 to-[#092870] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                       </button>
-                      <button className="border-2 border-[#092870] text-[#092870] px-8 py-4 rounded-full font-semibold text-lg hover:bg-gradient-to-r hover:from-[#092870] hover:to-indigo-600 hover:text-white hover:border-transparent transition-all duration-500 hover:shadow-xl hover:scale-105 flex-1 relative overflow-hidden group">
+                      <button className="border-2 border-blue-600 text-blue-700 bg-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-blue-600 hover:text-white transition-all duration-500 hover:shadow-xl hover:scale-105 flex-1">
                         <span className="relative z-10">View Our Services</span>
-                        <div className="absolute inset-0 bg-gradient-to-r from-[#092870] to-indigo-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
                       </button>
                     </div>
                   </div>
@@ -100,25 +98,25 @@ const DigitalMarketingPage = () => {
                       <div className="w-20 h-1 bg-gradient-to-r from-[#092870] to-indigo-600 rounded-full mx-auto mt-2"></div>
                     </h3>
                     <div className="grid grid-cols-1 gap-6">
-                      <div className="flex items-center justify-between p-6 bg-gradient-to-r from-[#092870] via-indigo-600 to-[#092870] bg-size-200 bg-pos-0 hover:bg-pos-100 rounded-2xl text-white transform hover:scale-105 transition-all duration-500 hover:shadow-xl group">
+                      <div className="flex items-center justify-between p-6 bg-gradient-to-r from-blue-50 via-indigo-50 to-blue-50 border border-blue-200 rounded-2xl text-gray-800 transform hover:scale-105 transition-all duration-500 hover:shadow-xl group hover:from-blue-100 hover:to-indigo-100">
                         <div className="text-center flex-1">
-                          <div className="text-3xl font-bold mb-2 group-hover:animate-bounce">ROI</div>
-                          <div className="font-semibold">Driven Campaigns</div>
-                          <div className="text-sm opacity-90">Proven Results</div>
+                          <div className="text-3xl font-bold mb-2 group-hover:animate-bounce text-blue-700">ROI</div>
+                          <div className="font-semibold text-gray-800">Driven Campaigns</div>
+                          <div className="text-sm text-gray-600">Proven Results</div>
                         </div>
                       </div>
-                      <div className="flex items-center justify-between p-6 bg-gradient-to-r from-[#30a659] via-emerald-600 to-[#30a659] bg-size-200 bg-pos-0 hover:bg-pos-100 rounded-2xl text-white transform hover:scale-105 transition-all duration-500 hover:shadow-xl group">
+                      <div className="flex items-center justify-between p-6 bg-gradient-to-r from-green-50 via-emerald-50 to-green-50 border border-green-200 rounded-2xl text-gray-800 transform hover:scale-105 transition-all duration-500 hover:shadow-xl group hover:from-green-100 hover:to-emerald-100">
                         <div className="text-center flex-1">
-                          <div className="text-3xl font-bold mb-2 group-hover:animate-bounce">US</div>
-                          <div className="font-semibold">Market Focused</div>
-                          <div className="text-sm opacity-90">Targeted Strategies</div>
+                          <div className="text-3xl font-bold mb-2 group-hover:animate-bounce text-green-700">US</div>
+                          <div className="font-semibold text-gray-800">Market Focused</div>
+                          <div className="text-sm text-gray-600">Targeted Strategies</div>
                         </div>
                       </div>
-                      <div className="flex items-center justify-between p-6 bg-gradient-to-r from-indigo-500 via-purple-600 to-indigo-500 bg-size-200 bg-pos-0 hover:bg-pos-100 rounded-2xl text-white transform hover:scale-105 transition-all duration-500 hover:shadow-xl group">
+                      <div className="flex items-center justify-between p-6 bg-gradient-to-r from-purple-50 via-indigo-50 to-purple-50 border border-purple-200 rounded-2xl text-gray-800 transform hover:scale-105 transition-all duration-500 hover:shadow-xl group hover:from-purple-100 hover:to-indigo-100">
                         <div className="text-center flex-1">
-                          <div className="text-3xl font-bold mb-2 group-hover:animate-bounce">10+</div>
-                          <div className="font-semibold">Services Offered</div>
-                          <div className="text-sm opacity-90">Complete Solutions</div>
+                          <div className="text-3xl font-bold mb-2 group-hover:animate-bounce text-purple-700">10+</div>
+                          <div className="font-semibold text-gray-800">Services Offered</div>
+                          <div className="text-sm text-gray-600">Complete Solutions</div>
                         </div>
                       </div>
                     </div>
@@ -439,11 +437,11 @@ const DigitalMarketingPage = () => {
         </section>
 
         {/* Why US Clients Trust Us */}
-        <section className="relative py-20 bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600">
-          <div className="absolute inset-0 bg-black/10"></div>
+        <section className="relative py-20 bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-50">
+          <div className="absolute inset-0 bg-gradient-to-br from-white/60 to-emerald-50/40"></div>
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center text-white mb-16">
-              <h2 className="text-4xl lg:text-5xl font-bold mb-6">
+            <div className="text-center text-gray-900 mb-16">
+              <h2 className="text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
                 Why U.S. Clients Trust Us
               </h2>
             </div>
@@ -471,12 +469,12 @@ const DigitalMarketingPage = () => {
                   icon: "📈"
                 }
               ].map((feature, index) => (
-                <div key={index} className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-white text-center">
-                  <div className="w-16 h-16 bg-gradient-to-r from-[#30a659] to-emerald-500 rounded-2xl flex items-center justify-center text-2xl mb-6 mx-auto">
+                <div key={index} className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 text-gray-900 text-center shadow-lg hover:shadow-xl transition-all duration-300 border border-white/20">
+                  <div className="w-16 h-16 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-2xl flex items-center justify-center text-2xl mb-6 mx-auto shadow-md">
                     {feature.icon}
                   </div>
-                  <h3 className="text-xl font-bold mb-4">{feature.title}</h3>
-                  <p className="opacity-90">{feature.description}</p>
+                  <h3 className="text-xl font-bold mb-4 text-emerald-700">{feature.title}</h3>
+                  <p className="text-gray-600">{feature.description}</p>
                 </div>
               ))}
             </div>
@@ -484,20 +482,20 @@ const DigitalMarketingPage = () => {
         </section>
 
         {/* CTA Before FAQ */}
-        <section className="relative py-20 bg-gradient-to-r from-[#30a659] via-emerald-600 to-teal-600">
-          <div className="absolute inset-0 bg-black/20"></div>
+        <section className="relative py-20 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
+          <div className="absolute inset-0 bg-gradient-to-br from-white/60 to-blue-50/40"></div>
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-8">
+            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-8 bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
               Ready to Grow Your Business Online?
             </h2>
-            <p className="text-xl text-white/90 max-w-4xl mx-auto mb-8">
+            <p className="text-xl text-gray-700 max-w-4xl mx-auto mb-8">
               Let us do the guessing when it comes to digital marketing so that you can concentrate on your business. Whether you need a full-service approach or help with one channel, we are here to make you successful.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-[#30a659] px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-100 transition-colors">
+              <button className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">
                 Get Digital Marketing Support
               </button>
-              <button className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-[#30a659] transition-colors">
+              <button className="bg-white border-2 border-blue-600 text-blue-600 px-8 py-4 rounded-full font-semibold text-lg hover:bg-blue-600 hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl">
                 Schedule Free Consultation
               </button>
             </div>
