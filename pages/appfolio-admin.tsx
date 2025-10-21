@@ -55,115 +55,112 @@ const AppFolioAdminPage = () => {
           </div>
         </section>
 
-        {/* Hero Section - Second Row with Content and Features */}
-        <section className="relative py-20 bg-gradient-to-br from-white via-gray-50 to-slate-50">
-          <div className="absolute inset-0 bg-gradient-to-br from-white/90 to-gray-50/60"></div>
+        {/* Two-card row: Core Admin Services (left) and Advertising Property (right) */}
+        <section className="relative py-12 bg-gradient-to-br from-white via-gray-50 to-slate-50">
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              {/* Left Content */}
-              <div className="space-y-8">
-                <div className="space-y-6">
-                  <h2 className="text-3xl lg:text-4xl font-bold text-gray-900">
-                    <span className="bg-gradient-to-r from-[#1f2937] to-[#3b82f6] bg-clip-text text-transparent">Expert AppFolio administration services</span> that maximize your property management efficiency
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+              {/* Left: Core Admin Services summary card */}
+              <div className="bg-white/95 rounded-3xl p-8 shadow-xl border border-white/30 flex flex-col justify-between">
+                <div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">Core Admin Services</h3>
+                  <p className="text-gray-700 mb-6">Comprehensive administration support for property managers using AppFolio — from tenant communication to maintenance coordination and marketing.</p>
+                  <ul className="space-y-3">
+                    <li className="flex items-start gap-3">
+                      <div className="w-8 h-8 rounded-full bg-green-500 text-white flex items-center justify-center">✓</div>
+                      <span className="text-gray-800">Tenant Communication (calls & messaging)</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <div className="w-8 h-8 rounded-full bg-blue-500 text-white flex items-center justify-center">✓</div>
+                      <span className="text-gray-800">Maintenance Coordination & Vendor Management</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <div className="w-8 h-8 rounded-full bg-indigo-500 text-white flex items-center justify-center">✓</div>
+                      <span className="text-gray-800">Property Marketing & Listings</span>
+                    </li>
+                  </ul>
+                </div>
+                <div className="mt-6">
+                  <button className="bg-gradient-to-r from-[#06b6d4] to-[#3b82f6] text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg">Talk to an Expert</button>
+                </div>
+              </div>
+
+              {/* Right: Advertising Property list card (keeps existing list) */}
+              <div className="bg-white/95 rounded-3xl p-8 shadow-xl border border-white/30">
+                <h4 className="text-lg font-semibold text-gray-900 mb-4">Advertising Property</h4>
+                <div className="grid grid-cols-1 gap-3">
+                  {[
+                    'Property Showing and Tenant Screening',
+                    'Move In/Out Process',
+                    'Tenant Communication',
+                    'Maintenance Coordination',
+                    'Eviction'
+                  ].map((item, idx) => (
+                    <div key={idx} className="bg-white/90 rounded-2xl p-4 shadow-sm border border-white/20">
+                      <div className="flex items-start gap-4">
+                        <div className="w-10 h-10 rounded-full bg-gradient-to-r from-[#3b82f6] to-[#1d4ed8] flex items-center justify-center text-white text-lg">✓</div>
+                        <div>
+                          <div className="font-semibold text-gray-900">{item}</div>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Full-width hero block matching design: headline, paragraph, pill stats, and two large stat cards */}
+        <section className="relative py-16 bg-gradient-to-br from-white via-gray-50 to-slate-50">
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="bg-white/95 rounded-3xl p-8 shadow-xl border border-white/30">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                <div>
+                  <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
+                    Expert AppFolio administration services that maximize your property management efficiency
                   </h2>
-                  <p className="text-xl text-gray-700 leading-relaxed">
+                  <p className="text-lg text-gray-700 mt-6">
                     At Pacerline Outsourcing Service Pvt Ltd, we provide comprehensive AppFolio administration services to property management companies, real estate firms, and landlords - helping you leverage the complete potential of AppFolio while saving time and money.
                   </p>
-                  <div className="flex flex-wrap gap-4">
-                    <div className="flex items-center space-x-2 bg-white/80 px-4 py-2 rounded-full shadow-sm">
+
+                  <div className="flex flex-wrap gap-3 mt-6">
+                    <div className="flex items-center space-x-2 bg-white/90 px-4 py-2 rounded-full shadow-sm">
                       <div className="w-3 h-3 bg-green-500 rounded-full"></div>
                       <span className="text-sm font-medium text-gray-700">14+ Years Experience</span>
                     </div>
-                    <div className="flex items-center space-x-2 bg-white/80 px-4 py-2 rounded-full shadow-sm">
+                    <div className="flex items-center space-x-2 bg-white/90 px-4 py-2 rounded-full shadow-sm">
                       <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
                       <span className="text-sm font-medium text-gray-700">70% Cost Savings</span>
                     </div>
-                    <div className="flex items-center space-x-2 bg-white/80 px-4 py-2 rounded-full shadow-sm">
+                    <div className="flex items-center space-x-2 bg-white/90 px-4 py-2 rounded-full shadow-sm">
                       <div className="w-3 h-3 bg-purple-500 rounded-full"></div>
                       <span className="text-sm font-medium text-gray-700">24/7 Support</span>
                     </div>
                   </div>
                 </div>
 
-                {/* Key Stats Cards */}
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-6 shadow-xl border border-white/20">
                     <div className="flex items-center space-x-3">
                       <div className="w-12 h-12 bg-gradient-to-r from-[#374151] to-[#4b5563] rounded-xl flex items-center justify-center shadow-lg">
-                        <span className="text-white text-xl font-bold">📊</span>
+                        <span className="text-white text-xl font-bold">🏆</span>
                       </div>
                       <div>
-                        <div className="text-2xl font-bold text-gray-900">14+</div>
-                        <div className="text-sm text-gray-600">Years Experience</div>
+                        <div className="text-2xl font-bold text-gray-900">AppFolio Expert</div>
+                        <div className="text-sm text-gray-600">Professional service</div>
                       </div>
                     </div>
                   </div>
                   <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-6 shadow-xl border border-white/20">
                     <div className="flex items-center space-x-3">
                       <div className="w-12 h-12 bg-gradient-to-r from-[#06b6d4] to-[#0891b2] rounded-xl flex items-center justify-center shadow-lg">
-                        <span className="text-white text-xl font-bold">💰</span>
+                        <span className="text-white text-xl font-bold">🏢</span>
                       </div>
                       <div>
-                        <div className="text-2xl font-bold text-gray-900">70%</div>
-                        <div className="text-sm text-gray-600">Cost Savings</div>
+                        <div className="text-2xl font-bold text-gray-900">100+</div>
+                        <div className="text-sm text-gray-600">Properties Managed</div>
                       </div>
                     </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Right Side - Admin Services */}
-              <div className="space-y-6">
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">Core Admin Services</h3>
-                
-                {/* Service cards */}
-                <div className="grid grid-cols-1 gap-4">
-                  <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-white/20 hover:shadow-xl transition-all duration-300">
-                    <div className="flex items-center space-x-4">
-                      <div className="w-12 h-12 bg-gradient-to-r from-[#374151] to-[#4b5563] rounded-xl flex items-center justify-center text-white text-lg font-bold shadow-lg">
-                        📞
-                      </div>
-                      <div>
-                        <h4 className="text-lg font-semibold text-gray-900">Tenant Communication</h4>
-                        <p className="text-sm text-gray-600">Inbound/outbound calls & support</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-white/20 hover:shadow-xl transition-all duration-300">
-                    <div className="flex items-center space-x-4">
-                      <div className="w-12 h-12 bg-gradient-to-r from-[#06b6d4] to-[#0891b2] rounded-xl flex items-center justify-center text-white text-lg font-bold shadow-lg">
-                        🔧
-                      </div>
-                      <div>
-                        <h4 className="text-lg font-semibold text-gray-900">Maintenance Coordination</h4>
-                        <p className="text-sm text-gray-600">Work orders & vendor management</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-white/20 hover:shadow-xl transition-all duration-300">
-                    <div className="flex items-center space-x-4">
-                      <div className="w-12 h-12 bg-gradient-to-r from-[#059669] to-[#10b981] rounded-xl flex items-center justify-center text-white text-lg font-bold shadow-lg">
-                        🏠
-                      </div>
-                      <div>
-                        <h4 className="text-lg font-semibold text-gray-900">Property Marketing</h4>
-                        <p className="text-sm text-gray-600">Listings & rental advertising</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Bottom stats */}
-                <div className="grid grid-cols-2 gap-4 mt-6">
-                  <div className="bg-gradient-to-r from-[#374151] to-[#4b5563] rounded-2xl p-4 text-white text-center shadow-xl">
-                    <div className="text-2xl font-bold mb-1 text-cyan-400">24/7</div>
-                    <div className="text-xs opacity-90">Admin Support</div>
-                  </div>
-                  <div className="bg-gradient-to-r from-[#06b6d4] to-[#0891b2] rounded-2xl p-4 text-white text-center shadow-xl">
-                    <div className="text-2xl font-bold mb-1">100+</div>
-                    <div className="text-xs opacity-90">Properties Managed</div>
                   </div>
                 </div>
               </div>
@@ -193,20 +190,6 @@ const AppFolioAdminPage = () => {
                 
                 {/* Key Service Areas */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
-                  <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-6 text-center border border-blue-100">
-                    <div className="w-16 h-16 bg-gradient-to-r from-[#3b82f6] to-[#1d4ed8] rounded-2xl flex items-center justify-center text-2xl mx-auto mb-4 shadow-lg">
-                      📞
-                    </div>
-                    <h3 className="font-bold text-gray-900 mb-2">Tenant Communication</h3>
-                    <p className="text-sm text-gray-600">Call handling & support</p>
-                  </div>
-                  <div className="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-2xl p-6 text-center border border-emerald-100">
-                    <div className="w-16 h-16 bg-gradient-to-r from-[#059669] to-[#0891b2] rounded-2xl flex items-center justify-center text-2xl mx-auto mb-4 shadow-lg">
-                      🔧
-                    </div>
-                    <h3 className="font-bold text-gray-900 mb-2">Maintenance</h3>
-                    <p className="text-sm text-gray-600">Work order coordination</p>
-                  </div>
                   <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-6 text-center border border-purple-100">
                     <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center text-2xl mx-auto mb-4 shadow-lg">
                       🏠
@@ -216,10 +199,36 @@ const AppFolioAdminPage = () => {
                   </div>
                   <div className="bg-gradient-to-br from-cyan-50 to-blue-50 rounded-2xl p-6 text-center border border-cyan-100">
                     <div className="w-16 h-16 bg-gradient-to-r from-[#06b6d4] to-[#3b82f6] rounded-2xl flex items-center justify-center text-2xl mx-auto mb-4 shadow-lg">
-                      📋
-                    </div>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="w-8 h-8" fill="none" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                          <rect x="7" y="3" width="10" height="4" rx="1" ry="1" fill="white" stroke="none" opacity="0.12" />
+                          <path d="M9 3h6a2 2 0 0 1 2 2v0" stroke="white" />
+                          <rect x="6" y="6" width="12" height="14" rx="2" ry="2" stroke="white" fill="none" />
+                          <path d="M9 11h6" stroke="white" />
+                        </svg>
+                      </div>
                     <h3 className="font-bold text-gray-900 mb-2">Administrative Tasks</h3>
                     <p className="text-sm text-gray-600">Screening & documentation</p>
+                  </div>
+                  <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-6 text-center border border-blue-100">
+                    <div className="w-16 h-16 bg-gradient-to-r from-[#3b82f6] to-[#1d4ed8] rounded-2xl flex items-center justify-center text-2xl mx-auto mb-4 shadow-lg">
+                      <svg className="w-8 h-8 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.86 19.86 0 0 1 2.09 4.18 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.72c.12.86.33 1.7.63 2.5a2 2 0 0 0-.45 1.94L10.6 9.6a16 16 0 0 0 6 6l1.44-1.44a2 2 0 0 0 1.94-.45c.8.3 1.64.51 2.5.63A2 2 0 0 1 22 16.92z" fill="currentColor"/>
+                      </svg>
+                    </div>
+                    <h3 className="font-bold text-gray-900 mb-2">Tenant Communication</h3>
+                    <p className="text-sm text-gray-600">Call handling & support</p>
+                  </div>
+                  <div className="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-2xl p-6 text-center border border-emerald-100">
+                    <div className="w-16 h-16 bg-gradient-to-r from-[#059669] to-[#0891b2] rounded-2xl flex items-center justify-center text-2xl mx-auto mb-4 shadow-lg">
+                      <svg className="w-8 h-8 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M21 16.5v3a1.5 1.5 0 0 1-1.5 1.5h-3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                        <path d="M3 11l7 7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                        <path d="M14.5 6.5l3 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                        <path d="M10.5 2.5l3 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </div>
+                    <h3 className="font-bold text-gray-900 mb-2">Maintenance</h3>
+                    <p className="text-sm text-gray-600">Work order coordination</p>
                   </div>
                 </div>
               </div>

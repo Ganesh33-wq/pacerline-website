@@ -116,12 +116,12 @@ const ContactPage = () => {
               </svg>
             </div>
             
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-800 animate-fade-in-up">
+            <h1 className="text-5xl md:text-6xl font-extrabold mb-6 text-gray-900 animate-fade-in-up">
               Contact Us
             </h1>
             <p className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed mb-4 animate-fade-in-up delay-200">
-              We are truthful – we value 
-              <span className="text-green-600 font-semibold"> honest and frequent feedback</span>
+              We are truthful – we value
+              <span className="text-blue-600 font-semibold"> honest and frequent feedback</span>
             </p>
             <p className="text-base text-gray-500 max-w-3xl mx-auto animate-fade-in-up delay-300">
               Whatever are your needs, contact us & we would develop a solution for you!

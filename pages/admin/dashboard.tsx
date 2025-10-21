@@ -419,12 +419,14 @@ const AdminDashboard = () => {
       return (
         <div className="text-center py-12">
           <p className="text-gray-600">No data available for {activeTab}</p>
-          <button
-            onClick={() => handleAddNew(activeTab)}
-            className="mt-4 bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg transition-colors"
-          >
-            Add First Record
-          </button>
+          {!["contacts", "jobApplications", "about"].includes(activeTab) && (
+            <button
+              onClick={() => handleAddNew(activeTab)}
+              className="mt-4 bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg transition-colors"
+            >
+              Add First Record
+            </button>
+          )}
         </div>
       )
     }
@@ -469,18 +471,29 @@ const AdminDashboard = () => {
                 ))}
                 <td className="px-2 sm:px-4 md:px-6 py-2 sm:py-4 whitespace-nowrap font-medium">
                   <div className="flex flex-col sm:flex-row gap-1 sm:gap-2">
-                    <button
-                      onClick={() => handleEdit(activeTab, item.id || index)}
-                      className="text-indigo-600 hover:text-indigo-900 bg-indigo-100 hover:bg-indigo-200 px-2 sm:px-3 py-1 rounded-md transition-colors text-xs sm:text-sm"
-                    >
-                      Edit
-                    </button>
-                    <button
-                      onClick={() => handleDelete(activeTab, item.id || index)}
-                      className="text-red-600 hover:text-red-900 bg-red-100 hover:bg-red-200 px-2 sm:px-3 py-1 rounded-md transition-colors text-xs sm:text-sm"
-                    >
-                      Delete
-                    </button>
+                    {['contacts', 'jobApplications', 'about'].includes(activeTab) ? (
+                      <button
+                        onClick={() => handleDelete(activeTab, item.id || index)}
+                        className="text-red-600 hover:text-red-900 bg-red-100 hover:bg-red-200 px-2 sm:px-3 py-1 rounded-md transition-colors text-xs sm:text-sm"
+                      >
+                        Delete
+                      </button>
+                    ) : (
+                      <>
+                        <button
+                          onClick={() => handleEdit(activeTab, item.id || index)}
+                          className="text-indigo-600 hover:text-indigo-900 bg-indigo-100 hover:bg-indigo-200 px-2 sm:px-3 py-1 rounded-md transition-colors text-xs sm:text-sm"
+                        >
+                          Edit
+                        </button>
+                        <button
+                          onClick={() => handleDelete(activeTab, item.id || index)}
+                          className="text-red-600 hover:text-red-900 bg-red-100 hover:bg-red-200 px-2 sm:px-3 py-1 rounded-md transition-colors text-xs sm:text-sm"
+                        >
+                          Delete
+                        </button>
+                      </>
+                    )}
                   </div>
                 </td>
               </tr>
@@ -951,15 +964,18 @@ const AdminDashboard = () => {
                     </svg>
                     Refresh
                   </button>
-                  <button
-                    onClick={() => handleAddNew(activeTab)}
-                    className="bg-green-100 hover:bg-green-200 text-green-700 font-bold px-4 py-2 rounded-lg transition-colors flex items-center gap-2 border border-green-300"
-                  >
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-                    </svg>
-                    Add New
-                  </button>
+                  {/* Only show Add New for non-restricted tabs */}
+                  {!["contacts", "jobApplications", "about"].includes(activeTab) && (
+                    <button
+                      onClick={() => handleAddNew(activeTab)}
+                      className="bg-green-100 hover:bg-green-200 text-green-700 font-bold px-4 py-2 rounded-lg transition-colors flex items-center gap-2 border border-green-300"
+                    >
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                      </svg>
+                      Add New
+                    </button>
+                  )}
                 </div>
               </div>
             </div>
