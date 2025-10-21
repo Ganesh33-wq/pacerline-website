@@ -1,38 +1,16 @@
 User-agent: *
-Allow: /
-
-# Sitemap
-Sitemap: https://pacerline.com/sitemap.xml
-
-# Crawl-delay for respectful crawling
-Crawl-delay: 1
-
-# Block access to admin areas (if any)
 Disallow: /admin/
 Disallow: /api/
 Disallow: /_next/
 Disallow: /static/
 
-# Allow all major search engines
-User-agent: Googlebot
-Allow: /
+# Sitemap (use canonical www host that Google Console expects)
+Sitemap: https://www.pacerline.com/sitemap.xml
 
-User-agent: Bingbot
-Allow: /
+# Crawl delay (optional)
+Crawl-delay: 1
 
-User-agent: Slurp
-Allow: /
-
-User-agent: facebookexternalhit
-Allow: /
-
-User-agent: Twitterbot
-Allow: /
-
-User-agent: LinkedInBot
-Allow: /
-
-# Block bad bots
+# Block known bad crawlers
 User-agent: SemrushBot
 Disallow: /
 
