@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 60" fill="none">
+  <rect x="10" y="15" width="25" height="25" rx="12" fill="#FF7043"/>
+  <text x="40" y="32" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#FF7043">
+    Cozy
+  </text>
+  <circle cx="22" cy="27" r="8" fill="white"/>
+  <path d="M18 27h8m-4-4v8" stroke="#FF7043" stroke-width="2"/>
+</svg>

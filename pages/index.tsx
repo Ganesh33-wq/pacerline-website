@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import Layout from '../components/Layout'
+import { useEffect, useState } from 'react'
 
 export default function Home() {
   const services = [
@@ -48,7 +49,7 @@ export default function Home() {
       title: 'QuickBooks Accounting Services',
       subtitle: 'CUSTOMIZED SOLUTIONS',
       description: 'Customized QuickBooks solutions for real estate companies with complete setup and ongoing support.',
-      icon: '�',
+      icon: '📘',
       features: ['Setup & Configuration', 'Bank Reconciliation', 'Financial Reporting', 'Software Integration', 'Tax-ready Financials'],
       color: 'from-pink-500 to-rose-600'
     },
@@ -56,7 +57,7 @@ export default function Home() {
       title: 'Property Management Administrative Services',
       subtitle: 'BACK-OFFICE SUPPORT',
       description: 'Critical back-office processes so you can concentrate on tenant satisfaction and business expansion.',
-      icon: '�',
+      icon: '🧾',
       features: ['Tenant Screening', 'Lease Document Management', 'Maintenance Coordination', 'Compliance Management', 'Customer Support'],
       color: 'from-[#092870] to-[#30a659]'
     },
@@ -104,7 +105,7 @@ export default function Home() {
       title: 'Dedicated Professional Teams',
       subtitle: 'Trained & Certified Experts',
       description: 'Our team members are professionally trained to integrate into your workflow and provide consistent, high-quality output with continuous support.',
-      icon: '�',
+      icon: '👥',
       image: '/images/about/tool4.png'
     },
     {
@@ -118,7 +119,7 @@ export default function Home() {
       title: 'Data Security & Compliance',
       subtitle: 'Robust Protection Standards',
       description: 'Strong protection of your financial and operational data with compliance to Australian and U.S. legislation and industry standards.',
-      icon: '�',
+      icon: '🔒',
       image: '/images/about/tool1.png'
     }
   ]
@@ -231,58 +232,13 @@ export default function Home() {
         `}</style>
       </Head>
       
-      {/* Hero Section - First Row */}
+  {/* Hero Section - First Row */}
       <section className="hero-section relative bg-gradient-to-br from-blue-50 via-white to-green-50 text-gray-800 py-20 overflow-hidden">
-        {/* Floating Software Logos Background */}
-        <div className="absolute inset-0 opacity-30 pointer-events-none">
-          {/* Clean and Professional Floating Logos */}
-          
-          {/* AppFolio - Top Left */}
-          <div className="absolute top-20 left-20 w-16 h-16 bg-white/90 backdrop-blur-sm rounded-xl shadow-lg border border-blue-100 flex items-center justify-center animate-[float-move_8s_ease-in-out_infinite] hover:scale-105 transition-all duration-300">
-            <div className="text-blue-600 font-semibold text-xs">AppFolio</div>
-          </div>
-          
-          {/* QuickBooks - Top Center */}
-          <div className="absolute top-16 left-1/2 transform -translate-x-1/2 w-18 h-18 bg-white/90 backdrop-blur-sm rounded-xl shadow-lg border border-green-100 flex items-center justify-center animate-[float-move_6s_ease-in-out_infinite_1s] hover:scale-105 transition-all duration-300">
-            <div className="text-green-600 font-semibold text-sm">QuickBooks</div>
-          </div>
-          
-          {/* Yardi - Top Right */}
-          <div className="absolute top-20 right-20 w-16 h-16 bg-white/90 backdrop-blur-sm rounded-xl shadow-lg border border-purple-100 flex items-center justify-center animate-[float-move_7s_ease-in-out_infinite_2s] hover:scale-105 transition-all duration-300">
-            <div className="text-purple-600 font-semibold text-sm">YARDI</div>
-          </div>
-          
-          {/* Buildium - Left Middle */}
-          <div className="absolute top-1/2 left-16 transform -translate-y-1/2 w-20 h-20 bg-white/90 backdrop-blur-sm rounded-xl shadow-lg border border-emerald-100 flex items-center justify-center animate-[float-move_9s_ease-in-out_infinite_0.5s] hover:scale-105 transition-all duration-300">
-            <div className="text-emerald-600 font-semibold text-sm">Buildium</div>
-          </div>
-          
-          {/* Xero - Right Middle */}
-          <div className="absolute top-1/2 right-16 transform -translate-y-1/2 w-16 h-16 bg-white/90 backdrop-blur-sm rounded-xl shadow-lg border border-cyan-100 flex items-center justify-center animate-[float-move_5s_ease-in-out_infinite_3s] hover:scale-105 transition-all duration-300">
-            <div className="text-cyan-600 font-semibold text-sm">Xero</div>
-          </div>
-          
-          {/* Sage - Bottom Left */}
-          <div className="absolute bottom-24 left-24 w-16 h-16 bg-white/90 backdrop-blur-sm rounded-xl shadow-lg border border-orange-100 flex items-center justify-center animate-[float-move_6s_ease-in-out_infinite_1.5s] hover:scale-105 transition-all duration-300">
-            <div className="text-orange-600 font-semibold text-sm">Sage</div>
-          </div>
-          
-          {/* PropertyWare - Bottom Center */}
-          <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 w-20 h-20 bg-white/90 backdrop-blur-sm rounded-xl shadow-lg border border-teal-100 flex items-center justify-center animate-[float-move_7s_ease-in-out_infinite_2.5s] hover:scale-105 transition-all duration-300">
-            <div className="text-teal-600 font-semibold text-xs text-center">Property<br/>Ware</div>
-          </div>
-          
-          {/* RealPage - Bottom Right */}
-          <div className="absolute bottom-24 right-24 w-16 h-16 bg-white/90 backdrop-blur-sm rounded-xl shadow-lg border border-red-100 flex items-center justify-center animate-[float-move_8s_ease-in-out_infinite_4s] hover:scale-105 transition-all duration-300">
-            <div className="text-red-600 font-semibold text-xs text-center">Real<br/>Page</div>
-          </div>
-        </div>
-        
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center">
             {/* Main Title */}
-            <div className="opacity-0 animate-[fadeInUp_1s_ease-out_0.2s_forwards]">
-              <h1 className="text-5xl md:text-7xl font-black mb-6 leading-tight">
+            <div>
+              <h1 className="text-6xl md:text-8xl font-extrabold mb-6 leading-tight">
                 <span className="block text-4xl md:text-6xl mb-4 text-[#30a659]">
                   Property Management
                 </span>
@@ -292,14 +248,16 @@ export default function Home() {
               </h1>
               
               {/* CTA Button */}
-              <div className="">
-                <Link href="/contact" className="inline-flex items-center px-8 py-4 bg-[#30a659] hover:bg-[#092870] text-white font-bold text-lg rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">
+              <div className="mt-4">
+                <Link href="/contact" className="inline-flex items-center px-10 py-5 bg-[#30a659] hover:bg-[#092870] text-white font-bold text-lg rounded-full transition-all duration-300 shadow-2xl transform hover:scale-105">
                   Explore Our Services
                 </Link>
               </div>
             </div>
           </div>
         </div>
+
+  {/* Floating logos removed for a cleaner hero (was client-side loaded) */}
       </section>
 
       {/* Partner Logos - Scrolling */}
@@ -948,3 +906,5 @@ export default function Home() {
     </Layout>
   )
 }
+
+// Floating logos removed — kept intentionally blank to simplify hero visuals.

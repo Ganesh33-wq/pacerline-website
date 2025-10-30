@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60" fill="none">
+  <rect x="10" y="10" width="40" height="40" rx="8" fill="#1E88E5"/>
+  <text x="55" y="35" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#1E88E5">
+    Rent Manager
+  </text>
+  <path d="M20 20h20v5h-20v-5zm0 8h20v5h-20v-5zm0 8h15v5h-15v-5z" fill="white"/>
+</svg>

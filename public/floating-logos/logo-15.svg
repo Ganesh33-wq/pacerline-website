@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 60" fill="none">
+  <rect x="10" y="10" width="30" height="30" rx="6" fill="#9B59B6"/>
+  <text x="45" y="30" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#9B59B6">
+    RentSpree
+  </text>
+  <path d="M15 18l5 5 10-10" stroke="white" stroke-width="2" fill="none"/>
+</svg>

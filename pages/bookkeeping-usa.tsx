@@ -64,9 +64,7 @@ const BookkeepingUSAPage = () => {
                 <br />
                 <span className="text-4xl lg:text-6xl">Service (USA)</span>
               </h1>
-              <p className="text-xl lg:text-2xl text-gray-700 max-w-4xl mx-auto mb-10 leading-relaxed">
-                Are you a business owner, freelancer, landlord, or small business owner seeking precise bookkeeping and reliable tax services in the USA? You're at the right spot. At Pacerline Outsourcing, we offer full-service bookkeeping and tax preparation that are specifically tailored to meet individuals' and businesses' financial requirements in the U.S.
-              </p>
+              {/* Removed intro paragraph from hero section */}
               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
                 <button className="group relative px-8 py-4 bg-gradient-to-r from-indigo-500 via-purple-500 to-indigo-600 text-white rounded-full font-semibold text-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
                   <span className="relative z-10">Free Consultation</span>
@@ -353,29 +351,29 @@ const BookkeepingUSAPage = () => {
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-              {/* Left Card - QuickBooks Benefits */}
-              <div className="bg-white rounded-3xl p-8 shadow-xl border border-gray-100 h-full">
-                <div className="flex items-center mb-6">
-                  <div className="w-12 h-12 bg-gradient-to-r from-[#092870] to-indigo-600 rounded-xl flex items-center justify-center mr-4">
-                    <span className="text-white text-xl">💡</span>
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-900">QuickBooks Online Benefits</h3>
-                </div>
-                <div className="space-y-4">
-                  {[
-                    "Real-time bank feeds",
-                    "Automated expense management", 
-                    "Custom invoicing",
-                    "Integrated payroll",
-                    "Intelligent financial reporting",
-                    "User-friendly dashboard",
-                    "Clear cash flow picture"
-                  ].map((benefit, index) => (
-                    <div key={index} className="flex items-center p-3 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl">
-                      <span className="w-3 h-3 bg-gradient-to-r from-[#092870] to-[#30a659] rounded-full mr-4"></span>
-                      <span className="text-gray-700 font-medium">{benefit}</span>
+              {/* Left Card - QuickBooks Benefits with Intro Paragraph Below */}
+              <div className="bg-white rounded-3xl p-8 shadow-xl border border-gray-100 h-full flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center mb-6">
+                    <div className="w-12 h-12 bg-gradient-to-r from-[#092870] to-indigo-600 rounded-xl flex items-center justify-center mr-4">
+                      <span className="text-white text-xl">💡</span>
                     </div>
-                  ))}
+                    <h3 className="text-2xl font-bold text-gray-900">QuickBooks Online Benefits</h3>
+                  </div>
+                  <div className="space-y-4">
+                    {["Real-time bank feeds","Automated expense management","Custom invoicing","Integrated payroll","Intelligent financial reporting","User-friendly dashboard","Clear cash flow picture"].map((benefit, index) => (
+                      <div key={index} className="flex items-center p-3 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl">
+                        <span className="w-3 h-3 bg-gradient-to-r from-[#092870] to-[#30a659] rounded-full mr-4"></span>
+                        <span className="text-gray-700 font-medium">{benefit}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                {/* Intro paragraph at bottom of card */}
+                <div className="mt-8">
+                  <p className="text-lg text-gray-700 leading-relaxed text-center">
+                    Are you a business owner, freelancer, landlord, or small business owner seeking precise bookkeeping and reliable tax services in the USA? You're at the right spot. At Pacerline Outsourcing, we offer full-service bookkeeping and tax preparation that are specifically tailored to meet individuals' and businesses' financial requirements in the U.S.
+                  </p>
                 </div>
               </div>
               
@@ -393,13 +391,7 @@ const BookkeepingUSAPage = () => {
                   </p>
                 </div>
                 <div className="space-y-3">
-                  {[
-                    "Chart of accounts setup",
-                    "Bank reconciliations", 
-                    "Accounts payable/receivable management",
-                    "Comprehensive financial reporting",
-                    "Certified professionals support"
-                  ].map((service, index) => (
+                  {["Chart of accounts setup","Bank reconciliations", "Accounts payable/receivable management","Comprehensive financial reporting","Certified professionals support"].map((service, index) => (
                     <div key={index} className="flex items-center p-3 bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl">
                       <span className="w-3 h-3 bg-gradient-to-r from-[#30a659] to-green-600 rounded-full mr-4"></span>
                       <span className="text-gray-700 font-medium">{service}</span>
@@ -503,27 +495,21 @@ const BookkeepingUSAPage = () => {
                   Looking for an accounting service that supports your software? We're fluent in today's leading platforms.
                 </p>
               </div>
-              
               {/* Software Logos Simple */}
-              <div className="flex flex-wrap justify-center items-center gap-12">
-                {[
-                  "/images/software-logos/quickbooks.svg",
-                  "/images/software-logos/xero.svg",
-                  "/images/logos/freshbooks.svg",
-                  "/images/software-logos/sage.svg",
-                  "/images/logos/myob.svg",
-                  "/images/software-logos/buildium.svg"
-                ].map((logo, index) => (
-                  <div key={index} className="transition-all duration-300 hover:scale-110">
-                    <img 
-                      src={logo} 
-                      alt={`Accounting Software ${index + 1}`}
-                      className="h-16 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity duration-300"
-                    />
-                  </div>
-                ))}
+              <div className="flex flex-wrap justify-center items-center gap-12 mb-8">
+                {/* Existing and new software logos only, no names below */}
+                <div className="flex flex-wrap justify-center items-center gap-12">
+                  <img src="/images/software-logos/quickbooks.svg" alt="QuickBooks Online" className="h-16 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity duration-300" />
+                  <img src="/images/software-logos/xero.svg" alt="Xero" className="h-16 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity duration-300" />
+                  <img src="/images/logos/freshbooks.svg" alt="FreshBooks" className="h-16 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity duration-300" />
+                  <img src="/images/software-logos/sage.svg" alt="Sage" className="h-16 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity duration-300" />
+                  <img src="/images/logos/myob.svg" alt="MYOB" className="h-16 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity duration-300" />
+                  <img src="/images/software-logos/buildium.svg" alt="Buildium" className="h-16 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity duration-300" />
+                  <img src="/images/software-logos/zoho-books.png" alt="Zoho Books" className="h-16 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity duration-300" />
+                  <img src="/images/software-logos/wave.png" alt="Wave" className="h-16 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity duration-300" />
+                  <img src="/images/software-logos/cashapp.png" alt="CashApp" className="h-16 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity duration-300" />
+                </div>
               </div>
-              
               <div className="text-center mt-8">
                 <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-[#30a659]/10 to-green-100/50 rounded-full border border-[#30a659]/20">
                   <span className="text-[#30a659] font-semibold">
@@ -767,6 +753,7 @@ const BookkeepingUSAPage = () => {
           </div>
         </section>
 
+        {/* Removed duplicate intro paragraph from bottom of page */}
         <Footer />
       </div>
 

@@ -245,6 +245,72 @@ const VirtualAssistantPage = () => {
             .delay-1000 {
               animation-delay: 1s;
             }
+
+            @keyframes logo-scroll {
+              0% { transform: translateX(0); }
+              100% { transform: translateX(-120px); }
+            }
+            .animate-logo-scroll {
+              animation: logo-scroll 8s linear infinite alternate;
+            }
+          `}</style>
+        </section>
+
+        {/* Animated Logo Row - Virtual Assistant Software */}
+
+        <section className="relative py-12 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 overflow-hidden">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="relative w-full h-28 overflow-hidden">
+              <div className="absolute left-0 top-1/2 -translate-y-1/2 flex items-center animate-logo-marquee" style={{ width: 'max-content' }}>
+                {[
+                  "Airbnb.png",
+                  "AppFolio.png",
+                  "Buildium.png",
+                  "DocuSign.jpeg",
+                  "HubSpot.png",
+                  "Salesforce.jpeg",
+                  "Slack.jpeg",
+                  "VRBO.png",
+                  "Zillow.png"
+                ].map((img, idx) => (
+                  <img
+                    key={img}
+                    src={`/images/virtual-assistant/${img}`}
+                    alt={img.replace('.png','').replace('.jpeg','')}
+                    className="h-20 w-40 object-contain drop-shadow-xl mx-8 transition-transform duration-500 hover:scale-110"
+                    style={{ animationDelay: `${idx * 0.2}s` }}
+                  />
+                ))}
+                {/* Duplicate logos for seamless loop */}
+                {[
+                  "Airbnb.png",
+                  "AppFolio.png",
+                  "Buildium.png",
+                  "DocuSign.jpeg",
+                  "HubSpot.png",
+                  "Salesforce.jpeg",
+                  "Slack.jpeg",
+                  "VRBO.png",
+                  "Zillow.png"
+                ].map((img, idx) => (
+                  <img
+                    key={img+"-dup"}
+                    src={`/images/virtual-assistant/${img}`}
+                    alt={img.replace('.png','').replace('.jpeg','')}
+                    className="h-20 w-40 object-contain drop-shadow-xl mx-8 transition-transform duration-500 hover:scale-110"
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
+          <style jsx>{`
+            @keyframes logo-marquee {
+              0% { transform: translateX(0); }
+              100% { transform: translateX(-50%); }
+            }
+            .animate-logo-marquee {
+              animation: logo-marquee 18s linear infinite;
+            }
           `}</style>
         </section>
 

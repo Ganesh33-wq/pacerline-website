@@ -119,34 +119,34 @@ const PropertyManagementPage = () => {
             <div className="relative">
               <div className="bg-gradient-to-br from-blue-500/10 to-green-500/10 rounded-3xl p-8 border border-green-200/30">
                 <div className="text-center mb-6">
-                  <div className="text-6xl mb-4">🏢</div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">Software Integration</h3>
+                  <div className="text-6xl mb-4">🧾</div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">Accounting & Compliance Services</h3>
                 </div>
                 
                 <div className="grid grid-cols-2 gap-4">
                   <div className="text-center p-3 bg-white rounded-lg shadow-md">
-                    <div className="text-2xl mb-2">🏢</div>
-                    <h4 className="text-sm font-semibold text-blue-600">AppFolio</h4>
+                    <div className="text-2xl mb-2">⚙️</div>
+                    <h4 className="text-sm font-semibold text-blue-600">Software Setup & Migration</h4>
                   </div>
                   <div className="text-center p-3 bg-white rounded-lg shadow-md">
-                    <div className="text-2xl mb-2">🏗️</div>
-                    <h4 className="text-sm font-semibold text-green-600">Buildium</h4>
+                    <div className="text-2xl mb-2">�</div>
+                    <h4 className="text-sm font-semibold text-blue-600">Property Budgeting</h4>
                   </div>
                   <div className="text-center p-3 bg-white rounded-lg shadow-md">
-                    <div className="text-2xl mb-2">🏠</div>
-                    <h4 className="text-sm font-semibold text-blue-600">PropertyWare</h4>
+                    <div className="text-2xl mb-2">🔍</div>
+                    <h4 className="text-sm font-semibold text-blue-600">Diagnostic Review & Error Clean-up</h4>
                   </div>
                   <div className="text-center p-3 bg-white rounded-lg shadow-md">
-                    <div className="text-2xl mb-2">📊</div>
-                    <h4 className="text-sm font-semibold text-green-600">QuickBooks</h4>
+                    <div className="text-2xl mb-2">🧮</div>
+                    <h4 className="text-sm font-semibold text-green-600">3-Way Reconciliation</h4>
                   </div>
                   <div className="text-center p-3 bg-white rounded-lg shadow-md">
-                    <div className="text-2xl mb-2">🔧</div>
-                    <h4 className="text-sm font-semibold text-blue-600">Rentvine</h4>
+                    <div className="text-2xl mb-2">�</div>
+                    <h4 className="text-sm font-semibold text-blue-600">Property Budgeting</h4>
                   </div>
                   <div className="text-center p-3 bg-white rounded-lg shadow-md">
-                    <div className="text-2xl mb-2">☁️</div>
-                    <h4 className="text-sm font-semibold text-green-600">TenantCloud</h4>
+                    <div className="text-2xl mb-2">📝</div>
+                    <h4 className="text-sm font-semibold text-green-600">IRS 1099 Filing</h4>
                   </div>
                 </div>
                 
