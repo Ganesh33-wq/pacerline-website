@@ -233,23 +233,103 @@ export default function Home() {
       </Head>
       
   {/* Hero Section - First Row */}
-      <section className="hero-section relative bg-gradient-to-br from-blue-50 via-white to-green-50 text-gray-800 py-20 overflow-hidden">
+      <section className="hero-section relative bg-gradient-to-br from-sky-50 via-blue-50 to-indigo-50 text-gray-800 py-16 md:py-20 lg:py-28 overflow-hidden min-h-[500px] md:min-h-[580px]">
+        {/* Background Decorative Elements */}
+        <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+          <div className="absolute top-10 left-10 w-64 h-64 bg-blue-200/30 rounded-full blur-3xl"></div>
+          <div className="absolute top-20 right-20 w-80 h-80 bg-indigo-200/30 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-10 left-1/4 w-96 h-96 bg-sky-200/20 rounded-full blur-3xl"></div>
+        </div>
+
+        {/* Floating Software Icons with Circular Backgrounds - Only 10 Main Software - Hidden on Mobile, Visible on Tablet+ */}
+        <div className="absolute inset-0 pointer-events-none overflow-hidden hidden md:block">
+          {/* Top Left */}
+          <div className="floating-icon-wrapper absolute" style={{ top: '12%', left: '8%', animationDelay: '0s' }}>
+            <div className="icon-circle bg-white backdrop-blur-md rounded-full p-2 lg:p-2.5 shadow-lg border border-gray-100/50">
+              <img src="/images/software-icons/quickbooks.png" alt="QuickBooks" className="w-8 h-8 lg:w-9 lg:h-9 object-contain" />
+            </div>
+          </div>
+          
+          {/* Top Center-Left */}
+          <div className="floating-icon-wrapper absolute hidden lg:block" style={{ top: '8%', left: '22%', animationDelay: '1.5s' }}>
+            <div className="icon-circle bg-white backdrop-blur-md rounded-full p-2 lg:p-2.5 shadow-lg border border-gray-100/50">
+              <img src="/images/software-icons/appfolio.png" alt="AppFolio" className="w-8 h-8 lg:w-9 lg:h-9 object-contain" />
+            </div>
+          </div>
+          
+          {/* Top Center-Right */}
+          <div className="floating-icon-wrapper absolute hidden lg:block" style={{ top: '10%', right: '22%', animationDelay: '2.5s' }}>
+            <div className="icon-circle bg-white backdrop-blur-md rounded-full p-2 lg:p-2.5 shadow-lg border border-gray-100/50">
+              <img src="/images/software-icons/buildium.png" alt="Buildium" className="w-8 h-8 lg:w-9 lg:h-9 object-contain" />
+            </div>
+          </div>
+          
+          {/* Top Right */}
+          <div className="floating-icon-wrapper absolute" style={{ top: '14%', right: '8%', animationDelay: '0.8s' }}>
+            <div className="icon-circle bg-white backdrop-blur-md rounded-full p-2 lg:p-2.5 shadow-lg border border-gray-100/50">
+              <img src="/images/software-icons/xero.png" alt="Xero" className="w-8 h-8 lg:w-9 lg:h-9 object-contain" />
+            </div>
+          </div>
+          
+          {/* Middle Left */}
+          <div className="floating-icon-wrapper absolute" style={{ top: '42%', left: '6%', animationDelay: '3s' }}>
+            <div className="icon-circle bg-white backdrop-blur-md rounded-full p-2 lg:p-2.5 shadow-lg border border-gray-100/50">
+              <img src="/images/software-icons/propertyware.png" alt="Propertyware" className="w-8 h-8 lg:w-9 lg:h-9 object-contain" />
+            </div>
+          </div>
+          
+          {/* Middle Right */}
+          <div className="floating-icon-wrapper absolute" style={{ top: '45%', right: '7%', animationDelay: '1.2s' }}>
+            <div className="icon-circle bg-white backdrop-blur-md rounded-full p-2 lg:p-2.5 shadow-lg border border-gray-100/50">
+              <img src="/images/software-icons/salesforce.png" alt="Salesforce" className="w-8 h-8 lg:w-9 lg:h-9 object-contain" />
+            </div>
+          </div>
+          
+          {/* Bottom Left */}
+          <div className="floating-icon-wrapper absolute" style={{ top: '72%', left: '10%', animationDelay: '2s' }}>
+            <div className="icon-circle bg-white backdrop-blur-md rounded-full p-2 lg:p-2.5 shadow-lg border border-gray-100/50">
+              <img src="/images/software-icons/slack.png" alt="Slack" className="w-8 h-8 lg:w-9 lg:h-9 object-contain" />
+            </div>
+          </div>
+          
+          {/* Bottom Center-Left */}
+          <div className="floating-icon-wrapper absolute hidden lg:block" style={{ top: '78%', left: '24%', animationDelay: '3.5s' }}>
+            <div className="icon-circle bg-white backdrop-blur-md rounded-full p-2 lg:p-2.5 shadow-lg border border-gray-100/50">
+              <img src="/images/software-icons/docusign.png" alt="DocuSign" className="w-8 h-8 lg:w-9 lg:h-9 object-contain" />
+            </div>
+          </div>
+          
+          {/* Bottom Center-Right */}
+          <div className="floating-icon-wrapper absolute hidden lg:block" style={{ top: '76%', right: '24%', animationDelay: '0.5s' }}>
+            <div className="icon-circle bg-white backdrop-blur-md rounded-full p-2 lg:p-2.5 shadow-lg border border-gray-100/50">
+              <img src="/images/software-icons/hubspot.png" alt="HubSpot" className="w-8 h-8 lg:w-9 lg:h-9 object-contain" />
+            </div>
+          </div>
+          
+          {/* Bottom Right */}
+          <div className="floating-icon-wrapper absolute" style={{ top: '70%', right: '9%', animationDelay: '2.8s' }}>
+            <div className="icon-circle bg-white backdrop-blur-md rounded-full p-2 lg:p-2.5 shadow-lg border border-gray-100/50">
+              <img src="/images/software-icons/zillow.png" alt="Zillow" className="w-8 h-8 lg:w-9 lg:h-9 object-contain" />
+            </div>
+          </div>
+        </div>
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center">
             {/* Main Title */}
-            <div>
-              <h1 className="text-6xl md:text-8xl font-extrabold mb-6 leading-tight">
-                <span className="block text-4xl md:text-6xl mb-4 text-[#30a659]">
+            <div className="space-y-4">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight">
+                <span className="block text-[#30a659] mb-2">
                   Property Management
                 </span>
-                <span className="block text-4xl md:text-6xl bg-gradient-to-r from-[#092870] to-[#30a659] bg-clip-text text-transparent">
+                <span className="block bg-gradient-to-r from-[#092870] via-blue-600 to-[#30a659] bg-clip-text text-transparent">
                   Accounting Service
                 </span>
               </h1>
               
               {/* CTA Button */}
-              <div className="mt-4">
-                <Link href="/contact" className="inline-flex items-center px-10 py-5 bg-[#30a659] hover:bg-[#092870] text-white font-bold text-lg rounded-full transition-all duration-300 shadow-2xl transform hover:scale-105">
+              <div className="mt-6 md:mt-8">
+                <Link href="/contact" className="inline-flex items-center px-7 md:px-9 py-3 md:py-4 bg-[#30a659] hover:bg-[#092870] text-white font-bold text-sm md:text-base rounded-full transition-all duration-300 shadow-2xl transform hover:scale-105 hover:shadow-3xl">
                   Explore Our Services
                 </Link>
               </div>
@@ -257,7 +337,41 @@ export default function Home() {
           </div>
         </div>
 
-  {/* Floating logos removed for a cleaner hero (was client-side loaded) */}
+        <style jsx>{`
+          .floating-icon-wrapper {
+            animation: float-smooth 8s ease-in-out infinite;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+          }
+          
+          .icon-circle {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            will-change: transform;
+          }
+          
+          .floating-icon-wrapper:hover {
+            animation-play-state: paused;
+          }
+          
+          .floating-icon-wrapper:hover .icon-circle {
+            transform: scale(1.1) translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+          }
+          
+          @keyframes float-smooth {
+            0%, 100% {
+              transform: translateY(0px) translateX(0px) rotate(0deg);
+            }
+            25% {
+              transform: translateY(-15px) translateX(8px) rotate(1deg);
+            }
+            50% {
+              transform: translateY(-25px) translateX(-5px) rotate(-1deg);
+            }
+            75% {
+              transform: translateY(-18px) translateX(6px) rotate(1deg);
+            }
+          }
+        `}</style>
       </section>
 
       {/* Partner Logos - Scrolling */}

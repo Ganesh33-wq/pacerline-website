@@ -67,16 +67,16 @@ const Header = () => {
   }, [])
 
   return (
-    <header className="bg-white/95 backdrop-blur-lg shadow-lg border-b border-indigo-100/50 sticky top-0 z-50 transition-all duration-300 w-full">
+    <header className="bg-white/70 backdrop-blur-xl shadow-sm border-b border-white/20 sticky top-0 z-50 transition-all duration-300 w-full">
       <nav className="w-full" ref={dropdownRef}>
-        <div className="flex justify-between items-center py-3 sm:py-4 lg:py-6 px-3 sm:px-4 md:px-6 lg:px-8 w-full min-h-[64px]">
+        <div className="flex justify-between items-center py-3 md:py-4 lg:py-4 px-4 md:px-6 lg:px-8 xl:px-12 w-full min-h-[64px]">
           {/* Logo (as home link, no text) */}
-          <div className="flex items-center group flex-shrink-0 ml-[10px]">
+          <div className="flex items-center group flex-shrink-0">
             <Link href="/admin/dashboard" className="relative block">
               <img 
                 src="/images/home/company-logo.png" 
                 alt="Pacerline Company Logo" 
-                className="h-12 sm:h-14 w-auto transition-transform duration-300 group-hover:scale-110"
+                className="h-12 md:h-13 lg:h-14 w-auto transition-transform duration-300 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/20 to-purple-500/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </Link>
@@ -245,7 +245,7 @@ const Header = () => {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Link href="/contact" className="relative overflow-hidden bg-gradient-to-r from-indigo-600 via-purple-600 to-indigo-700 hover:from-purple-600 hover:via-indigo-600 hover:to-purple-700 text-white font-bold py-2 px-4 md:py-3 md:px-6 lg:py-3 lg:px-8 rounded-full transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:-translate-y-1 group text-sm md:text-base" style={{ color: 'white' }}>
+            <Link href="/contact" className="relative overflow-hidden bg-gradient-to-r from-indigo-600 via-purple-600 to-indigo-700 hover:from-purple-600 hover:via-indigo-600 hover:to-purple-700 text-white font-bold py-2.5 px-6 md:py-3 md:px-7 lg:py-3 lg:px-8 rounded-full transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:-translate-y-1 group text-sm md:text-base" style={{ color: 'white' }}>
               <span className="relative z-10" style={{ color: 'white' }}>Get Started</span>
               <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               <div className="absolute inset-0 rounded-full bg-gradient-to-r from-indigo-400 to-purple-400 opacity-0 group-hover:opacity-20 blur-lg transition-opacity duration-300"></div>
