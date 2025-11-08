@@ -241,76 +241,61 @@ export default function Home() {
           <div className="absolute bottom-10 left-1/4 w-96 h-96 bg-sky-200/20 rounded-full blur-3xl"></div>
         </div>
 
-        {/* Floating Software Icons with Circular Backgrounds - Only 10 Main Software - Hidden on Mobile, Visible on Tablet+ */}
+        {/* Floating Software Icons - Direct Display Without Background */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden hidden md:block">
-          {/* Top Left */}
-          <div className="floating-icon-wrapper absolute" style={{ top: '12%', left: '8%', animationDelay: '0s' }}>
-            <div className="icon-circle bg-white backdrop-blur-md rounded-full p-2 lg:p-2.5 shadow-lg border border-gray-100/50">
-              <img src="/images/software-icons/quickbooks.png" alt="QuickBooks" className="w-8 h-8 lg:w-9 lg:h-9 object-contain" />
-            </div>
+          {/* Top Row - Left to Right */}
+          <div className="floating-icon-wrapper absolute" style={{ top: '10%', left: '5%', animationDelay: '0s' }}>
+            <img src="/images/software-icons/appfolio.png" alt="AppFolio" className="w-12 h-12 lg:w-14 lg:h-14 object-contain drop-shadow-lg" />
           </div>
           
-          {/* Top Center-Left */}
-          <div className="floating-icon-wrapper absolute hidden lg:block" style={{ top: '8%', left: '22%', animationDelay: '1.5s' }}>
-            <div className="icon-circle bg-white backdrop-blur-md rounded-full p-2 lg:p-2.5 shadow-lg border border-gray-100/50">
-              <img src="/images/software-icons/appfolio.png" alt="AppFolio" className="w-8 h-8 lg:w-9 lg:h-9 object-contain" />
-            </div>
+          <div className="floating-icon-wrapper absolute" style={{ top: '8%', left: '18%', animationDelay: '1.5s' }}>
+            <img src="/images/software-icons/buildium.png" alt="Buildium" className="w-12 h-12 lg:w-14 lg:h-14 object-contain drop-shadow-lg" />
           </div>
           
-          {/* Top Center-Right */}
-          <div className="floating-icon-wrapper absolute hidden lg:block" style={{ top: '10%', right: '22%', animationDelay: '2.5s' }}>
-            <div className="icon-circle bg-white backdrop-blur-md rounded-full p-2 lg:p-2.5 shadow-lg border border-gray-100/50">
-              <img src="/images/software-icons/buildium.png" alt="Buildium" className="w-8 h-8 lg:w-9 lg:h-9 object-contain" />
-            </div>
+          <div className="floating-icon-wrapper absolute hidden lg:block" style={{ top: '6%', left: '35%', animationDelay: '2.2s' }}>
+            <img src="/images/software-icons/propertyware.png" alt="Propertyware" className="w-12 h-12 lg:w-14 lg:h-14 object-contain drop-shadow-lg" />
           </div>
           
-          {/* Top Right */}
-          <div className="floating-icon-wrapper absolute" style={{ top: '14%', right: '8%', animationDelay: '0.8s' }}>
-            <div className="icon-circle bg-white backdrop-blur-md rounded-full p-2 lg:p-2.5 shadow-lg border border-gray-100/50">
-              <img src="/images/software-icons/xero.png" alt="Xero" className="w-8 h-8 lg:w-9 lg:h-9 object-contain" />
-            </div>
+          <div className="floating-icon-wrapper absolute hidden lg:block" style={{ top: '6%', right: '35%', animationDelay: '3s' }}>
+            <img src="/images/software-icons/quickbooks.png" alt="QuickBooks" className="w-12 h-12 lg:w-14 lg:h-14 object-contain drop-shadow-lg" />
           </div>
           
-          {/* Middle Left */}
-          <div className="floating-icon-wrapper absolute" style={{ top: '42%', left: '6%', animationDelay: '3s' }}>
-            <div className="icon-circle bg-white backdrop-blur-md rounded-full p-2 lg:p-2.5 shadow-lg border border-gray-100/50">
-              <img src="/images/software-icons/propertyware.png" alt="Propertyware" className="w-8 h-8 lg:w-9 lg:h-9 object-contain" />
-            </div>
+          <div className="floating-icon-wrapper absolute" style={{ top: '8%', right: '18%', animationDelay: '0.8s' }}>
+            <img src="/images/software-icons/rentvine.png" alt="Rentvine" className="w-12 h-12 lg:w-14 lg:h-14 object-contain drop-shadow-lg" />
           </div>
           
-          {/* Middle Right */}
-          <div className="floating-icon-wrapper absolute" style={{ top: '45%', right: '7%', animationDelay: '1.2s' }}>
-            <div className="icon-circle bg-white backdrop-blur-md rounded-full p-2 lg:p-2.5 shadow-lg border border-gray-100/50">
-              <img src="/images/software-icons/salesforce.png" alt="Salesforce" className="w-8 h-8 lg:w-9 lg:h-9 object-contain" />
-            </div>
+          <div className="floating-icon-wrapper absolute" style={{ top: '10%', right: '5%', animationDelay: '1.8s' }}>
+            <img src="/images/software-icons/dotloop.png" alt="Dotloop" className="w-12 h-12 lg:w-14 lg:h-14 object-contain drop-shadow-lg" />
           </div>
           
-          {/* Bottom Left */}
-          <div className="floating-icon-wrapper absolute" style={{ top: '72%', left: '10%', animationDelay: '2s' }}>
-            <div className="icon-circle bg-white backdrop-blur-md rounded-full p-2 lg:p-2.5 shadow-lg border border-gray-100/50">
-              <img src="/images/software-icons/slack.png" alt="Slack" className="w-8 h-8 lg:w-9 lg:h-9 object-contain" />
-            </div>
+          {/* Middle Row */}
+          <div className="floating-icon-wrapper absolute" style={{ top: '40%', left: '4%', animationDelay: '2.5s' }}>
+            <img src="/images/software-icons/xero.png" alt="Xero" className="w-12 h-12 lg:w-14 lg:h-14 object-contain drop-shadow-lg" />
           </div>
           
-          {/* Bottom Center-Left */}
-          <div className="floating-icon-wrapper absolute hidden lg:block" style={{ top: '78%', left: '24%', animationDelay: '3.5s' }}>
-            <div className="icon-circle bg-white backdrop-blur-md rounded-full p-2 lg:p-2.5 shadow-lg border border-gray-100/50">
-              <img src="/images/software-icons/docusign.png" alt="DocuSign" className="w-8 h-8 lg:w-9 lg:h-9 object-contain" />
-            </div>
+          <div className="floating-icon-wrapper absolute hidden lg:block" style={{ top: '42%', left: '25%', animationDelay: '3.2s' }}>
+            <img src="/images/software-icons/zillow.png" alt="Zillow" className="w-12 h-12 lg:w-14 lg:h-14 object-contain drop-shadow-lg" />
           </div>
           
-          {/* Bottom Center-Right */}
-          <div className="floating-icon-wrapper absolute hidden lg:block" style={{ top: '76%', right: '24%', animationDelay: '0.5s' }}>
-            <div className="icon-circle bg-white backdrop-blur-md rounded-full p-2 lg:p-2.5 shadow-lg border border-gray-100/50">
-              <img src="/images/software-icons/hubspot.png" alt="HubSpot" className="w-8 h-8 lg:w-9 lg:h-9 object-contain" />
-            </div>
+          <div className="floating-icon-wrapper absolute hidden lg:block" style={{ top: '42%', right: '25%', animationDelay: '1.2s' }}>
+            <img src="/images/software-icons/docusign.png" alt="DocuSign" className="w-12 h-12 lg:w-14 lg:h-14 object-contain drop-shadow-lg" />
           </div>
           
-          {/* Bottom Right */}
-          <div className="floating-icon-wrapper absolute" style={{ top: '70%', right: '9%', animationDelay: '2.8s' }}>
-            <div className="icon-circle bg-white backdrop-blur-md rounded-full p-2 lg:p-2.5 shadow-lg border border-gray-100/50">
-              <img src="/images/software-icons/zillow.png" alt="Zillow" className="w-8 h-8 lg:w-9 lg:h-9 object-contain" />
-            </div>
+          <div className="floating-icon-wrapper absolute" style={{ top: '40%', right: '4%', animationDelay: '2.8s' }}>
+            <img src="/images/software-icons/mls.png" alt="MLS" className="w-12 h-12 lg:w-14 lg:h-14 object-contain drop-shadow-lg" />
+          </div>
+          
+          {/* Bottom Row */}
+          <div className="floating-icon-wrapper absolute" style={{ top: '75%', left: '8%', animationDelay: '1s' }}>
+            <img src="/images/software-icons/hubspot.png" alt="HubSpot" className="w-12 h-12 lg:w-14 lg:h-14 object-contain drop-shadow-lg" />
+          </div>
+          
+          <div className="floating-icon-wrapper absolute hidden lg:block" style={{ top: '73%', left: '28%', animationDelay: '3.5s' }}>
+            <img src="/images/software-icons/slack.png" alt="Slack" className="w-12 h-12 lg:w-14 lg:h-14 object-contain drop-shadow-lg" />
+          </div>
+          
+          <div className="floating-icon-wrapper absolute hidden lg:block" style={{ top: '73%', right: '28%', animationDelay: '0.5s' }}>
+            <img src="/images/software-icons/salesforce.png" alt="Salesforce" className="w-12 h-12 lg:w-14 lg:h-14 object-contain drop-shadow-lg" />
           </div>
         </div>
 
@@ -343,32 +328,24 @@ export default function Home() {
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
           }
           
-          .icon-circle {
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            will-change: transform;
-          }
-          
           .floating-icon-wrapper:hover {
             animation-play-state: paused;
-          }
-          
-          .floating-icon-wrapper:hover .icon-circle {
-            transform: scale(1.1) translateY(-4px);
-            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+            transform: scale(1.15) translateY(-5px);
+            filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.25));
           }
           
           @keyframes float-smooth {
             0%, 100% {
-              transform: translateY(0px) translateX(0px) rotate(0deg);
+              transform: translateY(0px) translateX(0px);
             }
             25% {
-              transform: translateY(-15px) translateX(8px) rotate(1deg);
+              transform: translateY(-15px) translateX(8px);
             }
             50% {
-              transform: translateY(-25px) translateX(-5px) rotate(-1deg);
+              transform: translateY(-25px) translateX(-5px);
             }
             75% {
-              transform: translateY(-18px) translateX(6px) rotate(1deg);
+              transform: translateY(-18px) translateX(6px);
             }
           }
         `}</style>
