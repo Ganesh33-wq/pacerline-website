@@ -55,14 +55,61 @@ const VirtualAssistantPage = () => {
             </div>
           </div>
 
-          {/* Phase 2: Content & CTA Section */}
+          {/* Animated Logo Row - Virtual Assistant Software */}
+          <div className="relative py-8 bg-white/50">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="relative w-full h-28 overflow-hidden">
+                <div className="absolute left-0 top-1/2 -translate-y-1/2 flex items-center animate-logo-marquee" style={{ width: 'max-content' }}>
+                  {[
+                    "Airbnb.png",
+                    "AppFolio.png",
+                    "Buildium.png",
+                    "DocuSign.jpeg",
+                    "HubSpot.png",
+                    "Salesforce.jpeg",
+                    "Slack.jpeg",
+                    "VRBO.png",
+                    "Zillow.png"
+                  ].map((img, idx) => (
+                    <img
+                      key={img}
+                      src={`/images/virtual-assistant/${img}`}
+                      alt={img.replace('.png','').replace('.jpeg','')}
+                      className="h-16 w-auto object-contain drop-shadow-lg mx-6 transition-transform duration-500 hover:scale-110"
+                    />
+                  ))}
+                  {/* Duplicate logos for seamless loop */}
+                  {[
+                    "Airbnb.png",
+                    "AppFolio.png",
+                    "Buildium.png",
+                    "DocuSign.jpeg",
+                    "HubSpot.png",
+                    "Salesforce.jpeg",
+                    "Slack.jpeg",
+                    "VRBO.png",
+                    "Zillow.png"
+                  ].map((img, idx) => (
+                    <img
+                      key={img+"-dup"}
+                      src={`/images/virtual-assistant/${img}`}
+                      alt={img.replace('.png','').replace('.jpeg','')}
+                      className="h-16 w-auto object-contain drop-shadow-lg mx-6 transition-transform duration-500 hover:scale-110"
+                    />
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Phase 2: Content & CTA Section - Expert Virtual Support */}
           <div className="relative py-16 lg:py-20">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 
                 {/* Left Side - Content */}
                 <div className="space-y-8 animate-slide-in-left">
-                  <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-white/20 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 group">
+                  <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-white/20 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 group h-full">
                     <h2 className="text-2xl font-bold text-gray-900 mb-6 group-hover:text-[#092870] transition-colors duration-300">
                       <span className="bg-gradient-to-r from-[#092870] to-indigo-600 bg-clip-text text-transparent">Expert Virtual Support</span>
                       <div className="w-16 h-1 bg-gradient-to-r from-[#092870] to-indigo-600 rounded-full mt-2 group-hover:w-24 transition-all duration-300"></div>
@@ -76,6 +123,9 @@ const VirtualAssistantPage = () => {
                       </p>
                       <p className="hover:text-gray-900 transition-colors duration-300">
                         Our virtual assistants are trained to handle a wide range of tasks, from tenant communication and maintenance coordination to real estate support and receptionist duties. With flexible service packages, you can scale up or down as your business needs change, ensuring you always have the right support at the right time.
+                      </p>
+                      <p className="hover:text-gray-900 transition-colors duration-300">
+                        Whether you need help with daily operations, after-hours support, or specialized administrative services, our team is equipped to meet your unique business requirements.
                       </p>
                     </div>
                     
@@ -100,49 +150,49 @@ const VirtualAssistantPage = () => {
 
                 {/* Right Side - Key Stats */}
                 <div className="space-y-6 animate-slide-in-right">
-                  <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-white/20 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                  <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-white/20 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 h-full">
                     <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
                       We are serving
                       <div className="w-20 h-1 bg-gradient-to-r from-[#092870] to-indigo-600 rounded-full mx-auto mt-2"></div>
                     </h3>
                     <div className="grid grid-cols-1 gap-6">
-                      <div className="flex items-center justify-between p-3 bg-gradient-to-r from-[#3b82f6] via-[#6366f1] to-[#3b82f6] bg-size-200 bg-pos-0 hover:bg-pos-100 rounded-xl text-white transform hover:scale-105 transition-all duration-500 hover:shadow-xl group" style={{ minHeight: '70px' }}>
+                      <div className="flex items-center justify-between p-4 bg-gradient-to-r from-[#3b82f6] via-[#6366f1] to-[#3b82f6] bg-size-200 bg-pos-0 hover:bg-pos-100 rounded-xl text-white transform hover:scale-105 transition-all duration-500 hover:shadow-xl group" style={{ minHeight: '90px' }}>
                         <div>
-                          <div className="text-2xl font-bold group-hover:animate-pulse">Property Management Virtual Assistant</div>
-                          <div className="font-semibold">Remote admin & operations</div>
-                          <div className="text-sm opacity-90">Leasing, communication, listings</div>
+                          <div className="text-xl font-bold !text-white group-hover:animate-pulse">Property Management Virtual Assistant</div>
+                          <div className="font-semibold !text-white">Remote admin & operations</div>
+                          <div className="text-sm !text-white opacity-90">Leasing, communication, listings</div>
                         </div>
-                        <div className="text-4xl group-hover:animate-bounce">�</div>
+                        <div className="text-4xl group-hover:animate-bounce">🏢</div>
                       </div>
-                      <div className="flex items-center justify-between p-3 bg-gradient-to-r from-[#059669] via-[#10b981] to-[#059669] bg-size-200 bg-pos-0 hover:bg-pos-100 rounded-xl text-white transform hover:scale-105 transition-all duration-500 hover:shadow-xl group" style={{ minHeight: '70px' }}>
+                      <div className="flex items-center justify-between p-4 bg-gradient-to-r from-[#059669] via-[#10b981] to-[#059669] bg-size-200 bg-pos-0 hover:bg-pos-100 rounded-xl text-white transform hover:scale-105 transition-all duration-500 hover:shadow-xl group" style={{ minHeight: '90px' }}>
                         <div>
-                          <div className="text-2xl font-bold group-hover:animate-pulse">Maintenance Coordinator</div>
-                          <div className="font-semibold">Work order & vendor management</div>
-                          <div className="text-sm opacity-90">Repairs, scheduling, follow-up</div>
+                          <div className="text-xl font-bold !text-white group-hover:animate-pulse">Maintenance Coordinator</div>
+                          <div className="font-semibold !text-white">Work order & vendor management</div>
+                          <div className="text-sm !text-white opacity-90">Repairs, scheduling, follow-up</div>
                         </div>
                         <div className="text-4xl group-hover:animate-bounce">🔧</div>
                       </div>
-                      <div className="flex items-center justify-between p-3 bg-gradient-to-r from-[#a21caf] via-[#7c3aed] to-[#a21caf] bg-size-200 bg-pos-0 hover:bg-pos-100 rounded-xl text-white transform hover:scale-105 transition-all duration-500 hover:shadow-xl group" style={{ minHeight: '70px' }}>
+                      <div className="flex items-center justify-between p-4 bg-gradient-to-r from-[#a21caf] via-[#7c3aed] to-[#a21caf] bg-size-200 bg-pos-0 hover:bg-pos-100 rounded-xl text-white transform hover:scale-105 transition-all duration-500 hover:shadow-xl group" style={{ minHeight: '90px' }}>
                         <div>
-                          <div className="text-2xl font-bold group-hover:animate-pulse">Real Estate Agent Service</div>
-                          <div className="font-semibold">Support for agents & brokers</div>
-                          <div className="text-sm opacity-90">Listings, showings, paperwork</div>
+                          <div className="text-xl font-bold !text-white group-hover:animate-pulse">Real Estate Agent Service</div>
+                          <div className="font-semibold !text-white">Support for agents & brokers</div>
+                          <div className="text-sm !text-white opacity-90">Listings, showings, paperwork</div>
                         </div>
-                        <div className="text-4xl group-hover:animate-bounce">�</div>
+                        <div className="text-4xl group-hover:animate-bounce">🏠</div>
                       </div>
-                      <div className="flex items-center justify-between p-3 bg-gradient-to-r from-[#06b6d4] via-[#0891b2] to-[#06b6d4] bg-size-200 bg-pos-0 hover:bg-pos-100 rounded-xl text-white transform hover:scale-105 transition-all duration-500 hover:shadow-xl group" style={{ minHeight: '70px' }}>
+                      <div className="flex items-center justify-between p-4 bg-gradient-to-r from-[#06b6d4] via-[#0891b2] to-[#06b6d4] bg-size-200 bg-pos-0 hover:bg-pos-100 rounded-xl text-white transform hover:scale-105 transition-all duration-500 hover:shadow-xl group" style={{ minHeight: '90px' }}>
                         <div>
-                          <div className="text-2xl font-bold group-hover:animate-pulse">Receptionist Service</div>
-                          <div className="font-semibold">Call, email & chat handling</div>
-                          <div className="text-sm opacity-90">Front desk, scheduling, support</div>
+                          <div className="text-xl font-bold !text-white group-hover:animate-pulse">Receptionist Service</div>
+                          <div className="font-semibold !text-white">Call, email & chat handling</div>
+                          <div className="text-sm !text-white opacity-90">Front desk, scheduling, support</div>
                         </div>
                         <div className="text-4xl group-hover:animate-bounce">📞</div>
                       </div>
-                      <div className="flex items-center justify-between p-3 bg-gradient-to-r from-[#ef4444] via-[#dc2626] to-[#ef4444] bg-size-200 bg-pos-0 hover:bg-pos-100 rounded-xl text-white transform hover:scale-105 transition-all duration-500 hover:shadow-xl group" style={{ minHeight: '70px' }}>
+                      <div className="flex items-center justify-between p-4 bg-gradient-to-r from-[#f59e0b] via-[#f97316] to-[#f59e0b] bg-size-200 bg-pos-0 hover:bg-pos-100 rounded-xl text-white transform hover:scale-105 transition-all duration-500 hover:shadow-xl group" style={{ minHeight: '90px' }}>
                         <div>
-                          <div className="text-2xl font-bold group-hover:animate-pulse">Call Centre Support</div>
-                          <div className="font-semibold">Inbound & outbound call support</div>
-                          <div className="text-sm opacity-90">Lead capture, customer service</div>
+                          <div className="text-xl font-bold !text-white group-hover:animate-pulse">Call Centre Support</div>
+                          <div className="font-semibold !text-white">Inbound & outbound call support</div>
+                          <div className="text-sm !text-white opacity-90">Lead capture, customer service</div>
                         </div>
                         <div className="text-4xl group-hover:animate-bounce">🎧</div>
                       </div>
@@ -246,64 +296,6 @@ const VirtualAssistantPage = () => {
               animation-delay: 1s;
             }
 
-            @keyframes logo-scroll {
-              0% { transform: translateX(0); }
-              100% { transform: translateX(-120px); }
-            }
-            .animate-logo-scroll {
-              animation: logo-scroll 8s linear infinite alternate;
-            }
-          `}</style>
-        </section>
-
-        {/* Animated Logo Row - Virtual Assistant Software */}
-
-        <section className="relative py-12 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 overflow-hidden">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="relative w-full h-28 overflow-hidden">
-              <div className="absolute left-0 top-1/2 -translate-y-1/2 flex items-center animate-logo-marquee" style={{ width: 'max-content' }}>
-                {[
-                  "Airbnb.png",
-                  "AppFolio.png",
-                  "Buildium.png",
-                  "DocuSign.jpeg",
-                  "HubSpot.png",
-                  "Salesforce.jpeg",
-                  "Slack.jpeg",
-                  "VRBO.png",
-                  "Zillow.png"
-                ].map((img, idx) => (
-                  <img
-                    key={img}
-                    src={`/images/virtual-assistant/${img}`}
-                    alt={img.replace('.png','').replace('.jpeg','')}
-                    className="h-20 w-40 object-contain drop-shadow-xl mx-8 transition-transform duration-500 hover:scale-110"
-                    style={{ animationDelay: `${idx * 0.2}s` }}
-                  />
-                ))}
-                {/* Duplicate logos for seamless loop */}
-                {[
-                  "Airbnb.png",
-                  "AppFolio.png",
-                  "Buildium.png",
-                  "DocuSign.jpeg",
-                  "HubSpot.png",
-                  "Salesforce.jpeg",
-                  "Slack.jpeg",
-                  "VRBO.png",
-                  "Zillow.png"
-                ].map((img, idx) => (
-                  <img
-                    key={img+"-dup"}
-                    src={`/images/virtual-assistant/${img}`}
-                    alt={img.replace('.png','').replace('.jpeg','')}
-                    className="h-20 w-40 object-contain drop-shadow-xl mx-8 transition-transform duration-500 hover:scale-110"
-                  />
-                ))}
-              </div>
-            </div>
-          </div>
-          <style jsx>{`
             @keyframes logo-marquee {
               0% { transform: translateX(0); }
               100% { transform: translateX(-50%); }
@@ -312,9 +304,7 @@ const VirtualAssistantPage = () => {
               animation: logo-marquee 18s linear infinite;
             }
           `}</style>
-        </section>
-
-        {/* Why Choose Us */}
+        </section>        {/* Why Choose Us */}
         <section className="relative py-20 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 overflow-hidden">
           {/* Background Elements */}
           <div className="absolute top-10 right-10 w-64 h-64 bg-gradient-to-r from-blue-400/10 to-indigo-400/10 rounded-full blur-3xl"></div>
@@ -961,12 +951,12 @@ const VirtualAssistantPage = () => {
                 Join hundreds of property management companies, real estate professionals, and businesses who trust Pacerline for expert virtual assistant services. Start saving time and money while improving your customer service today.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="bg-gradient-to-r from-[#092870] via-indigo-600 to-[#092870] bg-size-200 bg-pos-0 hover:bg-pos-100 text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 relative overflow-hidden group">
-                  <span className="relative z-10">Get Virtual Assistant Support</span>
-                </button>
-                <button className="border-2 border-[#092870] text-[#092870] px-8 py-4 rounded-full font-semibold text-lg hover:bg-gradient-to-r hover:from-[#092870] hover:to-indigo-600 hover:text-white hover:border-transparent transition-all duration-500 hover:shadow-xl hover:scale-105">
-                  Schedule Free Consultation
-                </button>
+                <a href="/contact" className="bg-gradient-to-r from-[#38bdf8] via-[#0ea5e9] to-[#38bdf8] !text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 relative overflow-hidden group hover:from-[#0ea5e9] hover:to-[#38bdf8]">
+                  <span className="relative z-10 !text-white">Get Virtual Assistant Support</span>
+                </a>
+                <a href="/book-demo" className="border-2 border-[#38bdf8] bg-white text-[#0ea5e9] px-8 py-4 rounded-full font-semibold text-lg hover:bg-gradient-to-r hover:from-[#38bdf8] hover:to-[#0ea5e9] hover:!text-white hover:border-transparent transition-all duration-500 hover:shadow-xl hover:scale-105">
+                  <span className="hover:!text-white">Schedule Free Consultation</span>
+                </a>
               </div>
             </div>
           </div>

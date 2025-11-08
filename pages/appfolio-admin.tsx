@@ -44,12 +44,12 @@ const AppFolioAdminPage = () => {
                 <span className="text-gray-900">Administration Service</span>
               </h1>
               <div className="flex flex-col sm:flex-row gap-6 justify-center mt-12">
-                <button className="bg-gradient-to-r from-[#06b6d4] to-[#3b82f6] text-white px-10 py-4 rounded-full font-semibold text-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 hover:from-[#0891b2] hover:to-[#2563eb] shadow-lg">
+                <a href="/contact" className="bg-gradient-to-r from-[#06b6d4] to-[#3b82f6] text-white px-10 py-4 rounded-full font-semibold text-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 hover:from-[#0891b2] hover:to-[#2563eb] shadow-lg text-center">
                   Get AppFolio Admin Support
-                </button>
-                <button className="border-2 border-gray-800 text-gray-800 px-10 py-4 rounded-full font-semibold text-lg hover:bg-gray-800 hover:text-white transition-all duration-300 shadow-lg">
+                </a>
+                <a href="#services" className="border-2 border-gray-800 text-gray-800 px-10 py-4 rounded-full font-semibold text-lg hover:bg-gray-800 hover:text-white transition-all duration-300 shadow-lg text-center">
                   View Our Services
-                </button>
+                </a>
               </div>
             </div>
           </div>
@@ -69,10 +69,24 @@ const AppFolioAdminPage = () => {
                   <p className="text-xl text-gray-700 leading-relaxed">
                     At Pacerline Outsourcing Service Pvt Ltd, we provide comprehensive AppFolio administration services to property management companies, real estate firms, and landlords - helping you leverage the complete potential of AppFolio while saving time and money.
                   </p>
+                  <p className="text-lg text-gray-700 leading-relaxed">
+                    Our dedicated team of AppFolio experts handles everything from tenant screening and lease management to maintenance coordination and financial reporting. We ensure seamless integration with your existing workflows while maintaining the highest standards of accuracy and compliance.
+                  </p>
+                  <p className="text-lg text-gray-700 leading-relaxed">
+                    With our proven track record of managing 100+ properties and delivering 70% cost savings, we help you focus on growing your business while we handle the day-to-day administrative tasks efficiently and professionally.
+                  </p>
                   <div className="flex flex-wrap gap-4">
-                    <div className="flex items-center space-x-2 bg-white/80 px-4 py-2 rounded-full shadow-sm">
+                    <div className="flex items-center space-x-2 bg-yellow-100 px-4 py-2 rounded-full shadow-sm border border-yellow-200">
+                      <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                      <span className="text-sm font-semibold text-gray-900">14+ Years Experience</span>
+                    </div>
+                    <div className="flex items-center space-x-2 bg-yellow-100 px-4 py-2 rounded-full shadow-sm border border-yellow-200">
+                      <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
+                      <span className="text-sm font-semibold text-gray-900">70% Cost Savings</span>
+                    </div>
+                    <div className="flex items-center space-x-2 bg-yellow-100 px-4 py-2 rounded-full shadow-sm border border-yellow-200">
                       <div className="w-3 h-3 bg-purple-500 rounded-full"></div>
-                      <span className="text-sm font-medium text-gray-700">24/7 Support</span>
+                      <span className="text-sm font-semibold text-gray-900">24/7 Support</span>
                     </div>
                   </div>
                 </div>
@@ -240,7 +254,7 @@ const AppFolioAdminPage = () => {
         </section>
 
         {/* Full Suite of Services */}
-        <section className="relative py-20 bg-white">
+        <section id="services" className="relative py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-8">
@@ -249,79 +263,6 @@ const AppFolioAdminPage = () => {
               <p className="text-xl text-gray-700 max-w-4xl mx-auto">
                 We offer end-to-end AppFolio support for all areas of tenant communication, owner communication, work order management & vendor communication and property marketing & listings.
               </p>
-            </div>
-
-            {/* Tenant Services & Communication */}
-            <div className="mb-16">
-              <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-3xl p-8 shadow-xl">
-                <div className="flex items-center mb-8">
-                  <div className="w-16 h-16 bg-gradient-to-r from-[#3b82f6] to-[#1d4ed8] rounded-2xl flex items-center justify-center text-2xl mr-6">
-                    📞
-                  </div>
-                  <h3 className="text-3xl font-bold text-gray-900">Tenant Services & Communication</h3>
-                </div>
-                <div className="space-y-4">
-                  {[
-                    {
-                      title: "Rental Inquiry / In-bound Calls Handling",
-                      description: "Our professional team handles incoming rental calls, responds to property questions, gives availability status updates and takes prospect information right in the AppFolio CRM.",
-                      benefits: ["Decreased missed leads", "Quick response to tenant questions"],
-                      icon: "📞",
-                      color: "from-[#3b82f6] to-[#1d4ed8]"
-                    },
-                    {
-                      title: "Tenant Screening Service",
-                      description: "We handle tenant screening processes within AppFolio, such as reviewing applications, conduct background checks of applicant, verifying income, criminal records and communicating with applicants.",
-                      benefits: ["Rental applications review", "Placing credit and background checks", "Communicating application outcomes", "Flagging red flags or discrepancies"],
-                      icon: "🔍",
-                      color: "from-[#059669] to-[#10b981]"
-                    },
-                    {
-                      title: "Lease Agreement Management",
-                      description: "We automate the lease agreement process with AppFolio by creating personalized electronic leases, sending them for e-signatures, and monitoring completion in real time. Our staff ensures all lease conditions, fees, and tenant information are entered correctly, eliminating errors and delays.",
-                      benefits: ["Electronic lease creation", "E-signature processing", "Real-time monitoring", "Error elimination"],
-                      icon: "📋",
-                      color: "from-indigo-500 to-purple-600"
-                    },
-                    {
-                      title: "Deposit and Rental Collections",
-                      description: "We collect the deposit from tenant and do the rent collection process in AppFolio with precision and quickly. Rent charges and security deposits are posted automatically, and tenants pay online via the secure tenant portal.",
-                      benefits: ["Automated posting", "Secure online payments", "Real-time tracking", "Delinquency management"],
-                      icon: "💰",
-                      color: "from-emerald-500 to-teal-600"
-                    },
-                    {
-                      title: "Outbound Calls with Tenants",
-                      description: "We do follow up on tenant documents, collect rent or notify vendors payments. We make outgoing calls for you on rent reminders, owner notifications, lease renewal, handyman selection and more -all tracked within AppFolio.",
-                      benefits: ["Rent payment reminders", "Lease renewal follow-ups", "Document collection", "Vendor scheduling"],
-                      icon: "📱",
-                      color: "from-purple-500 to-pink-600"
-                    }
-                  ].map((service, index) => (
-                    <div key={index} className="p-6 bg-white rounded-2xl shadow-lg">
-                      <div className="flex items-start">
-                        <div className={`w-12 h-12 bg-gradient-to-r ${service.color} rounded-xl flex items-center justify-center text-lg mr-4 flex-shrink-0`}>
-                          {service.icon}
-                        </div>
-                        <div>
-                          <h4 className="text-lg font-bold text-gray-900 mb-3">{service.title}</h4>
-                          <p className="text-gray-700 text-sm mb-4">{service.description}</p>
-                          {service.benefits && (
-                            <div>
-                              <p className="font-semibold text-[#3b82f6] mb-2 text-sm">Key Benefits:</p>
-                              <ul className="list-disc list-inside text-xs text-gray-600 space-y-1">
-                                {service.benefits.map((benefit, idx) => (
-                                  <li key={idx}>{benefit}</li>
-                                ))}
-                              </ul>
-                            </div>
-                          )}
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
             </div>
 
             {/* Property Management & Listings */}
@@ -392,6 +333,79 @@ const AppFolioAdminPage = () => {
                           {service.benefits && (
                             <div>
                               <p className="font-semibold text-[#059669] mb-2 text-sm">Key Benefits:</p>
+                              <ul className="list-disc list-inside text-xs text-gray-600 space-y-1">
+                                {service.benefits.map((benefit, idx) => (
+                                  <li key={idx}>{benefit}</li>
+                                ))}
+                              </ul>
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Tenant Services & Communication */}
+            <div className="mb-16">
+              <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-3xl p-8 shadow-xl">
+                <div className="flex items-center mb-8">
+                  <div className="w-16 h-16 bg-gradient-to-r from-[#3b82f6] to-[#1d4ed8] rounded-2xl flex items-center justify-center text-2xl mr-6">
+                    📞
+                  </div>
+                  <h3 className="text-3xl font-bold text-gray-900">Tenant Services & Communication</h3>
+                </div>
+                <div className="space-y-4">
+                  {[
+                    {
+                      title: "Rental Inquiry / In-bound Calls Handling",
+                      description: "Our professional team handles incoming rental calls, responds to property questions, gives availability status updates and takes prospect information right in the AppFolio CRM.",
+                      benefits: ["Decreased missed leads", "Quick response to tenant questions"],
+                      icon: "📞",
+                      color: "from-[#3b82f6] to-[#1d4ed8]"
+                    },
+                    {
+                      title: "Tenant Screening Service",
+                      description: "We handle tenant screening processes within AppFolio, such as reviewing applications, conduct background checks of applicant, verifying income, criminal records and communicating with applicants.",
+                      benefits: ["Rental applications review", "Placing credit and background checks", "Communicating application outcomes", "Flagging red flags or discrepancies"],
+                      icon: "🔍",
+                      color: "from-[#059669] to-[#10b981]"
+                    },
+                    {
+                      title: "Lease Agreement Management",
+                      description: "We automate the lease agreement process with AppFolio by creating personalized electronic leases, sending them for e-signatures, and monitoring completion in real time. Our staff ensures all lease conditions, fees, and tenant information are entered correctly, eliminating errors and delays.",
+                      benefits: ["Electronic lease creation", "E-signature processing", "Real-time monitoring", "Error elimination"],
+                      icon: "📋",
+                      color: "from-indigo-500 to-purple-600"
+                    },
+                    {
+                      title: "Deposit and Rental Collections",
+                      description: "We collect the deposit from tenant and do the rent collection process in AppFolio with precision and quickly. Rent charges and security deposits are posted automatically, and tenants pay online via the secure tenant portal.",
+                      benefits: ["Automated posting", "Secure online payments", "Real-time tracking", "Delinquency management"],
+                      icon: "💰",
+                      color: "from-emerald-500 to-teal-600"
+                    },
+                    {
+                      title: "Outbound Calls with Tenants",
+                      description: "We do follow up on tenant documents, collect rent or notify vendors payments. We make outgoing calls for you on rent reminders, owner notifications, lease renewal, handyman selection and more -all tracked within AppFolio.",
+                      benefits: ["Rent payment reminders", "Lease renewal follow-ups", "Document collection", "Vendor scheduling"],
+                      icon: "📱",
+                      color: "from-purple-500 to-pink-600"
+                    }
+                  ].map((service, index) => (
+                    <div key={index} className="p-6 bg-white rounded-2xl shadow-lg">
+                      <div className="flex items-start">
+                        <div className={`w-12 h-12 bg-gradient-to-r ${service.color} rounded-xl flex items-center justify-center text-lg mr-4 flex-shrink-0`}>
+                          {service.icon}
+                        </div>
+                        <div>
+                          <h4 className="text-lg font-bold text-gray-900 mb-3">{service.title}</h4>
+                          <p className="text-gray-700 text-sm mb-4">{service.description}</p>
+                          {service.benefits && (
+                            <div>
+                              <p className="font-semibold text-[#3b82f6] mb-2 text-sm">Key Benefits:</p>
                               <ul className="list-disc list-inside text-xs text-gray-600 space-y-1">
                                 {service.benefits.map((benefit, idx) => (
                                   <li key={idx}>{benefit}</li>
@@ -777,19 +791,19 @@ const AppFolioAdminPage = () => {
         <section className="relative py-20 bg-gradient-to-r from-[#092870] via-indigo-700 to-[#30a659]">
           <div className="absolute inset-0 bg-black/20"></div>
           <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
+            <h2 className="text-4xl lg:text-5xl font-bold !text-white mb-6">
               Increase Your Property Management Productivity with Our AppFolio Admin Professionals
             </h2>
-            <p className="text-xl text-white/90 mb-8">
+            <p className="text-xl !text-white mb-8">
               Let our AppFolio admin experts save you from the drudgery of admin work and keep your maintenance response times on track. You'll receive skilled, AppFolio-trained virtual professionals who are an extension of your staff—professional, dependable, and budget-friendly.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-[#092870] px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-100 transition-colors">
+              <a href="/contact" className="bg-white text-[#092870] px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-100 transition-colors">
                 Get Expert AppFolio Admin Support
-              </button>
-              <button className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-[#092870] transition-colors">
+              </a>
+              <a href="/book-demo" className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-[#092870] transition-colors">
                 Schedule Free Consultation
-              </button>
+              </a>
             </div>
           </div>
         </section>

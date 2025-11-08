@@ -56,7 +56,7 @@ const BookkeepingUSAPage = () => {
             <div className={`text-center transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
               <div className="mb-8">
                 <span className="inline-flex items-center px-6 py-3 rounded-full bg-[#092870]/20 border border-[#092870]/30 text-[#30a659] text-sm font-bold shadow-lg">
-                  🇺🇸 Professional US Tax & Bookkeeping Excellence
+                  Professional US Tax & Bookkeeping Excellence
                 </span>
               </div>
               <h1 className="text-5xl lg:text-7xl font-bold bg-gradient-to-r from-[#092870] via-[#30a659] to-[#092870] bg-clip-text text-transparent mb-6">
@@ -66,13 +66,13 @@ const BookkeepingUSAPage = () => {
               </h1>
               {/* Removed intro paragraph from hero section */}
               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-                <button className="group relative px-8 py-4 bg-gradient-to-r from-indigo-500 via-purple-500 to-indigo-600 text-white rounded-full font-semibold text-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                <a href="/contact" className="group relative px-8 py-4 bg-gradient-to-r from-indigo-500 via-purple-500 to-indigo-600 text-white rounded-full font-semibold text-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
                   <span className="relative z-10">Free Consultation</span>
                   <div className="absolute inset-0 bg-gradient-to-r from-purple-500 via-indigo-500 to-purple-600 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                </button>
-                <button className="px-8 py-4 border-2 border-indigo-500 text-indigo-500 rounded-full font-semibold text-lg hover:bg-indigo-500 hover:text-white transition-all duration-300">
+                </a>
+                <a href="/book-demo" className="px-8 py-4 border-2 border-indigo-500 text-indigo-500 rounded-full font-semibold text-lg hover:bg-indigo-500 hover:text-white transition-all duration-300">
                   Get Quote
-                </button>
+                </a>
               </div>
             </div>
           </div>
@@ -115,7 +115,7 @@ const BookkeepingUSAPage = () => {
         </section>
 
         {/* Our Services */}
-        <section className="relative py-20">
+        <section id="services" className="relative py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
@@ -720,9 +720,9 @@ const BookkeepingUSAPage = () => {
             
             <div className="mt-12 text-center">
               <p className="text-gray-600 mb-6">Still have questions?</p>
-              <button className="px-8 py-3 bg-gradient-to-r from-[#092870] to-[#30a659] text-white rounded-full font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105">
+              <a href="/contact" className="inline-block px-8 py-3 bg-gradient-to-r from-[#092870] to-[#30a659] text-white rounded-full font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105">
                 Contact Our Experts
-              </button>
+              </a>
             </div>
           </div>
         </section>
@@ -738,12 +738,12 @@ const BookkeepingUSAPage = () => {
               Get started with our expert US tax and bookkeeping services today. Don't let financial complexities hold back your business growth.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="group relative px-12 py-6 bg-white text-[#092870] rounded-full font-semibold text-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
+              <a href="/contact" className="group relative px-12 py-6 bg-white text-[#092870] rounded-full font-semibold text-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
                 <span className="relative z-10">Start Free Consultation</span>
-              </button>
-              <button className="px-12 py-6 border-2 border-white text-white rounded-full font-semibold text-xl hover:bg-white hover:text-[#092870] transition-all duration-300">
+              </a>
+              <a href="#services" className="px-12 py-6 border-2 border-white text-white rounded-full font-semibold text-xl hover:bg-white hover:text-[#092870] transition-all duration-300">
                 View Our Services
-              </button>
+              </a>
             </div>
             <div className="mt-8 text-white/80">
               <p className="text-lg">

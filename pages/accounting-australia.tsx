@@ -56,12 +56,12 @@ export default function AccountingAustraliaPage() {
               
               {/* Action Buttons */}
               <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
-                <button className="px-12 py-5 rounded-full font-bold text-xl bg-sky-200 text-black border-none shadow-md hover:bg-sky-300 transition-all duration-300">
+                <a href="/contact" className="px-12 py-5 rounded-full font-bold text-xl bg-sky-200 text-black border-none shadow-md hover:bg-sky-300 transition-all duration-300 text-center">
                   Get Free ATO Consultation
-                </button>
-                <button className="px-12 py-5 rounded-full font-bold text-xl bg-sky-200 text-black border-none shadow-md hover:bg-sky-300 transition-all duration-300 ml-0 sm:ml-6">
+                </a>
+                <a href="#services" className="px-12 py-5 rounded-full font-bold text-xl bg-sky-200 text-black border-none shadow-md hover:bg-sky-300 transition-all duration-300 ml-0 sm:ml-6 text-center">
                   Explore Our Services
-                </button>
+                </a>
               </div>
               
               {/* Scroll Indicator */}
@@ -104,7 +104,7 @@ export default function AccountingAustraliaPage() {
         </section>
 
         {/* About Section with Content and Images */}
-        <section className="relative py-20 bg-white">
+        <section id="services" className="relative py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-16">
               {/* Left Side - Content */}
@@ -123,12 +123,12 @@ export default function AccountingAustraliaPage() {
                 </div>
 
                 <div className="flex flex-col sm:flex-row gap-6">
-                  <button className="bg-sky-200 text-black px-10 py-4 rounded-full font-semibold text-lg border-none shadow-md hover:bg-sky-300 transition-all duration-300">
+                  <a href="/contact" className="bg-sky-200 text-black px-10 py-4 rounded-full font-semibold text-lg border-none shadow-md hover:bg-sky-300 transition-all duration-300 text-center">
                     Get Free ATO Consultation
-                  </button>
-                  <button className="bg-sky-200 text-black px-10 py-4 rounded-full font-semibold text-lg border-none shadow-md hover:bg-sky-300 transition-all duration-300">
+                  </a>
+                  <a href="#services" className="bg-sky-200 text-black px-10 py-4 rounded-full font-semibold text-lg border-none shadow-md hover:bg-sky-300 transition-all duration-300 text-center">
                     View Australian Services
-                  </button>
+                  </a>
                 </div>
               </div>
 
@@ -900,9 +900,9 @@ export default function AccountingAustraliaPage() {
                 <p className="text-gray-600 mb-6">
                   Let us help you transition to or optimize your cloud accounting setup with personalized training and ongoing support.
                 </p>
-                <button className="bg-sky-200 text-black px-8 py-4 rounded-full font-bold text-lg border-none shadow-md hover:bg-sky-300 transition-all duration-300">
+                <a href="/contact" className="inline-block bg-sky-200 text-black px-8 py-4 rounded-full font-bold text-lg border-none shadow-md hover:bg-sky-300 transition-all duration-300">
                   Start Your Cloud Journey
-                </button>
+                </a>
               </div>
             </div>
           </div>
@@ -1003,9 +1003,9 @@ export default function AccountingAustraliaPage() {
                 <p className="text-gray-600 mb-6">
                   Experience our seamless process and discover how we can transform your business accounting.
                 </p>
-                <button className="bg-sky-200 text-black px-8 py-4 rounded-full font-semibold text-lg border-none shadow-md hover:bg-sky-300 transition-all duration-300">
+                <a href="/contact" className="inline-block bg-sky-200 text-black px-8 py-4 rounded-full font-semibold text-lg border-none shadow-md hover:bg-sky-300 transition-all duration-300">
                   Get Free Consultation
-                </button>
+                </a>
               </div>
             </div>
           </div>
@@ -1077,12 +1077,12 @@ export default function AccountingAustraliaPage() {
               Get expert Australian accounting and tax services with ATO-registered professionals
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-sky-200 text-black px-8 py-4 rounded-full font-semibold text-lg border-none shadow-md hover:bg-sky-300 transition-all duration-300">
+              <a href="/contact" className="bg-sky-200 text-black px-8 py-4 rounded-full font-semibold text-lg border-none shadow-md hover:bg-sky-300 transition-all duration-300 text-center">
                 Get Free Consultation
-              </button>
-              <button className="bg-sky-200 text-black px-8 py-4 rounded-full font-semibold text-lg border-none shadow-md hover:bg-sky-300 transition-all duration-300">
+              </a>
+              <a href="#services" className="bg-sky-200 text-black px-8 py-4 rounded-full font-semibold text-lg border-none shadow-md hover:bg-sky-300 transition-all duration-300 text-center">
                 View Our Services
-              </button>
+              </a>
             </div>
           </div>
         </section>

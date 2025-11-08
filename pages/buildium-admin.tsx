@@ -74,19 +74,20 @@ const BuildiumAdminPage = () => {
                         Rental property management is no easy feat—particularly when you're handling tenant contact, work orders, rental ads, and financial reporting. That's where we step in. At <strong className="bg-gradient-to-r from-[#092870] to-indigo-600 bg-clip-text text-transparent">Pacerline Outsourcing Service Pvt Ltd</strong>, we provide Buildium administrative solutions to help U.S. property management firms streamline processes and reduce overhead expenses.
                       </p>
                       <p className="hover:text-gray-900 transition-colors duration-300">
-                        Our highly skilled virtual assistants and admin experts are individually trained in Buildium software. From responding to rental inquiries to listing management and email communication, we keep your back-office running smoothly.
+                        Our highly skilled virtual assistants and admin experts are individually trained in Buildium software. 
                       </p>
+                      <br>
+                      </br>
+                      <p>From responding to rental inquiries to listing management and email communication, we keep your back-office running smoothly.</p>
                     </div>
                     
                     <div className="mt-8 flex flex-col sm:flex-row gap-4">
-                      <button className="bg-gradient-to-r from-[#092870] via-indigo-600 to-[#092870] bg-size-200 bg-pos-0 hover:bg-pos-100 text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 flex-1 relative overflow-hidden group">
+                      <a href="/contact" className="bg-gradient-to-r from-[#38bdf8] via-[#0ea5e9] to-[#38bdf8] text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 flex-1 relative overflow-hidden group text-center hover:from-[#0ea5e9] hover:to-[#38bdf8]">
                         <span className="relative z-10">Get Buildium Admin Support</span>
-                        <div className="absolute inset-0 bg-gradient-to-r from-indigo-600 to-[#092870] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                      </button>
-                      <button className="border-2 border-[#092870] text-[#092870] px-8 py-4 rounded-full font-semibold text-lg hover:bg-gradient-to-r hover:from-[#092870] hover:to-indigo-600 hover:text-white hover:border-transparent transition-all duration-500 hover:shadow-xl hover:scale-105 flex-1 relative overflow-hidden group">
+                      </a>
+                      <a href="#services" className="border-2 border-[#38bdf8] bg-white text-[#0ea5e9] px-8 py-4 rounded-full font-semibold text-lg hover:bg-gradient-to-r hover:from-[#38bdf8] hover:to-[#0ea5e9] hover:text-white hover:border-transparent transition-all duration-500 hover:shadow-xl hover:scale-105 flex-1 relative overflow-hidden group text-center">
                         <span className="relative z-10">View Our Services</span>
-                        <div className="absolute inset-0 bg-gradient-to-r from-[#092870] to-indigo-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
-                      </button>
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -101,25 +102,25 @@ const BuildiumAdminPage = () => {
                     <div className="grid grid-cols-1 gap-6">
                       <div className="flex items-center justify-between p-6 bg-gradient-to-r from-[#092870] via-indigo-600 to-[#092870] bg-size-200 bg-pos-0 hover:bg-pos-100 rounded-2xl text-white transform hover:scale-105 transition-all duration-500 hover:shadow-xl group">
                         <div>
-                          <div className="text-3xl font-bold group-hover:animate-pulse">14+</div>
-                          <div className="font-semibold">Years Experience</div>
-                          <div className="text-sm opacity-90">Property Management</div>
+                          <div className="text-3xl font-bold !text-white group-hover:animate-pulse">14+</div>
+                          <div className="font-semibold !text-white">Years Experience</div>
+                          <div className="text-sm !text-white opacity-90">Property Management</div>
                         </div>
                         <div className="text-4xl group-hover:animate-bounce">🏆</div>
                       </div>
                       <div className="flex items-center justify-between p-6 bg-gradient-to-r from-[#30a659] via-emerald-600 to-[#30a659] bg-size-200 bg-pos-0 hover:bg-pos-100 rounded-2xl text-white transform hover:scale-105 transition-all duration-500 hover:shadow-xl group delay-100">
                         <div>
-                          <div className="text-3xl font-bold group-hover:animate-pulse">70%</div>
-                          <div className="font-semibold">Cost Savings</div>
-                          <div className="text-sm opacity-90">Administrative Overhead</div>
+                          <div className="text-3xl font-bold !text-white group-hover:animate-pulse">70%</div>
+                          <div className="font-semibold !text-white">Cost Savings</div>
+                          <div className="text-sm !text-white opacity-90">Administrative Overhead</div>
                         </div>
                         <div className="text-4xl group-hover:animate-bounce">💰</div>
                       </div>
                       <div className="flex items-center justify-between p-6 bg-gradient-to-r from-indigo-500 via-purple-600 to-indigo-500 bg-size-200 bg-pos-0 hover:bg-pos-100 rounded-2xl text-white transform hover:scale-105 transition-all duration-500 hover:shadow-xl group delay-200">
                         <div>
-                          <div className="text-3xl font-bold group-hover:animate-pulse">24/7</div>
-                          <div className="font-semibold">Support</div>
-                          <div className="text-sm opacity-90">All Time Zones</div>
+                          <div className="text-3xl font-bold !text-white group-hover:animate-pulse">24/7</div>
+                          <div className="font-semibold !text-white">Support</div>
+                          <div className="text-sm !text-white opacity-90">All Time Zones</div>
                         </div>
                         <div className="text-4xl group-hover:animate-bounce">🌍</div>
                       </div>
@@ -282,8 +283,8 @@ const BuildiumAdminPage = () => {
           </div>
         </section>
 
-        {/* Core Services */}
-        <section className="relative py-20 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 overflow-hidden">
+        {/* Admin Services Section */}
+        <section id="services" className="relative py-20 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 overflow-hidden">
           {/* Background Elements */}
           <div className="absolute top-20 left-20 w-72 h-72 bg-gradient-to-r from-indigo-400/10 to-purple-400/10 rounded-full blur-3xl"></div>
           <div className="absolute bottom-20 right-20 w-96 h-96 bg-gradient-to-r from-emerald-400/10 to-blue-400/10 rounded-full blur-3xl"></div>
@@ -302,73 +303,6 @@ const BuildiumAdminPage = () => {
 
             <div className="space-y-8">
               {[
-                {
-                  title: "Rental Inquiry Call Handling",
-                  description: "Our nice and professional staff answers incoming calls from potential renters, answers listing inquiries, arranges property showings, and records all activity within Buildium's CRM.",
-                  benefits: [
-                    "Never miss a qualified lead",
-                    "Increase leasing efficiency", 
-                    "Deliver consistent, high-quality service"
-                  ],
-                  icon: "📞",
-                  color: "from-[#092870] to-indigo-600"
-                },
-                {
-                  title: "Maintenance Call Support",
-                  description: "We receive maintenance-related phone calls from renters, generate or update service requests, assign vendors, and keep everyone informed—all within Buildium.",
-                  process: [
-                    "Record tenant maintenance requests",
-                    "Identify urgent versus routine",
-                    "Call vendors and monitor job status"
-                  ],
-                  icon: "🔧",
-                  color: "from-[#30a659] to-emerald-600"
-                },
-                {
-                  title: "Outbound Call Services",
-                  description: "We place outbound calls to owners, tenants, and vendors to remind them of rent payments, lease renewal, document requests, and service updates—all monitored and recorded within Buildium.",
-                  callTypes: [
-                    "Rent reminders and follow-ups",
-                    "Vendor coordination",
-                    "Lease renewal reminders"
-                  ],
-                  icon: "📱",
-                  color: "from-indigo-500 to-purple-600"
-                },
-                {
-                  title: "Email Communication Management",
-                  description: "Our virtual assistants assist with tenant and owner email communication directly from Buildium or your integrated email system. From responding to standard questions to alerting you to important issues, we ensure each message receives the respect it merits.",
-                  advantages: [
-                    "Increased response times",
-                    "Correctly written emails",
-                    "Clean tracking of correspondence history"
-                  ],
-                  icon: "📧",
-                  color: "from-emerald-500 to-teal-600"
-                },
-                {
-                  title: "Tenant Screening Coordination",
-                  description: "We handle the whole Buildium tenant screening process, such as background investigations, income verification, follow-up on applications, and communicating decisions.",
-                  process: [
-                    "Processing submitted applications",
-                    "Placing credit/background orders",
-                    "Verifying employment and rental history",
-                    "Notifying applicants of results"
-                  ],
-                  icon: "🔍",
-                  color: "from-purple-500 to-pink-600"
-                },
-                {
-                  title: "Work Order Management",
-                  description: "We manage work order creation, modification, tracking, and completion in Buildium. From assigning appropriate vendors to keeping tenants informed about job progress, we make every service request go smoothly.",
-                  benefits: [
-                    "Quicker issue resolution",
-                    "Organized vendor communication",
-                    "Clean recordkeeping"
-                  ],
-                  icon: "🔨",
-                  color: "from-cyan-500 to-blue-600"
-                },
                 {
                   title: "Rental Listing & Ad Posting",
                   description: "We assist in the creation and management of property listings on Buildium and listing them on popular rental websites such as Zillow, Craigslist, Apartments.com, and Facebook Marketplace.",
@@ -389,8 +323,75 @@ const BuildiumAdminPage = () => {
                     "Licensed agents with minimal time",
                     "Multi-platform listing consistency"
                   ],
-                  icon: "📊",
+                  icon: "�",
                   color: "from-indigo-600 to-purple-600"
+                },
+                {
+                  title: "Rental Inquiry Call Handling",
+                  description: "Our nice and professional staff answers incoming calls from potential renters, answers listing inquiries, arranges property showings, and records all activity within Buildium's CRM.",
+                  benefits: [
+                    "Never miss a qualified lead",
+                    "Increase leasing efficiency", 
+                    "Deliver consistent, high-quality service"
+                  ],
+                  icon: "�",
+                  color: "from-[#092870] to-indigo-600"
+                },
+                {
+                  title: "Tenant Screening Coordination",
+                  description: "We handle the whole Buildium tenant screening process, such as background investigations, income verification, follow-up on applications, and communicating decisions.",
+                  process: [
+                    "Processing submitted applications",
+                    "Placing credit/background orders",
+                    "Verifying employment and rental history",
+                    "Notifying applicants of results"
+                  ],
+                  icon: "�",
+                  color: "from-purple-500 to-pink-600"
+                },
+                {
+                  title: "Email Communication Management",
+                  description: "Our virtual assistants assist with tenant and owner email communication directly from Buildium or your integrated email system. From responding to standard questions to alerting you to important issues, we ensure each message receives the respect it merits.",
+                  advantages: [
+                    "Increased response times",
+                    "Correctly written emails",
+                    "Clean tracking of correspondence history"
+                  ],
+                  icon: "📧",
+                  color: "from-emerald-500 to-teal-600"
+                },
+                {
+                  title: "Maintenance Call Support",
+                  description: "We receive maintenance-related phone calls from renters, generate or update service requests, assign vendors, and keep everyone informed—all within Buildium.",
+                  process: [
+                    "Record tenant maintenance requests",
+                    "Identify urgent versus routine",
+                    "Call vendors and monitor job status"
+                  ],
+                  icon: "�",
+                  color: "from-[#30a659] to-emerald-600"
+                },
+                {
+                  title: "Work Order Management",
+                  description: "We manage work order creation, modification, tracking, and completion in Buildium. From assigning appropriate vendors to keeping tenants informed about job progress, we make every service request go smoothly.",
+                  benefits: [
+                    "Quicker issue resolution",
+                    "Organized vendor communication",
+                    "Clean recordkeeping"
+                  ],
+                  icon: "🔨",
+                  color: "from-cyan-500 to-blue-600"
+                },
+                {
+                  title: "Outbound Call Services",
+                  description: "We place outbound calls to owners, tenants, and vendors to remind them of rent payments, lease renewal, document requests, and service updates—all monitored and recorded within Buildium.",
+                  callTypes: [
+                    "Rent reminders and follow-ups",
+                    "Vendor coordination",
+                    "Lease renewal reminders"
+                  ],
+                  icon: "�",
+                  color: "from-indigo-500 to-purple-600"
                 }
               ].map((service, index) => (
                 <div key={index} className="bg-white/90 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-white/20 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
@@ -711,12 +712,12 @@ const BuildiumAdminPage = () => {
                 At <strong className="bg-gradient-to-r from-[#092870] to-indigo-600 bg-clip-text text-transparent">Pacerline Outsourcing Service Pvt Ltd</strong>, we don't simply "get tasks done"—we join your team. With industry knowledge, Buildium savvy, and top-notch communication, we provide a frictionless extension of your property management office at a fraction of the expense.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="bg-gradient-to-r from-[#092870] via-indigo-600 to-[#092870] bg-size-200 bg-pos-0 hover:bg-pos-100 text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 relative overflow-hidden group">
-                  <span className="relative z-10">Get Expert Buildium Admin Support</span>
-                </button>
-                <button className="border-2 border-[#092870] text-[#092870] px-8 py-4 rounded-full font-semibold text-lg hover:bg-gradient-to-r hover:from-[#092870] hover:to-indigo-600 hover:text-white hover:border-transparent transition-all duration-500 hover:shadow-xl hover:scale-105">
-                  Schedule Free Consultation
-                </button>
+                <a href="/contact" className="bg-gradient-to-r from-[#38bdf8] via-[#0ea5e9] to-[#38bdf8] !text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 relative overflow-hidden group hover:from-[#0ea5e9] hover:to-[#38bdf8]">
+                  <span className="relative z-10 !text-white">Get Expert Buildium Admin Support</span>
+                </a>
+                <a href="/book-demo" className="border-2 border-[#38bdf8] bg-white text-[#0ea5e9] px-8 py-4 rounded-full font-semibold text-lg hover:bg-gradient-to-r hover:from-[#38bdf8] hover:to-[#0ea5e9] hover:!text-white hover:border-transparent transition-all duration-500 hover:shadow-xl hover:scale-105">
+                  <span className="hover:!text-white">Schedule Free Consultation</span>
+                </a>
               </div>
             </div>
           </div>
@@ -821,12 +822,12 @@ const BuildiumAdminPage = () => {
                 Let our Buildium admin experts handle your day-to-day operations while you focus on growing your portfolio. Professional, reliable, and cost-effective solutions tailored for U.S. property management companies.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="bg-gradient-to-r from-[#092870] via-indigo-600 to-[#092870] bg-size-200 bg-pos-0 hover:bg-pos-100 text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 relative overflow-hidden group">
-                  <span className="relative z-10">Get Expert Buildium Admin Support</span>
-                </button>
-                <button className="border-2 border-[#092870] text-[#092870] px-8 py-4 rounded-full font-semibold text-lg hover:bg-gradient-to-r hover:from-[#092870] hover:to-indigo-600 hover:text-white hover:border-transparent transition-all duration-500 hover:shadow-xl hover:scale-105">
-                  Schedule Free Consultation
-                </button>
+                <a href="/contact" className="bg-gradient-to-r from-[#38bdf8] via-[#0ea5e9] to-[#38bdf8] !text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 relative overflow-hidden group hover:from-[#0ea5e9] hover:to-[#38bdf8]">
+                  <span className="relative z-10 !text-white">Get Expert Buildium Admin Support</span>
+                </a>
+                <a href="/book-demo" className="border-2 border-[#38bdf8] bg-white text-[#0ea5e9] px-8 py-4 rounded-full font-semibold text-lg hover:bg-gradient-to-r hover:from-[#38bdf8] hover:to-[#0ea5e9] hover:!text-white hover:border-transparent transition-all duration-500 hover:shadow-xl hover:scale-105">
+                  <span className="hover:!text-white">Schedule Free Consultation</span>
+                </a>
               </div>
             </div>
           </div>

@@ -76,7 +76,7 @@ const PropertyManagementPage = () => {
                 Explore Our Services
                 <span className="ml-2">→</span>
               </a>
-              <a href="#contact" className="inline-flex items-center px-8 py-4 border-2 border-blue-400 text-blue-600 font-semibold rounded-full hover:bg-blue-50 transition-all duration-300 transform hover:scale-105">
+              <a href="/contact" className="inline-flex items-center px-8 py-4 border-2 border-blue-400 text-blue-600 font-semibold rounded-full hover:bg-blue-50 transition-all duration-300 transform hover:scale-105">
                 Get Free Consultation
                 <span className="ml-2">📞</span>
               </a>
@@ -129,7 +129,7 @@ const PropertyManagementPage = () => {
                     <h4 className="text-sm font-semibold text-blue-600">Software Setup & Migration</h4>
                   </div>
                   <div className="text-center p-3 bg-white rounded-lg shadow-md">
-                    <div className="text-2xl mb-2">�</div>
+                    <div className="text-2xl mb-2">💎</div>
                     <h4 className="text-sm font-semibold text-blue-600">Property Budgeting</h4>
                   </div>
                   <div className="text-center p-3 bg-white rounded-lg shadow-md">
@@ -137,12 +137,12 @@ const PropertyManagementPage = () => {
                     <h4 className="text-sm font-semibold text-blue-600">Diagnostic Review & Error Clean-up</h4>
                   </div>
                   <div className="text-center p-3 bg-white rounded-lg shadow-md">
-                    <div className="text-2xl mb-2">🧮</div>
+                    <div className="text-2xl mb-2">📊</div>
                     <h4 className="text-sm font-semibold text-green-600">3-Way Reconciliation</h4>
                   </div>
                   <div className="text-center p-3 bg-white rounded-lg shadow-md">
-                    <div className="text-2xl mb-2">�</div>
-                    <h4 className="text-sm font-semibold text-blue-600">Property Budgeting</h4>
+                    <div className="text-2xl mb-2">📋</div>
+                    <h4 className="text-sm font-semibold text-blue-600">Chart of Account Migration & Setup</h4>
                   </div>
                   <div className="text-center p-3 bg-white rounded-lg shadow-md">
                     <div className="text-2xl mb-2">📝</div>
@@ -160,7 +160,7 @@ const PropertyManagementPage = () => {
       </section>
 
       {/* Main Service Areas */}
-      <section className="py-20 bg-gray-50">
+      <section id="services" className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
