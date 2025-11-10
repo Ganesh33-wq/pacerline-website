@@ -1,0 +1,2 @@
+# This file ensures the blogs folder is tracked by git
+# Blog images are excluded via .gitignore

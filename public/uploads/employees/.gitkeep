@@ -1,0 +1,2 @@
+# This file ensures the employees folder is tracked by git
+# Employee photos are excluded via .gitignore

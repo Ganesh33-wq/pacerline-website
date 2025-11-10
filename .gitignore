@@ -40,10 +40,28 @@ dev.db
 production.db
 prisma/dev.db
 prisma/production.db
+prisma/*.db
+prisma/*.db-journal
 
 # Uploads directory (keep structure but exclude files)
 uploads/*
 !uploads/.gitkeep
+uploads/resumes/*
+!uploads/resumes/.gitkeep
+
+# Employee photos (exclude uploaded photos)
+public/employee/*
+!public/employee/.gitkeep
+
+# Public uploads (exclude all uploaded files)
+public/uploads/*
+!public/uploads/.gitkeep
+public/uploads/employees/*
+!public/uploads/employees/.gitkeep
+public/uploads/blogs/*
+!public/uploads/blogs/.gitkeep
+public/uploads/resumes/*
+!public/uploads/resumes/.gitkeep
 
 # vercel
 .vercel
