@@ -570,8 +570,8 @@ const AdminDashboard = () => {
     }
 
     // Handle textarea fields
-    if (['message', 'content', 'description', 'requirements', 'coverLetter', 'skills', 'query'].includes(field)) {
-      const rows = field === 'content' ? 8 : field === 'description' || field === 'requirements' ? 6 : 4
+    if (['message', 'content', 'description', 'requirements', 'coverLetter', 'skills', 'query', 'excerpt'].includes(field)) {
+      const rows = field === 'content' ? 10 : field === 'description' || field === 'requirements' ? 6 : field === 'excerpt' ? 3 : 4
       return (
         <textarea
           value={formData[field] || ''}
@@ -796,7 +796,7 @@ const AdminDashboard = () => {
           <div className="flex-1 overflow-y-auto p-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {fields.map((field) => {
-                const isWideField = ['content', 'description', 'requirements', 'coverLetter', 'message', 'query', 'title'].includes(field)
+                const isWideField = ['content', 'description', 'requirements', 'coverLetter', 'message', 'query', 'title', 'excerpt'].includes(field)
                 const isRequired = ['title', 'name', 'email', 'content', 'slug'].includes(field)
                 
                 return (
@@ -808,6 +808,12 @@ const AdminDashboard = () => {
                     {renderFormField(field)}
                     {field === 'slug' && (
                       <p className="text-xs text-gray-500 mt-1">URL-friendly version (auto-generated from title)</p>
+                    )}
+                    {field === 'excerpt' && (
+                      <p className="text-xs text-gray-500 mt-1">Short summary of the blog post (optional, shown in blog list)</p>
+                    )}
+                    {field === 'tags' && (
+                      <p className="text-xs text-gray-500 mt-1">Comma-separated tags (e.g., "Property Management, Accounting, Tips")</p>
                     )}
                     {field === 'image' && (
                       <p className="text-xs text-gray-500 mt-1">Upload blog featured image</p>
