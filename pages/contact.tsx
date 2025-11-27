@@ -1,10 +1,12 @@
 import Head from 'next/head'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { useRouter } from 'next/router'
 import Layout from '../components/Layout'
 import { useNotificationContext } from '../contexts/NotificationContext'
 
 const ContactPage = () => {
   const { showSuccess, showError } = useNotificationContext()
+  const router = useRouter()
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [formData, setFormData] = useState({
     name: '',
@@ -75,6 +77,14 @@ const ContactPage = () => {
       setIsSubmitting(false)
     }
   }
+
+  // Client-side redirect: send users from /contact to /book-demo
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      // Immediate replace so contact page doesn't remain in history
+      router.replace('/book-demo')
+    }
+  }, [router])
 
   return (
     <Layout>

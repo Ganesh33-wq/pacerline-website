@@ -60,64 +60,100 @@ const BuildiumBookkeepingPage = () => {
           {/* Phase 2: Content & CTA Section */}
           <div className="relative py-16 lg:py-20">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
                 
                 {/* Left Side - Content */}
                 <div className="space-y-8 animate-slide-in-left">
-                  <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-white/20 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 group">
-                    <h2 className="text-2xl font-bold text-gray-900 mb-6 group-hover:text-[#092870] transition-colors duration-300">
-                      <span className="bg-gradient-to-r from-[#092870] to-indigo-600 bg-clip-text text-transparent">Maximize Your Buildium Investment</span>
-                      <div className="w-16 h-1 bg-gradient-to-r from-[#092870] to-indigo-600 rounded-full mt-2 group-hover:w-24 transition-all duration-300"></div>
-                    </h2>
-                    <p className="text-xl text-gray-700 leading-relaxed mb-6 hover:text-gray-900 transition-colors duration-300">
-                      With Expert Bookkeeping Support from our certified professionals who understand the intricacies of property management accounting.
-                    </p>
-                    
-                    <div className="flex flex-col sm:flex-row gap-4">
-                      <button className="bg-gradient-to-r from-[#092870] via-indigo-600 to-[#092870] bg-size-200 bg-pos-0 hover:bg-pos-100 text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 flex-1 relative overflow-hidden group">
-                        <span className="relative z-10">Get Expert Buildium Bookkeeping</span>
-                        <div className="absolute inset-0 bg-gradient-to-r from-indigo-600 to-[#092870] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                      </button>
-                      <button className="border-2 border-[#092870] text-[#092870] px-8 py-4 rounded-full font-semibold text-lg hover:bg-gradient-to-r hover:from-[#092870] hover:to-indigo-600 hover:text-white hover:border-transparent transition-all duration-500 hover:shadow-xl hover:scale-105 flex-1 relative overflow-hidden group">
-                        <span className="relative z-10">View Our Services</span>
-                        <div className="absolute inset-0 bg-gradient-to-r from-[#092870] to-indigo-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
-                      </button>
-                    </div>
+                  <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-white/20 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 group h-full flex flex-col justify-between">
+                    <div>
+                      <h2 className="text-2xl font-bold text-gray-900 mb-6 group-hover:text-[#092870] transition-colors duration-300">
+                        <span className="bg-gradient-to-r from-[#092870] to-indigo-600 bg-clip-text text-transparent">Maximize Your Buildium Investment</span>
+                        <div className="w-16 h-1 bg-gradient-to-r from-[#092870] to-indigo-600 rounded-full mt-2 group-hover:w-24 transition-all duration-300"></div>
+                      </h2>
+                      <p className="text-xl text-gray-700 leading-relaxed mb-4 hover:text-gray-900 transition-colors duration-300">
+                        With Expert Bookkeeping Support from our certified professionals who understand the intricacies of property management accounting.
+                      </p>
+
+                      <p className="text-gray-700 leading-relaxed mb-3">
+                        We handle everything from clean setup and data migration to monthly reconciliations and owner reporting. Our team follows strict processes to keep your books audit-ready and fully transparent.
+                      </p>
+
+                      <ul className="list-disc list-inside text-gray-700 text-sm space-y-2 mb-4">
+                        <li>Buildium setup, chart of accounts and property configuration</li>
+                        <li>Monthly bank &amp; credit card reconciliations</li>
+                        <li>Owner statements, P&amp;L and balance sheet preparation</li>
+                      </ul>
+                      </div>
+
+                      <div>
+                        <h4 className="text-lg font-semibold text-gray-900 mt-4 mb-2">How we work — simple, secure, proven</h4>
+                        <ol className="list-decimal list-inside text-gray-700 text-sm space-y-2 mb-4">
+                          <li><strong>Discovery:</strong> We review your portfolio and current systems to define a clear migration plan.</li>
+                          <li><strong>Setup & Migration:</strong> Clean data import, chart of accounts alignment and property configuration in Buildium.</li>
+                          <li><strong>Ongoing Support:</strong> Monthly reconciliations, reports and continuous process improvements.</li>
+                        </ol>
+
+                        <div className="bg-slate-50 rounded-lg p-4 shadow-sm mt-4">
+                          <p className="text-sm text-gray-800 italic">“Pacerline migrated our portfolio to Buildium and improved our month-end close — accurate, fast, and professional.”</p>
+                          <p className="text-xs text-gray-600 mt-2">— Operations Manager, Midwest Property Group</p>
+                        </div>
+
+                        <div className="text-sm text-gray-600 mt-6">
+                          <strong>Need a custom onboarding plan?</strong> Contact our team for a free consultation and tailored migration checklist.
+                        </div>
+                      </div>
                   </div>
                 </div>
+                    {/* CTAs removed per request to simplify hero */}
 
                 {/* Right Side - Key Stats */}
                 <div className="space-y-6 animate-slide-in-right">
-                  <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-white/20 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                  <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-white/20 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 h-full">
                     <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
                       Trusted Buildium Bookkeeping Experts
                       <div className="w-20 h-1 bg-gradient-to-r from-[#092870] to-indigo-600 rounded-full mx-auto mt-2"></div>
                     </h3>
                     <div className="grid grid-cols-1 gap-6">
-                      <div className="flex items-center justify-between p-6 bg-gradient-to-r from-[#092870] via-indigo-600 to-[#092870] bg-size-200 bg-pos-0 hover:bg-pos-100 rounded-2xl text-white transform hover:scale-105 transition-all duration-500 hover:shadow-xl group">
-                        <div>
-                          <div className="text-3xl font-bold group-hover:animate-pulse">14+</div>
-                          <div className="font-semibold">Years Experience</div>
-                          <div className="text-sm opacity-90">Buildium Expertise</div>
+                      {([
+                        {
+                          title: 'Buildium setup & Migration',
+                          subtitle: 'Seamless implementation, account setup and safe data migration',
+                          icon: '🚀',
+                          color: 'from-[#092870] via-indigo-600 to-[#092870]'
+                        },
+                        {
+                          title: 'Audit Ready Books',
+                          subtitle: 'Clean, reconciled ledgers and month-end processes ready for audit',
+                          icon: '🔍',
+                          color: 'from-[#30a659] via-emerald-600 to-[#30a659]'
+                        },
+                        {
+                          title: 'Multi Property Type Support',
+                          subtitle: 'Residential, commercial, HOA and mixed-use bookkeeping expertise',
+                          icon: '🏘️',
+                          color: 'from-indigo-500 via-purple-600 to-indigo-500'
+                        },
+                        {
+                          title: 'Accurate Financial Reporting',
+                          subtitle: 'Timely owner statements, P&L and balance sheets with precision',
+                          icon: '📊',
+                          color: 'from-orange-500 via-red-500 to-orange-500'
+                        },
+                        {
+                          title: 'Form 1099 Filing',
+                          subtitle: 'Vendor 1099 preparation and IRS-compliant filings',
+                          icon: '📄',
+                          color: 'from-cyan-500 via-blue-600 to-cyan-500'
+                        }
+                      ] as const).map((s, idx) => (
+                        <div key={idx} className={`flex items-center justify-between p-6 bg-gradient-to-r ${s.color} rounded-2xl text-white transform hover:scale-105 transition-all duration-500 hover:shadow-xl group`} style={{animationDelay: `${0.1 + idx * 0.05}s`}}>
+                          <div>
+                            <div className="text-xl font-bold">{s.title}</div>
+                            <div className="text-sm opacity-90 mt-1">{s.subtitle}</div>
+                          </div>
+                          <div className="text-4xl ml-4">{s.icon}</div>
                         </div>
-                        <div className="text-4xl group-hover:animate-bounce">🏆</div>
-                      </div>
-                      <div className="flex items-center justify-between p-6 bg-gradient-to-r from-[#30a659] via-emerald-600 to-[#30a659] bg-size-200 bg-pos-0 hover:bg-pos-100 rounded-2xl text-white transform hover:scale-105 transition-all duration-500 hover:shadow-xl group delay-100">
-                        <div>
-                          <div className="text-3xl font-bold group-hover:animate-pulse">100+</div>
-                          <div className="font-semibold">US Clients</div>
-                          <div className="text-sm opacity-90">Successfully Served</div>
-                        </div>
-                        <div className="text-4xl group-hover:animate-bounce">🇺🇸</div>
-                      </div>
-                      <div className="flex items-center justify-between p-6 bg-gradient-to-r from-indigo-500 via-purple-600 to-indigo-500 bg-size-200 bg-pos-0 hover:bg-pos-100 rounded-2xl text-white transform hover:scale-105 transition-all duration-500 hover:shadow-xl group delay-200">
-                        <div>
-                          <div className="text-3xl font-bold group-hover:animate-pulse">18</div>
-                          <div className="font-semibold">Services</div>
-                          <div className="text-sm opacity-90">Comprehensive Support</div>
-                        </div>
-                        <div className="text-4xl group-hover:animate-bounce">⚙️</div>
-                      </div>
+                      ))}
                     </div>
                   </div>
                 </div>
@@ -635,7 +671,7 @@ const BuildiumBookkeepingPage = () => {
                     {feature.icon}
                   </div>
                   <h3 className="text-xl font-bold text-black mb-4 text-center">{feature.title}</h3>
-<p className="text-black leading-relaxed text-center font-semibold">{feature.description}</p>
+<p className="text-black leading-relaxed text-center">{feature.description}</p>
                   <div className="mt-6 w-full h-1 bg-gray-200 rounded-full overflow-hidden">
                     <div className={`h-full bg-gradient-to-r ${feature.color} rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left`}></div>
                   </div>
