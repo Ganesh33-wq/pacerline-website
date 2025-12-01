@@ -83,6 +83,16 @@ const BuildiumBookkeepingPage = () => {
                         <li>Monthly bank &amp; credit card reconciliations</li>
                         <li>Owner statements, P&amp;L and balance sheet preparation</li>
                       </ul>
+                      
+                      <div className="mb-6">
+                        <p className="text-gray-700 leading-relaxed mb-4">
+                          In addition to the items above, we provide tailored owner distribution processing, customized monthly reporting, and year-end support to ensure your books are audit-ready and owner communication is simplified.
+                        </p>
+                        <p className="text-gray-700 leading-relaxed">
+                          Want a customized onboarding checklist or a walkthrough of how we would handle your portfolio? <a href="/contact" className="text-[#092870] font-semibold underline">Contact our team</a> and we’ll prepare a no-cost evaluation.
+                        </p>
+                      </div>
+
                       </div>
 
                       <div>
@@ -93,11 +103,6 @@ const BuildiumBookkeepingPage = () => {
                           <li><strong>Ongoing Support:</strong> Monthly reconciliations, reports and continuous process improvements.</li>
                         </ol>
 
-                        <div className="bg-slate-50 rounded-lg p-4 shadow-sm mt-4">
-                          <p className="text-sm text-gray-800 italic">“Pacerline migrated our portfolio to Buildium and improved our month-end close — accurate, fast, and professional.”</p>
-                          <p className="text-xs text-gray-600 mt-2">— Operations Manager, Midwest Property Group</p>
-                        </div>
-
                         <div className="text-sm text-gray-600 mt-6">
                           <strong>Need a custom onboarding plan?</strong> Contact our team for a free consultation and tailored migration checklist.
                         </div>
@@ -107,10 +112,12 @@ const BuildiumBookkeepingPage = () => {
                     {/* CTAs removed per request to simplify hero */}
 
                 {/* Right Side - Key Stats */}
-                <div className="space-y-6 animate-slide-in-right">
+                <div className="space-y-6 animate-slide-in-right buildium-right">
                   <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-white/20 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 h-full">
-                    <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
-                      Trusted Buildium Bookkeeping Experts
+                    <h3 className="text-2xl font-bold mb-6 text-center">
+                      <span className="inline-block bg-gradient-to-r from-[#092870] to-indigo-600 text-white px-4 py-2 rounded-full">
+                        Trusted Buildium Bookkeeping Experts
+                      </span>
                       <div className="w-20 h-1 bg-gradient-to-r from-[#092870] to-indigo-600 rounded-full mx-auto mt-2"></div>
                     </h3>
                     <div className="grid grid-cols-1 gap-6">
@@ -147,11 +154,11 @@ const BuildiumBookkeepingPage = () => {
                         }
                       ] as const).map((s, idx) => (
                         <div key={idx} className={`flex items-center justify-between p-6 bg-gradient-to-r ${s.color} rounded-2xl text-white transform hover:scale-105 transition-all duration-500 hover:shadow-xl group`} style={{animationDelay: `${0.1 + idx * 0.05}s`}}>
-                          <div>
-                            <div className="text-xl font-bold">{s.title}</div>
-                            <div className="text-sm opacity-90 mt-1">{s.subtitle}</div>
+                          <div className="min-w-0">
+                            <div className="text-xl font-bold text-white leading-tight">{s.title}</div>
+                            <div className="text-sm text-white/95 mt-1 whitespace-normal">{s.subtitle}</div>
                           </div>
-                          <div className="text-4xl ml-4">{s.icon}</div>
+                          <div className="text-4xl ml-4 flex-shrink-0">{s.icon}</div>
                         </div>
                       ))}
                     </div>
@@ -253,6 +260,17 @@ const BuildiumBookkeepingPage = () => {
             .delay-1000 {
               animation-delay: 1s;
             }
+
+            /* Force white text inside right-side gradient cards */
+            .buildium-right .grid .rounded-2xl,
+            .buildium-right .grid .rounded-2xl * {
+              color: #ffffff !important;
+            }
+
+            .buildium-right h3.inline-block,
+            .buildium-right h3.inline-block * {
+              color: #ffffff !important;
+            }
           `}</style>
         </section>
 
@@ -269,7 +287,7 @@ const BuildiumBookkeepingPage = () => {
                 Expert Buildium Bookkeeping Support
               </h2>
               
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
                 {/* Left Side - Content */}
                 <div className="space-y-6 animate-slide-in-left">
                   <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-white/20 hover:shadow-2xl transition-all duration-500">

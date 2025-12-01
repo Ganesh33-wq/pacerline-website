@@ -24,17 +24,16 @@ const AppFolioBookkeepingPage = () => {
         <link rel="canonical" href="https://pacerline.com/appfolio-bookkeeping" />
       </Head>
       
-      <div className="min-h-screen">
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-blue-100">
         <Header />
         
         {/* Hero Section - First Row (common gradient background) */}
-        <section className="relative py-16 bg-gradient-to-br from-[#092870] to-[#30a659] text-white overflow-hidden">
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="relative py-20 lg:py-32">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center">
-              <h1 className="text-5xl lg:text-8xl font-bold mb-6 tracking-tight">
-                <span className="bg-clip-text text-white text-opacity-95">AppFolio</span>
-                <br />
-                <span className="text-white">Bookkeeping Service</span>
+              <h1 className="text-5xl lg:text-7xl font-extrabold mb-6 leading-tight">
+                <span className="block text-[#30a659] mb-2">AppFolio</span>
+                <span className="block bg-gradient-to-r from-[#092870] via-blue-600 to-[#30a659] bg-clip-text text-transparent">Bookkeeping Service</span>
               </h1>
               <div className="flex flex-col sm:flex-row gap-6 justify-center mt-12">
                 <a href="/contact" className="inline-flex items-center justify-center bg-gradient-to-r from-[#38bdf8] via-[#0ea5e9] to-[#38bdf8] text-white px-10 py-4 rounded-full font-semibold text-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 shadow-lg">
