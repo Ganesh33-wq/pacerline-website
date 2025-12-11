@@ -743,13 +743,68 @@ const AboutPage = () => {
               
               <div className="space-y-2">
                 <label className="block text-sm font-semibold text-white">Phone Number *</label>
-                <input 
-                  type="tel" 
-                  name="phone"
-                  placeholder="Enter your phone number" 
-                  className="w-full p-4 rounded-xl border-2 border-white/30 bg-white/20 backdrop-blur-sm text-white placeholder-white/70 focus:border-white focus:ring-2 focus:ring-white/50 transition-all duration-300" 
-                  required 
-                />
+                <div className="flex gap-2">
+                  <select
+                    className="px-3 py-4 rounded-xl border-2 border-white/30 bg-white/20 backdrop-blur-sm text-white focus:border-white focus:ring-2 focus:ring-white/50 transition-all duration-300 font-medium"
+                    defaultValue="+1"
+                    style={{ minWidth: '110px' }}
+                  >
+                    <option value="+1" className="text-gray-900">US +1</option>
+                    <option value="+44" className="text-gray-900">GB +44</option>
+                    <option value="+91" className="text-gray-900">IN +91</option>
+                    <option value="+61" className="text-gray-900">AU +61</option>
+                    <option value="+971" className="text-gray-900">AE +971</option>
+                    <option value="+1" className="text-gray-900">CA +1</option>
+                    <option value="+86" className="text-gray-900">CN +86</option>
+                    <option value="+49" className="text-gray-900">DE +49</option>
+                    <option value="+33" className="text-gray-900">FR +33</option>
+                    <option value="+81" className="text-gray-900">JP +81</option>
+                    <option value="+82" className="text-gray-900">KR +82</option>
+                    <option value="+65" className="text-gray-900">SG +65</option>
+                    <option value="+60" className="text-gray-900">MY +60</option>
+                    <option value="+64" className="text-gray-900">NZ +64</option>
+                    <option value="+27" className="text-gray-900">ZA +27</option>
+                    <option value="+34" className="text-gray-900">ES +34</option>
+                    <option value="+39" className="text-gray-900">IT +39</option>
+                    <option value="+31" className="text-gray-900">NL +31</option>
+                    <option value="+46" className="text-gray-900">SE +46</option>
+                    <option value="+41" className="text-gray-900">CH +41</option>
+                    <option value="+47" className="text-gray-900">NO +47</option>
+                    <option value="+45" className="text-gray-900">DK +45</option>
+                    <option value="+358" className="text-gray-900">FI +358</option>
+                    <option value="+48" className="text-gray-900">PL +48</option>
+                    <option value="+351" className="text-gray-900">PT +351</option>
+                    <option value="+32" className="text-gray-900">BE +32</option>
+                    <option value="+43" className="text-gray-900">AT +43</option>
+                    <option value="+353" className="text-gray-900">IE +353</option>
+                    <option value="+966" className="text-gray-900">SA +966</option>
+                    <option value="+974" className="text-gray-900">QA +974</option>
+                    <option value="+973" className="text-gray-900">BH +973</option>
+                    <option value="+965" className="text-gray-900">KW +965</option>
+                    <option value="+968" className="text-gray-900">OM +968</option>
+                    <option value="+20" className="text-gray-900">EG +20</option>
+                    <option value="+62" className="text-gray-900">ID +62</option>
+                    <option value="+66" className="text-gray-900">TH +66</option>
+                    <option value="+63" className="text-gray-900">PH +63</option>
+                    <option value="+84" className="text-gray-900">VN +84</option>
+                    <option value="+92" className="text-gray-900">PK +92</option>
+                    <option value="+880" className="text-gray-900">BD +880</option>
+                    <option value="+94" className="text-gray-900">LK +94</option>
+                    <option value="+977" className="text-gray-900">NP +977</option>
+                    <option value="+52" className="text-gray-900">MX +52</option>
+                    <option value="+55" className="text-gray-900">BR +55</option>
+                    <option value="+54" className="text-gray-900">AR +54</option>
+                    <option value="+56" className="text-gray-900">CL +56</option>
+                    <option value="+57" className="text-gray-900">CO +57</option>
+                  </select>
+                  <input 
+                    type="tel" 
+                    name="phone"
+                    placeholder="Enter your phone number" 
+                    className="flex-1 p-4 rounded-xl border-2 border-white/30 bg-white/20 backdrop-blur-sm text-white placeholder-white/70 focus:border-white focus:ring-2 focus:ring-white/50 transition-all duration-300" 
+                    required 
+                  />
+                </div>
               </div>
 
               {/* Query Section */}

@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
+import FloatingContactWidget from '../components/FloatingContactWidget'
 
 export default function Home() {
   const services = [
@@ -329,6 +330,7 @@ export default function Home() {
       </section>
 
       <Footer />
+      <FloatingContactWidget />
     </div>
   )
 }

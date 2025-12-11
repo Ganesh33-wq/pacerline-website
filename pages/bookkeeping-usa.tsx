@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
+import FloatingContactWidget from '../components/FloatingContactWidget'
 import { useState, useEffect } from 'react'
 
 const BookkeepingUSAPage = () => {
@@ -815,6 +816,7 @@ const BookkeepingUSAPage = () => {
           animation: gradient-shift 3s ease infinite;
         }
       `}</style>
+      <FloatingContactWidget />
     </>
   )
 }

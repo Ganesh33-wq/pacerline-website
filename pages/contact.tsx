@@ -204,7 +204,9 @@ const ContactPage = () => {
 
             <div className="group text-center bg-gradient-to-br from-emerald-50 to-emerald-100 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-emerald-200 transform hover:-translate-y-2">
               <div className="w-16 h-16 bg-gradient-to-r from-emerald-500 to-emerald-600 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                <img src="/images/whatsapp.svg" alt="WhatsApp" className="w-10 h-10" />
+                <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.588z"/>
+                </svg>
               </div>
               <h3 className="text-xl font-bold text-emerald-600 mb-4">WhatsApp</h3>
               <a 
@@ -267,16 +269,71 @@ const ContactPage = () => {
                   <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
                     Phone Number *
                   </label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    required
-                    value={formData.phone}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-                    placeholder="Enter your phone number"
-                  />
+                  <div className="flex gap-2">
+                    <select
+                      className="px-3 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white font-medium"
+                      defaultValue="+1"
+                      style={{ minWidth: '110px' }}
+                    >
+                      <option value="+1">US +1</option>
+                      <option value="+44">GB +44</option>
+                      <option value="+91">IN +91</option>
+                      <option value="+61">AU +61</option>
+                      <option value="+971">AE +971</option>
+                      <option value="+1">CA +1</option>
+                      <option value="+86">CN +86</option>
+                      <option value="+49">DE +49</option>
+                      <option value="+33">FR +33</option>
+                      <option value="+81">JP +81</option>
+                      <option value="+82">KR +82</option>
+                      <option value="+65">SG +65</option>
+                      <option value="+60">MY +60</option>
+                      <option value="+64">NZ +64</option>
+                      <option value="+27">ZA +27</option>
+                      <option value="+34">ES +34</option>
+                      <option value="+39">IT +39</option>
+                      <option value="+31">NL +31</option>
+                      <option value="+46">SE +46</option>
+                      <option value="+41">CH +41</option>
+                      <option value="+47">NO +47</option>
+                      <option value="+45">DK +45</option>
+                      <option value="+358">FI +358</option>
+                      <option value="+48">PL +48</option>
+                      <option value="+351">PT +351</option>
+                      <option value="+32">BE +32</option>
+                      <option value="+43">AT +43</option>
+                      <option value="+353">IE +353</option>
+                      <option value="+966">SA +966</option>
+                      <option value="+974">QA +974</option>
+                      <option value="+973">BH +973</option>
+                      <option value="+965">KW +965</option>
+                      <option value="+968">OM +968</option>
+                      <option value="+20">EG +20</option>
+                      <option value="+62">ID +62</option>
+                      <option value="+66">TH +66</option>
+                      <option value="+63">PH +63</option>
+                      <option value="+84">VN +84</option>
+                      <option value="+92">PK +92</option>
+                      <option value="+880">BD +880</option>
+                      <option value="+94">LK +94</option>
+                      <option value="+977">NP +977</option>
+                      <option value="+52">MX +52</option>
+                      <option value="+55">BR +55</option>
+                      <option value="+54">AR +54</option>
+                      <option value="+56">CL +56</option>
+                      <option value="+57">CO +57</option>
+                    </select>
+                    <input
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      required
+                      value={formData.phone}
+                      onChange={handleChange}
+                      className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                      placeholder="Enter your phone number"
+                    />
+                  </div>
                 </div>
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -388,7 +445,9 @@ const ContactPage = () => {
                     </div>
                     <div className="flex items-center p-4 bg-emerald-50 rounded-xl border border-emerald-200 hover:shadow-md transition-all duration-300">
                       <div className="w-12 h-12 bg-emerald-500 rounded-full flex items-center justify-center mr-4">
-                        <span className="text-white text-xl">�</span>
+                        <span className="text-white text-xl"><svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.588z"/>
+                </svg></span>
                       </div>
                       <div>
                         <p className="font-medium text-gray-900">WhatsApp</p>

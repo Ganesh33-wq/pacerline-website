@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
+import FloatingContactWidget from '../components/FloatingContactWidget'
 
 const ServicesPage = () => {
   const services = [
@@ -265,6 +266,7 @@ const ServicesPage = () => {
       </section>
 
       <Footer />
+      <FloatingContactWidget />
     </div>
   )
 }

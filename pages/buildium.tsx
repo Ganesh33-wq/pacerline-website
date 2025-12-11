@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
+import FloatingContactWidget from '../components/FloatingContactWidget'
 import { useState } from 'react'
 
 const BuildiumPage = () => {
@@ -823,6 +824,7 @@ const BuildiumPage = () => {
         </section>
 
         <Footer />
+        <FloatingContactWidget />
       </div>
     </>
   )

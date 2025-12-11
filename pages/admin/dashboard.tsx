@@ -208,6 +208,46 @@ const AdminDashboard = () => {
     }
   }
 
+  const handleDownloadResume = async (resumeFileName: string, applicantName: string) => {
+    if (!resumeFileName) {
+      showError('Error', 'No resume file available', 3000)
+      return
+    }
+    
+    try {
+      const token = localStorage.getItem('adminToken')
+      
+      // Fetch the file from the API
+      const response = await fetch(`/api/admin/download-resume?filename=${encodeURIComponent(resumeFileName)}`, {
+        headers: {
+          'Authorization': `Bearer ${token}`
+        }
+      })
+      
+      if (!response.ok) {
+        throw new Error('Failed to download resume')
+      }
+      
+      // Get the blob from response
+      const blob = await response.blob()
+      
+      // Create download link
+      const url = window.URL.createObjectURL(blob)
+      const link = document.createElement('a')
+      link.href = url
+      link.download = `${applicantName.replace(/\s+/g, '_')}_Resume${resumeFileName.substring(resumeFileName.lastIndexOf('.'))}`
+      document.body.appendChild(link)
+      link.click()
+      document.body.removeChild(link)
+      window.URL.revokeObjectURL(url)
+      
+      showSuccess('Success', 'Resume downloaded successfully', 2000)
+    } catch (error) {
+      console.error('Download error:', error)
+      showError('Error', 'Failed to download resume', 3000)
+    }
+  }
+
   const handleAddNew = (table: string) => {
     // Create form data with default values based on the current table
     const defaultFormData = getDefaultFormData(table)
@@ -472,12 +512,26 @@ const AdminDashboard = () => {
                 <td className="px-2 sm:px-4 md:px-6 py-2 sm:py-4 whitespace-nowrap font-medium">
                   <div className="flex flex-col sm:flex-row gap-1 sm:gap-2">
                     {['contacts', 'jobApplications', 'about'].includes(activeTab) ? (
-                      <button
-                        onClick={() => handleDelete(activeTab, item.id || index)}
-                        className="text-red-600 hover:text-red-900 bg-red-100 hover:bg-red-200 px-2 sm:px-3 py-1 rounded-md transition-colors text-xs sm:text-sm"
-                      >
-                        Delete
-                      </button>
+                      <>
+                        {activeTab === 'jobApplications' && item.resume && (
+                          <button
+                            onClick={() => handleDownloadResume(item.resume, item.name)}
+                            className="text-green-600 hover:text-green-900 bg-green-100 hover:bg-green-200 px-2 sm:px-3 py-1 rounded-md transition-colors text-xs sm:text-sm flex items-center justify-center gap-1"
+                            title="Download Resume"
+                          >
+                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                            </svg>
+                            Download
+                          </button>
+                        )}
+                        <button
+                          onClick={() => handleDelete(activeTab, item.id || index)}
+                          className="text-red-600 hover:text-red-900 bg-red-100 hover:bg-red-200 px-2 sm:px-3 py-1 rounded-md transition-colors text-xs sm:text-sm"
+                        >
+                          Delete
+                        </button>
+                      </>
                     ) : (
                       <>
                         <button
