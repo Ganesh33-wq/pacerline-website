@@ -5,9 +5,9 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="col-span-1 md:col-span-2">
-            <div className="flex items-center space-x-3 mb-6">
-              <div className="w-10 h-10 bg-gradient-to-r from-primary-500 to-primary-600 rounded-full flex items-center justify-center">
-                <span className="text-white font-bold text-lg">P</span>
+            <div className="flex items-center space-x-4 mb-6">
+              <div className="w-16 h-16 bg-white rounded-lg p-2 flex items-center justify-center shadow-lg">
+                <img src="/images/home/logo.svg" alt="Pacerline Logo" className="w-full h-full object-contain" />
               </div>
               <h3 className="text-2xl font-bold !text-white">
                 Pacerline Outsourcing Service Pvt. Ltd.
@@ -46,11 +46,11 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-6 !text-white">Services</h4>
             <ul className="space-y-3">
-              <li><a href="/accounting" className="!text-white hover:text-primary-400 transition-colors duration-300 hover:translate-x-1 transform inline-block">→ Accounting</a></li>
-              <li><a href="/bookkeeping-usa" className="!text-white hover:text-primary-400 transition-colors duration-300 hover:translate-x-1 transform inline-block">→ Bookkeeping</a></li>
-              <li><a href="/accounting-australia" className="!text-white hover:text-primary-400 transition-colors duration-300 hover:translate-x-1 transform inline-block">→ Tax Services</a></li>
-              <li><a href="/property-management" className="!text-white hover:text-primary-400 transition-colors duration-300 hover:translate-x-1 transform inline-block">→ Property Management</a></li>
-              <li><a href="/digital-marketing" className="!text-white hover:text-primary-400 transition-colors duration-300 hover:translate-x-1 transform inline-block">→ Digital Marketing</a></li>
+              <li><a href="/accounting" className="!text-white hover:text-primary-400 transition-colors duration-300 hover:translate-x-1 transform inline-block">→ Accounting & Tax Services</a></li>
+              <li><a href="/bookkeeping-usa" className="!text-white hover:text-primary-400 transition-colors duration-300 hover:translate-x-1 transform inline-block">→ Bookkeeping Services</a></li>
+              <li><a href="/accounting-australia" className="!text-white hover:text-primary-400 transition-colors duration-300 hover:translate-x-1 transform inline-block">→ Australian Accounting Services</a></li>
+              <li><a href="/property-management" className="!text-white hover:text-primary-400 transition-colors duration-300 hover:translate-x-1 transform inline-block">→ Property Management Services</a></li>
+              <li><a href="/digital-marketing" className="!text-white hover:text-primary-400 transition-colors duration-300 hover:translate-x-1 transform inline-block">→ Digital Marketing Services</a></li>
             </ul>
           </div>
 

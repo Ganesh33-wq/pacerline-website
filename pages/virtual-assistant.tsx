@@ -42,10 +42,21 @@ const VirtualAssistantPage = () => {
                   <span className="inline-block animate-fade-in-up delay-300">Service</span>
                 </h1>
                 <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-6 shadow-xl max-w-4xl mx-auto border border-white/20 animate-fade-in-up delay-500 hover:shadow-2xl transition-all duration-500 hover:scale-105">
-                  <p className="text-xl text-gray-700 leading-relaxed">
+                  <p className="text-xl text-gray-700 leading-relaxed mb-8">
                     Professional <strong className="bg-gradient-to-r from-[#092870] to-indigo-600 bg-clip-text text-transparent">Virtual Assistant Services</strong> for Property Management & Real Estate Businesses
                   </p>
-                  <div className="mt-4 flex justify-center space-x-2">
+                  
+                  {/* CTA Buttons */}
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
+                    <a href="/contact#contact-methods" className="inline-flex items-center justify-center bg-gradient-to-r from-[#38bdf8] via-[#0ea5e9] to-[#38bdf8] px-8 py-4 rounded-full font-semibold text-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105" style={{ color: '#ffffff !important' }}>
+                      Get Virtual Assistant Support
+                    </a>
+                    <a href="/book-demo" className="inline-flex items-center justify-center bg-[#092870] text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-blue-900 transition-all duration-500 hover:shadow-xl hover:scale-105" style={{ color: '#ffffff !important' }}>
+                      Schedule Free Consultation
+                    </a>
+                  </div>
+                  
+                  <div className="flex justify-center space-x-2">
                     <div className="w-2 h-2 bg-gradient-to-r from-[#092870] to-indigo-600 rounded-full animate-bounce"></div>
                     <div className="w-2 h-2 bg-gradient-to-r from-indigo-600 to-[#092870] rounded-full animate-bounce delay-100"></div>
                     <div className="w-2 h-2 bg-gradient-to-r from-[#092870] to-indigo-600 rounded-full animate-bounce delay-200"></div>
@@ -951,11 +962,11 @@ const VirtualAssistantPage = () => {
                 Join hundreds of property management companies, real estate professionals, and businesses who trust Pacerline for expert virtual assistant services. Start saving time and money while improving your customer service today.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="/contact" className="bg-gradient-to-r from-[#38bdf8] via-[#0ea5e9] to-[#38bdf8] !text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 relative overflow-hidden group hover:from-[#0ea5e9] hover:to-[#38bdf8]">
-                  <span className="relative z-10 !text-white">Get Virtual Assistant Support</span>
+                <a href="/contact#contact-methods" className="inline-flex items-center justify-center bg-gradient-to-r from-[#38bdf8] via-[#0ea5e9] to-[#38bdf8] px-8 py-4 rounded-full font-semibold text-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105" style={{ color: '#ffffff !important' }}>
+                  Get Virtual Assistant Support
                 </a>
-                <a href="/book-demo" className="border-2 border-[#38bdf8] bg-white text-[#0ea5e9] px-8 py-4 rounded-full font-semibold text-lg hover:bg-gradient-to-r hover:from-[#38bdf8] hover:to-[#0ea5e9] hover:!text-white hover:border-transparent transition-all duration-500 hover:shadow-xl hover:scale-105">
-                  <span className="hover:!text-white">Schedule Free Consultation</span>
+                <a href="/book-demo" className="inline-flex items-center justify-center bg-[#092870] text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-blue-900 transition-all duration-500 hover:shadow-xl hover:scale-105" style={{ color: '#ffffff !important' }}>
+                  Schedule Free Consultation
                 </a>
               </div>
             </div>

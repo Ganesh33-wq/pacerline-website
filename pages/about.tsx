@@ -116,7 +116,7 @@ const AboutPage = () => {
             </div>
             
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-600 via-green-500 to-blue-600 bg-clip-text text-transparent animate-fade-in-up">
-              About Us
+              Contact Us
             </h1>
             
             <p className="text-xl md:text-2xl text-green-600 leading-relaxed mb-8 animate-fade-in-up animation-delay-200">
@@ -124,13 +124,13 @@ const AboutPage = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up animation-delay-400">
-              <a href="#company" className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-500 to-green-500 text-white font-semibold rounded-full hover:from-green-500 hover:to-blue-500 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-2xl">
-                Learn More About Us
-                <span className="ml-2">→</span>
-              </a>
-              <a href="#team" className="inline-flex items-center px-8 py-4 border-2 border-blue-400 text-blue-600 font-semibold rounded-full hover:bg-blue-50 transition-all duration-300 transform hover:scale-105">
+              <a href="#team" className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-500 to-green-500 text-white font-semibold rounded-full hover:from-green-500 hover:to-blue-500 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-2xl">
                 Meet Our Team
                 <span className="ml-2">👥</span>
+              </a>
+              <a href="/contact#contact-methods" className="inline-flex items-center px-8 py-4 border-2 border-blue-400 text-blue-600 font-semibold rounded-full hover:bg-blue-50 transition-all duration-300 transform hover:scale-105">
+                Contact Us
+                <span className="ml-2">→</span>
               </a>
             </div>
           </div>

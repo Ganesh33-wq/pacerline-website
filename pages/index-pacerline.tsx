@@ -137,10 +137,10 @@ export default function Home() {
               
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 mb-8 opacity-0 animate-[fadeInUp_1s_ease-out_1s_forwards]">
-                <Link href="/contact" className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-bold py-4 px-8 rounded-full transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:-translate-y-1 hover:scale-105 text-center animate-pulse">
+                <Link href="/contact#contact-methods" className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-bold py-4 px-8 rounded-full transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:-translate-y-1 hover:scale-105 text-center animate-pulse">
                   WORK WITH US
                 </Link>
-                <Link href="/about" className="border-2 border-green-500 text-green-400 hover:bg-green-500 hover:text-white font-bold py-4 px-8 rounded-full transition-all duration-300 transform hover:scale-105 text-center">
+                <Link href="/about" className="border-2 border-green-500 text-white hover:bg-green-500 hover:text-white font-bold py-4 px-8 rounded-full transition-all duration-300 transform hover:scale-105 text-center" style={{ background: 'transparent' }}>
                   READ MORE
                 </Link>
               </div>
@@ -263,7 +263,7 @@ export default function Home() {
                   
                   {/* CTA Button */}
                   <Link 
-                    href="/contact" 
+                    href="/contact#contact-methods" 
                     className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-green-500 to-green-600 text-white font-semibold rounded-full hover:from-green-600 hover:to-green-700 transition-all duration-300 transform hover:scale-105 group-hover:shadow-lg"
                   >
                     Get Started
@@ -317,7 +317,7 @@ export default function Home() {
               Join hundreds of satisfied clients worldwide who trust ProBusiness for their outsourcing needs
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contact" className="bg-white text-green-600 hover:bg-gray-100 font-bold py-4 px-8 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">
+              <Link href="/contact#contact-methods" className="bg-white text-green-600 hover:bg-gray-100 font-bold py-4 px-8 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">
                 Start Your Project Today
               </Link>
               <Link href="/services" className="border-2 border-white text-white hover:bg-white hover:text-green-600 font-bold py-4 px-8 rounded-full transition-all duration-300 transform hover:scale-105">

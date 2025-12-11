@@ -44,10 +44,6 @@ const PropertyManagement = () => {
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-5xl mx-auto">
-            <div className="mb-8 inline-block px-6 py-3 bg-blue-100/50 backdrop-blur-lg rounded-full border border-green-400/30">
-              <span className="text-green-600 text-sm font-semibold">🏢 PROPERTY MANAGEMENT SPECIALISTS</span>
-            </div>
-            
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-600 via-green-500 to-blue-600 bg-clip-text text-transparent animate-fade-in-up">
               Property Management Accounting
             </h1>
@@ -653,11 +649,11 @@ const PropertyManagement = () => {
           </div>
           
           <div className="flex flex-col md:flex-row gap-8 justify-center">
-            <a href="/contact" className="inline-flex items-center justify-center px-8 py-4 bg-white text-blue-600 font-semibold rounded-full hover:bg-blue-50 transition-all duration-300 transform hover:scale-105 shadow-lg">
+            <a href="/contact#contact-methods" className="inline-flex items-center justify-center px-8 py-4 bg-white text-blue-600 font-semibold rounded-full hover:bg-blue-50 transition-all duration-300 transform hover:scale-105 shadow-lg">
               <span className="mr-2">📞</span>
               Contact Us
             </a>
-            <a href="/contact" className="inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white font-semibold rounded-full hover:bg-white hover:text-blue-600 transition-all duration-300 transform hover:scale-105">
+            <a href="/contact#contact-methods" className="inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white font-semibold rounded-full hover:bg-white hover:text-blue-600 transition-all duration-300 transform hover:scale-105">
               <span className="mr-2">📅</span>
               Book Free Consultation
             </a>

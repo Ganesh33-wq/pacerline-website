@@ -66,7 +66,7 @@ const BookkeepingUSAPage = () => {
               </h1>
               {/* Removed intro paragraph from hero section */}
               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-                <a href="/contact" className="group relative px-8 py-4 bg-gradient-to-r from-indigo-500 via-purple-500 to-indigo-600 text-white rounded-full font-semibold text-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                <a href="/contact#contact-methods" className="group relative px-8 py-4 bg-gradient-to-r from-indigo-500 via-purple-500 to-indigo-600 text-white rounded-full font-semibold text-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
                   <span className="relative z-10">Free Consultation</span>
                   <div className="absolute inset-0 bg-gradient-to-r from-purple-500 via-indigo-500 to-purple-600 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </a>
@@ -720,7 +720,7 @@ const BookkeepingUSAPage = () => {
             
             <div className="mt-12 text-center">
               <p className="text-gray-600 mb-6">Still have questions?</p>
-              <a href="/contact" className="inline-block px-8 py-3 bg-gradient-to-r from-[#092870] to-[#30a659] text-white rounded-full font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105">
+              <a href="/contact#contact-methods" className="inline-block px-8 py-3 bg-gradient-to-r from-[#092870] to-[#30a659] text-white rounded-full font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105">
                 Contact Our Experts
               </a>
             </div>
@@ -731,22 +731,22 @@ const BookkeepingUSAPage = () => {
         <section className="relative py-20 bg-gradient-to-r from-[#092870] via-indigo-600 to-purple-600">
           <div className="absolute inset-0 bg-black/10"></div>
           <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
+            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6" style={{ color: '#ffffff !important' }}>
               Ready to Optimize Your US Taxes?
             </h2>
-            <p className="text-xl text-white/90 mb-10">
+            <p className="text-xl text-white/90 mb-10" style={{ color: '#ffffff !important' }}>
               Get started with our expert US tax and bookkeeping services today. Don't let financial complexities hold back your business growth.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="/contact" className="group relative px-12 py-6 bg-white text-[#092870] rounded-full font-semibold text-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
-                <span className="relative z-10">Start Free Consultation</span>
+              <a href="/contact#contact-methods" className="group relative px-12 py-6 bg-white text-[#092870] rounded-full font-semibold text-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105" style={{ color: '#092870 !important' }}>
+                <span className="relative z-10" style={{ color: '#092870 !important' }}>Start Free Consultation</span>
               </a>
-              <a href="#services" className="px-12 py-6 border-2 border-white text-white rounded-full font-semibold text-xl hover:bg-white hover:text-[#092870] transition-all duration-300">
+              <a href="#services" className="px-12 py-6 border-2 border-white text-white rounded-full font-semibold text-xl hover:bg-white hover:text-[#092870] transition-all duration-300" style={{ color: '#ffffff !important' }}>
                 View Our Services
               </a>
             </div>
-            <div className="mt-8 text-white/80">
-              <p className="text-lg">
+            <div className="mt-8 text-white/80" style={{ color: '#ffffff !important' }}>
+              <p className="text-lg" style={{ color: '#ffffff !important' }}>
                 ✨ Join 2000+ satisfied clients across all 50 US states
               </p>
             </div>

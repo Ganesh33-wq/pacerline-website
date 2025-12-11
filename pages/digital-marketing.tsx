@@ -45,10 +45,21 @@ const DigitalMarketingPage = () => {
                   <span className="inline-block animate-fade-in-up delay-300">Services</span>
                 </h1>
                 <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-6 shadow-xl max-w-4xl mx-auto border border-white/20 animate-fade-in-up delay-500 hover:shadow-2xl transition-all duration-500 hover:scale-105">
-                  <p className="text-xl text-gray-700 leading-relaxed">
+                  <p className="text-xl text-gray-700 leading-relaxed mb-8">
                     Professional <strong className="bg-gradient-to-r from-[#092870] to-indigo-600 bg-clip-text text-transparent">Digital Marketing Solutions</strong> for US Businesses & Global Markets
                   </p>
-                  <div className="mt-4 flex justify-center space-x-2">
+                  
+                  {/* CTA Buttons */}
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
+                    <a href="/contact#contact-methods" className="inline-flex items-center justify-center bg-gradient-to-r from-[#38bdf8] via-[#0ea5e9] to-[#38bdf8] px-8 py-4 rounded-full font-semibold text-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105" style={{ color: '#ffffff !important' }}>
+                      Get Digital Marketing Support
+                    </a>
+                    <a href="/book-demo" className="inline-flex items-center justify-center bg-[#092870] text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-blue-900 transition-all duration-500 hover:shadow-xl hover:scale-105" style={{ color: '#ffffff !important' }}>
+                      Schedule Free Consultation
+                    </a>
+                  </div>
+                  
+                  <div className="flex justify-center space-x-2">
                     <div className="w-2 h-2 bg-gradient-to-r from-[#092870] to-indigo-600 rounded-full animate-bounce"></div>
                     <div className="w-2 h-2 bg-gradient-to-r from-indigo-600 to-[#092870] rounded-full animate-bounce delay-100"></div>
                     <div className="w-2 h-2 bg-gradient-to-r from-[#092870] to-indigo-600 rounded-full animate-bounce delay-200"></div>
@@ -80,12 +91,12 @@ const DigitalMarketingPage = () => {
                     </div>
                     
                     <div className="mt-8 flex flex-col sm:flex-row gap-4">
-                      <button className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 flex-1 hover:from-blue-700 hover:to-indigo-700">
-                        <span className="relative z-10">Get Digital Marketing Support</span>
-                      </button>
-                      <button className="border-2 border-blue-600 text-blue-700 bg-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-blue-600 hover:text-white transition-all duration-500 hover:shadow-xl hover:scale-105 flex-1">
-                        <span className="relative z-10">View Our Services</span>
-                      </button>
+                      <a href="/contact#contact-methods" className="inline-flex items-center justify-center bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 flex-1 hover:from-blue-700 hover:to-indigo-700">
+                        <span style={{ color: 'white' }}>Get Digital Marketing Support</span>
+                      </a>
+                      <a href="#services" className="inline-flex items-center justify-center border-2 border-blue-600 text-blue-700 bg-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-blue-600 hover:text-white transition-all duration-500 hover:shadow-xl hover:scale-105 flex-1">
+                        View Our Services
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -191,7 +202,7 @@ const DigitalMarketingPage = () => {
         </section>
 
         {/* Digital Marketing Solutions */}
-        <section className="relative py-20 bg-gradient-to-r from-slate-100 to-blue-100">
+        <section id="services" className="relative py-20 bg-gradient-to-r from-slate-100 to-blue-100">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-8">
@@ -492,12 +503,12 @@ const DigitalMarketingPage = () => {
               Let us do the guessing when it comes to digital marketing so that you can concentrate on your business. Whether you need a full-service approach or help with one channel, we are here to make you successful.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">
+              <a href="/contact#contact-methods" className="inline-flex items-center justify-center bg-gradient-to-r from-blue-600 to-indigo-600 px-8 py-4 rounded-full font-semibold text-lg hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105" style={{ color: '#ffffff' }}>
                 Get Digital Marketing Support
-              </button>
-              <button className="bg-white border-2 border-blue-600 text-blue-600 px-8 py-4 rounded-full font-semibold text-lg hover:bg-blue-600 hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl">
+              </a>
+              <a href="/book-demo" className="inline-flex items-center justify-center bg-white border-2 border-blue-600 text-blue-600 px-8 py-4 rounded-full font-semibold text-lg hover:bg-blue-600 hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl">
                 Schedule Free Consultation
-              </button>
+              </a>
             </div>
           </div>
         </section>
@@ -612,19 +623,19 @@ const DigitalMarketingPage = () => {
         <section className="relative py-20 bg-gradient-to-r from-[#092870] via-indigo-700 to-[#30a659]">
           <div className="absolute inset-0 bg-black/20"></div>
           <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
+            <h2 className="text-4xl lg:text-5xl font-bold mb-6" style={{ color: '#ffffff' }}>
               Transform Your Business with Expert Digital Marketing
             </h2>
             <p className="text-xl text-white/90 mb-8">
               Join hundreds of US businesses who trust Pacerline for comprehensive digital marketing solutions. From SEO to social media, PPC to email marketing - we deliver results that drive growth and ROI.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-[#092870] px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-100 transition-colors">
+              <a href="/contact#contact-methods" className="inline-flex items-center justify-center bg-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-100 transition-colors" style={{ color: '#092870' }}>
                 Start Your Digital Marketing Journey
-              </button>
-              <button className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-[#092870] transition-colors">
+              </a>
+              <a href="/book-demo" className="inline-flex items-center justify-center border-2 border-white px-8 py-4 rounded-full font-semibold text-lg transition-colors" style={{ color: '#ffffff' }}>
                 Get Free Marketing Consultation
-              </button>
+              </a>
             </div>
           </div>
         </section>

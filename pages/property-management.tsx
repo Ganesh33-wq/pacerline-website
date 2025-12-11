@@ -59,7 +59,7 @@ const PropertyManagementPage = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
             <div className="mb-8 inline-block px-6 py-3 bg-blue-100/50 backdrop-blur-lg rounded-full border border-green-400/30">
-              <span className="text-green-600 text-sm font-semibold">🏢 PROPERTY MANAGEMENT SPECIALISTS</span>
+              <span className="text-green-600 text-sm font-semibold">🏢 PROPERTY MANAGEMENT ACCOUNTING SPECIALIST</span>
             </div>
             
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-600 via-green-500 to-blue-600 bg-clip-text text-transparent">
@@ -72,13 +72,13 @@ const PropertyManagementPage = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="#services" className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-500 to-green-500 text-white font-semibold rounded-full hover:from-green-500 hover:to-blue-500 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-2xl">
+              <a href="/contact#contact-methods" className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-500 to-green-500 text-white font-semibold rounded-full hover:from-green-500 hover:to-blue-500 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-2xl" style={{ color: '#ffffff !important' }}>
                 Explore Our Services
-                <span className="ml-2">→</span>
+                <span className="ml-2" style={{ color: '#ffffff !important' }}>→</span>
               </a>
-              <a href="/contact" className="inline-flex items-center px-8 py-4 border-2 border-blue-400 text-blue-600 font-semibold rounded-full hover:bg-blue-50 transition-all duration-300 transform hover:scale-105">
+              <a href="/contact#contact-methods" className="inline-flex items-center px-8 py-4 border-2 border-white text-white font-semibold rounded-full hover:bg-white/10 transition-all duration-300 transform hover:scale-105" style={{ color: '#ffffff !important' }}>
                 Get Free Consultation
-                <span className="ml-2">📞</span>
+                <span className="ml-2" style={{ color: '#ffffff !important' }}>📞</span>
               </a>
             </div>
           </div>
@@ -716,7 +716,7 @@ const PropertyManagementPage = () => {
           
           <div className="mt-12 text-center">
             <p className="text-gray-600 mb-6">Still have questions about our property management services?</p>
-            <button className="px-8 py-3 bg-gradient-to-r from-blue-600 to-green-500 text-white rounded-full font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105">
+            <button className="px-8 py-3 bg-gradient-to-r from-blue-600 to-green-500 text-white rounded-full font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105" style={{ color: '#ffffff !important' }}>
               Contact Our Property Management Experts
             </button>
           </div>
@@ -726,22 +726,22 @@ const PropertyManagementPage = () => {
       {/* Call to Action */}
       <section className="py-20 bg-gradient-to-r from-blue-500 to-green-500 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold mb-6">
+          <h2 className="text-4xl font-bold mb-6" style={{ color: '#ffffff !important' }}>
             Ready to Streamline Your Property Management Accounting?
           </h2>
-          <p className="text-xl mb-8 max-w-3xl mx-auto">
+          <p className="text-xl mb-8 max-w-3xl mx-auto" style={{ color: '#ffffff !important' }}>
             Join hundreds of U.S. property managers who trust Pacerline for their accounting needs. 
             Let us handle the books while you focus on growing your business.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="/contact" className="inline-flex items-center px-8 py-4 bg-white text-blue-600 font-semibold rounded-full hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg">
+            <a href="/contact#contact-methods" className="inline-flex items-center px-8 py-4 border-2 border-white text-white font-semibold rounded-full hover:bg-white/10 transition-all duration-300 transform hover:scale-105 shadow-lg" style={{ color: '#ffffff !important' }}>
               Get Free Consultation
-              <span className="ml-2">📞</span>
+              <span className="ml-2" style={{ color: '#ffffff !important' }}>📞</span>
             </a>
-            <a href="mailto:info@pacerlineoutsourcing.com" className="inline-flex items-center px-8 py-4 border-2 border-white text-white font-semibold rounded-full hover:bg-white/10 transition-all duration-300 transform hover:scale-105">
+            <a href="/contact#contact-methods" className="inline-flex items-center px-8 py-4 border-2 border-white text-white font-semibold rounded-full hover:bg-white/10 transition-all duration-300 transform hover:scale-105" style={{ color: '#ffffff !important' }}>
               Email Us Now
-              <span className="ml-2">✉️</span>
+              <span className="ml-2" style={{ color: '#ffffff !important' }}>✉️</span>
             </a>
           </div>
         </div>

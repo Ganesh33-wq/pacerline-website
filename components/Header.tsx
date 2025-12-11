@@ -188,7 +188,7 @@ const Header = () => {
                               <h4 className="text-sm font-semibold text-green-800 mb-2">Need Custom Solutions?</h4>
                               <p className="text-xs text-green-600 mb-3">Let us create a tailored service package for your business needs.</p>
                               <Link 
-                                href="/contact" 
+                                href="/contact#contact-methods" 
                                 className="inline-block bg-green-600 text-white text-xs font-semibold px-4 py-2 rounded-lg hover:bg-green-700 transition-colors duration-300"
                               >
                                 Get Quote
@@ -240,12 +240,12 @@ const Header = () => {
                 </div>
               </div>
             </div>
-            <Link href="/contact" className="px-3 py-2 text-sm font-medium text-gray-700 hover:text-indigo-600 hover:bg-indigo-50 rounded-lg transition-all duration-300">Contact</Link>
+            <Link href="/contact#contact-methods" className="px-3 py-2 text-sm font-medium text-gray-700 hover:text-indigo-600 hover:bg-indigo-50 rounded-lg transition-all duration-300">Contact</Link>
           </div>
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Link href="/contact" className="relative overflow-hidden bg-gradient-to-r from-indigo-600 via-purple-600 to-indigo-700 hover:from-purple-600 hover:via-indigo-600 hover:to-purple-700 text-white font-bold py-2.5 px-6 md:py-3 md:px-7 lg:py-3 lg:px-8 rounded-full transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:-translate-y-1 group text-sm md:text-base" style={{ color: 'white' }}>
+            <Link href="/contact#contact-methods" className="relative overflow-hidden bg-gradient-to-r from-indigo-600 via-purple-600 to-indigo-700 hover:from-purple-600 hover:via-indigo-600 hover:to-purple-700 text-white font-bold py-2.5 px-6 md:py-3 md:px-7 lg:py-3 lg:px-8 rounded-full transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:-translate-y-1 group text-sm md:text-base" style={{ color: 'white' }}>
               <span className="relative z-10" style={{ color: 'white' }}>Get Started</span>
               <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               <div className="absolute inset-0 rounded-full bg-gradient-to-r from-indigo-400 to-purple-400 opacity-0 group-hover:opacity-20 blur-lg transition-opacity duration-300"></div>
@@ -363,7 +363,7 @@ const Header = () => {
             ))}
             <div className="pt-4 border-t border-gray-200">
               <Link
-                href="/contact"
+                href="/contact#contact-methods"
                 className="block w-full text-center bg-gradient-to-r from-indigo-600 to-indigo-700 hover:from-indigo-700 hover:to-indigo-800 text-white font-bold py-3 sm:py-4 px-4 sm:px-6 rounded-xl transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:-translate-y-1 text-sm sm:text-base"
                 style={{ color: 'white' }}
                 onClick={() => setMobileMenuOpen(false)}

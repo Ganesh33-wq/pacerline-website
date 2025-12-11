@@ -131,6 +131,12 @@ const CareersPage = () => {
         <meta name="description" content="Explore career opportunities at Pacerline Outsourcing Service. Join our team of professionals in accounting, property management, and business services." />
       </Head>
 
+      <style jsx>{`
+        .apply-btn {
+          color: #ffffff !important;
+        }
+      `}</style>
+
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 py-20 overflow-hidden">
         {/* Simple animated background shapes */}
@@ -149,8 +155,8 @@ const CareersPage = () => {
               </svg>
             </div>
             
-            <h1 className="text-5xl md:text-6xl font-extrabold mb-6 text-gray-900 leading-tight animate-fade-in-up">
-              Join Our Team
+            <h1 className="text-5xl md:text-6xl font-extrabold mb-6 leading-tight animate-fade-in-up">
+              <span className="bg-gradient-to-r from-[#092870] via-indigo-600 to-[#092870] bg-clip-text text-transparent">Join Our Team</span>
             </h1>
             <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed animate-fade-in-up delay-200">
               Build your career with us. We're looking for talented individuals to join our
@@ -159,19 +165,19 @@ const CareersPage = () => {
             
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8 animate-fade-in-up delay-400">
-              <button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-3 rounded-lg font-medium text-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+              <a href="#open-positions" className="inline-flex items-center justify-center bg-gradient-to-r from-blue-600 to-purple-600 px-8 py-3 rounded-lg font-medium text-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1" style={{ color: '#ffffff' }}>
                 View Open Positions
-              </button>
-              <button className="border-2 border-blue-600 text-blue-600 px-8 py-3 rounded-lg font-medium text-lg hover:bg-blue-600 hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+              </a>
+              <a href="#why-join" className="inline-flex items-center justify-center border-2 border-blue-600 text-blue-600 px-8 py-3 rounded-lg font-medium text-lg hover:bg-blue-600 hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
                 Learn More
-              </button>
+              </a>
             </div>
           </div>
         </div>
       </section>
 
       {/* Why Join Our Team Section */}
-      <section className="py-20 bg-white">
+      <section id="why-join" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-6">
@@ -281,7 +287,7 @@ const CareersPage = () => {
       </section>
 
       {/* Jobs Section */}
-      <section className="py-16 bg-gray-50" id="openings">
+      <section className="py-16 bg-gray-50" id="open-positions">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
@@ -387,7 +393,7 @@ const CareersPage = () => {
                                 </span>
                                 <button
                                   onClick={() => handleApplyClick(job)}
-                                  className="bg-gradient-to-r from-blue-600 to-green-600 text-white px-6 py-2 rounded-full font-semibold hover:from-blue-700 hover:to-green-700 transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg"
+                                  className="apply-btn bg-gradient-to-r from-blue-600 to-green-600 text-white px-6 py-2 rounded-full font-semibold hover:from-blue-700 hover:to-green-700 transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg"
                                 >
                                   Apply Now
                                 </button>
@@ -455,7 +461,7 @@ const CareersPage = () => {
                                 </span>
                                 <button
                                   onClick={() => handleApplyClick(job)}
-                                  className="bg-gradient-to-r from-blue-600 to-green-600 text-white px-6 py-2 rounded-full font-semibold hover:from-blue-700 hover:to-green-700 transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg"
+                                  className="apply-btn bg-gradient-to-r from-blue-600 to-green-600 text-white px-6 py-2 rounded-full font-semibold hover:from-blue-700 hover:to-green-700 transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg"
                                 >
                                   Apply Now
                                 </button>

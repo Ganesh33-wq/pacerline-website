@@ -230,6 +230,24 @@ export default function Home() {
             }
           }
         `}</style>
+
+        {/* Force white text on buttons */}
+        <style jsx>{`
+          a[href="/contact#contact-methods"],
+          a[href="/about"],
+          a[href="/services"] {
+            color: #ffffff !important;
+          }
+          
+          /* Force white text on client count buttons */
+          .inline-block.px-6.py-2.bg-\\[\\#30a659\\] {
+            color: #ffffff !important;
+          }
+          
+          .inline-block.px-6.py-2.bg-\\[\\#30a659\\]:hover {
+            color: #ffffff !important;
+          }
+        `}</style>
       </Head>
       
   {/* Hero Section - First Row */}
@@ -314,7 +332,7 @@ export default function Home() {
               
               {/* CTA Button */}
               <div className="mt-6 md:mt-8">
-                <Link href="/contact" className="inline-flex items-center px-7 md:px-9 py-3 md:py-4 bg-[#30a659] hover:bg-[#092870] text-white font-bold text-sm md:text-base rounded-full transition-all duration-300 shadow-2xl transform hover:scale-105 hover:shadow-3xl">
+                <Link href="/contact#contact-methods" className="inline-flex items-center px-7 md:px-9 py-3 md:py-4 bg-[#30a659] hover:bg-[#092870] text-white font-bold text-sm md:text-base rounded-full transition-all duration-300 shadow-2xl transform hover:scale-105 hover:shadow-3xl">
                   Explore Our Services
                 </Link>
               </div>
@@ -323,16 +341,37 @@ export default function Home() {
         </div>
 
         <style jsx>{`
-          .floating-icon-wrapper {
-            animation: float-smooth 8s ease-in-out infinite;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-          }
-          
-          .floating-icon-wrapper:hover {
-            animation-play-state: paused;
-            transform: scale(1.15) translateY(-5px);
-            filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.25));
-          }
+            .floating-icon-wrapper {
+              animation: float-smooth 8s ease-in-out infinite;
+              transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+              display: inline-flex;
+              align-items: center;
+              justify-content: center;
+              width: 56px;
+              height: 56px;
+              border-radius: 9999px;
+              padding: 6px;
+              background: rgba(255,255,255,0.6);
+              backdrop-filter: blur(6px);
+              -webkit-backdrop-filter: blur(6px);
+            }
+
+            /* Make logo white backgrounds blend better over the hero gradients */
+            .floating-icon-wrapper img {
+              width: 100%;
+              height: 100%;
+              object-fit: contain;
+              mix-blend-mode: multiply;
+              background: transparent;
+              border-radius: 9999px;
+              filter: drop-shadow(0 6px 12px rgba(16,24,40,0.12));
+            }
+
+            .floating-icon-wrapper:hover {
+              animation-play-state: paused;
+              transform: scale(1.15) translateY(-5px);
+              filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.25));
+            }
           
           @keyframes float-smooth {
             0%, 100% {
@@ -360,32 +399,32 @@ export default function Home() {
             <div className="flex animate-scroll-left space-x-8 md:space-x-16 items-center">
               {/* First set of logos */}
               <div className="flex space-x-8 md:space-x-16 items-center flex-shrink-0">
-                <img src="/images/logos/yardi.svg" alt="Yardi" className="h-16 md:h-20 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300" />
-                <img src="/images/logos/realpage.svg" alt="RealPage" className="h-16 md:h-20 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300" />
-                <img src="/images/logos/rent-manager.svg" alt="Rent Manager" className="h-16 md:h-20 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300" />
-                <img src="/images/logos/propertyware.jpeg" alt="propertyware" className="h-12 md:h-16 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300" />
-                <img src="/images/logos/rentvine.jpeg" alt="rentvine" className="h-12 md:h-16 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300" />
-                <img src="/images/logos/quickbook.jpeg" alt="quickbook" className="h-12 md:h-16 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300" />
-                <img src="/images/logos/AppFolio.jpeg" alt="appfolio" className="h-12 md:h-16 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300" />
-                <img src="/images/logos/TenantCloud.jpeg" alt="tenantcloud" className="h-12 md:h-16 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300" />
-                <img src="/images/logos/Buildium.jpeg" alt="buildium" className="h-12 md:h-16 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300" />  
-                <img src="/images/logos/doorloop.svg" alt="DoorLoop" className="h-16 md:h-20 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300" />
-                <img src="/images/logos/xero.svg" alt="Xero" className="h-16 md:h-20 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300" />
-                <img src="/images/logos/freshbooks.svg" alt="FreshBooks" className="h-16 md:h-20 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300" />
-                <img src="/images/logos/sage.svg" alt="Sage" className="h-16 md:h-20 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300" />
-                <img src="/images/logos/yardi-breeze.svg" alt="Yardi Breeze" className="h-16 md:h-20 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300" />
-              </div>
+                  <img src="/images/logos/yardi.svg" alt="Yardi" className="partner-logo" />
+                  <img src="/images/logos/realpage.svg" alt="RealPage" className="partner-logo" />
+                  <img src="/images/logos/rent-manager.svg" alt="Rent Manager" className="partner-logo" />
+                  <img src="/images/logos/propertyware.jpeg" alt="propertyware" className="partner-logo" />
+                  <img src="/images/logos/rentvine.jpeg" alt="rentvine" className="partner-logo" />
+                  <img src="/images/logos/quickbook.jpeg" alt="quickbook" className="partner-logo" />
+                  <img src="/images/logos/AppFolio.jpeg" alt="appfolio" className="partner-logo" />
+                  <img src="/images/logos/TenantCloud.jpeg" alt="tenantcloud" className="partner-logo" />
+                  <img src="/images/logos/Buildium.jpeg" alt="buildium" className="partner-logo" />
+                  <img src="/images/logos/doorloop.svg" alt="DoorLoop" className="partner-logo" />
+                  <img src="/images/logos/xero.svg" alt="Xero" className="partner-logo" />
+                  <img src="/images/logos/freshbooks.svg" alt="FreshBooks" className="partner-logo" />
+                  <img src="/images/logos/sage.svg" alt="Sage" className="partner-logo" />
+                  <img src="/images/logos/yardi-breeze.svg" alt="Yardi Breeze" className="partner-logo" />
+                </div>
               
               {/* Duplicate set for seamless loop */}
               <div className="flex space-x-8 md:space-x-16 items-center flex-shrink-0">
-                <img src="/images/logos/yardi.svg" alt="Yardi" className="h-16 md:h-20 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300" />
-                <img src="/images/logos/realpage.svg" alt="RealPage" className="h-16 md:h-20 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300" />
-                <img src="/images/logos/rent-manager.svg" alt="Rent Manager" className="h-16 md:h-20 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300" />
-                <img src="/images/logos/doorloop.svg" alt="DoorLoop" className="h-16 md:h-20 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300" />
-                <img src="/images/logos/xero.svg" alt="Xero" className="h-16 md:h-20 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300" />
-                <img src="/images/logos/freshbooks.svg" alt="FreshBooks" className="h-16 md:h-20 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300" />
-                <img src="/images/logos/sage.svg" alt="Sage" className="h-16 md:h-20 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300" />
-                <img src="/images/logos/yardi-breeze.svg" alt="Yardi Breeze" className="h-16 md:h-20 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300" />
+                <img src="/images/logos/yardi.svg" alt="Yardi" className="partner-logo" />
+                <img src="/images/logos/realpage.svg" alt="RealPage" className="partner-logo" />
+                <img src="/images/logos/rent-manager.svg" alt="Rent Manager" className="partner-logo" />
+                <img src="/images/logos/doorloop.svg" alt="DoorLoop" className="partner-logo" />
+                <img src="/images/logos/xero.svg" alt="Xero" className="partner-logo" />
+                <img src="/images/logos/freshbooks.svg" alt="FreshBooks" className="partner-logo" />
+                <img src="/images/logos/sage.svg" alt="Sage" className="partner-logo" />
+                <img src="/images/logos/yardi-breeze.svg" alt="Yardi Breeze" className="partner-logo" />
               </div>
             </div>
           </div>
@@ -403,9 +442,24 @@ export default function Home() {
           }
           
           .animate-scroll-left {
-            animation: scroll-left 30s linear infinite;
+            animation: scroll-left 30s linear infinite reverse; /* reverse to move left-to-right */
             width: 200%;  /* Double the width to ensure seamless loop */
           }
+
+          /* Partner logo shared styles */
+          .partner-logo {
+            height: 48px; /* small screens */
+            width: auto;
+            opacity: 0.7;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            object-fit: contain;
+          }
+
+          @media (min-width: 768px) {
+            .partner-logo { height: 64px; }
+          }
+
+          .partner-logo:hover { opacity: 1; transform: translateY(-4px); }
           
           .animate-scroll-left:hover {
             animation-play-state: paused;
@@ -471,10 +525,10 @@ export default function Home() {
               
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link href="/contact" className="bg-gradient-to-r from-[#092870] to-[#30a659] hover:from-[#30a659] hover:to-[#092870] text-white font-bold py-4 px-8 rounded-full transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:-translate-y-1 hover:scale-105 text-center">
+                <Link href="/contact#contact-methods" className="bg-gradient-to-r from-[#092870] to-[#30a659] hover:from-[#30a659] hover:to-[#092870] text-white font-bold py-4 px-8 rounded-full transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:-translate-y-1 hover:scale-105 text-center" style={{ color: '#ffffff !important' }}>
                   WORK WITH US
                 </Link>
-                <Link href="/about" className="bg-gradient-to-r from-[#092870] to-[#30a659] hover:from-[#30a659] hover:to-[#092870] text-white font-bold py-4 px-8 rounded-full transition-all duration-300 transform hover:scale-105 text-center">
+                <Link href="/about" className="bg-gradient-to-r from-[#092870] to-[#30a659] hover:from-[#30a659] hover:to-[#092870] text-white font-bold py-4 px-8 rounded-full transition-all duration-300 transform hover:scale-105 text-center" style={{ color: '#ffffff !important' }}>
                   READ MORE
                 </Link>
               </div>
@@ -601,7 +655,7 @@ export default function Home() {
                   <h3 className="text-lg font-semibold text-gray-600 mb-4">{location.country}</h3>
                   
                   {/* Client Count Button */}
-                  <div className="inline-block px-6 py-2 bg-[#30a659] hover:bg-[#092870] rounded-full text-white font-bold text-sm shadow-md transition-colors duration-300">
+                  <div className="inline-block px-6 py-2 bg-[#30a659] hover:bg-[#092870] rounded-full text-white font-bold text-sm shadow-md transition-colors duration-300" style={{ color: '#ffffff !important' }}>
                     {location.clients} Clients
                   </div>
                 </div>
@@ -660,7 +714,7 @@ export default function Home() {
                   
                   {/* CTA Button */}
                   <Link 
-                    href="/contact" 
+                    href="/contact#contact-methods" 
                     className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-[#092870] to-[#30a659] text-white font-semibold rounded-full hover:from-[#30a659] hover:to-[#092870] transition-all duration-300 transform hover:scale-105 group-hover:shadow-lg"
                     style={{ color: 'white !important' }}
                   >
@@ -871,7 +925,7 @@ export default function Home() {
                 <span style={{ color: 'white !important' }}>Start Standard Process</span>
                 <span className="ml-2" style={{ color: 'white !important' }}>→</span>
               </Link>
-              <Link href="/contact" className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-[#30a659] to-[#092870] text-white font-semibold rounded-full hover:shadow-xl transition-all duration-300 transform hover:scale-105" style={{ color: 'white !important' }}>
+              <Link href="/contact#contact-methods" className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-[#30a659] to-[#092870] text-white font-semibold rounded-full hover:shadow-xl transition-all duration-300 transform hover:scale-105" style={{ color: 'white !important' }}>
                 <span style={{ color: 'white !important' }}>Get Express Service</span>
                 <span className="ml-2" style={{ color: 'white !important' }}>⚡</span>
               </Link>
@@ -977,17 +1031,17 @@ export default function Home() {
       <section className="py-20 bg-gradient-to-br from-[#092870] to-[#30a659] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
-              Ready to <span className="text-white">Transform</span> Your Business?
+           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white" style={{ color: '#ffffff !important' }}>
+              Ready to <span className="text-white" style={{ color: '#ffffff !important' }}>Transform</span> Your Business?
             </h2>
-            <p className="text-xl mb-8 max-w-3xl mx-auto opacity-90">
+            <p className="text-xl mb-8 max-w-3xl mx-auto opacity-90" style={{ color: '#ffffff !important' }}>
               Join hundreds of satisfied clients worldwide who trust Pacerline for their outsourcing needs
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contact" className="bg-gradient-to-r from-[#092870] to-[#30a659] hover:from-[#30a659] hover:to-[#092870] text-white font-bold py-4 px-8 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">
+              <Link href="/contact#contact-methods" className="bg-gradient-to-r from-[#092870] to-[#30a659] hover:from-[#30a659] hover:to-[#092870] text-white font-bold py-4 px-8 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105" style={{ color: '#ffffff !important' }}>
                 Start Your Project Today
               </Link>
-              <Link href="/services" className="bg-gradient-to-r from-[#092870] to-[#30a659] hover:from-[#30a659] hover:to-[#092870] text-white font-bold py-4 px-8 rounded-full transition-all duration-300 transform hover:scale-105">
+              <Link href="/services" className="bg-gradient-to-r from-[#092870] to-[#30a659] hover:from-[#30a659] hover:to-[#092870] text-white font-bold py-4 px-8 rounded-full transition-all duration-300 transform hover:scale-105" style={{ color: '#ffffff !important' }}>
                 Explore All Services
               </Link>
             </div>

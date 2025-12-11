@@ -86,17 +86,22 @@ const BlogPage = () => {
       </Head>
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-50 via-white to-green-50 py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-              Our <span className="bg-gradient-to-r from-[#092870] to-[#30a659] bg-clip-text text-transparent">Blog</span>
-            </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-              Stay informed with expert insights, industry trends, and practical tips 
-              for property management, accounting, and business growth.
-            </p>
-          </div>
+      <section className="relative bg-gradient-to-br from-blue-50 via-white to-green-50 py-20 overflow-hidden">
+        {/* animated background shapes */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-10 left-10 w-36 h-36 bg-blue-200 rounded-full opacity-20 animate-float"></div>
+          <div className="absolute top-20 right-20 w-28 h-28 bg-green-200 rounded-full opacity-25 animate-float-delayed"></div>
+          <div className="absolute bottom-16 left-1/4 w-24 h-24 bg-indigo-100 rounded-full opacity-20 animate-float-slow"></div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+          <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 animate-fade-in-up">
+            Our <span className="bg-gradient-to-r from-[#092870] to-[#30a659] bg-clip-text text-transparent">Blog</span>
+          </h1>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8 animate-fade-in-up delay-300">
+            Stay informed with expert insights, industry trends, and practical tips 
+            for property management, accounting, and business growth.
+          </p>
         </div>
       </section>
 
@@ -294,7 +299,7 @@ const BlogPage = () => {
             Never miss an important update in the property management industry.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/contact" className="bg-white text-[#092870] font-bold py-4 px-8 rounded-full hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+            <Link href="/contact#contact-methods" className="bg-white text-[#092870] font-bold py-4 px-8 rounded-full hover:shadow-xl transition-all duration-300 transform hover:scale-105">
               Subscribe to Newsletter
             </Link>
             <Link href="/services" className="border-2 border-white text-white hover:bg-white hover:text-[#092870] font-bold py-4 px-8 rounded-full transition-all duration-300">

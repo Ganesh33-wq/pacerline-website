@@ -282,7 +282,7 @@ const BlogPostPage = ({ blog, error }: BlogPostPageProps) => {
             <Link href="/blog" className="bg-white text-[#092870] font-bold py-3 px-8 rounded-full hover:shadow-xl transition-all duration-300 inline-block">
               View All Articles
             </Link>
-            <Link href="/contact" className="border-2 border-white text-white hover:bg-white hover:text-[#092870] font-bold py-3 px-8 rounded-full transition-all duration-300 inline-block">
+            <Link href="/contact#contact-methods" className="border-2 border-white text-white hover:bg-white hover:text-[#092870] font-bold py-3 px-8 rounded-full transition-all duration-300 inline-block">
               Contact Us
             </Link>
           </div>

@@ -36,10 +36,10 @@ const AppFolioBookkeepingPage = () => {
                 <span className="block bg-gradient-to-r from-[#092870] via-blue-600 to-[#30a659] bg-clip-text text-transparent">Bookkeeping Service</span>
               </h1>
               <div className="flex flex-col sm:flex-row gap-6 justify-center mt-12">
-                <a href="/contact" className="inline-flex items-center justify-center bg-gradient-to-r from-[#38bdf8] via-[#0ea5e9] to-[#38bdf8] text-white px-10 py-4 rounded-full font-semibold text-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 shadow-lg">
+                <a href="/contact#contact-methods" className="inline-flex items-center justify-center bg-gradient-to-r from-[#38bdf8] via-[#0ea5e9] to-[#38bdf8] text-white px-10 py-4 rounded-full font-semibold text-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 shadow-lg">
                   Get AppFolio Bookkeeping Help
                 </a>
-                <a href="#services" className="inline-flex items-center justify-center border-2 border-white text-white px-10 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-[#092870] transition-all duration-300 shadow-lg">
+                <a href="#full-service" className="inline-flex items-center justify-center border-2 border-white text-white px-10 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-[#092870] transition-all duration-300 shadow-lg">
                   View Our Services
                 </a>
               </div>
@@ -187,7 +187,7 @@ const AppFolioBookkeepingPage = () => {
 
 
         {/* Full-Service Solutions */}
-        <section className="relative py-20 bg-white">
+        <section id="full-service" className="relative py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-8">
@@ -560,17 +560,17 @@ const AppFolioBookkeepingPage = () => {
         <section className="relative py-20 bg-gradient-to-r from-[#092870] via-indigo-700 to-[#30a659]">
           <div className="absolute inset-0 bg-black/20"></div>
           <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
+            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6" style={{ color: '#ffffff !important' }}>
               Ready to Optimize Your AppFolio Investment?
             </h2>
-            <p className="text-xl text-white/90 mb-8">
+            <p className="text-xl text-white/90 mb-8" style={{ color: '#ffffff !important' }}>
               Partner with 13+ years AppFolio experts for comprehensive bookkeeping solutions
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-[#092870] px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-100 transition-colors">
+              <button className="bg-white text-[#092870] px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-100 transition-colors" style={{ color: '#092870 !important' }}>
                 Get Expert AppFolio Help
               </button>
-              <button className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-[#092870] transition-colors">
+              <button className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-[#092870] transition-colors" style={{ color: '#ffffff !important' }}>
                 Schedule Consultation
               </button>
             </div>

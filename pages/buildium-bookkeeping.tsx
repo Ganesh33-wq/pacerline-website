@@ -47,6 +47,16 @@ const BuildiumBookkeepingPage = () => {
                   <p className="text-xl text-gray-700 leading-relaxed mb-4">
                     <strong className="bg-gradient-to-r from-[#092870] to-indigo-600 bg-clip-text text-transparent">Pacerline Outsourcing Service Pvt Ltd</strong> providing expert Back-Office Bookkeeping Support to U.S. Property Management Firms and Real Estate companies.
                   </p>
+                  <div className="mt-6 flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="/contact#contact-methods" className="inline-flex items-center justify-center bg-gradient-to-r from-[#092870] to-indigo-600 text-white px-8 py-3 rounded-full font-semibold text-lg hover:shadow-lg transition-all duration-300 transform hover:scale-105" style={{ color: '#ffffff !important' }}>
+                      Get Free Consultation
+                      <span className="ml-2">📞</span>
+                    </a>
+                    <a href="#services" className="inline-flex items-center justify-center border-2 border-[#092870] text-[#092870] px-8 py-3 rounded-full font-semibold text-lg hover:bg-[#092870] hover:text-white transition-all duration-300 transform hover:scale-105" style={{ color: '#092870 !important' }}>
+                      View Services
+                      <span className="ml-2">→</span>
+                    </a>
+                  </div>
                   <div className="mt-4 flex justify-center space-x-2">
                     <div className="w-2 h-2 bg-gradient-to-r from-[#092870] to-indigo-600 rounded-full animate-bounce"></div>
                     <div className="w-2 h-2 bg-gradient-to-r from-indigo-600 to-[#092870] rounded-full animate-bounce delay-100"></div>
@@ -89,7 +99,7 @@ const BuildiumBookkeepingPage = () => {
                           In addition to the items above, we provide tailored owner distribution processing, customized monthly reporting, and year-end support to ensure your books are audit-ready and owner communication is simplified.
                         </p>
                         <p className="text-gray-700 leading-relaxed">
-                          Want a customized onboarding checklist or a walkthrough of how we would handle your portfolio? <a href="/contact" className="text-[#092870] font-semibold underline">Contact our team</a> and we’ll prepare a no-cost evaluation.
+                          Want a customized onboarding checklist or a walkthrough of how we would handle your portfolio? <a href="/contact#contact-methods" className="text-[#092870] font-semibold underline">Contact our team</a> and we'll prepare a no-cost evaluation.
                         </p>
                       </div>
 
@@ -357,6 +367,20 @@ const BuildiumBookkeepingPage = () => {
           </div>
         </section>
 
+        {/* Services Section */}
+        <section id="services" className="relative py-20 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-8 animate-fade-in-up">
+                Our Buildium Bookkeeping Services
+              </h2>
+              <p className="text-xl text-gray-700 max-w-4xl mx-auto">
+                Complete bookkeeping solutions tailored for your property management business
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* Who We Serve */}
         <section className="relative py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -594,12 +618,12 @@ const BuildiumBookkeepingPage = () => {
                   Let our certified experts handle your property management accounting while you focus on growing your business. Experience the difference with our comprehensive 18-service solution.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <button className="bg-gradient-to-r from-[#092870] via-indigo-600 to-[#092870] bg-size-200 bg-pos-0 hover:bg-pos-100 text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105">
+                  <a href="/contact#contact-methods" className="inline-flex items-center justify-center bg-gradient-to-r from-[#092870] via-indigo-600 to-[#092870] text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105" style={{ color: '#ffffff !important' }}>
                     Start Your Buildium Service Today
-                  </button>
-                  <button className="border-2 border-[#30a659] text-[#30a659] px-8 py-4 rounded-full font-semibold text-lg hover:bg-[#30a659] hover:text-white transition-all duration-500 hover:shadow-xl hover:scale-105">
+                  </a>
+                  <a href="/book-demo" className="inline-flex items-center justify-center border-2 border-[#30a659] text-white bg-[#30a659] px-8 py-4 rounded-full font-semibold text-lg hover:bg-[#2a9449] transition-all duration-500 hover:shadow-xl hover:scale-105" style={{ color: '#ffffff !important' }}>
                     Schedule Free Consultation
-                  </button>
+                  </a>
                 </div>
               </div>
             </div>
@@ -834,16 +858,16 @@ const BuildiumBookkeepingPage = () => {
               <h2 className="text-4xl lg:text-5xl font-bold text-black mb-6">
                 Ready to Maximize Your Buildium Investment?
               </h2>
-              <p className="text-xl text-black mb-8 leading-relaxed font-semibold">
-                Let our <strong className="bg-gradient-to-r from-[#092870] to-indigo-600 bg-clip-text text-transparent">Buildium experts</strong> handle your bookkeeping while you focus on growing your property management business. Get <strong className="bg-gradient-to-r from-[#30a659] to-emerald-600 bg-clip-text text-transparent">14+ years of expertise</strong> working for you with professional, accurate, and compliant accounting services.
+              <p className="text-xl text-black mb-8 leading-relaxed">
+                Let our <span className="bg-gradient-to-r from-[#092870] to-indigo-600 bg-clip-text text-transparent">Buildium experts</span> handle your bookkeeping while you focus on growing your property management business. Get <span className="bg-gradient-to-r from-[#30a659] to-emerald-600 bg-clip-text text-transparent">14+ years of expertise</span> working for you with professional, accurate, and compliant accounting services.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="bg-gradient-to-r from-[#092870] via-indigo-600 to-[#092870] bg-size-200 bg-pos-0 hover:bg-pos-100 text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105">
+                <a href="/contact#contact-methods" className="inline-flex items-center justify-center bg-gradient-to-r from-[#092870] via-indigo-600 to-[#092870] text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105" style={{ color: '#ffffff !important' }}>
                   Get Expert Buildium Bookkeeping
-                </button>
-                <button className="border-2 border-[#30a659] text-[#30a659] px-8 py-4 rounded-full font-semibold text-lg hover:bg-[#30a659] hover:text-white transition-all duration-500 hover:shadow-xl hover:scale-105">
+                </a>
+                <a href="/book-demo" className="inline-flex items-center justify-center bg-[#30a659] text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-[#2a9449] transition-all duration-500 hover:shadow-xl hover:scale-105" style={{ color: '#ffffff !important' }}>
                   Schedule Free Consultation
-                </button>
+                </a>
               </div>
               
               {/* Trust Indicators */}

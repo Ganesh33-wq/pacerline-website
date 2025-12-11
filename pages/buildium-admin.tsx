@@ -44,10 +44,21 @@ const BuildiumAdminPage = () => {
                   <span className="inline-block animate-fade-in-up delay-300">Administration Service</span>
                 </h1>
                 <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-6 shadow-xl max-w-4xl mx-auto border border-white/20 animate-fade-in-up delay-500 hover:shadow-2xl transition-all duration-500 hover:scale-105">
-                  <p className="text-xl text-gray-700 leading-relaxed">
+                  <p className="text-xl text-gray-700 leading-relaxed mb-8">
                     Professional <strong className="bg-gradient-to-r from-[#092870] to-indigo-600 bg-clip-text text-transparent">Buildium Administration Solutions</strong> for U.S. Property Management Companies
                   </p>
-                  <div className="mt-4 flex justify-center space-x-2">
+                  
+                  {/* CTA Buttons */}
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
+                    <a href="/contact#contact-methods" className="inline-flex items-center justify-center bg-gradient-to-r from-[#38bdf8] via-[#0ea5e9] to-[#38bdf8] px-8 py-4 rounded-full font-semibold text-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105" style={{ color: '#ffffff !important' }}>
+                      Get Buildium Admin Support
+                    </a>
+                    <a href="/book-demo" className="inline-flex items-center justify-center bg-[#092870] text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-blue-900 transition-all duration-500 hover:shadow-xl hover:scale-105" style={{ color: '#ffffff !important' }}>
+                      Schedule Free Consultation
+                    </a>
+                  </div>
+                  
+                  <div className="flex justify-center space-x-2">
                     <div className="w-2 h-2 bg-gradient-to-r from-[#092870] to-indigo-600 rounded-full animate-bounce"></div>
                     <div className="w-2 h-2 bg-gradient-to-r from-indigo-600 to-[#092870] rounded-full animate-bounce delay-100"></div>
                     <div className="w-2 h-2 bg-gradient-to-r from-[#092870] to-indigo-600 rounded-full animate-bounce delay-200"></div>
@@ -82,11 +93,11 @@ const BuildiumAdminPage = () => {
                     </div>
                     
                     <div className="mt-8 flex flex-col sm:flex-row gap-4">
-                      <a href="/contact" className="bg-gradient-to-r from-[#38bdf8] via-[#0ea5e9] to-[#38bdf8] text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 flex-1 relative overflow-hidden group text-center hover:from-[#0ea5e9] hover:to-[#38bdf8]">
-                        <span className="relative z-10">Get Buildium Admin Support</span>
+                      <a href="/contact#contact-methods" className="bg-gradient-to-r from-[#38bdf8] via-[#0ea5e9] to-[#38bdf8] px-8 py-4 rounded-full font-semibold text-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 flex-1 text-center" style={{ color: '#ffffff !important' }}>
+                        Get Buildium Admin Support
                       </a>
-                      <a href="#services" className="border-2 border-[#38bdf8] bg-white text-[#0ea5e9] px-8 py-4 rounded-full font-semibold text-lg hover:bg-gradient-to-r hover:from-[#38bdf8] hover:to-[#0ea5e9] hover:text-white hover:border-transparent transition-all duration-500 hover:shadow-xl hover:scale-105 flex-1 relative overflow-hidden group text-center">
-                        <span className="relative z-10">View Our Services</span>
+                      <a href="#services" className="border-2 border-[#38bdf8] bg-white text-[#0ea5e9] px-8 py-4 rounded-full font-semibold text-lg hover:bg-gradient-to-r hover:from-[#38bdf8] hover:to-[#0ea5e9] transition-all duration-500 hover:shadow-xl hover:scale-105 flex-1 text-center" style={{ color: '#0ea5e9' }}>
+                        View Our Services
                       </a>
                     </div>
                   </div>
@@ -712,11 +723,11 @@ const BuildiumAdminPage = () => {
                 At <strong className="bg-gradient-to-r from-[#092870] to-indigo-600 bg-clip-text text-transparent">Pacerline Outsourcing Service Pvt Ltd</strong>, we don't simply "get tasks done"—we join your team. With industry knowledge, Buildium savvy, and top-notch communication, we provide a frictionless extension of your property management office at a fraction of the expense.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="/contact" className="bg-gradient-to-r from-[#38bdf8] via-[#0ea5e9] to-[#38bdf8] !text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 relative overflow-hidden group hover:from-[#0ea5e9] hover:to-[#38bdf8]">
-                  <span className="relative z-10 !text-white">Get Expert Buildium Admin Support</span>
+                <a href="/contact#contact-methods" className="inline-flex items-center justify-center bg-gradient-to-r from-[#38bdf8] via-[#0ea5e9] to-[#38bdf8] px-8 py-4 rounded-full font-semibold text-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105" style={{ color: '#ffffff !important' }}>
+                  Get Expert Buildium Admin Support
                 </a>
-                <a href="/book-demo" className="border-2 border-[#38bdf8] bg-white text-[#0ea5e9] px-8 py-4 rounded-full font-semibold text-lg hover:bg-gradient-to-r hover:from-[#38bdf8] hover:to-[#0ea5e9] hover:!text-white hover:border-transparent transition-all duration-500 hover:shadow-xl hover:scale-105">
-                  <span className="hover:!text-white">Schedule Free Consultation</span>
+                <a href="/book-demo" className="inline-flex items-center justify-center bg-[#092870] text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-blue-900 transition-all duration-500 hover:shadow-xl hover:scale-105" style={{ color: '#ffffff !important' }}>
+                  Schedule Free Consultation
                 </a>
               </div>
             </div>
@@ -822,11 +833,11 @@ const BuildiumAdminPage = () => {
                 Let our Buildium admin experts handle your day-to-day operations while you focus on growing your portfolio. Professional, reliable, and cost-effective solutions tailored for U.S. property management companies.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="/contact" className="bg-gradient-to-r from-[#38bdf8] via-[#0ea5e9] to-[#38bdf8] !text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 relative overflow-hidden group hover:from-[#0ea5e9] hover:to-[#38bdf8]">
-                  <span className="relative z-10 !text-white">Get Expert Buildium Admin Support</span>
+                <a href="/contact#contact-methods" className="inline-flex items-center justify-center bg-gradient-to-r from-[#38bdf8] via-[#0ea5e9] to-[#38bdf8] px-8 py-4 rounded-full font-semibold text-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105" style={{ color: '#ffffff !important' }}>
+                  Get Expert Buildium Admin Support
                 </a>
-                <a href="/book-demo" className="border-2 border-[#38bdf8] bg-white text-[#0ea5e9] px-8 py-4 rounded-full font-semibold text-lg hover:bg-gradient-to-r hover:from-[#38bdf8] hover:to-[#0ea5e9] hover:!text-white hover:border-transparent transition-all duration-500 hover:shadow-xl hover:scale-105">
-                  <span className="hover:!text-white">Schedule Free Consultation</span>
+                <a href="/book-demo" className="inline-flex items-center justify-center bg-[#092870] text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-blue-900 transition-all duration-500 hover:shadow-xl hover:scale-105" style={{ color: '#ffffff !important' }}>
+                  Schedule Free Consultation
                 </a>
               </div>
             </div>

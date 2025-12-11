@@ -1,14 +1,18 @@
 import nodemailer from 'nodemailer';
 
-// Email transporter configuration
+// Email transporter configuration for Gmail
 const transporter = nodemailer.createTransport({
-  host: process.env.EMAIL_HOST,
-  port: parseInt(process.env.EMAIL_PORT || '587'),
-  secure: false, // true for 465, false for other ports
+  service: 'gmail',
+  host: 'smtp.gmail.com',
+  port: 587,
+  secure: false, // true for 465, false for 587
   auth: {
-    user: process.env.EMAIL_USER,
+    user: process.env.EMAIL_USER || 'info@pacerline.com',
     pass: process.env.EMAIL_PASS,
   },
+  tls: {
+    rejectUnauthorized: false
+  }
 });
 
 // Verify transporter configuration
@@ -16,9 +20,12 @@ export const verifyEmailConfig = async () => {
   try {
     await transporter.verify();
     console.log('✅ Email server is ready to send messages');
+    console.log('📧 Using email:', process.env.EMAIL_USER);
     return true;
   } catch (error) {
     console.error('❌ Email server configuration error:', error);
+    console.error('📧 EMAIL_USER:', process.env.EMAIL_USER);
+    console.error('📧 EMAIL_HOST:', process.env.EMAIL_HOST);
     return false;
   }
 };
@@ -29,6 +36,10 @@ export const sendEmail = async (options: {
   subject: string;
   html: string;
   cc?: string;
+  attachments?: Array<{
+    filename: string;
+    path: string;
+  }>;
 }) => {
   try {
     const info = await transporter.sendMail({
@@ -37,6 +48,7 @@ export const sendEmail = async (options: {
       cc: options.cc,
       subject: options.subject,
       html: options.html,
+      attachments: options.attachments || [],
     });
 
     console.log('✅ Email sent successfully:', info.messageId);
@@ -355,6 +367,89 @@ export const emailTemplates = {
             Email: info@pacerline.com<br>
             Website: https://pacerline.com<br>
             Careers: https://pacerline.com/careers
+          </p>
+        </div>
+      </div>
+    </div>
+  `,
+
+  // Job application - Admin notification with applicant details
+  jobApplicationAdmin: (data: any) => `
+    <div style="font-family: Arial, sans-serif; max-width: 700px; margin: 0 auto; padding: 20px; background-color: #f9f9f9;">
+      <div style="background-color: #ffffff; padding: 30px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+        <h2 style="color: #1f2937; margin-bottom: 20px; text-align: center; border-bottom: 3px solid #3b82f6; padding-bottom: 15px;">
+          🎯 New Job Application Received
+        </h2>
+        
+        <div style="background-color: #eff6ff; padding: 25px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #3b82f6;">
+          <h3 style="color: #1e40af; margin-top: 0; font-size: 18px;">📋 Position Applied For:</h3>
+          <p style="font-size: 20px; font-weight: bold; color: #1f2937; margin: 10px 0;">${data.position}</p>
+        </div>
+
+        <div style="background-color: #f0fdf4; padding: 25px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #10b981;">
+          <h3 style="color: #166534; margin-top: 0; font-size: 18px;">👤 Applicant Information:</h3>
+          <table style="width: 100%; border-collapse: collapse;">
+            <tr>
+              <td style="padding: 8px 0; color: #6b7280; font-weight: bold; width: 40%;">Full Name:</td>
+              <td style="padding: 8px 0; color: #1f2937; font-size: 16px;">${data.name}</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px 0; color: #6b7280; font-weight: bold;">Email Address:</td>
+              <td style="padding: 8px 0;">
+                <a href="mailto:${data.email}" style="color: #3b82f6; text-decoration: none;">${data.email}</a>
+              </td>
+            </tr>
+            <tr>
+              <td style="padding: 8px 0; color: #6b7280; font-weight: bold;">Phone Number:</td>
+              <td style="padding: 8px 0;">
+                <a href="tel:${data.phone}" style="color: #3b82f6; text-decoration: none;">${data.phone}</a>
+              </td>
+            </tr>
+            <tr>
+              <td style="padding: 8px 0; color: #6b7280; font-weight: bold;">Application Date:</td>
+              <td style="padding: 8px 0; color: #1f2937;">${new Date().toLocaleString('en-US', { dateStyle: 'full', timeStyle: 'short' })}</td>
+            </tr>
+          </table>
+        </div>
+
+        ${data.coverLetter ? `
+        <div style="background-color: #fef3c7; padding: 25px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #f59e0b;">
+          <h3 style="color: #92400e; margin-top: 0; font-size: 18px;">📝 Cover Letter:</h3>
+          <p style="color: #374151; font-size: 15px; line-height: 1.8; white-space: pre-wrap; background-color: #ffffff; padding: 15px; border-radius: 6px;">${data.coverLetter}</p>
+        </div>
+        ` : ''}
+
+        <div style="background-color: #f3f4f6; padding: 25px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #6b7280;">
+          <h3 style="color: #374151; margin-top: 0; font-size: 18px;">Resume/CV:</h3>
+          <p style="color: #6b7280; font-size: 14px; margin: 10px 0;">
+            ${data.resumeFileName ? `
+              Resume attached to this email: <strong>${data.resumeFileName}</strong>
+            ` : `
+              No resume file was uploaded
+            `}
+          </p>
+        </div>
+
+        <div style="background-color: #fef2f2; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #dc2626;">
+          <h3 style="color: #991b1b; margin-top: 0; font-size: 16px;">⚡ Quick Actions Required:</h3>
+          <ul style="color: #374151; line-height: 1.8;">
+            <li>Review the attached resume/CV</li>
+            <li>Assess candidate qualifications against job requirements</li>
+            <li>Schedule interview if candidate meets criteria</li>
+            <li>Update application status in the admin panel</li>
+            <li>Respond to candidate within 2 weeks</li>
+          </ul>
+        </div>
+
+        <hr style="margin: 30px 0; border: none; border-top: 2px solid #e5e7eb;">
+        
+        <div style="text-align: center; color: #6b7280; font-size: 13px;">
+          <p style="margin: 5px 0;">This is an automated notification from Pacerline Careers System</p>
+          <p style="margin: 5px 0;">Please do not reply to this email</p>
+          <p style="margin: 15px 0;">
+            <a href="https://pacerline.com/admin" style="color: #3b82f6; text-decoration: none; font-weight: bold;">
+              → Access Admin Panel
+            </a>
           </p>
         </div>
       </div>

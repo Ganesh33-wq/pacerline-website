@@ -71,7 +71,7 @@ const HomePage = () => {
                 solutions tailored to accelerate your business growth.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 fade-in-up stagger-4">
-                <Link href="/contact" className="bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 text-white font-bold py-4 px-8 rounded-full transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:-translate-y-1 hover:scale-105 text-center pulse-glow">
+                <Link href="/contact#contact-methods" className="bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 text-white font-bold py-4 px-8 rounded-full transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:-translate-y-1 hover:scale-105 text-center pulse-glow">
                   Get Started Today
                 </Link>
                 <Link href="/services" className="border-2 border-primary-500 text-primary-400 hover:bg-primary-500 hover:text-white font-bold py-4 px-8 rounded-full transition-all duration-300 transform hover:scale-105 text-center">
@@ -174,7 +174,7 @@ const HomePage = () => {
               <p className="text-lg text-primary-100 mb-6 max-w-2xl mx-auto">
                 Let our expert team help you streamline operations and accelerate growth with our comprehensive business solutions.
               </p>
-              <Link href="/contact" className="inline-block bg-white text-primary-600 hover:bg-primary-50 font-bold py-3 px-8 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+              <Link href="/contact#contact-methods" className="inline-block bg-white text-primary-600 hover:bg-primary-50 font-bold py-3 px-8 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
                 Start Your Journey
               </Link>
             </div>

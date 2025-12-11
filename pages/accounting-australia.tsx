@@ -41,7 +41,7 @@ export default function AccountingAustraliaPage() {
               </div>
               
               {/* Main Title */}
-              <h1 className="text-6xl lg:text-8xl font-bold mb-8 leading-tight">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 leading-tight">
                 <span className="text-gray-900">Professional</span>
                 <span className="block bg-gradient-to-r from-blue-600 via-teal-500 to-emerald-500 bg-clip-text text-transparent animate-gradient-x">
                   Australian
@@ -50,13 +50,13 @@ export default function AccountingAustraliaPage() {
               </h1>
               
               {/* Subtitle */}
-              <p className="text-xl lg:text-2xl text-gray-600 max-w-4xl mx-auto mb-12 leading-relaxed">
+              <p className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto mb-12 leading-relaxed">
                 Empowering Australian businesses with expert financial guidance and compliance solutions
               </p>
               
               {/* Action Buttons */}
               <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
-                <a href="/contact" className="px-12 py-5 rounded-full font-bold text-xl bg-sky-200 text-black border-none shadow-md hover:bg-sky-300 transition-all duration-300 text-center">
+                <a href="/contact#contact-methods" className="px-12 py-5 rounded-full font-bold text-xl bg-sky-200 text-black border-none shadow-md hover:bg-sky-300 transition-all duration-300 text-center">
                   Get Free ATO Consultation
                 </a>
                 <a href="#services" className="px-12 py-5 rounded-full font-bold text-xl bg-sky-200 text-black border-none shadow-md hover:bg-sky-300 transition-all duration-300 ml-0 sm:ml-6 text-center">
@@ -123,7 +123,7 @@ export default function AccountingAustraliaPage() {
                 </div>
 
                 <div className="flex flex-col sm:flex-row gap-6">
-                  <a href="/contact" className="bg-sky-200 text-black px-10 py-4 rounded-full font-semibold text-lg border-none shadow-md hover:bg-sky-300 transition-all duration-300 text-center">
+                  <a href="/contact#contact-methods" className="bg-sky-200 text-black px-10 py-4 rounded-full font-semibold text-lg border-none shadow-md hover:bg-sky-300 transition-all duration-300 text-center">
                     Get Free ATO Consultation
                   </a>
                   <a href="#services" className="bg-sky-200 text-black px-10 py-4 rounded-full font-semibold text-lg border-none shadow-md hover:bg-sky-300 transition-all duration-300 text-center">
@@ -900,7 +900,7 @@ export default function AccountingAustraliaPage() {
                 <p className="text-gray-600 mb-6">
                   Let us help you transition to or optimize your cloud accounting setup with personalized training and ongoing support.
                 </p>
-                <a href="/contact" className="inline-block bg-sky-200 text-black px-8 py-4 rounded-full font-bold text-lg border-none shadow-md hover:bg-sky-300 transition-all duration-300">
+                <a href="/contact#contact-methods" className="inline-block bg-sky-200 text-black px-8 py-4 rounded-full font-bold text-lg border-none shadow-md hover:bg-sky-300 transition-all duration-300">
                   Start Your Cloud Journey
                 </a>
               </div>
@@ -1003,7 +1003,7 @@ export default function AccountingAustraliaPage() {
                 <p className="text-gray-600 mb-6">
                   Experience our seamless process and discover how we can transform your business accounting.
                 </p>
-                <a href="/contact" className="inline-block bg-sky-200 text-black px-8 py-4 rounded-full font-semibold text-lg border-none shadow-md hover:bg-sky-300 transition-all duration-300">
+                <a href="/contact#contact-methods" className="inline-block bg-sky-200 text-black px-8 py-4 rounded-full font-semibold text-lg border-none shadow-md hover:bg-sky-300 transition-all duration-300">
                   Get Free Consultation
                 </a>
               </div>
@@ -1070,17 +1070,17 @@ export default function AccountingAustraliaPage() {
         <section className="relative py-20 bg-gradient-to-r from-[#092870] via-indigo-700 to-[#30a659]">
           <div className="absolute inset-0 bg-black/20"></div>
           <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
+            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6" style={{ color: '#ffffff !important' }}>
               Ready to Streamline Your Australian Accounting?
             </h2>
-            <p className="text-xl text-white/90 mb-8">
+            <p className="text-xl text-white/90 mb-8" style={{ color: '#ffffff !important' }}>
               Get expert Australian accounting and tax services with ATO-registered professionals
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="/contact" className="bg-sky-200 text-black px-8 py-4 rounded-full font-semibold text-lg border-none shadow-md hover:bg-sky-300 transition-all duration-300 text-center">
+              <a href="/contact#contact-methods" className="bg-sky-200 text-black px-8 py-4 rounded-full font-semibold text-lg border-none shadow-md hover:bg-sky-300 transition-all duration-300 text-center" style={{ color: '#000000 !important' }}>
                 Get Free Consultation
               </a>
-              <a href="#services" className="bg-sky-200 text-black px-8 py-4 rounded-full font-semibold text-lg border-none shadow-md hover:bg-sky-300 transition-all duration-300 text-center">
+              <a href="#services" className="bg-sky-200 text-black px-8 py-4 rounded-full font-semibold text-lg border-none shadow-md hover:bg-sky-300 transition-all duration-300 text-center" style={{ color: '#000000 !important' }}>
                 View Our Services
               </a>
             </div>

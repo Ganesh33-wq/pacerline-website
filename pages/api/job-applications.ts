@@ -103,11 +103,20 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         }
       })
 
-      // Send acknowledgment email to client only (no admin email for job applications)
-      const emailData = {
+      // Prepare email data
+      const clientEmailData = {
         name: jobApplication.name,
         email: jobApplication.email,
         position: job.title
+      }
+
+      const adminEmailData = {
+        name: jobApplication.name,
+        email: jobApplication.email,
+        phone: jobApplication.phone,
+        position: job.title,
+        coverLetter: jobApplication.coverLetter,
+        resumeFileName: resumeFileName
       }
 
       try {
@@ -115,10 +124,26 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         await sendEmail({
           to: jobApplication.email,
           subject: 'Application Received - Pacerline Careers',
-          html: emailTemplates.jobApplicationClient(emailData)
+          html: emailTemplates.jobApplicationClient(clientEmailData)
         })
 
-        console.log('✅ Job application acknowledgment email sent successfully')
+        console.log('✅ Job application acknowledgment email sent to client')
+
+        // Send notification email to admin with resume attachment
+        const adminEmail = process.env.ADMIN_EMAIL || 'hr@pacerline.com'
+        const attachments = resumeFileName ? [{
+          filename: resumeFileName,
+          path: path.join(uploadDir, resumeFileName)
+        }] : []
+
+        await sendEmail({
+          to: adminEmail,
+          subject: `New Job Application: ${job.title} - ${jobApplication.name}`,
+          html: emailTemplates.jobApplicationAdmin(adminEmailData),
+          attachments: attachments
+        })
+
+        console.log('✅ Job application notification email sent to admin with attachment')
       } catch (emailError) {
         console.error('❌ Failed to send job application email:', emailError)
         // Don't fail the API call if email fails

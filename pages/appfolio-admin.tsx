@@ -36,15 +36,23 @@ const AppFolioAdminPage = () => {
               backgroundSize: '60px 60px'
             }}></div>
           </div>
+
+          {/* floating shapes for subtle motion */}
+          <div className="absolute inset-0 pointer-events-none">
+            <div className="absolute top-12 left-12 w-40 h-40 bg-gradient-to-r from-[#06b6d4] to-[#3b82f6] rounded-full blur-3xl opacity-15 animate-float"></div>
+            <div className="absolute top-24 right-16 w-28 h-28 bg-gradient-to-r from-[#8b5cf6] to-[#06b6d4] rounded-full blur-3xl opacity-18 animate-float-delayed"></div>
+            <div className="absolute bottom-20 left-1/3 w-32 h-32 bg-gradient-to-r from-[#10b981] to-[#059669] rounded-full blur-3xl opacity-12 animate-float-slow"></div>
+          </div>
+
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center">
               <h1 className="text-5xl lg:text-8xl font-bold text-gray-900 mb-6 tracking-tight">
-                <span className="bg-gradient-to-r from-[#06b6d4] via-[#3b82f6] to-[#8b5cf6] bg-clip-text text-transparent">AppFolio</span>
+                <span className="bg-gradient-to-r from-[#06b6d4] via-[#3b82f6] to-[#8b5cf6] bg-clip-text text-transparent animate-fade-in-up">AppFolio</span>
                 <br />
-                <span className="text-gray-900">Administration Service</span>
+                <span className="text-gray-900 animate-fade-in-up delay-300">Administration Service</span>
               </h1>
-              <div className="flex flex-col sm:flex-row gap-6 justify-center mt-12">
-                <a href="/contact" className="bg-gradient-to-r from-[#06b6d4] to-[#3b82f6] text-white px-10 py-4 rounded-full font-semibold text-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 hover:from-[#0891b2] hover:to-[#2563eb] shadow-lg text-center">
+              <div className="flex flex-col sm:flex-row gap-6 justify-center mt-12 animate-fade-in-up delay-500">
+                <a href="/contact#contact-methods" className="bg-gradient-to-r from-[#06b6d4] to-[#3b82f6] text-white px-10 py-4 rounded-full font-semibold text-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 hover:from-[#0891b2] hover:to-[#2563eb] shadow-lg text-center">
                   Get AppFolio Admin Support
                 </a>
                 <a href="#services" className="border-2 border-gray-800 text-gray-800 px-10 py-4 rounded-full font-semibold text-lg hover:bg-gray-800 hover:text-white transition-all duration-300 shadow-lg text-center">
@@ -798,7 +806,7 @@ const AppFolioAdminPage = () => {
               Let our AppFolio admin experts save you from the drudgery of admin work and keep your maintenance response times on track. You'll receive skilled, AppFolio-trained virtual professionals who are an extension of your staff—professional, dependable, and budget-friendly.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="/contact" className="bg-white text-[#092870] px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-100 transition-colors">
+              <a href="/contact#contact-methods" className="bg-white text-[#092870] px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-100 transition-colors">
                 Get Expert AppFolio Admin Support
               </a>
               <a href="/book-demo" className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-[#092870] transition-colors">

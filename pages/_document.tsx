@@ -7,6 +7,19 @@ export default function Document() {
         <meta charSet="utf-8" />
         <meta name="theme-color" content="#3B82F6" />
         
+        {/* Google Analytics */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-1TGVGK1PNK"></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-1TGVGK1PNK');
+            `,
+          }}
+        />
+        
         {/* Favicon Package */}
         <link rel="icon" href="/favicon.ico" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
