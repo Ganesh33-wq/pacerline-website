@@ -9,11 +9,6 @@ const nextConfig = {
     removeConsole: process.env.NODE_ENV === 'production',
   },
   
-  // Target modern browsers to reduce polyfills
-  experimental: {
-    modern: true,
-  },
-  
   // Optimize JavaScript bundling
   webpack: (config, { isServer }) => {
     if (!isServer) {
