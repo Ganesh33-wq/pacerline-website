@@ -116,7 +116,7 @@ const AboutPage = () => {
             </div>
             
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-600 via-green-500 to-blue-600 bg-clip-text text-transparent animate-fade-in-up">
-              Contact Us
+              About Us
             </h1>
             
             <p className="text-xl md:text-2xl text-green-600 leading-relaxed mb-8 animate-fade-in-up animation-delay-200">

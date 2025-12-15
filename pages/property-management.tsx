@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Link from 'next/link'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import FloatingContactWidget from '../components/FloatingContactWidget'
@@ -77,9 +78,9 @@ const PropertyManagementPage = () => {
                 Explore Our Services
                 <span className="ml-2" style={{ color: '#ffffff !important' }}>→</span>
               </a>
-              <a href="/contact#contact-methods" className="inline-flex items-center px-8 py-4 border-2 border-white text-white font-semibold rounded-full hover:bg-white/10 transition-all duration-300 transform hover:scale-105" style={{ color: '#ffffff !important' }}>
+              <a href="/contact#contact-methods" className="inline-flex items-center px-8 py-4 border-2 border-blue-600 text-blue-600 font-semibold rounded-full hover:bg-blue-600 hover:text-white transition-all duration-300 transform hover:scale-105 shadow-lg">
                 Get Free Consultation
-                <span className="ml-2" style={{ color: '#ffffff !important' }}>📞</span>
+                <span className="ml-2">📞</span>
               </a>
             </div>
           </div>
@@ -717,9 +718,9 @@ const PropertyManagementPage = () => {
           
           <div className="mt-12 text-center">
             <p className="text-gray-600 mb-6">Still have questions about our property management services?</p>
-            <button className="px-8 py-3 bg-gradient-to-r from-blue-600 to-green-500 text-white rounded-full font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105" style={{ color: '#ffffff !important' }}>
+            <Link href="/contact#contact-methods" className="inline-block px-8 py-3 bg-gradient-to-r from-blue-600 to-green-500 text-white rounded-full font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105" style={{ color: '#ffffff !important' }}>
               Contact Our Property Management Experts
-            </button>
+            </Link>
           </div>
         </div>
       </section>

@@ -11,7 +11,8 @@ export default function Home() {
       description: 'Complete financial management following IRS regulations and GAAP by our Certified Public Accountants (CPAs) for all 50 states.',
       icon: '🇺🇸',
       features: ['General Bookkeeping', 'Accounts Payable/Receivable', 'Financial Reporting', 'Tax Preparation Services', 'Audit-Ready Financial Statements'],
-      color: 'from-indigo-500 to-purple-600'
+      color: 'from-indigo-500 to-purple-600',
+      link: '/accounting'
     },
     {
       title: 'Australian Accounting Services', 
@@ -19,7 +20,8 @@ export default function Home() {
       description: 'Customized accounting solutions in accordance with Australian Taxation Office (ATO) regulations and local conventions.',
       icon: '🇦🇺',
       features: ['BAS and GST Reporting', 'Payroll Management', 'Financial Projections', 'Compliance Support', 'Cloud Accounting'],
-      color: 'from-blue-500 to-indigo-600'
+      color: 'from-blue-500 to-indigo-600',
+      link: '/accounting-australia'
     },
     {
       title: 'Property Management Accounting',
@@ -27,7 +29,8 @@ export default function Home() {
       description: 'Accurate, compliant financial reporting for property managers and real estate companies with your preferred software.',
       icon: '🏠',
       features: ['Rent Roll Management', 'Bank Reconciliations', 'Owner Statements', 'Vendor Payments', '1099 Preparation'],
-      color: 'from-purple-500 to-violet-600'
+      color: 'from-purple-500 to-violet-600',
+      link: '/property-management'
     },
     {
       title: 'AppFolio Accounting Support',
@@ -35,7 +38,8 @@ export default function Home() {
       description: 'Complete accounting and administrative support through the AppFolio system with specialized expertise.',
       icon: '⚙️',
       features: ['Transaction Coding', 'Tenant Ledger Management', 'Owner Reporting', 'Administrative Tasks', 'Real-time Integration'],
-      color: 'from-cyan-500 to-blue-600'
+      color: 'from-cyan-500 to-blue-600',
+      link: '/appfolio'
     },
     {
       title: 'Buildium Accounting Services',
@@ -43,7 +47,8 @@ export default function Home() {
       description: 'One-to-one accounting and bookkeeping services with complete Buildium software integration.',
       icon: '🔧',
       features: ['Financial Record-keeping', 'Vendor Bill Tracking', 'Rent Roll Reporting', '1099 Preparation', 'Real-time Review'],
-      color: 'from-teal-500 to-cyan-600'
+      color: 'from-teal-500 to-cyan-600',
+      link: '/buildium'
     },
     {
       title: 'QuickBooks Accounting Services',
@@ -51,7 +56,8 @@ export default function Home() {
       description: 'Customized QuickBooks solutions for real estate companies with complete setup and ongoing support.',
       icon: '📘',
       features: ['Setup & Configuration', 'Bank Reconciliation', 'Financial Reporting', 'Software Integration', 'Tax-ready Financials'],
-      color: 'from-pink-500 to-rose-600'
+      color: 'from-pink-500 to-rose-600',
+      link: '/bookkeeping-usa'
     },
     {
       title: 'Property Management Administrative Services',
@@ -59,7 +65,8 @@ export default function Home() {
       description: 'Critical back-office processes so you can concentrate on tenant satisfaction and business expansion.',
       icon: '🧾',
       features: ['Tenant Screening', 'Lease Document Management', 'Maintenance Coordination', 'Compliance Management', 'Customer Support'],
-      color: 'from-[#092870] to-[#30a659]'
+      color: 'from-[#092870] to-[#30a659]',
+      link: '/propertymanagement'
     },
     {
       title: 'Virtual Assistant Services',
@@ -67,7 +74,8 @@ export default function Home() {
       description: 'Highly qualified professionals offering flexible, high-quality support according to your business requirements.',
       icon: '🤝',
       features: ['Calendar Management', 'Email Filtering', 'Customer Support', 'Data Entry', 'Back-Office Processing'],
-      color: 'from-[#30a659] to-[#092870]'
+      color: 'from-[#30a659] to-[#092870]',
+      link: '/virtual-assistant'
     },
     {
       title: 'Digital Marketing Services',
@@ -75,7 +83,8 @@ export default function Home() {
       description: 'Targeted, performance-based strategies to help you stand out from the crowd in the competitive digital space.',
       icon: '📱',
       features: ['Search Engine Optimization (SEO)', 'Pay-Per-Click (PPC) Advertising', 'Social Media Marketing', 'Content Marketing', 'Website Development', 'Lead Generation'],
-      color: 'from-blue-500 to-[#092870]'
+      color: 'from-blue-500 to-[#092870]',
+      link: '/digital-marketing'
     },
   ]
 
@@ -714,7 +723,7 @@ export default function Home() {
                   
                   {/* CTA Button */}
                   <Link 
-                    href="/contact#contact-methods" 
+                    href={service.link} 
                     className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-[#092870] to-[#30a659] text-white font-semibold rounded-full hover:from-[#30a659] hover:to-[#092870] transition-all duration-300 transform hover:scale-105 group-hover:shadow-lg"
                     style={{ color: 'white !important' }}
                   >

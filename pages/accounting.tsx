@@ -44,7 +44,7 @@ const AccountingPage = () => {
                 Explore Our Services
                 <span className="ml-2">→</span>
               </a>
-              <a href="#contact" className="inline-flex items-center px-8 py-4 border-2 border-blue-400 text-blue-600 font-semibold rounded-full hover:bg-blue-50 transition-all duration-300 transform hover:scale-105">
+              <a href="/contact#contact-methods" className="inline-flex items-center px-8 py-4 border-2 border-blue-400 text-blue-600 font-semibold rounded-full hover:bg-blue-50 transition-all duration-300 transform hover:scale-105">
                 Get Free Consultation
                 <span className="ml-2">📞</span>
               </a>

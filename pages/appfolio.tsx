@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Link from 'next/link'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import FloatingContactWidget from '../components/FloatingContactWidget'
@@ -71,13 +72,13 @@ const AppFolioPage = () => {
               
               {/* Action Buttons */}
               <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
-                <button className="group relative px-12 py-5 bg-gradient-to-r from-blue-600 to-indigo-700 text-white rounded-full font-bold text-xl hover:shadow-2xl hover:shadow-blue-500/25 transition-all duration-300 transform hover:scale-105 hover:-translate-y-1">
+                <Link href="/contact#contact-methods" className="group relative px-12 py-5 bg-gradient-to-r from-blue-600 to-indigo-700 text-white rounded-full font-bold text-xl hover:shadow-2xl hover:shadow-blue-500/25 transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 text-center">
                   <span className="relative z-10">Get AppFolio Expert Help</span>
                   <div className="absolute inset-0 bg-gradient-to-r from-indigo-700 to-blue-600 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                </button>
-                <button className="px-12 py-5 border-2 border-gray-300 text-gray-700 rounded-full font-bold text-xl hover:bg-gray-100 hover:border-gray-400 transition-all duration-300 bg-white/50 backdrop-blur-sm">
+                </Link>
+                <Link href="#appfolio-services" className="px-12 py-5 border-2 border-gray-300 text-gray-700 rounded-full font-bold text-xl hover:bg-gray-100 hover:border-gray-400 transition-all duration-300 bg-white/50 backdrop-blur-sm text-center">
                   View Our AppFolio Services
-                </button>
+                </Link>
               </div>
               
               {/* Scroll Indicator */}
@@ -115,7 +116,8 @@ const AppFolioPage = () => {
             }
             
             .animate-fade-in-up {
-              animation: fade-in-up 1s ease-out;
+              animation: fade-in-up 1s ease-out forwards;
+              animation-fill-mode: forwards;
             }
             
             .animate-gradient-x {
@@ -156,12 +158,12 @@ const AppFolioPage = () => {
                 </div>
 
                 <div className="flex flex-col sm:flex-row gap-6">
-                  <button className="bg-gradient-to-r from-[#092870] to-indigo-600 text-white px-10 py-4 rounded-full font-semibold text-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
+                  <Link href="/contact#contact-methods" className="bg-gradient-to-r from-[#092870] to-indigo-600 text-white px-10 py-4 rounded-full font-semibold text-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 text-center">
                     Get AppFolio Expert Help
-                  </button>
-                  <button className="border-2 border-[#092870] text-[#092870] px-10 py-4 rounded-full font-semibold text-lg hover:bg-[#092870] hover:text-white transition-all duration-300">
+                  </Link>
+                  <Link href="#appfolio-services" className="border-2 border-[#092870] text-[#092870] px-10 py-4 rounded-full font-semibold text-lg hover:bg-[#092870] hover:text-white transition-all duration-300 text-center">
                     View Our AppFolio Services
-                  </button>
+                  </Link>
                 </div>
               </div>
 
@@ -1057,12 +1059,12 @@ const AppFolioPage = () => {
               Partner with 13+ years AppFolio experts for comprehensive bookkeeping and administration services
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-[#092870] px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-100 transition-colors">
+              <Link href="/contact#contact-methods" className="bg-white text-[#092870] px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-100 transition-colors text-center">
                 Get Expert AppFolio Help
-              </button>
-              <button className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-[#092870] transition-colors">
-                View AppFolio Services
-              </button>
+              </Link>
+              <Link href="/book-demo" className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-[#092870] transition-colors text-center">
+                Schedule Consultation
+              </Link>
             </div>
           </div>
         </section>
