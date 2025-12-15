@@ -408,32 +408,32 @@ export default function Home() {
             <div className="flex animate-scroll-left space-x-8 md:space-x-16 items-center">
               {/* First set of logos */}
               <div className="flex space-x-8 md:space-x-16 items-center flex-shrink-0">
-                  <img src="/images/logos/yardi.svg" alt="Yardi" className="partner-logo" />
-                  <img src="/images/logos/realpage.svg" alt="RealPage" className="partner-logo" />
-                  <img src="/images/logos/rent-manager.svg" alt="Rent Manager" className="partner-logo" />
-                  <img src="/images/logos/propertyware.jpeg" alt="propertyware" className="partner-logo" />
-                  <img src="/images/logos/rentvine.jpeg" alt="rentvine" className="partner-logo" />
-                  <img src="/images/logos/quickbook.jpeg" alt="quickbook" className="partner-logo" />
-                  <img src="/images/logos/AppFolio.jpeg" alt="appfolio" className="partner-logo" />
-                  <img src="/images/logos/TenantCloud.jpeg" alt="tenantcloud" className="partner-logo" />
-                  <img src="/images/logos/Buildium.jpeg" alt="buildium" className="partner-logo" />
-                  <img src="/images/logos/doorloop.svg" alt="DoorLoop" className="partner-logo" />
-                  <img src="/images/logos/xero.svg" alt="Xero" className="partner-logo" />
-                  <img src="/images/logos/freshbooks.svg" alt="FreshBooks" className="partner-logo" />
-                  <img src="/images/logos/sage.svg" alt="Sage" className="partner-logo" />
-                  <img src="/images/logos/yardi-breeze.svg" alt="Yardi Breeze" className="partner-logo" />
+                  <img src="/images/logos/yardi.svg" alt="Yardi" className="partner-logo" width="120" height="40" loading="lazy" />
+                  <img src="/images/logos/realpage.svg" alt="RealPage" className="partner-logo" width="120" height="40" loading="lazy" />
+                  <img src="/images/logos/rent-manager.svg" alt="Rent Manager" className="partner-logo" width="120" height="40" loading="lazy" />
+                  <img src="/images/logos/propertyware.jpeg" alt="propertyware" className="partner-logo" width="120" height="40" loading="lazy" />
+                  <img src="/images/logos/rentvine.jpeg" alt="rentvine" className="partner-logo" width="120" height="40" loading="lazy" />
+                  <img src="/images/logos/quickbook.jpeg" alt="quickbook" className="partner-logo" width="120" height="40" loading="lazy" />
+                  <img src="/images/logos/appfolio.jpeg" alt="AppFolio Property Management Software" className="partner-logo" width="120" height="40" loading="lazy" />
+                  <img src="/images/logos/TenantCloud.jpeg" alt="tenantcloud" className="partner-logo" width="120" height="40" loading="lazy" />
+                  <img src="/images/logos/Buildium.jpeg" alt="buildium" className="partner-logo" width="120" height="40" loading="lazy" />
+                  <img src="/images/logos/doorloop.svg" alt="DoorLoop" className="partner-logo" width="120" height="40" loading="lazy" />
+                  <img src="/images/logos/xero.svg" alt="Xero" className="partner-logo" width="120" height="40" loading="lazy" />
+                  <img src="/images/logos/freshbooks.svg" alt="FreshBooks" className="partner-logo" width="120" height="40" loading="lazy" />
+                  <img src="/images/logos/sage.svg" alt="Sage" className="partner-logo" width="120" height="40" loading="lazy" />
+                  <img src="/images/logos/yardi-breeze.svg" alt="Yardi Breeze" className="partner-logo" width="120" height="40" loading="lazy" />
                 </div>
               
               {/* Duplicate set for seamless loop */}
-              <div className="flex space-x-8 md:space-x-16 items-center flex-shrink-0">
-                <img src="/images/logos/yardi.svg" alt="Yardi" className="partner-logo" />
-                <img src="/images/logos/realpage.svg" alt="RealPage" className="partner-logo" />
-                <img src="/images/logos/rent-manager.svg" alt="Rent Manager" className="partner-logo" />
-                <img src="/images/logos/doorloop.svg" alt="DoorLoop" className="partner-logo" />
-                <img src="/images/logos/xero.svg" alt="Xero" className="partner-logo" />
-                <img src="/images/logos/freshbooks.svg" alt="FreshBooks" className="partner-logo" />
-                <img src="/images/logos/sage.svg" alt="Sage" className="partner-logo" />
-                <img src="/images/logos/yardi-breeze.svg" alt="Yardi Breeze" className="partner-logo" />
+              <div className="flex space-x-8 md:space-x-16 items-center flex-shrink-0" aria-hidden="true">
+                <img src="/images/logos/yardi.svg" alt="" className="partner-logo" width="120" height="40" loading="lazy" />
+                <img src="/images/logos/realpage.svg" alt="" className="partner-logo" width="120" height="40" loading="lazy" />
+                <img src="/images/logos/rent-manager.svg" alt="" className="partner-logo" width="120" height="40" loading="lazy" />
+                <img src="/images/logos/doorloop.svg" alt="" className="partner-logo" width="120" height="40" loading="lazy" />
+                <img src="/images/logos/xero.svg" alt="" className="partner-logo" width="120" height="40" loading="lazy" />
+                <img src="/images/logos/freshbooks.svg" alt="" className="partner-logo" width="120" height="40" loading="lazy" />
+                <img src="/images/logos/sage.svg" alt="" className="partner-logo" width="120" height="40" loading="lazy" />
+                <img src="/images/logos/yardi-breeze.svg" alt="" className="partner-logo" width="120" height="40" loading="lazy" />
               </div>
             </div>
           </div>
@@ -538,7 +538,7 @@ export default function Home() {
                   WORK WITH US
                 </Link>
                 <Link href="/about" className="bg-gradient-to-r from-[#092870] to-[#30a659] hover:from-[#30a659] hover:to-[#092870] text-white font-bold py-4 px-8 rounded-full transition-all duration-300 transform hover:scale-105 text-center" style={{ color: '#ffffff !important' }}>
-                  READ MORE
+                  LEARN MORE ABOUT US
                 </Link>
               </div>
             </div>
@@ -962,7 +962,7 @@ export default function Home() {
                   JD
                 </div>
                 <div>
-                  <h4 className="font-bold text-lg text-gray-900">John Davis</h4>
+                  <p className="font-bold text-lg text-gray-900">John Davis</p>
                   <p className="text-gray-600 text-sm">Property Manager, Texas</p>
                 </div>
               </div>
@@ -982,7 +982,7 @@ export default function Home() {
                   SM
                 </div>
                 <div>
-                  <h4 className="font-bold text-lg text-gray-900">Sarah Mitchell</h4>
+                  <p className="font-bold text-lg text-gray-900">Sarah Mitchell</p>
                   <p className="text-gray-600 text-sm">CEO, Real Estate Group</p>
                 </div>
               </div>
@@ -1002,7 +1002,7 @@ export default function Home() {
                   MR
                 </div>
                 <div>
-                  <h4 className="font-bold text-lg text-gray-900">Michael Rodriguez</h4>
+                  <p className="font-bold text-lg text-gray-900">Michael Rodriguez</p>
                   <p className="text-gray-600 text-sm">CFO, Property Solutions</p>
                 </div>
               </div>

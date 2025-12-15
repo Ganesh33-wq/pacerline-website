@@ -12,19 +12,6 @@ export default function Document() {
         <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
         <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
         
-        {/* Google Analytics */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-1TGVGK1PNK"></script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-1TGVGK1PNK');
-            `,
-          }}
-        />
-        
         {/* Favicon Package */}
         <link rel="icon" href="/favicon.ico" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -41,6 +28,21 @@ export default function Document() {
       <body className="antialiased">
         <Main />
         <NextScript />
+        
+        {/* Google Analytics - Load after page content to avoid reflow */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-1TGVGK1PNK', {
+                page_path: window.location.pathname,
+              });
+            `,
+          }}
+        />
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-1TGVGK1PNK"></script>
       </body>
     </Html>
   )

@@ -77,6 +77,9 @@ const Header = () => {
                 src="/images/home/company-logo.png" 
                 alt="Pacerline Company Logo" 
                 className="h-12 md:h-13 lg:h-14 w-auto transition-transform duration-300 group-hover:scale-110"
+                width="200"
+                height="56"
+                loading="eager"
               />
               <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/20 to-purple-500/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </Link>

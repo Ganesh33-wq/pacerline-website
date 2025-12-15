@@ -5,6 +5,11 @@ module.exports = {
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
+  safelist: [
+    'animate-pulse',
+    'animate-bounce',
+    'animate-spin',
+  ],
   theme: {
     extend: {
       colors: {
