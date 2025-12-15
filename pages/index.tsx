@@ -272,57 +272,57 @@ export default function Home() {
         <div className="absolute inset-0 pointer-events-none overflow-hidden hidden md:block">
           {/* Top Row - Left to Right */}
           <div className="floating-icon-wrapper absolute" style={{ top: '10%', left: '5%', animationDelay: '0s' }}>
-            <img src="/images/software-icons/appfolio.png" alt="AppFolio" className="w-12 h-12 lg:w-14 lg:h-14 object-contain drop-shadow-lg" />
+            <img src="/images/software-icons/appfolio.png" alt="AppFolio" width="56" height="56" className="w-12 h-12 lg:w-14 lg:h-14 object-contain drop-shadow-lg" />
           </div>
           
           <div className="floating-icon-wrapper absolute" style={{ top: '8%', left: '18%', animationDelay: '1.5s' }}>
-            <img src="/images/software-icons/buildium.png" alt="Buildium" className="w-12 h-12 lg:w-14 lg:h-14 object-contain drop-shadow-lg" />
+            <img src="/images/software-icons/buildium.png" alt="Buildium" width="56" height="56" className="w-12 h-12 lg:w-14 lg:h-14 object-contain drop-shadow-lg" />
           </div>
           
           <div className="floating-icon-wrapper absolute hidden lg:block" style={{ top: '6%', left: '35%', animationDelay: '2.2s' }}>
-            <img src="/images/software-icons/propertyware.png" alt="Propertyware" className="w-12 h-12 lg:w-14 lg:h-14 object-contain drop-shadow-lg" />
+            <img src="/images/software-icons/propertyware.png" alt="Propertyware" width="56" height="56" className="w-12 h-12 lg:w-14 lg:h-14 object-contain drop-shadow-lg" />
           </div>
           
           <div className="floating-icon-wrapper absolute hidden lg:block" style={{ top: '6%', right: '35%', animationDelay: '3s' }}>
-            <img src="/images/software-icons/quickbooks.png" alt="QuickBooks" className="w-12 h-12 lg:w-14 lg:h-14 object-contain drop-shadow-lg" />
+            <img src="/images/software-icons/quickbooks.png" alt="QuickBooks" width="56" height="56" className="w-12 h-12 lg:w-14 lg:h-14 object-contain drop-shadow-lg" />
           </div>
           
           <div className="floating-icon-wrapper absolute" style={{ top: '8%', right: '18%', animationDelay: '0.8s' }}>
-            <img src="/images/software-icons/rentvine.png" alt="Rentvine" className="w-12 h-12 lg:w-14 lg:h-14 object-contain drop-shadow-lg" />
+            <img src="/images/software-icons/rentvine.png" alt="Rentvine" width="56" height="56" className="w-12 h-12 lg:w-14 lg:h-14 object-contain drop-shadow-lg" />
           </div>
           
           <div className="floating-icon-wrapper absolute" style={{ top: '10%', right: '5%', animationDelay: '1.8s' }}>
-            <img src="/images/software-icons/dotloop.png" alt="Dotloop" className="w-12 h-12 lg:w-14 lg:h-14 object-contain drop-shadow-lg" />
+            <img src="/images/software-icons/dotloop.png" alt="Dotloop" width="56" height="56" className="w-12 h-12 lg:w-14 lg:h-14 object-contain drop-shadow-lg" />
           </div>
           
           {/* Middle Row */}
           <div className="floating-icon-wrapper absolute" style={{ top: '40%', left: '4%', animationDelay: '2.5s' }}>
-            <img src="/images/software-icons/xero.png" alt="Xero" className="w-12 h-12 lg:w-14 lg:h-14 object-contain drop-shadow-lg" />
+            <img src="/images/software-icons/xero.png" alt="Xero" width="56" height="56" className="w-12 h-12 lg:w-14 lg:h-14 object-contain drop-shadow-lg" />
           </div>
           
           <div className="floating-icon-wrapper absolute hidden lg:block" style={{ top: '42%', left: '25%', animationDelay: '3.2s' }}>
-            <img src="/images/software-icons/zillow.png" alt="Zillow" className="w-12 h-12 lg:w-14 lg:h-14 object-contain drop-shadow-lg" />
+            <img src="/images/software-icons/zillow.png" alt="Zillow" width="56" height="56" className="w-12 h-12 lg:w-14 lg:h-14 object-contain drop-shadow-lg" />
           </div>
           
           <div className="floating-icon-wrapper absolute hidden lg:block" style={{ top: '42%', right: '25%', animationDelay: '1.2s' }}>
-            <img src="/images/software-icons/docusign.png" alt="DocuSign" className="w-12 h-12 lg:w-14 lg:h-14 object-contain drop-shadow-lg" />
+            <img src="/images/software-icons/docusign.png" alt="DocuSign" width="56" height="56" className="w-12 h-12 lg:w-14 lg:h-14 object-contain drop-shadow-lg" />
           </div>
           
           <div className="floating-icon-wrapper absolute" style={{ top: '40%', right: '4%', animationDelay: '2.8s' }}>
-            <img src="/images/software-icons/mls.png" alt="MLS" className="w-12 h-12 lg:w-14 lg:h-14 object-contain drop-shadow-lg" />
+            <img src="/images/software-icons/mls.png" alt="MLS" width="56" height="56" className="w-12 h-12 lg:w-14 lg:h-14 object-contain drop-shadow-lg" />
           </div>
           
           {/* Bottom Row */}
           <div className="floating-icon-wrapper absolute" style={{ top: '75%', left: '8%', animationDelay: '1s' }}>
-            <img src="/images/software-icons/hubspot.png" alt="HubSpot" className="w-12 h-12 lg:w-14 lg:h-14 object-contain drop-shadow-lg" />
+            <img src="/images/software-icons/hubspot.png" alt="HubSpot" width="56" height="56" className="w-12 h-12 lg:w-14 lg:h-14 object-contain drop-shadow-lg" />
           </div>
           
           <div className="floating-icon-wrapper absolute hidden lg:block" style={{ top: '73%', left: '28%', animationDelay: '3.5s' }}>
-            <img src="/images/software-icons/slack.png" alt="Slack" className="w-12 h-12 lg:w-14 lg:h-14 object-contain drop-shadow-lg" />
+            <img src="/images/software-icons/slack.png" alt="Slack" width="56" height="56" className="w-12 h-12 lg:w-14 lg:h-14 object-contain drop-shadow-lg" />
           </div>
           
           <div className="floating-icon-wrapper absolute hidden lg:block" style={{ top: '73%', right: '28%', animationDelay: '0.5s' }}>
-            <img src="/images/software-icons/salesforce.png" alt="Salesforce" className="w-12 h-12 lg:w-14 lg:h-14 object-contain drop-shadow-lg" />
+            <img src="/images/software-icons/salesforce.png" alt="Salesforce" width="56" height="56" className="w-12 h-12 lg:w-14 lg:h-14 object-contain drop-shadow-lg" />
           </div>
         </div>
 
