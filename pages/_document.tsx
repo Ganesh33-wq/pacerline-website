@@ -7,6 +7,11 @@ export default function Document() {
         <meta charSet="utf-8" />
         <meta name="theme-color" content="#3B82F6" />
         
+        {/* DNS Prefetch for faster loading */}
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+        <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+        
         {/* Google Analytics */}
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-1TGVGK1PNK"></script>
         <script
