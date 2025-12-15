@@ -23,11 +23,6 @@ const nextConfig = {
   // Compress responses
   compress: true,
   
-  // Optimize CSS
-  experimental: {
-    optimizeCss: true,
-  },
-  
   // Headers for better caching and security
   async headers() {
     return [
